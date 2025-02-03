@@ -5,9 +5,11 @@ import React from "react";
 
 export default function Home() {
     return (
-        <HeaderProvider>
-            <Banner />
-            <Items />
-        </HeaderProvider>
+        <div className="container px-28">
+            <HeaderProvider>
+                <Banner/>
+                <Items/>
+            </HeaderProvider>
+        </div>
     );
 }
