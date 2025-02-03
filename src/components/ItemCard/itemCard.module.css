@@ -1,0 +1,129 @@
+.card {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%;
+}
+
+.image {
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.content {
+    padding: 12px;
+}
+
+.priceContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.mainPrice {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.priceInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+.oldPrice {
+    font-size: 14px;
+    color: #6b7280;
+    text-decoration: line-through;
+}
+
+.discount {
+    color: #ef4444;
+    background-color: #ffeeec;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    margin: 8px 0;
+}
+
+.ratingWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-size: 16px;
+}
+
+.ratingNumber {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.comments {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 12px;
+}
+
+.cartButton {
+    flex: 1;
+}
+
+.cartButton:hover {
+    background: #1d4ed8;
+}
+
+.favoriteButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #F3F7FE;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.favoriteButton:hover {
+    background-color: #d5e3fd;
+}
