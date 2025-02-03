@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Home() {
     return (
-        <div className="container px-28">
+        <div className="container px-26">
             <HeaderProvider>
                 <Banner/>
                 <Items/>
