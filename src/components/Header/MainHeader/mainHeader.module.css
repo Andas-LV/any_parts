@@ -33,6 +33,7 @@
     align-items: center;
     text-decoration: none;
     color: #4b5563;
+    cursor: pointer;
 }
 
 .navItem:hover {

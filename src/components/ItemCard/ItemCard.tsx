@@ -1,19 +1,23 @@
+"use client"
+
 import styles from './itemCard.module.css';
 import { Item } from "@/types/Item";
 import { ImageCarousel } from './ImageCarousel';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Icons } from '@/assets/svg'
+import {useRouter} from "next/navigation";
 
-export default function ItemCard({name, price, currentPrice, discount, rating, comments, images}: Item) {
+export default function ItemCard({id, name, price, currentPrice, discount, rating, comments, images}: Item) {
+    const router = useRouter();
+
     return (
-        <Card className={styles.card}>
+        <Card className={styles.card} onClick={() => router.push(`/item/${id}`)}>
             <ImageCarousel
                 images={images}
                 alt={name}
                 width={250}
             />
-
 
             <div className={styles.content}>
                 <div className={styles.priceContainer}>

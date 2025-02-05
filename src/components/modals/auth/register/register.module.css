@@ -1,0 +1,86 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+}
+
+.overlay.visible {
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 460px;
+    position: relative;
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal.modalVisible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal h2{
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: -30px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.instruction {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.phone {
+    margin: 0 5px;
+}
+
+.nameInput {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #F2F2F2;
+    margin-bottom: 16px;
+}
+
+.changeNumberBtn{
+    color: #0C66E4;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 25px 0;
+    border-radius: 15px;
+}

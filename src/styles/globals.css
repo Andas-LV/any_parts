@@ -53,6 +53,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+input:focus,
+input:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
 
 ::-webkit-scrollbar {
   width: 0;
