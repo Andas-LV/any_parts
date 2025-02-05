@@ -15,6 +15,7 @@ export const items: Item[] = [
             "/items/evaCarpet.png",
             "/items/seatCovers.png",
             "/items/wheelItems.png",
+            "/items/carpet.png",
         ],
     },
     {

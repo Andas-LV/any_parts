@@ -1,10 +1,15 @@
-import React from 'react';
+"use client"
+
+import React, {useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Search from "./Search/Search";
 import styles from './mainHeader.module.css';
+import LoginModal from "../../modals/auth/login";
 
 const MainHeader = () => {
+    const [isModalOpen, setModalOpen] = useState(false);
+
     return (
         <div className={styles.container}>
             <Link href="/" className={styles.logo}>
@@ -20,7 +25,7 @@ const MainHeader = () => {
             <Search/>
 
             <nav className={styles.navigationSection}>
-                <Link href="/" className={styles.navItem}>
+                <div className={styles.navItem} onClick={() => setModalOpen(true)}>
                     <Image
                         src="/header/user.svg"
                         alt="Login"
@@ -28,10 +33,10 @@ const MainHeader = () => {
                         height={24}
                     />
                     <span>Войти</span>
-                </Link>
+                </div>
 
                 <Link href="/" className={styles.navItem}>
-                    <Image
+                <Image
                         src="/header/order.svg"
                         alt="Orders"
                         width={24}
@@ -60,6 +65,8 @@ const MainHeader = () => {
                     <span>Корзина</span>
                 </Link>
             </nav>
+
+            {isModalOpen && <LoginModal onClose={() => setModalOpen(false)} />}
         </div>
     );
 };

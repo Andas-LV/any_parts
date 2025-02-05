@@ -1,0 +1,132 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 550px;
+    position: relative;
+}
+
+.modal h2{
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: -30px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.select {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    background: #F2F2F2;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.countrySelector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    padding: 10px 5px 10px 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.countryCode {
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+.phoneInput {
+    width: 100%;
+    padding: 10px 5px;
+    background: #F2F2F2;
+    border-radius: 15px;
+    font-size: 18px;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 25px 0;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.flag {
+    border-radius: 50%;
+}
+
+.arrowIcon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+.terms{
+    color: #0C66E4;
+    word-spacing: 5px;
+    line-height: 1.2;
+}
+.terms span{
+    color: #4D4D4D;
+    margin-right: 5px;
+}
+
+.error {
+    color: #DC2626;
+    font-size: 14px;
+    margin-bottom: 16px;
+}

@@ -7,7 +7,10 @@ export default function Recommended() {
         <div className={styles.wrapper}>
             Recommended
             {items.map((item, index) => (
-                <ItemCard key={index} {...item} />
+                <ItemCard
+                    key={index}
+                    {...item}
+                />
             ))}
         </div>
     )

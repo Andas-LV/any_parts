@@ -27,7 +27,7 @@
 
 .searchInput:focus, .categorySelect:focus {
     outline: none;
-    border-color: #d1d3d6;
+    border: 2px solid #d4d4da;
 }
 
 .searchWrapper {
