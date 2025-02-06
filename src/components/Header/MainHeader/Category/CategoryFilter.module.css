@@ -1,0 +1,131 @@
+.container {
+    margin: 0 25px;
+}
+
+.categoryBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.backdrop {
+    position: fixed;
+    top: calc(var(--main-header-height) + var(--top-header-height));
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.backdropVisible {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: all;
+}
+
+.dropdown {
+    width: 90%;
+    height: 70%;
+    margin: 0 auto;
+    display: flex;
+    background: white;
+    border-radius: 0 0 25px 25px;
+    overflow: hidden;
+    z-index: 50;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.dropdownVisible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.sidebar {
+    width: 25%;
+    background: #f8f9fa;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h1{
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.categoryButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.categoryNameContent{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.categoryButton:hover, .categoryButton.active {
+    background: #F2F2F2;
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.content h2{
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.categoryAmount {
+    color: #aaa;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.subcategories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.subcategory h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subcategory ul {
+    list-style: none;
+    padding: 0;
+}
+
+.subcategory li {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0;
+}

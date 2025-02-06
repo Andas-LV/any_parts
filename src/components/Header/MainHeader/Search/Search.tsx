@@ -13,16 +13,6 @@ export default function Search() {
 
     return (
         <div className={styles.searchSection}>
-            <Button>
-                <Image
-                    src="/header/category.svg"
-                    alt="Login"
-                    width={24}
-                    height={24}
-                />
-                Категории
-            </Button>
-
             <div className={styles.searchWrapper}>
                 <DropdownMenu onOpenChange={setIsOpen}>
                     <DropdownMenuTrigger className={styles.categorySelect}>

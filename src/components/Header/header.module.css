@@ -1,5 +1,5 @@
 .mainHeaderWrapper {
-    height: var(--header-height);
+    height: var(--main-header-height);
     position: relative;
     z-index: 50;
     background-color: white;
@@ -15,5 +15,5 @@
 }
 
 .mainHeaderWrapper.fixed + * {
-    margin-top: var(--header-height);
+    margin-top: var(--main-header-height);
 }

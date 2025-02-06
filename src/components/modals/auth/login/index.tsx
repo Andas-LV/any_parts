@@ -27,7 +27,6 @@ const LoginModal = ({ onClose }: { onClose: () => void; }) => {
     const [phone, setPhone] = useState("");
     const [agreed, setAgreed] = useState(false);
     const [showConfirmModal, setShowConfirmModal] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
 
     const phoneNumber = selectedCountry.code.concat(phone.replace(/\D/g, ""));
 
@@ -56,8 +55,8 @@ const LoginModal = ({ onClose }: { onClose: () => void; }) => {
     }
 
     return (
-        <div className={`${styles.overlay} ${isVisible ? styles.visible : ''}`}>
-            <div className={`${styles.modal} ${isVisible ? styles.modalVisible : ''}`}>
+        <div className={styles.overlay}>
+            <div className={styles.modal}>
                 <Icons.Close className={styles.closeButton} onClick={onClose} />
                 <h2>Войти или создать профиль</h2>
                 <div className={styles.inputWrapper}>

@@ -14,7 +14,7 @@
 .tabsListWrapper.fixed {
     position: fixed;
     background-color: white;
-    top: var(--header-height);
+    top: var(--main-header-height);
     left: 0;
     right: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -22,10 +22,9 @@
 }
 
 .tabsContent {
-    padding-top: var(--tabs-height); /* Добавьте отступ равный высоте TabsList */
+    padding-top: var(--tabs-height);
 }
 
-/* Добавьте отступ для контента под фиксированными табами */
 .tabsListWrapper.fixed + .tabsContent {
     margin-top: var(--tabs-height);
 }

@@ -1,5 +1,6 @@
 :root {
-  --header-height: 70px;
+  --main-header-height: 70px;
+  --top-header-height: 27px;
   --tabs-height: 45px;
 }
 

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Search from "./Search/Search";
 import styles from './mainHeader.module.css';
 import LoginModal from "../../modals/auth/login";
+import CategoryFilter from "@components/Header/MainHeader/Category/CategoryFilter";
 
 const MainHeader = () => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -21,6 +22,8 @@ const MainHeader = () => {
                 />
                 <h1>Any Parts</h1>
             </Link>
+
+            <CategoryFilter/>
 
             <Search/>
 

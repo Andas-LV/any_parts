@@ -1,9 +1,11 @@
 .container {
     height: 100%;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 0;
+    z-index: 55;
 }
 
 .logo {
@@ -18,8 +20,6 @@
     font-size: 26px;
     font-weight: bold;
 }
-
-
 
 .navigationSection {
     display: flex;

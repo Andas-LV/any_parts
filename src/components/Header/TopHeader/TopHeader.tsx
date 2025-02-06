@@ -1,12 +1,16 @@
 import styles from "./topHeader.module.css"
 import Image from "next/image"
 import {Button} from "@/components/ui/button";
+import React, {useState} from "react";
+import CurrencyModal from "@components/modals/currency/currencyModal";
 
 export default function TopHeader() {
+    const [isModalOpen, setModalOpen] = useState(false);
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.leftSide}>
-                <Button className={styles.currency} variant="secondary">
+                <Button className={styles.currency} variant="secondary" onClick={() => setModalOpen(true)}>
                     <Image
                         className={styles.currencyImg}
                         src={'/countries/russian.svg'}
@@ -31,6 +35,8 @@ export default function TopHeader() {
             <Button className={styles.getSeller}>
                 Стать продавцом
             </Button>
+
+            {isModalOpen && <CurrencyModal onClose={() => setModalOpen(false)} />}
         </div>
     )
 }
