@@ -1,10 +1,12 @@
 import styles from './itemPage.module.css';
 import { items } from '@components/Items/exampleItems';
 import HeaderWrapper from "@/providers/HeaderProvider";
-import ItemHeader from "@/app/(pages)/item/[...id]/pageHeader";
+import ItemHeader from "./pageHeader/index";
 
-export default async function ItemPage({ params }: { params: { id: string } }) {
-    const id = Number(params.id);
+export type paramsType = Promise<{ id: number }>;
+
+export default async function ItemPage(props: { params: paramsType }) {
+    const { id } = await props.params;
     const item = items[id - 1];
 
     const breadcrumbItems = [
