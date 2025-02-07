@@ -1,4 +1,3 @@
-
 .tabsContainer {
     position: relative;
     margin: 30px 0;
@@ -34,7 +33,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 20px;
-    background-color: white;
+    background-color: transparent !important;
 }
 
 .tabsTrigger {

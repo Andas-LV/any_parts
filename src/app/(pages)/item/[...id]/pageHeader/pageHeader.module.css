@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem 0;
+    padding: 20px 0;
     background-color: white;
     z-index: 15;
 }
@@ -58,7 +58,7 @@
 }
 
 .favoriteIcon {
-    color: #0C66E4;
+    color: var(--brand-primary);
 }
 
 .favoriteIcon:hover,

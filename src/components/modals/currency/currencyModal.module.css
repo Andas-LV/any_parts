@@ -124,7 +124,7 @@
 }
 
 .terms{
-    color: #0C66E4;
+    color: var(--brand-primary);
     word-spacing: 5px;
     line-height: 1.2;
 }

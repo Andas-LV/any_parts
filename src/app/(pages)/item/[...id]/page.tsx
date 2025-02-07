@@ -1,13 +1,14 @@
 import styles from './itemPage.module.css';
-import { items } from '@components/Items/exampleItems';
+import {itemInfo} from '@components/Items/exampleItems';
 import HeaderWrapper from "@/providers/HeaderProvider";
 import ItemHeader from "./pageHeader/index";
+import MainContent from "./mainContent";
 
 export type paramsType = Promise<{ id: number }>;
 
 export default async function ItemPage(props: { params: paramsType }) {
     const { id } = await props.params;
-    const item = items[id - 1];
+    const item = itemInfo[id - 1];
 
     const breadcrumbItems = [
         { label: 'Главная', href: '/' },
@@ -26,8 +27,7 @@ export default async function ItemPage(props: { params: paramsType }) {
             <HeaderWrapper>
                 <div className={styles.wrapper}>
                     <ItemHeader routes={breadcrumbItems} />
-                    <h1>{item.name}</h1>
-                    <p>{item.price}</p>
+                    <MainContent {...item} />
                 </div>
             </HeaderWrapper>
         </div>

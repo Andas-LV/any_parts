@@ -1,4 +1,128 @@
-import {Item} from "@/types/Item";
+import {Item, ItemInfoType} from "@/types/Item";
+
+export const itemInfo: ItemInfoType[] = [
+    {
+        id: 1,
+        name: "Качественный перешив руля, ручки КПП",
+
+        price: 2000,
+        apPrice: 1800,
+        currentPrice: 1500,
+        discount: 25,
+
+        marketName: "Market_name",
+        rating: 3.6,
+        comments: 382,
+        sold: 150,
+        options: ["Черный", "Красный", "Синий"],
+        type: ["Перешив", "Тюнинг"],
+        brand: "AutoStyle",
+        material: "Кожа",
+        article: 15978954613,
+        images: [
+            "/items/steeringWheel.png",
+            "/items/case.png",
+            "/items/evaCarpet.png",
+            "/items/seatCovers.png",
+            "/items/wheelItems.png",
+            "/items/carpet.png",
+        ],
+    },
+    {
+        id: 2,
+        name: "Коврики эва ева с бортами, EVA с бортиками 3D",
+
+        price: 3200,
+        apPrice: 1800,
+        currentPrice: null,
+        discount: null,
+
+        marketName: "Market_name",
+        rating: 4.5,
+        comments: 128,
+        sold: 90,
+        article: 15978954613,
+        options: ["Черный", "Серый", "Бежевый"],
+        type: ["Коврики", "Защита интерьера"],
+        brand: "EvaLux",
+        material: "Полиуретан",
+        images: ["/items/evaCarpet.png"],
+    },
+    {
+        id: 3,
+        name: "Комплект премиальных чехлов на сидения",
+        price: 4500,
+        apPrice: 1800,
+        currentPrice: 3900,
+        discount: 13,
+
+        marketName: "Market_name",
+        rating: 4.8,
+        comments: 256,
+        sold: 210,
+        article: 15978954613,
+        options: ["Эко-кожа", "Алькантара", "Ткань"],
+        type: ["Чехлы", "Тюнинг"],
+        brand: "SeatCover Pro",
+        material: "Эко-кожа",
+        images: [
+            "/items/steeringWheel.png",
+            "/items/case.png",
+            "/items/evaCarpet.png",
+            "/items/seatCovers.png",
+            "/items/wheelItems.png",
+            "/items/carpet.png",
+            "/items/seatCovers.png",
+            "/items/wheelItems.png",
+            "/items/carpet.png",
+        ],
+    },
+    {
+        id: 4,
+        name: "Защитные коврики в багажник",
+        price: 1800,
+        apPrice: 1800,
+        currentPrice: 1400,
+        discount: 22,
+
+        marketName: "Market_name",
+        rating: 3.9,
+        comments: 97,
+        sold: 75,
+        article: 15978954613,
+        options: ["С резиновым покрытием", "Без покрытия"],
+        type: ["Коврики", "Защита интерьера"],
+        brand: "TrunkMat",
+        material: "Полиуретан",
+        images: [
+            "/items/seatCovers.png",
+            "/items/wheelItems.png",
+            "/items/carpet.png",
+        ],
+    },
+    {
+        id: 5,
+        name: "Автомобильные органайзеры для хранения",
+        price: 5000,
+        apPrice: 1800,
+        currentPrice: null,
+        discount: null,
+
+        marketName: "Market_name",
+        rating: 4.2,
+        comments: 412,
+        sold: 60,
+        article: 15978954613,
+        options: ["Малый", "Средний", "Большой"],
+        type: ["Органайзер", "Аксессуары"],
+        brand: "CarOrder",
+        material: "Пластик",
+        images: [
+            "/items/steeringWheel.png",
+            "/items/case.png",
+        ],
+    }
+];
 
 export const items: Item[] = [
     {
@@ -37,8 +161,14 @@ export const items: Item[] = [
         rating: 4.8,
         comments: 256,
         images: [
+            "/items/steeringWheel.png",
+            "/items/case.png",
+            "/items/evaCarpet.png",
             "/items/seatCovers.png",
             "/items/wheelItems.png",
+            "/items/carpet.png",
+            "/items/steeringWheel.png",
+            "/items/case.png",
         ],
     },
     {
@@ -49,7 +179,13 @@ export const items: Item[] = [
         discount: 22,
         rating: 3.9,
         comments: 97,
-        images: ["/items/carpet.png"],
+        images: [
+            "/items/seatCovers.png",
+            "/items/wheelItems.png",
+            "/items/carpet.png",
+            "/items/steeringWheel.png",
+            "/items/case.png"
+        ],
     },
     {
         id: 5,
@@ -72,7 +208,11 @@ export const items: Item[] = [
         discount: 17,
         rating: 3.5,
         comments: 189,
-        images: ["/items/evaCarpet.png"],
+        images: [
+            "/items/carpet.png",
+            "/items/steeringWheel.png",
+            "/items/case.png"
+        ],
     },
     {
         id: 7,

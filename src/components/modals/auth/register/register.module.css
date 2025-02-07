@@ -76,7 +76,7 @@
 }
 
 .changeNumberBtn{
-    color: #0C66E4;
+    color: var(--brand-primary);
 }
 
 .submitButton {

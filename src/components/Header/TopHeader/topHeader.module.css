@@ -40,7 +40,7 @@
     padding: var(--padding);
     font-weight: bold;
     background-color: #E7F0FC;
-    color: #0C66E4;
+    color: var(--brand-primary);
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }

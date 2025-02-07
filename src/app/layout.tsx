@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { manrope } from "@/assets//fonts";
 import "../styles/globals.css";
 import React from "react";
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: "Any Parts",
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.className}`}>
         {children}
+        <Toaster />
       </body>
     </html>
   );
