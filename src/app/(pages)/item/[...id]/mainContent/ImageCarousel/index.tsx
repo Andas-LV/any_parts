@@ -8,10 +8,11 @@ import { Icons } from '@/assets/svg'
 
 interface ImageCarouselProps {
     images: string[];
+    selectedIndex: number;
+    setSelectedIndexAction: (index: number) => void;
 }
 
-export default function ImageCarousel({ images }: ImageCarouselProps) {
-    const [selectedIndex, setSelectedIndex] = useState(0);
+export default function ImageCarousel({ images, selectedIndex, setSelectedIndexAction }: ImageCarouselProps) {
     const [scrollIndex, setScrollIndex] = useState(0);
     const thumbnailsRef = useRef<HTMLDivElement>(null);
     const visibleThumbnails = 5;
@@ -46,7 +47,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                         <button
                             key={index + scrollIndex}
                             className={cn(styles.thumbnail, { [styles.active]: index + scrollIndex === selectedIndex })}
-                            onClick={() => setSelectedIndex(index + scrollIndex)}
+                            onClick={() => setSelectedIndexAction(index + scrollIndex)}
                         >
                             {src.endsWith(".mp4") || src.endsWith(".webm") ? (
                                 <div className={styles.videoThumbnail}>

@@ -1,27 +1,28 @@
-"use client"
+"use client";
 
-import {ItemInfoType} from "@/types/Item";
-import React, { useState } from 'react';
-import styles from './itemInfo.module.css';
+import { ItemInfoType } from "@/types/Item";
+import React from "react";
+import styles from "./itemInfo.module.css";
 import RatingStars from "@components/RatingStars";
-import {cn} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
-import {Button} from "@components/ui/button";
 import { Icons } from "@/assets/svg";
-import {copyToClipboard} from "@/utils/copyToClipboard";
+import { copyToClipboard } from "@/utils/copyToClipboard";
 import { useToast } from "@/hooks/use-toast";
 
-export default function ItemInfo({...item}: ItemInfoType) {
+interface ItemInfoProps extends ItemInfoType {
+    selectedIndex: number;
+    setSelectedIndexAction: (index: number) => void;
+}
+
+export default function ItemInfo({ selectedIndex, setSelectedIndexAction, ...item }: ItemInfoProps) {
     const { toast } = useToast();
 
-    const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-    const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
-
     const characters = [
-        {name: 'Артикул', value: item.article},
-        {name: 'Тип', value: item.type},
-        {name: 'Брэнд', value: item.brand},
-        {name: 'Материал', value: item.material},
+        { name: "Артикул", value: item.article },
+        { name: "Тип", value: item.type },
+        { name: "Брэнд", value: item.brand },
+        { name: "Материал", value: item.material },
     ];
 
     return (
@@ -31,7 +32,7 @@ export default function ItemInfo({...item}: ItemInfoType) {
             <div className={styles.ratings}>
                 <div className={styles.rating}>
                     {item.rating}
-                    <RatingStars rating={item.rating}/>
+                    <RatingStars rating={item.rating} />
                 </div>
 
                 <div className={styles.comments}>{item.comments} отзывов</div>
@@ -48,29 +49,17 @@ export default function ItemInfo({...item}: ItemInfoType) {
                 {item.images.map((src, index) => (
                     <button
                         key={index}
-                        className={cn(styles.thumbnail, {[styles.activeImage]: index === selectedImageIndex})}
-                        onClick={() => setSelectedImageIndex(index)}
+                        className={cn(styles.thumbnail, { [styles.activeImage]: index === selectedIndex })}
+                        onClick={() => setSelectedIndexAction(index)}
                     >
                         {src.endsWith(".mp4") || src.endsWith(".webm") ? (
                             <div className={styles.videoThumbnail}>
                                 <span className={styles.playIcon}>▶</span>
                             </div>
                         ) : (
-                            <Image src={src} alt={`Thumbnail ${index + 1}`} width={48} height={48}/>
+                            <Image src={src} alt={`Thumbnail ${index + 1}`} width={48} height={48} />
                         )}
                     </button>
-                ))}
-            </div>
-
-            <div className={styles.options}>
-                {item.options.map((option, index) => (
-                    <Button
-                        key={index}
-                        className={cn(styles.optionBtn, {[styles.activeOption]: index === selectedOptionIndex})}
-                        onClick={() => setSelectedOptionIndex(index)}
-                    >
-                        {option}
-                    </Button>
                 ))}
             </div>
 
@@ -86,7 +75,7 @@ export default function ItemInfo({...item}: ItemInfoType) {
                                     className={styles.copyIcon}
                                     onClick={() => copyToClipboard(characteristic.value, toast)}
                                 >
-                                    <Icons.Copy/>
+                                    <Icons.Copy />
                                 </button>
                             )}
                         </span>
@@ -94,30 +83,7 @@ export default function ItemInfo({...item}: ItemInfoType) {
                 ))}
             </div>
 
-            <button className={styles.fullCharsLink}>
-                Все характеристики
-            </button>
+            <button className={styles.fullCharsLink}>Все характеристики</button>
         </div>
     );
 }
-
-// id: 1,
-//     name: "Качественный перешив руля, ручки КПП",
-//     price: 2000,
-//     currentPrice: 1500,
-//     discount: 25,
-//     rating: 3.6,
-//     comments: 382,
-//     sold: 150,
-//     options: ["Черный", "Красный", "Синий"],
-//     type: ["Перешив", "Тюнинг"],
-//     brand: "AutoStyle",
-//     material: "Кожа",
-//     images: [
-//     "/items/steeringWheel.png",
-//     "/items/case.png",
-//     "/items/evaCarpet.png",
-//     "/items/seatCovers.png",
-//     "/items/wheelItems.png",
-//     "/items/carpet.png",
-// ],
