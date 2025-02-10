@@ -37,16 +37,6 @@
     font-size: 20px;
 }
 
-.select {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid #ddd;
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 .inputWrapper {
     position: relative;
     display: flex;
@@ -54,34 +44,9 @@
     width: 100%;
 }
 
-.inputContainer {
-    display: flex;
-    align-items: center;
+.emailInput {
     width: 100%;
-    position: relative;
-    background: #F2F2F2;
-    border-radius: 15px;
-    margin-top: 10px;
-}
-
-.countrySelector {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-    padding: 10px 5px 10px 10px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.countryCode {
-    margin-left: 5px;
-    font-size: 18px;
-}
-
-.phoneInput {
-    width: 100%;
-    padding: 10px 5px;
+    padding: 10px;
     background: #F2F2F2;
     border-radius: 15px;
     font-size: 18px;
@@ -99,20 +64,6 @@
     align-items: center;
     gap: 8px;
     margin-top: 10px;
-}
-
-.flag {
-    border-radius: 50%;
-}
-
-.arrowIcon {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
-}
-
-.rotated {
-    transform: rotate(180deg);
 }
 
 .terms{

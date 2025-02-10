@@ -41,7 +41,7 @@ export default function ItemCard({id, name, price, currentPrice, discount, ratin
 
                 <div className={styles.ratingWrapper}>
                     <div className={styles.rating}>
-                        <Icons.Star/>
+                        <Icons.Star width={12} height={12}/>
                         <span className={styles.ratingNumber}>{rating}</span>
                     </div>
                     <div className={styles.comments}>

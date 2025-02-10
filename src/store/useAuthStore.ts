@@ -4,7 +4,7 @@ import * as authService from '@/service/auth.service'
 import { setAuthToken, removeAuthToken, getAuthToken } from '@/utils/cookie'
 import {ConfirmCode, Login, Register} from '@/types/User'
 import {z} from "zod";
-import {confirmPhone, loginSchema} from "@/schemas";
+import {confirmEmail, loginSchema} from "@/schemas";
 
 const isClient = typeof window !== 'undefined'
 
@@ -15,11 +15,11 @@ interface AuthState {
     isAuthenticated: boolean;
     isLoading: boolean;
     error: z.ZodError | string | null;  // Теперь error может быть ZodError
-    phone: string | null;
+    email: string | null;
 
     register: (data: Register) => Promise<void>;
     getConfirmCode: (data: Login) => Promise<void>;
-    confirmPhone: (data: ConfirmCode) => Promise<void>;
+    confirmEmail: (data: ConfirmCode) => Promise<void>;
     logout: () => void;
     clearError: () => void;
 }
@@ -31,7 +31,7 @@ export const useAuthStore = create<AuthState>()(
             isAuthenticated: !!getInitialToken(),
             isLoading: false,
             error: null,
-            phone: null,
+            email: null,
 
             register: async (data) => {
                 set({ isLoading: true, error: null });
@@ -58,7 +58,7 @@ export const useAuthStore = create<AuthState>()(
                 try {
                     const parsedData = loginSchema.parse(body); // Здесь может выбросить ошибку
                     // const response = await authService.getConfirmCode(parsedData);
-                    set({ phone: body.phone });
+                    set({ email: body.email });
                 } catch (error) {
                     if (error instanceof z.ZodError) {
                         set({ error });
@@ -70,11 +70,11 @@ export const useAuthStore = create<AuthState>()(
                 }
             },
 
-            confirmPhone: async (data: ConfirmCode) => {
+            confirmEmail: async (data: ConfirmCode) => {
                 set({ isLoading: true, error: null });
                 try {
-                    const validatedData = confirmPhone.parse(data);
-                    const response = await authService.confirmPhone(validatedData);
+                    const validatedData = confirmEmail.parse(data);
+                    const response = await authService.confirmEmail(validatedData);
                     setAuthToken(response.token);
                     set({
                         isAuthenticated: true,

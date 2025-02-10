@@ -6,32 +6,18 @@ import { Icons } from "@/assets/svg";
 import { Button } from "@components/ui/button";
 import { Checkbox } from "@components/ui/checkbox";
 import { Label } from "@components/ui/label";
-import Image from "next/image";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@components/ui/dropdown-menu";
-import { countryCodes } from "@components/modals/auth/countryCodes";
-import ConfirmPhoneModal from "../confirmPhone";
+import ConfirmEmailModal from "../confirmEmail";
 import {useAuthStore} from "@/store/useAuthStore";
 import {renderError} from "@/utils/renderError";
 
 const LoginModal = ({ onClose }: { onClose: () => void; }) => {
     const { getConfirmCode, isLoading, error } = useAuthStore();
-    const [selectedCountry, setSelectedCountry] = useState(countryCodes[0]);
-    const [selectIsOpen, setSelectIsOpen] = useState(false);
-    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
     const [agreed, setAgreed] = useState(false);
     const [showConfirmModal, setShowConfirmModal] = useState(false);
 
-    const phoneNumber = selectedCountry.code.concat(phone.replace(/\D/g, ""));
-
     const loginForm = {
-        phone: phoneNumber,
+        email: email,
         agreed: agreed
     };
 
@@ -43,14 +29,14 @@ const LoginModal = ({ onClose }: { onClose: () => void; }) => {
         }
     };
 
-    const handleChangePhone = () => {
+    const handleChangeEmail = () => {
         setShowConfirmModal(false);
     };
 
     if (showConfirmModal) {
-        return <ConfirmPhoneModal
+        return <ConfirmEmailModal
             onClose={onClose}
-            onChangePhone={handleChangePhone}
+            onChangeEmail={handleChangeEmail}
         />;
     }
 
@@ -60,52 +46,16 @@ const LoginModal = ({ onClose }: { onClose: () => void; }) => {
                 <Icons.Close className={styles.closeButton} onClick={onClose} />
                 <h2>Войти или создать профиль</h2>
                 <div className={styles.inputWrapper}>
-                    <DropdownMenu onOpenChange={setSelectIsOpen}>
-                        <div className={styles.inputContainer}>
-                            <DropdownMenuTrigger asChild>
-                                <div className={styles.countrySelector}>
-                                    <Image
-                                        src={selectedCountry.flag}
-                                        alt={selectedCountry.country}
-                                        width={20}
-                                        height={16}
-                                        className={styles.flag}
-                                    />
-                                    <Icons.ArrowDown className={`${styles.arrowIcon} ${selectIsOpen ? styles.rotated : ""}`}/>
-                                </div>
-                            </DropdownMenuTrigger>
-
-                            <span className={styles.countryCode}>{selectedCountry.code}</span>
-
-                            <input
-                                type="text"
-                                className={styles.phoneInput}
-                                placeholder="000 000-00-00"
-                                value={phone}
-                                onChange={(e) => setPhone(e.target.value)}
-                            />
-                        </div>
-
-                        <DropdownMenuContent>
-                            <DropdownMenuLabel>Код страны</DropdownMenuLabel>
-                            <DropdownMenuSeparator/>
-                            {countryCodes.map((country) => (
-                                <DropdownMenuItem key={country.code} onClick={() => setSelectedCountry(country)}>
-                                    <Image
-                                        src={country.flag}
-                                        alt={country.country}
-                                        width={20}
-                                        height={16}
-                                        className={styles.flag}
-                                    />
-                                    {country.country} {country.code}
-                                </DropdownMenuItem>
-                            ))}
-                        </DropdownMenuContent>
-                    </DropdownMenu>
+                    <input
+                        type="text"
+                        className={styles.emailInput}
+                        placeholder="example@gmail.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
                 </div>
 
-                {renderError(error, "phone")}
+                {renderError(error, "email")}
 
                 <Button className={styles.submitButton} onClick={handleSubmit}>
                     Получить код

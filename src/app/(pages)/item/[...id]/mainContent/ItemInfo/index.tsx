@@ -9,6 +9,7 @@ import Image from "next/image";
 import { Icons } from "@/assets/svg";
 import { copyToClipboard } from "@/utils/copyToClipboard";
 import { useToast } from "@/hooks/use-toast";
+import {characters as charactersSerializer} from "@/schemas/characters";
 
 interface ItemInfoProps extends ItemInfoType {
     selectedIndex: number;
@@ -18,12 +19,7 @@ interface ItemInfoProps extends ItemInfoType {
 export default function ItemInfo({ selectedIndex, setSelectedIndexAction, ...item }: ItemInfoProps) {
     const { toast } = useToast();
 
-    const characters = [
-        { name: "Артикул", value: item.article },
-        { name: "Тип", value: item.type },
-        { name: "Брэнд", value: item.brand },
-        { name: "Материал", value: item.material },
-    ];
+    const characters = charactersSerializer(item)
 
     return (
         <div className={styles.itemInfoContainer}>
@@ -35,7 +31,7 @@ export default function ItemInfo({ selectedIndex, setSelectedIndexAction, ...ite
                     <RatingStars rating={item.rating} />
                 </div>
 
-                <div className={styles.comments}>{item.comments} отзывов</div>
+                <div className={styles.comments}>{item.comments.amount} отзывов</div>
 
                 <div className={styles.sold}>{item.sold} продано</div>
             </div>

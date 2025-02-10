@@ -16,7 +16,7 @@ export async function getConfirmCode(body: Login) {
     return data;
 }
 
-export async function confirmPhone(body: ConfirmCode) {
-    const { data } = await axiosInstance.post('/auth/confirmNumber/', body);
+export async function confirmEmail(body: ConfirmCode) {
+    const { data } = await axiosInstance.post('/auth/confirmEmail/', body);
     return data;
 }

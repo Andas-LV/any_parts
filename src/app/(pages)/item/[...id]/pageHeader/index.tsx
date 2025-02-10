@@ -32,7 +32,7 @@ const ItemHeader: React.FC<ItemHeaderProps> = ({ routes }) => {
             }
         };
 
-        handleScroll(); // Initial check
+        handleScroll();
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);

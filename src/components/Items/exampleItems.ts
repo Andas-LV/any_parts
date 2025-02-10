@@ -12,7 +12,67 @@ export const itemInfo: ItemInfoType[] = [
 
         marketName: "Market_name",
         rating: 3.6,
-        comments: 382,
+        ratingDistribution: {
+            1: 2,
+            2: 4,
+            3: 9,
+            4: 13,
+            5: 86,
+        },
+
+        comments: {
+            amount: 34,
+            images: {
+                totalImages: 75,
+                image: [
+                    {
+                        user:{
+                            id: 3,
+                            username: "user2",
+                            email: "user@gmail.com",
+                            avatarUrl: "user.png"
+                        },
+                        imageUrl:'/items/carpet.png',
+                    },
+                    {
+                        user:{
+                            id: 3,
+                            username: "user2",
+                            email: "user@gmail.com",
+                            avatarUrl: "user.png"
+                        },
+                        imageUrl:'/items/evaCarpet.png',
+                    },
+                    {
+                        user:{
+                            id: 3,
+                            username: "user2",
+                            email: "user@gmail.com",
+                            avatarUrl: "user.png"
+                        },
+                        imageUrl:'/items/case.png',
+                    },
+                ]
+            },
+            list: [{
+                id: 1,
+                user:{
+                    id: 3,
+                    username: "user2",
+                    email: "user@gmail.com",
+                    avatarUrl: "/user.png"
+                },
+                rating: 5,
+                date: '23-05-2024',
+                text: 'Lorem ipsum dolor sit amet consectetur. Mattis mattis augue a in egestas pharetra. Vitae nulla nulla lectus nulla pellentesque augue. Quis suspendisse aenean ac tempus velit vulputate sed. Massa sed pellentesque ornare lacus tempus.',
+                images: [],
+                likes: 94,
+                replies: [],
+                updatedAt: '23-05-2024',
+            }],
+        },
+
+
         sold: 150,
         options: ["Черный", "Красный", "Синий"],
         type: ["Перешив", "Тюнинг"],
@@ -27,6 +87,17 @@ export const itemInfo: ItemInfoType[] = [
             "/items/wheelItems.png",
             "/items/carpet.png",
         ],
+        description: 'Lorem ipsum dolor sit amet consectetur. ' +
+            'Enim lectus et lorem auctor fermentum tellus purus enim. ' +
+            'Amet luctus sit mauris non euismod sagittis sit amet suscipit. ' +
+            'Quisque morbi scelerisque neque vulputate pharetra est. ' +
+            'Sed eleifend elit parturient eleifend scelerisque. ' +
+            'Etiam viverra vel amet tincidunt felis. ' +
+            'Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. ' +
+            'Quam nisl porttitor eget elit ornare pellentesque eget sapien. ' +
+            'Eu imperdiet malesuada semper in in purus urna velit. ' +
+            'Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. ' +
+            'Vestibulum cursus morbi sed egestas sed viverra sagittis cras.'
     },
     {
         id: 2,
@@ -39,7 +110,47 @@ export const itemInfo: ItemInfoType[] = [
 
         marketName: "Market_name",
         rating: 4.5,
-        comments: 128,
+        ratingDistribution: {
+            1: 2,
+            2: 4,
+            3: 9,
+            4: 13,
+            5: 86,
+        },
+
+        comments: {
+            amount: 34,
+            images: {
+                totalImages: 75,
+                image: [
+                    {
+                        user:{
+                            id: 3,
+                            username: "user2",
+                            email: "user@gmail.com",
+                            avatarUrl: "user.png"
+                        },
+                        imageUrl:'/items/carpet.png',
+                    },
+                ]
+            },
+            list: [{
+                id: 1,
+                user:{
+                    id: 3,
+                    username: "user2",
+                    email: "user@gmail.com",
+                    avatarUrl: "/user.png"
+                },
+                rating: 4,
+                date: '23-05-2024',
+                text: 'Lorem ipsum dolor sit amet consectetur. Mattis mattis augue a in egestas pharetra. Vitae nulla nulla lectus nulla pellentesque augue. Quis suspendisse aenean ac tempus velit vulputate sed. Massa sed pellentesque ornare lacus tempus.',
+                images: [],
+                likes: 94,
+                replies: [],
+                updatedAt: '23-05-2024',
+            }],
+        },
         sold: 90,
         article: 15978954613,
         options: ["Черный", "Серый", "Бежевый"],
@@ -47,6 +158,17 @@ export const itemInfo: ItemInfoType[] = [
         brand: "EvaLux",
         material: "Полиуретан",
         images: ["/items/evaCarpet.png"],
+        description: 'Lorem ipsum dolor sit amet consectetur. ' +
+            'Enim lectus et lorem auctor fermentum tellus purus enim. ' +
+            'Amet luctus sit mauris non euismod sagittis sit amet suscipit. ' +
+            'Quisque morbi scelerisque neque vulputate pharetra est. ' +
+            'Sed eleifend elit parturient eleifend scelerisque. ' +
+            'Etiam viverra vel amet tincidunt felis. ' +
+            'Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. ' +
+            'Quam nisl porttitor eget elit ornare pellentesque eget sapien. ' +
+            'Eu imperdiet malesuada semper in in purus urna velit. ' +
+            'Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. ' +
+            'Vestibulum cursus morbi sed egestas sed viverra sagittis cras.'
     },
     {
         id: 3,
@@ -58,7 +180,47 @@ export const itemInfo: ItemInfoType[] = [
 
         marketName: "Market_name",
         rating: 4.8,
-        comments: 256,
+        ratingDistribution: {
+            1: 2,
+            2: 4,
+            3: 9,
+            4: 13,
+            5: 86,
+        },
+
+        comments: {
+            amount: 34,
+            images: {
+                totalImages: 75,
+                image: [
+                    {
+                        user:{
+                            id: 3,
+                            username: "user2",
+                            email: "user@gmail.com",
+                            avatarUrl: "user.png"
+                        },
+                        imageUrl:'/items/carpet.png',
+                    },
+                ]
+            },
+            list: [{
+                id: 1,
+                user:{
+                    id: 3,
+                    username: "user2",
+                    email: "user@gmail.com",
+                    avatarUrl: "/user.png"
+                },
+                rating: 4,
+                date: '23-05-2024',
+                text: 'Lorem ipsum dolor sit amet consectetur. Mattis mattis augue a in egestas pharetra. Vitae nulla nulla lectus nulla pellentesque augue. Quis suspendisse aenean ac tempus velit vulputate sed. Massa sed pellentesque ornare lacus tempus.',
+                images: [],
+                likes: 94,
+                replies: [],
+                updatedAt: '23-05-2024',
+            }],
+        },
         sold: 210,
         article: 15978954613,
         options: ["Эко-кожа", "Алькантара", "Ткань"],
@@ -76,6 +238,17 @@ export const itemInfo: ItemInfoType[] = [
             "/items/wheelItems.png",
             "/items/carpet.png",
         ],
+        description: 'Lorem ipsum dolor sit amet consectetur. ' +
+            'Enim lectus et lorem auctor fermentum tellus purus enim. ' +
+            'Amet luctus sit mauris non euismod sagittis sit amet suscipit. ' +
+            'Quisque morbi scelerisque neque vulputate pharetra est. ' +
+            'Sed eleifend elit parturient eleifend scelerisque. ' +
+            'Etiam viverra vel amet tincidunt felis. ' +
+            'Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. ' +
+            'Quam nisl porttitor eget elit ornare pellentesque eget sapien. ' +
+            'Eu imperdiet malesuada semper in in purus urna velit. ' +
+            'Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. ' +
+            'Vestibulum cursus morbi sed egestas sed viverra sagittis cras.'
     },
     {
         id: 4,
@@ -87,7 +260,47 @@ export const itemInfo: ItemInfoType[] = [
 
         marketName: "Market_name",
         rating: 3.9,
-        comments: 97,
+        ratingDistribution: {
+            1: 2,
+            2: 4,
+            3: 9,
+            4: 13,
+            5: 86,
+        },
+
+        comments: {
+            amount: 34,
+            images: {
+                totalImages: 75,
+                image: [
+                    {
+                        user:{
+                            id: 3,
+                            username: "user2",
+                            email: "user@gmail.com",
+                            avatarUrl: "user.png"
+                        },
+                        imageUrl:'/items/carpet.png',
+                    },
+                ]
+            },
+            list: [{
+                id: 1,
+                user:{
+                    id: 3,
+                    username: "user2",
+                    email: "user@gmail.com",
+                    avatarUrl: "/user.png"
+                },
+                rating: 4,
+                date: '23-05-2024',
+                text: 'Lorem ipsum dolor sit amet consectetur. Mattis mattis augue a in egestas pharetra. Vitae nulla nulla lectus nulla pellentesque augue. Quis suspendisse aenean ac tempus velit vulputate sed. Massa sed pellentesque ornare lacus tempus.',
+                images: [],
+                likes: 94,
+                replies: [],
+                updatedAt: '23-05-2024',
+            }],
+        },
         sold: 75,
         article: 15978954613,
         options: ["С резиновым покрытием", "Без покрытия"],
@@ -99,6 +312,17 @@ export const itemInfo: ItemInfoType[] = [
             "/items/wheelItems.png",
             "/items/carpet.png",
         ],
+        description: 'Lorem ipsum dolor sit amet consectetur. ' +
+            'Enim lectus et lorem auctor fermentum tellus purus enim. ' +
+            'Amet luctus sit mauris non euismod sagittis sit amet suscipit. ' +
+            'Quisque morbi scelerisque neque vulputate pharetra est. ' +
+            'Sed eleifend elit parturient eleifend scelerisque. ' +
+            'Etiam viverra vel amet tincidunt felis. ' +
+            'Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. ' +
+            'Quam nisl porttitor eget elit ornare pellentesque eget sapien. ' +
+            'Eu imperdiet malesuada semper in in purus urna velit. ' +
+            'Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. ' +
+            'Vestibulum cursus morbi sed egestas sed viverra sagittis cras.'
     },
     {
         id: 5,
@@ -110,7 +334,47 @@ export const itemInfo: ItemInfoType[] = [
 
         marketName: "Market_name",
         rating: 4.2,
-        comments: 412,
+        ratingDistribution: {
+            1: 2,
+            2: 4,
+            3: 9,
+            4: 13,
+            5: 86,
+        },
+
+        comments: {
+            amount: 34,
+            images: {
+                totalImages: 75,
+                image: [
+                    {
+                        user:{
+                            id: 3,
+                            username: "user2",
+                            email: "user@gmail.com",
+                            avatarUrl: "user.png"
+                        },
+                        imageUrl:'/items/carpet.png',
+                    },
+                ]
+            },
+            list: [{
+                id: 1,
+                user:{
+                    id: 3,
+                    username: "user2",
+                    email: "user@gmail.com",
+                    avatarUrl: "/user.png"
+                },
+                rating: 4,
+                date: '23-05-2024',
+                text: 'Lorem ipsum dolor sit amet consectetur. Mattis mattis augue a in egestas pharetra. Vitae nulla nulla lectus nulla pellentesque augue. Quis suspendisse aenean ac tempus velit vulputate sed. Massa sed pellentesque ornare lacus tempus.',
+                images: ['/items/carpet.png'],
+                likes: 94,
+                replies: [],
+                updatedAt: '23-05-2024',
+            }],
+        },
         sold: 60,
         article: 15978954613,
         options: ["Малый", "Средний", "Большой"],
@@ -121,6 +385,17 @@ export const itemInfo: ItemInfoType[] = [
             "/items/steeringWheel.png",
             "/items/case.png",
         ],
+        description: 'Lorem ipsum dolor sit amet consectetur. ' +
+            'Enim lectus et lorem auctor fermentum tellus purus enim. ' +
+            'Amet luctus sit mauris non euismod sagittis sit amet suscipit. ' +
+            'Quisque morbi scelerisque neque vulputate pharetra est. ' +
+            'Sed eleifend elit parturient eleifend scelerisque. ' +
+            'Etiam viverra vel amet tincidunt felis. ' +
+            'Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. ' +
+            'Quam nisl porttitor eget elit ornare pellentesque eget sapien. ' +
+            'Eu imperdiet malesuada semper in in purus urna velit. ' +
+            'Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. ' +
+            'Vestibulum cursus morbi sed egestas sed viverra sagittis cras.'
     }
 ];
 

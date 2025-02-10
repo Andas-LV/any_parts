@@ -1,20 +1,21 @@
 export type User = {
     id: number;
-    phone: string;
+    email: string;
     username: string;
+    avatarUrl?: string | null;
 }
 
 export type Login = {
-    phone: string;
+    email: string;
     agreed: boolean;
 }
 
 export type Register = {
-    phone: string;
+    email: string;
     username: string;
 }
 
 export type ConfirmCode = {
-    phone: string;
+    email: string;
     code: string;
 }

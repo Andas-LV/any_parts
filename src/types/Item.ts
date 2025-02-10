@@ -1,3 +1,6 @@
+import {Comment} from "@/types/Comments";
+import {User} from "@/types/User";
+
 export type Item = {
     id: number,
     name: string,
@@ -9,6 +12,14 @@ export type Item = {
     images: string[],
 }
 
+export type Images = {
+    totalImages: number;
+    image: {
+        user: User,
+        imageUrl: string
+    }[]
+}
+
 export type ItemInfoType = {
     id: number,
     name: string,
@@ -16,8 +27,15 @@ export type ItemInfoType = {
     apPrice: number,
     currentPrice: number | null,
     discount: number | null,
+
     rating: number,
-    comments: number,
+    ratingDistribution: RatingDistribution,
+
+    comments: {
+        amount: number;
+        images: Images,
+        list: Comment[];
+    },
     images: string[],
 
     marketName: string,
@@ -27,4 +45,13 @@ export type ItemInfoType = {
     type: string[]
     brand: string,
     material: string,
+    description: string,
 }
+
+export type RatingDistribution = {
+    1: number;
+    2: number;
+    3: number;
+    4: number;
+    5: number;
+};

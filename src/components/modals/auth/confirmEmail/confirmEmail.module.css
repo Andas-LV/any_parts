@@ -119,7 +119,7 @@
     cursor: pointer;
 }
 
-.changePhoneButton {
+.changeEmailButton {
     flex: 1;
     padding: 25px 0;
     background-color: #F2F2F2;
@@ -131,8 +131,8 @@
     cursor: pointer;
 }
 
-.submitButton:disabled,
-.changePhoneButton:disabled {
+.changeEmailButton:disabled,
+.changeEmailButton:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }

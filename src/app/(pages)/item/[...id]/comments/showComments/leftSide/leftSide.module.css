@@ -1,0 +1,77 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 0.6;
+}
+
+.ratingContainer{
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.generalRating{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0.3;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid #E6E6E6;
+    padding: 20px;
+}
+
+.generalRating button{
+    padding: 0;
+}
+
+.generalRating p{
+    color: #808080;
+}
+
+.rating{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.rating span{
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.ratingDistributionContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1rem;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #E6E6E6;
+    border-radius: 10px;
+}
+
+.ratingRow {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.starsContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.progressBar {
+    background-color: #E6E6E6;
+}
+
+.ratingCount {
+    min-width: 30px;
+    text-align: left;
+    color: var(--brand-primary);
+}

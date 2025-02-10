@@ -1,0 +1,78 @@
+.tabsContainer {
+    position: relative;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.tabsListWrapper {
+    position: relative;
+    z-index: 40;
+    transition: all 0.3s ease;
+}
+
+.tabsContent {
+    padding-top: var(--tabs-height);
+}
+
+.tabsListWrapper.fixed + .tabsContent {
+    margin-top: var(--tabs-height);
+}
+
+.tabsList {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 0;
+    background-color: transparent !important;
+}
+
+.tabsTrigger {
+    padding: 12px 0;
+    height: auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6b7280;
+    background-color: transparent !important;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tabsTrigger[data-state="active"] {
+    color: #111827;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.tabsTrigger:hover {
+    color: #374151;
+    background-color: transparent !important;
+}
+
+
+.tabsTrigger[data-state="active"]::after {
+    content: none;
+}
+
+@media (max-width: 768px) {
+    .tabsList {
+        gap: 16px;
+    }
+
+    .tabsTrigger {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabsList {
+        gap: 12px;
+    }
+
+    .tabsTrigger {
+        font-size: 12px;
+        padding: 8px 0;
+    }
+}

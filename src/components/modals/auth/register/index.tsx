@@ -6,20 +6,20 @@ import { Icons } from "@/assets/svg";
 import { Button } from "@components/ui/button";
 import { useAuthStore } from "@/store/useAuthStore";
 
-const RegisterModal = ({onClose, onChangePhone}: {
+const RegisterModal = ({onClose, onChangeEmail}: {
     onClose: () => void;
-    onChangePhone: () => void;
+    onChangeEmail: () => void;
 }) => {
-    const { register, isLoading, error, phone } = useAuthStore();
+    const { register, isLoading, error, email } = useAuthStore();
     const [username, setUsername] = useState("");
     const [isVisible, setIsVisible] = useState(false);
 
     const handleSubmit = async () => {
-        if (!phone) {
+        if (!email) {
             return
         }
         try {
-            await register({ username, phone });
+            await register({ username, email });
             onClose();
         } catch (error) {
             console.error('Error registering:', error);
@@ -33,9 +33,9 @@ const RegisterModal = ({onClose, onChangePhone}: {
                 <h2>Регистрация</h2>
 
                 <p className={styles.instruction}>
-                    Мы не нашли аккаунт, зарегистрированный на номер телефона <span
-                    className={styles.phone}>{phone}</span>
-                    <button className={styles.changeNumberBtn} onClick={onChangePhone}>
+                    Мы не нашли аккаунт, зарегистрированный на почту
+                    <span className={styles.email}>{email}</span>
+                    <button className={styles.changeNumberBtn} onClick={onChangeEmail}>
                         Изменить
                     </button>
                 </p>

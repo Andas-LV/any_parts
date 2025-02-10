@@ -1,21 +1,22 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import styles from "./confirmPhone.module.css";
+import styles from "./confirmEmail.module.css";
 import { Icons } from "@/assets/svg";
 import { Button } from "@components/ui/button";
 import { useAuthStore } from "@/store/useAuthStore";
 import RegisterModal from "@components/modals/auth/register";
 import {renderError} from "@/utils/renderError";
+import {confirmEmail} from "@/schemas";
 
-const ConfirmPhoneModal = ({
+const ConfirmEmailModal = ({
                                onClose,
-                               onChangePhone,
+                               onChangeEmail,
                            }: {
     onClose: () => void;
-    onChangePhone: () => void;
+    onChangeEmail: () => void;
 }) => {
-    const { phone, isLoading, error } = useAuthStore();
+    const { email, isLoading, error } = useAuthStore();
     const [code, setCode] = useState("");
     const [timeLeft, setTimeLeft] = useState(120);
     const [canResend, setCanResend] = useState(false);
@@ -50,7 +51,7 @@ const ConfirmPhoneModal = ({
     };
 
     const handleSubmit = async() => {
-        // await confirmPhone(code);
+        // await confirmEmail(code);
         if (!useAuthStore.getState().error) {
             setShowRegisterModal(true);
         }
@@ -59,7 +60,7 @@ const ConfirmPhoneModal = ({
     if (showRegisterModal) {
         return <RegisterModal
             onClose={onClose}
-            onChangePhone={onChangePhone}
+            onChangeEmail={onChangeEmail}
         />;
     }
 
@@ -71,7 +72,7 @@ const ConfirmPhoneModal = ({
 
                 <p className={styles.instruction}>
                     Укажите проверочный код - он придёт <br/>
-                    на {phone} в течение 2 минут.
+                    на {email} в течение 2 минут.
                 </p>
 
                 <input
@@ -108,11 +109,11 @@ const ConfirmPhoneModal = ({
 
                     <Button
                         variant="ghost"
-                        className={styles.changePhoneButton}
-                        onClick={onChangePhone}
+                        className={styles.changeEmailButton}
+                        onClick={onChangeEmail}
                         disabled={isLoading}
                     >
-                        Изменить номер
+                        Изменить почту
                     </Button>
                 </div>
             </div>
@@ -120,4 +121,4 @@ const ConfirmPhoneModal = ({
     );
 };
 
-export default ConfirmPhoneModal;
+export default ConfirmEmailModal;
