@@ -30,7 +30,7 @@ const Payment = ({ onClose }: { onClose: () => void; }) => {
 
     return (
         <ModalsLayout title="Способ оплаты" back={false} onClose={onClose}>
-            <PaymentCard onClose={onClose} onDeleteCard={setDeletingCard} />
+            <PaymentCard onDeleteCard={setDeletingCard} />
 
             <button className={styles.navItem} onClick={() => setShowCreateCard(true)}>
                 <div className={styles.navHeader}>

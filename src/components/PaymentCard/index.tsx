@@ -4,11 +4,10 @@ import { usePaymentStore } from "@/store/usePaymentStore";
 import type { PaymentCard as PaymentCardType } from "@/types/PaymentCard";
 
 interface PaymentCardProps {
-    onClose: () => void;
     onDeleteCard: (card: PaymentCardType) => void;
 }
 
-export default function PaymentCard({ onClose, onDeleteCard }: PaymentCardProps) {
+export default function PaymentCard({ onDeleteCard }: PaymentCardProps) {
     const { cards } = usePaymentStore();
 
     if (!cards || cards.length === 0) return null;
