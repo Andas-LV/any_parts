@@ -16,12 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <Suspense fallback={<div>Загрузка...</div>}>
-          <body className={`${manrope.className}`}>
+       <body className={`${manrope.className}`}>
+          <Suspense fallback={<div>Загрузка...</div>}>
             {children}
             <Toaster />
-          </body>
-        </Suspense>
+          </Suspense>
+       </body>
     </html>
   );
 }
