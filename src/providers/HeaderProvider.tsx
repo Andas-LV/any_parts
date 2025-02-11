@@ -7,7 +7,10 @@ interface HeaderWrapperProps {
 export default function HeaderWrapper({ children }: HeaderWrapperProps) {
     return (
         <div>
-            <Header />
+            <div className="container px-28">
+                <Header />
+            </div>
+
             {children}
         </div>
     );

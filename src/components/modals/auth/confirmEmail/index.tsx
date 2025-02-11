@@ -8,6 +8,7 @@ import { useAuthStore } from "@/store/useAuthStore";
 import RegisterModal from "@components/modals/auth/register";
 import {renderError} from "@/utils/renderError";
 import {confirmEmail} from "@/schemas";
+import ModalsLayout from "@components/modals/layout";
 
 const ConfirmEmailModal = ({
                                onClose,
@@ -20,14 +21,9 @@ const ConfirmEmailModal = ({
     const [code, setCode] = useState("");
     const [timeLeft, setTimeLeft] = useState(120);
     const [canResend, setCanResend] = useState(false);
-    const [isVisible, setIsVisible] = useState(false);
     const [showRegisterModal, setShowRegisterModal] = useState(false);
 
     useEffect(() => {
-        requestAnimationFrame(() => {
-            setIsVisible(true);
-        });
-
         if (timeLeft > 0) {
             const timer = setInterval(() => {
                 setTimeLeft(prev => prev - 1);
@@ -65,59 +61,54 @@ const ConfirmEmailModal = ({
     }
 
     return (
-        <div className={`${styles.overlay} ${isVisible ? styles.visible : ''}`}>
-            <div className={`${styles.modal} ${isVisible ? styles.modalVisible : ''}`}>
-                <Icons.Close className={styles.closeButton} onClick={onClose}/>
-                <h2>Подтвердите номер</h2>
+        <ModalsLayout title={'Подтвердите номер'} back={false} onClose={onClose}>
+            <p className={styles.instruction}>
+                Укажите проверочный код - он придёт на {email} <br/>
+                в течение 2 минут.
+            </p>
 
-                <p className={styles.instruction}>
-                    Укажите проверочный код - он придёт <br/>
-                    на {email} в течение 2 минут.
+            <input
+                type="text"
+                className={styles.codeInput}
+                placeholder="Код из смс"
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
+            />
+
+            {!canResend ? (
+                <p className={styles.timerText}>
+                    Получить новый код можно через {formatTime(timeLeft)}
                 </p>
+            ) : (
+                <button
+                    className={styles.resendButton}
+                    onClick={handleResend}
+                >
+                    Отправить код заново
+                </button>
+            )}
 
-                <input
-                    type="text"
-                    className={styles.codeInput}
-                    placeholder="Код из смс"
-                    value={code}
-                    onChange={(e) => setCode(e.target.value)}
-                />
+            {renderError(error, "code")}
 
-                {!canResend ? (
-                    <p className={styles.timerText}>
-                        Получить новый код можно через {formatTime(timeLeft)}
-                    </p>
-                ) : (
-                    <button
-                        className={styles.resendButton}
-                        onClick={handleResend}
-                    >
-                        Отправить код заново
-                    </button>
-                )}
+            <div className={styles.buttonGroup}>
+                <Button
+                    className={styles.submitButton}
+                    onClick={handleSubmit}
+                    disabled={isLoading}
+                >
+                    Подтвердить
+                </Button>
 
-                {renderError(error, "code")}
-
-                <div className={styles.buttonGroup}>
-                    <Button
-                        className={styles.submitButton}
-                        onClick={handleSubmit}
-                        disabled={isLoading}
-                    >
-                        Подтвердить
-                    </Button>
-
-                    <Button
-                        variant="ghost"
-                        className={styles.changeEmailButton}
-                        onClick={onChangeEmail}
-                        disabled={isLoading}
-                    >
-                        Изменить почту
-                    </Button>
-                </div>
+                <Button
+                    variant="ghost"
+                    className={styles.changeEmailButton}
+                    onClick={onChangeEmail}
+                    disabled={isLoading}
+                >
+                    Изменить почту
+                </Button>
             </div>
-        </div>
+        </ModalsLayout>
     );
 };
 

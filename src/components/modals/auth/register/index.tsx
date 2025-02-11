@@ -5,6 +5,7 @@ import styles from "./register.module.css";
 import { Icons } from "@/assets/svg";
 import { Button } from "@components/ui/button";
 import { useAuthStore } from "@/store/useAuthStore";
+import ModalsLayout from "@components/modals/layout";
 
 const RegisterModal = ({onClose, onChangeEmail}: {
     onClose: () => void;
@@ -12,7 +13,6 @@ const RegisterModal = ({onClose, onChangeEmail}: {
 }) => {
     const { register, isLoading, error, email } = useAuthStore();
     const [username, setUsername] = useState("");
-    const [isVisible, setIsVisible] = useState(false);
 
     const handleSubmit = async () => {
         if (!email) {
@@ -27,42 +27,37 @@ const RegisterModal = ({onClose, onChangeEmail}: {
     };
 
     return (
-        <div className={`${styles.overlay} ${isVisible ? styles.visible : ''}`}>
-            <div className={`${styles.modal} ${isVisible ? styles.modalVisible : ''}`}>
-                <Icons.Close className={styles.closeButton} onClick={onClose}/>
-                <h2>Регистрация</h2>
-
-                <p className={styles.instruction}>
-                    Мы не нашли аккаунт, зарегистрированный на почту
-                    <span className={styles.email}>{email}</span>
-                    <button className={styles.changeNumberBtn} onClick={onChangeEmail}>
-                        Изменить
-                    </button>
-                </p>
+        <ModalsLayout title={'Регистрация'} back={false} onClose={onClose}>
+            <p className={styles.instruction}>
+                Мы не нашли аккаунт, зарегистрированный на почту <br/>
+                <span className={styles.email}>{email}</span>
+                <button className={styles.changeNumberBtn} onClick={onChangeEmail}>
+                    Изменить
+                </button>
+            </p>
 
 
-                <p className={styles.instruction}>
-                    Чтобы создать новый аккаунт, введите своё имя и нажмите
-                    кнопку «Зарегистрироваться»
-                </p>
+            <p className={styles.instruction}>
+                Чтобы создать новый аккаунт, введите своё имя и нажмите <br/>
+                кнопку «Зарегистрироваться»
+            </p>
 
-                <input
-                    type="text"
-                    className={styles.nameInput}
-                    placeholder="Ваше имя"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
+            <input
+                type="text"
+                className={styles.nameInput}
+                placeholder="Ваше имя"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+            />
 
-                <Button
-                    className={styles.submitButton}
-                    onClick={handleSubmit}
-                    disabled={isLoading}
-                >
-                    Зарегистрироваться
-                </Button>
-            </div>
-        </div>
+            <Button
+                className={styles.submitButton}
+                onClick={handleSubmit}
+                disabled={isLoading}
+            >
+                Зарегистрироваться
+            </Button>
+        </ModalsLayout>
     );
 };
 

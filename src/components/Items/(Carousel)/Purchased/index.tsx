@@ -1,20 +1,19 @@
-// RecommendedCarousel.jsx
 import {
     Carousel,
     CarouselContent,
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@components/ui/carousel";
 
 import { items } from "@components/Items/exampleItems";
-import ItemCard from "@/components/ItemCard/ItemCard";
+import ItemCard from "@components/ItemCard/ItemCard";
 import styles from "./page.module.css";
 
-export default function RecommendedCarousel() {
+export default function PurchasedCarousel() {
     return (
         <div className={styles.container}>
-            <h1>Рекомендуем также</h1>
+            <h1>Покупают вместе</h1>
 
             <div className={styles.wrapper}>
                 <Carousel

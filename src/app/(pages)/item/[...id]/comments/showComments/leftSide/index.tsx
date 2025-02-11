@@ -3,13 +3,17 @@
 import {ItemInfoType} from "@/types/Item";
 import styles from "./leftSide.module.css";
 import RatingStars from "@components/RatingStars";
-import React from "react";
+import React, {useState} from "react";
 import {Icons} from "@/assets/svg";
 import {Progress} from "@components/ui/progress";
 import CommentItem from "@/app/(pages)/item/[...id]/comments/showComments/leftSide/Comment/Comment";
 import {Button} from "@components/ui/button";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@components/ui/dropdown-menu";
 
 export function CommentsSection({ ...item }: ItemInfoType) {
+    const [isOpen, setIsOpen] = useState(false);
+    const [isRatingOpen, setIsRatingOpen] = useState(false);
+
     const total = Object.values(item.ratingDistribution).reduce((a, b) => a + b, 0);
 
     const ratingRows = [5, 4, 3, 2, 1].map((stars) => {
@@ -58,8 +62,39 @@ export function CommentsSection({ ...item }: ItemInfoType) {
                 </div>
             </div>
 
+            <div className={styles.commentFilterContainer}>
+                <div className={styles.commentFilters}>
+                    <Button variant="outline">С фото</Button>
+                    <Button variant="outline">Из Казахстана</Button>
+                    <DropdownMenu onOpenChange={setIsRatingOpen}>
+                        <DropdownMenuTrigger className={styles.ratingSelect}>
+                            Все звезды
+                            <Icons.ArrowDown className={`${styles.arrowIcon} ${isRatingOpen ? styles.rotated : ""}`}/>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent>
+                            <DropdownMenuItem>1</DropdownMenuItem>
+                            <DropdownMenuItem>2</DropdownMenuItem>
+                            <DropdownMenuItem>3</DropdownMenuItem>
+                            <DropdownMenuItem>4</DropdownMenuItem>
+                            <DropdownMenuItem>5</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                </div>
+
+                <DropdownMenu onOpenChange={setIsOpen}>
+                    <DropdownMenuTrigger className={styles.ratingSelect}>
+                        Сначала полезные
+                        <Icons.ArrowDown className={`${styles.arrowIcon} ${isOpen ? styles.rotated : ""}`}/>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                        <DropdownMenuItem>Сначала полезные</DropdownMenuItem>
+                        <DropdownMenuItem>Сначала популярные</DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+            </div>
+
             {item.comments.list.map((comment, i) => (
-                <CommentItem key={i} comment={comment} />
+                <CommentItem key={i} comment={comment}/>
             ))}
         </div>
     );

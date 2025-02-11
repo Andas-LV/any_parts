@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 30px;
     flex: 0.6;
+    margin-bottom: 50px;
 }
 
 .ratingContainer{
@@ -74,4 +75,47 @@
     min-width: 30px;
     text-align: left;
     color: var(--brand-primary);
+}
+
+/*COMMENTS FILTERS*/
+
+.commentFilterContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+.commentFilters {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.commentFilters button,
+.commentFilters select,
+.commentFilterContainer > select {
+    padding: 8px 12px;
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+}
+
+.commentActions button:hover {
+    color: #000;
+}
+.ratingSelect{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/*Arrow*/
+.arrowIcon {
+    transition: transform 0.3s ease;
+}
+
+.rotated {
+    transform: rotate(180deg);
 }

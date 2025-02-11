@@ -4,9 +4,10 @@ import HeaderWrapper from "@/providers/HeaderProvider";
 import ItemHeader from "./pageHeader/index";
 import MainContent from "./mainContent";
 import Details from "./details";
-import RecommendedCarousel from "@components/Items/Recommended/Carousel";
-import PurchasedCarousel from "@components/Items/Purchased";
+import RecommendedCarousel from "@/components/Items/(Carousel)/Recommended";
+import PurchasedCarousel from "@/components/Items/(Carousel)/Purchased";
 import {Comments} from "@/app/(pages)/item/[...id]/comments";
+
 
 export type paramsType = Promise<{ id: number }>;
 
@@ -27,10 +28,10 @@ export default async function ItemPage(props: { params: paramsType }) {
     }
 
     return (
-        <div className="container px-28">
+        <div>
             <HeaderWrapper>
                 <div className={styles.wrapper}>
-                    <ItemHeader routes={breadcrumbItems} />
+                    <ItemHeader routes={breadcrumbItems}/>
                     <MainContent {...item} />
                     <RecommendedCarousel/>
                     <PurchasedCarousel/>

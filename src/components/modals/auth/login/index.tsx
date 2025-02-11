@@ -9,6 +9,7 @@ import { Label } from "@components/ui/label";
 import ConfirmEmailModal from "../confirmEmail";
 import {useAuthStore} from "@/store/useAuthStore";
 import {renderError} from "@/utils/renderError";
+import ModalsLayout from "@components/modals/layout";
 
 const LoginModal = ({ onClose }: { onClose: () => void; }) => {
     const { getConfirmCode, isLoading, error } = useAuthStore();
@@ -41,38 +42,34 @@ const LoginModal = ({ onClose }: { onClose: () => void; }) => {
     }
 
     return (
-        <div className={styles.overlay}>
-            <div className={styles.modal}>
-                <Icons.Close className={styles.closeButton} onClick={onClose} />
-                <h2>Войти или создать профиль</h2>
-                <div className={styles.inputWrapper}>
-                    <input
-                        type="text"
-                        className={styles.emailInput}
-                        placeholder="example@gmail.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
-
-                {renderError(error, "email")}
-
-                <Button className={styles.submitButton} onClick={handleSubmit}>
-                    Получить код
-                </Button>
-                <div className={styles.checkbox}>
-                    <Checkbox id="terms" onClick={() => setAgreed(!agreed)}/>
-                    <Label htmlFor="terms" className={styles.terms}>
-                        <span>Соглашаюсь</span>
-                        <a>с правилами пользования <br/> торговой площадкой </a>
-                        <span>и</span>
-                        <a>возврата</a>
-                    </Label>
-                </div>
-
-                {renderError(error, "agreed")}
+        <ModalsLayout title={'Войти или создать профиль'} back={false} onClose={onClose}>
+            <div className={styles.inputWrapper}>
+                <input
+                    type="text"
+                    className={styles.emailInput}
+                    placeholder="example@gmail.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
             </div>
-        </div>
+
+            {renderError(error, "email")}
+
+            <Button className={styles.submitButton} onClick={handleSubmit}>
+                Получить код
+            </Button>
+            <div className={styles.checkbox}>
+                <Checkbox id="terms" onClick={() => setAgreed(!agreed)}/>
+                <Label htmlFor="terms" className={styles.terms}>
+                    <span>Соглашаюсь</span>
+                    <a>с правилами пользования <br/> торговой площадкой </a>
+                    <span>и</span>
+                    <a>возврата</a>
+                </Label>
+            </div>
+
+            {renderError(error, "agreed")}
+        </ModalsLayout>
     );
 };
 

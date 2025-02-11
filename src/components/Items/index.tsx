@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import styles from "./items.module.css";
-import Discounted from "@/components/Items/Discounted/Discounted";
-import Recommended from "@/components/Items/Recommended/Recommended";
-import Popular from "@/components/Items/Popular/Popular";
+import Discounted from "@/components/Items/(Tabs)/Discounted/Discounted";
+import Recommended from "@components/Items/(Tabs)/Recommended/Recommended";
+import Popular from "@/components/Items/(Tabs)/Popular/Popular";
 
 export function Items() {
     const [isTabsFixed, setIsTabsFixed] = useState(false);

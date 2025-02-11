@@ -10,13 +10,14 @@ import { Icons } from "@/assets/svg";
 import { copyToClipboard } from "@/utils/copyToClipboard";
 import { useToast } from "@/hooks/use-toast";
 import {characters as charactersSerializer} from "@/schemas/characters";
+import {Button} from "@components/ui/button";
 
 interface ItemInfoProps extends ItemInfoType {
     selectedIndex: number;
     setSelectedIndexAction: (index: number) => void;
 }
 
-export default function ItemInfo({ selectedIndex, setSelectedIndexAction, ...item }: ItemInfoProps) {
+export default function ItemInfo({  selectedIndex, setSelectedIndexAction, ...item }: ItemInfoProps) {
     const { toast } = useToast();
 
     const characters = charactersSerializer(item)
@@ -79,7 +80,10 @@ export default function ItemInfo({ selectedIndex, setSelectedIndexAction, ...ite
                 ))}
             </div>
 
-            <button className={styles.fullCharsLink}>Все характеристики</button>
+            <Button
+                variant="link"
+                className={styles.fullCharsLink}
+            >Все характеристики</Button>
         </div>
     );
 }

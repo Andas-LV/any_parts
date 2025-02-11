@@ -1,11 +1,15 @@
 "use client"
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { ItemInfoType } from "@/types/Item";
 import ImageCarousel from "@/app/(pages)/item/[...id]/mainContent/ImageCarousel";
 import ItemInfo from "@/app/(pages)/item/[...id]/mainContent/ItemInfo";
 import styles from "./mainContent.module.css";
 import ActionsBlock from "@/app/(pages)/item/[...id]/mainContent/ActionsBlock";
+
+interface MainContentProps extends ItemInfoType {
+    onScrollToDetailsAction: () => void;
+}
 
 export default function MainContent({ ...item }: ItemInfoType) {
     const [selectedIndex, setSelectedIndex] = useState(0);

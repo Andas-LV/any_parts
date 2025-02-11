@@ -1,4 +1,4 @@
-import {items} from "../exampleItems";
+import {items} from "../../exampleItems";
 import ItemCard from "@/components/ItemCard/ItemCard";
 import styles from './page.module.css'
 
