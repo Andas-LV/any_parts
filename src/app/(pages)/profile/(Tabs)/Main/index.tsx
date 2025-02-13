@@ -1,8 +1,17 @@
+"use client"
+
 import styles from "./page.module.css"
 import Menu from './menu'
 import Image from 'next/image'
+import React, {useState} from "react";
+import ApCreateModal from "@components/modals/apWallet/apCreateModal";
+import {useUserStore} from "@/store/useUserStore";
 
 export default function Main() {
+    const {user} = useUserStore()
+
+    const [isApWalletOpen, setIsApWalletOpen] = useState(false);
+
     return (
         <div className={styles.wrapper}>
             <Menu/>
@@ -14,17 +23,33 @@ export default function Main() {
                         <p>Баланс</p>
                     </div>
 
-                    <button className={styles.createWalletButton}>
-                        <Image
-                            className={styles.walletImg}
-                            src={'/profile/APwallet.png'}
-                            alt={'wallet'}
-                            fill
-                            sizes={'20px'}
-                        />
+                    {user?.apWallet ?
+                        <button className={styles.createWalletButton}>
+                            <Image
+                                className={styles.walletImg}
+                                src={'/profile/APwallet.png'}
+                                alt={'wallet'}
+                                fill
+                                sizes={'20px'}
+                            />
 
-                        <p>Открыть AP Кошелёк</p>
-                    </button>
+                            <p>Пополнить</p>
+                        </button>
+                        :
+                        <button className={styles.createWalletButton} onClick={() => setIsApWalletOpen(true)}>
+                            <Image
+                                className={styles.walletImg}
+                                src={'/profile/APwallet.png'}
+                                alt={'wallet'}
+                                fill
+                                sizes={'20px'}
+                            />
+
+                            <p>Открыть AP Кошелёк</p>
+                        </button>
+                    }
+
+
                 </div>
 
                 <div className={styles.actionCard}>
@@ -61,6 +86,8 @@ export default function Main() {
                     </button>
                 </div>
             </div>
+
+            {isApWalletOpen && <ApCreateModal onClose={() => setIsApWalletOpen(false)} />}
         </div>
     )
 }

@@ -7,13 +7,20 @@ import {PaymentCard} from "@/types/PaymentCard";
 import styles from './deleteCard.module.css'
 import {Button} from "@components/ui/button";
 import React from "react";
+import {useToast} from "@/hooks/use-toast";
 
 const DeleteCard = ({ onClose, card }: { onClose: () => void, card: PaymentCard }) => {
     const { deleteCard, isLoading, error } = usePaymentStore();
+    const { toast } = useToast();
 
     const handleDelete = async () => {
         try{
             await deleteCard(card.id);
+            toast({
+                done: true,
+                variant: "deleted",
+                description: "Выбранный реквизит успешно удалён",
+            })
             console.log(card)
             onClose()
         } catch (error) {

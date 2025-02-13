@@ -6,12 +6,15 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: #007bff;
+    background-color: var(--brand-primary);
     color: white;
     padding: 10px 16px;
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
+}
+.categoryBtn:hover {
+    background-color: #0c5bc8;
 }
 
 .backdrop {

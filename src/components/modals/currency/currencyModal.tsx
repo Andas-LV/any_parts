@@ -11,7 +11,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu";
-import { countryCodes } from "@components/modals/auth/countryCodes";
+import { countryCodes } from "@components/countryCodes";
 import {useAuthStore} from "@/store/useAuthStore";
 import ModalsLayout from "@components/modals/layout";
 
@@ -39,7 +39,7 @@ const CurrencyModal = ({ onClose }: { onClose: () => void; }) => {
                             <div className={styles.countrySelector}>
                                 <Image
                                     src={selectedCountry.flag}
-                                    alt={selectedCountry.country}
+                                    alt={selectedCountry.name}
                                     width={20}
                                     height={16}
                                     className={styles.flag}
@@ -57,10 +57,10 @@ const CurrencyModal = ({ onClose }: { onClose: () => void; }) => {
 
                     <DropdownMenuContent className={styles.dropdownMenu}>
                         {countryCodes.map((country) => (
-                            <DropdownMenuItem key={country.code} onClick={() => setSelectedCountry(country)}>
+                            <DropdownMenuItem key={country.name} onClick={() => setSelectedCountry(country)}>
                                 <Image
                                     src={country.flag}
-                                    alt={country.country}
+                                    alt={country.name}
                                     width={20}
                                     height={16}
                                     className={styles.flag}

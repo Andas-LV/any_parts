@@ -14,7 +14,6 @@ export default function Home() {
     useEffect(() => {
         if (searchParams.get('redirected') === 'true') {
             toast({
-                variant: "default",
                 title: "Вы не авторизованы.",
                 description: "Пожалуйста зарегистрируйтесь.",
             })

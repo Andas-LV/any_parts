@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import styles from "./register.module.css";
-import { Icons } from "@/assets/svg";
 import { Button } from "@components/ui/button";
 import { useAuthStore } from "@/store/useAuthStore";
 import ModalsLayout from "@components/modals/layout";

@@ -5,11 +5,16 @@ import styles from "./page.module.css"
 import {useUserStore} from "@/store/useUserStore";
 import React, {useState} from "react";
 import Payment from "@components/modals/payment/Payment";
+import Requisites from "@components/modals/requisites/Requisites";
+import SettingsModal from "@components/modals/settings/settingsModal";
+import Devices from "@components/modals/devices/Devices";
 
 export default function Menu() {
     const { user } = useUserStore()
     const [isPaymentOpen, setIsPaymentOpen] = useState(false);
-
+    const [isReqOpen, setIsReqOpen] = useState(false);
+    const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+    const [isDevicesOpen, setIsDevicesOpen] = useState(false);
 
     return (
         <div className={styles.wrapper}>
@@ -38,7 +43,7 @@ export default function Menu() {
 
                     <p>Способы оплаты</p>
                 </button>
-                <button className={styles.navItem}>
+                <button className={styles.navItem} onClick={() => setIsReqOpen(true)}>
                     <Image
                         className={styles.navImage}
                         src={'/profile/FileText.png'}
@@ -51,7 +56,7 @@ export default function Menu() {
                 </button>
 
                 <p>Управление</p>
-                <button className={styles.navItem}>
+                <button className={styles.navItem} onClick={() => setIsSettingsOpen(true)}>
                     <Image
                         className={styles.navImage}
                         src={'/profile/Settings.png'}
@@ -62,7 +67,7 @@ export default function Menu() {
 
                     <p>Настройки</p>
                 </button>
-                <button className={styles.navItem}>
+                <button className={styles.navItem} onClick={() => setIsDevicesOpen(true)}>
                     <Image
                         className={styles.navImage}
                         src={'/profile/Devices.png'}
@@ -76,6 +81,9 @@ export default function Menu() {
             </div>
 
             {isPaymentOpen && <Payment onClose={() => setIsPaymentOpen(false)} />}
+            {isReqOpen && <Requisites onClose={() => setIsReqOpen(false)} />}
+            {isSettingsOpen && <SettingsModal onClose={() => setIsSettingsOpen(false)} />}
+            {isDevicesOpen && <Devices onClose={() => setIsDevicesOpen(false)} />}
         </div>
     )
 }

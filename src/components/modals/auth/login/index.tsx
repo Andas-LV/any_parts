@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import styles from "./loginModal.module.css";
-import { Icons } from "@/assets/svg";
 import { Button } from "@components/ui/button";
 import { Checkbox } from "@components/ui/checkbox";
 import { Label } from "@components/ui/label";

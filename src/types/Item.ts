@@ -9,6 +9,7 @@ export type Item = {
     discount: number | null,
     rating: number,
     comments: number,
+    favorite: boolean,
     images: string[],
 }
 
@@ -27,6 +28,7 @@ export type ItemInfoType = {
     apPrice: number,
     currentPrice: number | null,
     discount: number | null,
+    favorite: boolean,
 
     rating: number,
     ratingDistribution: RatingDistribution,

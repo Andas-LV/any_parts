@@ -5,7 +5,7 @@ import styles from "./payment.module.css";
 import { Icons } from "@/assets/svg";
 
 import Image from "next/image";
-import PaymentCard from "@components/PaymentCard";
+import PaymentCard from "./PaymentCards";
 import CreateCard from "@components/modals/payment/create/CreateCard";
 import DeleteCard from "@components/modals/payment/delete/DeleteCard";
 import ModalsLayout from "@components/modals/layout";

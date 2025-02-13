@@ -1,0 +1,62 @@
+.wrapper{
+   width: 400px;
+}
+
+.codeInput {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #F9FAFB;
+    margin-bottom: 16px;
+}
+
+.codeInput::placeholder {
+    color: #9CA3AF;
+}
+
+.timerText {
+    color: #6B7280;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.resendButton {
+    background: none;
+    border: none;
+    color: #2563EB;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.resendButton:hover {
+    text-decoration: underline;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 25px 0;
+    background: #2563EB;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.error {
+    color: #DC2626;
+    font-size: 14px;
+    margin-bottom: 16px;
+}

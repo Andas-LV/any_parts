@@ -9,20 +9,25 @@ import {
   ToastTitle,
   ToastViewport,
 } from "@/components/ui/toast"
+import { Icons } from "@/assets/svg";
 
 export function Toaster() {
   const { toasts } = useToast()
 
   return (
     <ToastProvider >
-      {toasts.map(function ({ id, title, description, action, ...props }) {
+      {toasts.map(function ({ id, title, description, action, done, ...props  }) {
         return (
           <Toast key={id} {...props}>
-            <div className="grid gap-1">
-              {title && <ToastTitle>{title}</ToastTitle>}
-              {description && (
-                <ToastDescription>{description}</ToastDescription>
-              )}
+            <div className="flex items-center gap-1">
+              {done && <Icons.Done width={24} height={24}/>}
+
+              <div className="grid gap-1">
+                {title && <ToastTitle>{title}</ToastTitle>}
+                {description && (
+                    <ToastDescription>{description}</ToastDescription>
+                )}
+              </div>
             </div>
             {action}
             <ToastClose />

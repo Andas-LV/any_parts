@@ -3,6 +3,7 @@ import { manrope } from "@/assets//fonts";
 import "../styles/globals.css";
 import React, {Suspense} from "react";
 import { Toaster } from "@/components/ui/toaster"
+import Loading from "@components/Loading"
 
 export const metadata: Metadata = {
   title: "Any Parts",
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <body className={`${manrope.className}`}>
-          <Suspense fallback={<div>Загрузка...</div>}>
+          <Suspense fallback={<Loading/>}>
             {children}
             <Toaster />
           </Suspense>

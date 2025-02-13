@@ -1,6 +1,8 @@
 export type User = {
     id: number;
     email: string;
+    phone: string;
+    apWallet: boolean;
     username: string;
     avatarUrl?: string | null;
 }
