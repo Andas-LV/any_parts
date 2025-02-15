@@ -1,26 +1,20 @@
 import styles from "./apModal.module.css";
 import ModalsLayout from "@components/modals/layout";
 import React, { useState } from "react";
-import { AP_DISCOUNT_LIMIT, AP_DISCOUNT_PERCENTAGE, COMPANY_NAME } from "@/utils/const";
+import { AP_DISCOUNT_LIMIT, AP_DISCOUNT_PERCENTAGE, COMPANY_NAME } from "@/constants/apConstants";
 import AfterCreate from "@components/modals/apWallet/afterCreateWallet/afterCreate";
 import {useUserStore} from "@/store/useUserStore";
 
-export default function ApCreateModal({ onClose }: { onClose: () => void }) {
+export default function ApCreateModal({onClose, onNext}: { onClose: () => void, onNext: () => void }) {
     const {createApWallet} = useUserStore()
-
-    const [showAfterCreate, setShowAfterCreate] = useState(false);
 
     const handleCreateApWallet = async() => {
         await createApWallet()
-        setShowAfterCreate(true);
-    }
-
-    if (showAfterCreate) {
-        return <AfterCreate onClose={onClose} />;
+        onNext()
     }
 
     return (
-        <ModalsLayout title="" back={false} onClose={onClose}>
+        <ModalsLayout title="" onClose={onClose}>
             <div className={styles.modalContent}>
                 <h2>
                     Скидка <span className={styles.apPercentage}>${AP_DISCOUNT_PERCENTAGE}%</span>, если платить

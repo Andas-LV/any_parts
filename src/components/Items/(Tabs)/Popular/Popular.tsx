@@ -6,7 +6,7 @@ export default function Popular() {
     return(
         <div className={styles.wrapper}>
             {items.map((item, index) => (
-                <ItemCard key={index} {...item} />
+                <ItemCard key={index} item={item} showFavorite={true} />
             ))}
         </div>
     )

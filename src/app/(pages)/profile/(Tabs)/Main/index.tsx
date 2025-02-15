@@ -6,11 +6,15 @@ import Image from 'next/image'
 import React, {useState} from "react";
 import ApCreateModal from "@components/modals/apWallet/apCreateModal";
 import {useUserStore} from "@/store/useUserStore";
+import AfterCreate from "@components/modals/apWallet/afterCreateWallet/afterCreate";
+import InstructionModal from "@components/modals/apWallet/instruction/instructionModal";
+
+export type TModal = "createWallet" | "onSuccessModal" | "instructionModal" | null
 
 export default function Main() {
     const {user} = useUserStore()
 
-    const [isApWalletOpen, setIsApWalletOpen] = useState(false);
+    const [activeModal, setActiveModal] = useState<TModal>(null);
 
     return (
         <div className={styles.wrapper}>
@@ -36,7 +40,7 @@ export default function Main() {
                             <p>Пополнить</p>
                         </button>
                         :
-                        <button className={styles.createWalletButton} onClick={() => setIsApWalletOpen(true)}>
+                        <button className={styles.createWalletButton} onClick={() => setActiveModal("createWallet")}>
                             <Image
                                 className={styles.walletImg}
                                 src={'/profile/APwallet.png'}
@@ -48,8 +52,6 @@ export default function Main() {
                             <p>Открыть AP Кошелёк</p>
                         </button>
                     }
-
-
                 </div>
 
                 <div className={styles.actionCard}>
@@ -87,7 +89,9 @@ export default function Main() {
                 </div>
             </div>
 
-            {isApWalletOpen && <ApCreateModal onClose={() => setIsApWalletOpen(false)} />}
+            {activeModal && <ApCreateModal onClose={() => setActiveModal(null)} onNext={() => setActiveModal("onSuccessModal")}/>}
+            {activeModal && <AfterCreate onClose={() => setActiveModal(null)} onNext={() => setActiveModal("instructionModal")}/>}
+            {activeModal && <InstructionModal onClose={() => setActiveModal(null)}/>}
         </div>
     )
 }

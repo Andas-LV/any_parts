@@ -1,8 +1,6 @@
 "use client"
 
 import styles from "./search.module.css";
-import {Button} from "@/components/ui/button";
-import Image from "next/image";
 import { Search as SearchIcon } from 'lucide-react';
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
 import { Icons } from "@/assets/svg";
@@ -20,9 +18,10 @@ export default function Search() {
                         <Icons.ArrowDown className={`${styles.arrowIcon} ${isOpen ? styles.rotated : ""}`} />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
+                        <DropdownMenuItem>Аксессуары</DropdownMenuItem>
                         <DropdownMenuItem>Автомобили</DropdownMenuItem>
                         <DropdownMenuItem>Запчасти</DropdownMenuItem>
-                        <DropdownMenuItem>Аксессуары</DropdownMenuItem>
+                        <DropdownMenuItem>Все</DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
 

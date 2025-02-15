@@ -1,7 +1,8 @@
 import {Comment} from "@/types/Comments";
 import {User} from "@/types/User";
+import {StatusTypes} from "@/types/Refund";
 
-export type Item = {
+export type ItemCard = {
     id: number,
     name: string,
     price: number,
@@ -9,16 +10,8 @@ export type Item = {
     discount: number | null,
     rating: number,
     comments: number,
-
+    favorite: boolean,
     images: string[],
-}
-
-export type Images = {
-    totalImages: number;
-    image: {
-        user: User,
-        imageUrl: string
-    }[]
 }
 
 export type ItemInfoType = {
@@ -28,14 +21,14 @@ export type ItemInfoType = {
     apPrice: number,
     currentPrice: number | null,
     discount: number | null,
-
+    favorite: boolean,
 
     rating: number,
     ratingDistribution: RatingDistribution,
 
     comments: {
         amount: number;
-        images: Images,
+        images: commentImages,
         list: Comment[];
     },
     images: string[],
@@ -48,6 +41,14 @@ export type ItemInfoType = {
     brand: string,
     material: string,
     description: string,
+}
+
+export type commentImages = {
+    totalImages: number;
+    image: {
+        user: User,
+        imageUrl: string
+    }[]
 }
 
 export type RatingDistribution = {

@@ -3,6 +3,8 @@ import styles from "./profile.module.css";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@components/ui/tabs";
 import React from "react";
 import Main from './(Tabs)/Main'
+import Favorite from "@/app/(pages)/profile/(Tabs)/Favorite";
+import Refund from "@/app/(pages)/profile/(Tabs)/Refund";
 
 export default function Profile() {
     return (
@@ -42,9 +44,11 @@ export default function Profile() {
                             </TabsContent>
 
                             <TabsContent value="refund">
+                                <Refund/>
                             </TabsContent>
 
                             <TabsContent value="favorite">
+                                <Favorite/>
                             </TabsContent>
 
                             <TabsContent value="purse">

@@ -26,7 +26,7 @@ export default function PurchasedCarousel() {
                     <CarouselContent className={styles.carouselContent}>
                         {items.map((item, index) => (
                             <CarouselItem key={index} className={styles.carouselItem}>
-                                <ItemCard {...item} />
+                                <ItemCard item={item} showFavorite={true}/>
                             </CarouselItem>
                         ))}
                     </CarouselContent>

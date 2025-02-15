@@ -2,7 +2,7 @@ import styles from "./instructionModal.module.css";
 import ModalsLayout from "@components/modals/layout";
 import React from "react";
 import {useUserStore} from "@/store/useUserStore";
-import { COMPANY_NAME } from "@/utils/const";
+import { COMPANY_NAME } from "@/constants/apConstants";
 
 export default function InstructionModal({ onClose }: { onClose: () => void }) {
     const {user} = useUserStore()

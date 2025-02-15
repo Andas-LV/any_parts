@@ -2,8 +2,10 @@
 
 import React, {useEffect, useState} from 'react';
 import Link from 'next/link';
-import { ChevronRight, Heart, Share2 } from 'lucide-react';
+import { ChevronRight, Share2 } from 'lucide-react';
 import styles from './pageHeader.module.css';
+import {Icons} from "@/assets/svg";
+import {useItemsStore} from "@/store/useItemsStore";
 
 interface ItemHeader {
     label: string;
@@ -15,8 +17,16 @@ interface ItemHeaderProps {
 }
 
 const ItemHeader: React.FC<ItemHeaderProps> = ({ routes }) => {
+    const {  currentItem } = useItemsStore();
+
     const [isFixed, setIsFixed] = useState(false);
+    const [isFavorite, setIsFavorite] = useState(currentItem?.favorite);
     const [headerHeight, setHeaderHeight] = useState(0);
+
+    const toggleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        setIsFavorite(!isFavorite);
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -67,12 +77,15 @@ const ItemHeader: React.FC<ItemHeaderProps> = ({ routes }) => {
             ))}
 
             <div className={styles.actionButtons}>
-                <button className={styles.favorite}>
-                    <Heart
-                        className={styles.favoriteIcon}
-                        size={20}
-                        strokeWidth={1.5}
-                    />
+                <button
+                    onClick={(e) => toggleFavorite(e)}
+                    className={styles.favorite}
+                >
+                    {isFavorite ? (
+                        <Icons.HeartFilled className={styles.favoriteIcon}/>
+                    ) : (
+                        <Icons.HeartOutline className={styles.favoriteIcon}/>
+                    )}
                     В избранное
                 </button>
                 <button className={styles.share}>

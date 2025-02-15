@@ -9,7 +9,8 @@ export default function Recommended() {
             {items.map((item, index) => (
                 <ItemCard
                     key={index}
-                    {...item}
+                    item={item}
+                    showFavorite={true}
                 />
             ))}
         </div>

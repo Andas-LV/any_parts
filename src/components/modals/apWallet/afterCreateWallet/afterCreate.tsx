@@ -4,15 +4,9 @@ import ModalsLayout from "@components/modals/layout";
 import React, {useState} from "react";
 import InstructionModal from "@components/modals/apWallet/instruction/instructionModal";
 
-export default function AfterCreate({ onClose }: { onClose: () => void }) {
-    const [showInstruction, setShowInstruction] = useState(false);
-
-    if (showInstruction) {
-        return <InstructionModal onClose={onClose} />;
-    }
-
+export default function AfterCreate({onClose, onNext}: { onClose: () => void, onNext: () => void }) {
     return (
-        <ModalsLayout title="" back={false} onClose={onClose}>
+        <ModalsLayout title="" onClose={onClose}>
             <div className={styles.modalContent}>
                 <Icons.Done width={80} height={80} />
 
@@ -22,7 +16,7 @@ export default function AfterCreate({ onClose }: { onClose: () => void }) {
 
                 <p>Теперь его можно пополнять и оплачивать с него со скидкой</p>
 
-                <button type="submit" className={styles.submitButton} onClick={() => setShowInstruction(true)}>
+                <button type="submit" className={styles.submitButton} onClick={onNext}>
                     Как пополнить
                 </button>
             </div>

@@ -6,7 +6,7 @@ interface ModalsLayoutProps {
     children: React.ReactNode;
     title: string;
     onClose: () => void;
-    back: boolean;
+    back?: () => void;
 }
 
 const ModalsLayout: React.FC<ModalsLayoutProps> = ({ children, title, onClose, back }) => {
@@ -15,10 +15,12 @@ const ModalsLayout: React.FC<ModalsLayoutProps> = ({ children, title, onClose, b
             <div className={styles.modal}>
                 <Icons.Close className={styles.closeButton} onClick={onClose} />
                 <div className={styles.titleWrapper}>
-                    {back && <Icons.ArrowLeft className={styles.backButton} onClick={onClose} /> }
+                    {back && <Icons.ArrowLeft className={styles.backButton} onClick={back} /> }
                     <h2>{title}</h2>
                 </div>
-                {children}
+                <div className={styles.children}>
+                    {children}
+                </div>
             </div>
         </div>
     );

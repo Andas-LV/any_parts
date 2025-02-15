@@ -7,7 +7,7 @@ export default function Discounted() {
         <div className={styles.wrapper}>
             Discounted
             {items.map((item, index) => (
-                <ItemCard key={index} {...item} />
+                <ItemCard key={index} item={item} showFavorite={true} />
             ))}
         </div>
     )

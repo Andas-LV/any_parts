@@ -1,13 +1,22 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import styles from "./details.module.css";
-import {ItemInfoType} from "@/types/Item";
-import {characters as charactersSerializer} from "@/schemas/characters";
+import { characters as charactersSerializer } from "@/schemas/characters";
+import { useItemsStore } from "@/store/useItemsStore";
+import Loading from "@components/Loading";
 
-export default function Details({ ...item }: ItemInfoType) {
-    const description = item.description;
-    const characters = charactersSerializer(item);
+export default function Details() {
+    const { currentItem } = useItemsStore();
+
+    if (!currentItem) {
+        return <Loading/>;
+    }
+
+    const description = currentItem.description || "Нет описания";
+    const characters = charactersSerializer(currentItem) || [];
+
+    const hasCharacters = characters.length > 0;
 
     const [isExpanded, setIsExpanded] = useState(false);
     const MAX_LENGTH = 300;
@@ -16,13 +25,13 @@ export default function Details({ ...item }: ItemInfoType) {
 
     return (
         <div className={styles.details}>
+            {/* Описание */}
             <div className={styles.description}>
                 <h1>Описание</h1>
                 <p>
-                    {isExpanded ?
-                        description
-                        :
-                        description.slice(0, MAX_LENGTH) + (description.length > MAX_LENGTH ? "..." : "")}
+                    {isExpanded
+                        ? description
+                        : description.slice(0, MAX_LENGTH) + (description.length > MAX_LENGTH ? "..." : "")}
                 </p>
                 {description.length > MAX_LENGTH && (
                     <button className={styles.toggleButton} onClick={toggleExpand}>
@@ -31,20 +40,23 @@ export default function Details({ ...item }: ItemInfoType) {
                 )}
             </div>
 
+            {/* Характеристики */}
             <div className={styles.characteristicsWrapper}>
                 <h1>Характеристики</h1>
 
-                <p>Title</p>
-
-                <div className={styles.characteristics}>
-                    {characters.map((characteristic, index) => (
-                        <div key={index} className={styles.characteristic}>
-                            <span className={styles.label}>{characteristic.name}</span>
-                            <span className={styles.dots}></span>
-                            <span className={styles.value}>{characteristic.value}</span>
-                        </div>
-                    ))}
-                </div>
+                {hasCharacters ? (
+                    <div className={styles.characteristics}>
+                        {characters.map((characteristic, index) => (
+                            <div key={index} className={styles.characteristic}>
+                                <span className={styles.label}>{characteristic.name}</span>
+                                <span className={styles.dots}></span>
+                                <span className={styles.value}>{characteristic.value}</span>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <p>Нет характеристик</p>
+                )}
             </div>
         </div>
     );

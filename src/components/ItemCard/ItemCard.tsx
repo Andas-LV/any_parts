@@ -1,15 +1,34 @@
 "use client"
 
 import styles from './itemCard.module.css';
-import { Item } from "@/types/Item";
+import { ItemCard as ItemCardType } from "@/types/Item";
 import { ImageCarousel } from './ImageCarousel';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Icons } from '@/assets/svg'
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import Loading from "@components/Loading";
 
-export default function ItemCard({id, name, price, currentPrice, discount, rating, comments, images}: Item) {
+interface ItemCardProps {
+    item: ItemCardType;
+    showFavorite?: boolean;
+}
+
+export default function ItemCard({ item, showFavorite }: ItemCardProps) {
+    if (!item) {
+        return <Loading/>;
+    }
+
+    const { id, name, price, currentPrice, discount, rating, comments, images, favorite } = item;
     const router = useRouter();
+
+    const [isFavorite, setIsFavorite] = useState(favorite);
+
+    const toggleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        setIsFavorite(!isFavorite);
+    };
 
     return (
         <Card className={styles.card} onClick={() => router.push(`/item/${id}`)}>
@@ -41,11 +60,11 @@ export default function ItemCard({id, name, price, currentPrice, discount, ratin
 
                 <div className={styles.ratingWrapper}>
                     <div className={styles.rating}>
-                        <Icons.Star width={12} height={12}/>
+                        <Icons.Star width={12} height={12} />
                         <span className={styles.ratingNumber}>{rating}</span>
                     </div>
                     <div className={styles.comments}>
-                        <Icons.Comments/>
+                        <Icons.Comments />
                         {comments}
                     </div>
                 </div>
@@ -56,9 +75,18 @@ export default function ItemCard({id, name, price, currentPrice, discount, ratin
                         В корзину
                     </Button>
 
-                    <button className={styles.favoriteButton}>
-                        <Icons.CardFavorite className={styles.favoriteIcon}/>
-                    </button>
+                    {showFavorite && (
+                        <button
+                            onClick={(e) => toggleFavorite(e)}
+                            className={styles.favoriteButton}
+                        >
+                            {isFavorite ? (
+                                <Icons.HeartFilled className={styles.favoriteIcon} />
+                            ) : (
+                                <Icons.HeartOutline className={styles.favoriteIcon} />
+                            )}
+                        </button>
+                    )}
                 </div>
             </div>
         </Card>

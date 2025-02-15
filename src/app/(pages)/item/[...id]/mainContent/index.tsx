@@ -6,27 +6,31 @@ import ImageCarousel from "@/app/(pages)/item/[...id]/mainContent/ImageCarousel"
 import ItemInfo from "@/app/(pages)/item/[...id]/mainContent/ItemInfo";
 import styles from "./mainContent.module.css";
 import ActionsBlock from "@/app/(pages)/item/[...id]/mainContent/ActionsBlock";
+import {useItemsStore} from "@/store/useItemsStore";
+import Loading from "@components/Loading";
 
-interface MainContentProps extends ItemInfoType {
-    onScrollToDetailsAction: () => void;
-}
+export default function MainContent() {
+    const { currentItem } = useItemsStore();
 
-export default function MainContent({ ...item }: ItemInfoType) {
     const [selectedIndex, setSelectedIndex] = useState(0);
+
+    if (!currentItem) {
+        return <Loading/>;
+    }
 
     return (
         <div className={styles.mainContent}>
             <ImageCarousel
-                images={item.images}
+                images={currentItem.images}
                 selectedIndex={selectedIndex}
                 setSelectedIndexAction={setSelectedIndex}
             />
             <ItemInfo
-                {...item}
+                {...currentItem}
                 selectedIndex={selectedIndex}
                 setSelectedIndexAction={setSelectedIndex}
             />
-            <ActionsBlock {...item} />
+            <ActionsBlock {...currentItem} />
         </div>
     );
 }

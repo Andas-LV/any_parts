@@ -4,9 +4,16 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import styles from "./comments.module.css";
 import {ShowComments} from "@/app/(pages)/item/[...id]/comments/showComments";
 import {AskQuestion} from "@/app/(pages)/item/[...id]/comments/askQuestion";
-import {ItemInfoType} from "@/types/Item";
+import {useItemsStore} from "@/store/useItemsStore";
+import React from "react";
+import Loading from "@components/Loading";
 
-export function Comments({ ...item }: ItemInfoType) {
+export function Comments() {
+    const { currentItem } = useItemsStore();
+
+    if (!currentItem) {
+        return <Loading/>;
+    }
 
     return (
         <div id="itemsTabs">
@@ -24,10 +31,10 @@ export function Comments({ ...item }: ItemInfoType) {
 
                 <div className={styles.tabsContent}>
                     <TabsContent value="comments">
-                        <ShowComments {...item}/>
+                        <ShowComments {...currentItem}/>
                     </TabsContent>
                     <TabsContent value="askQuestion">
-                        <AskQuestion {...item}/>
+                        <AskQuestion {...currentItem}/>
                     </TabsContent>
                 </div>
             </Tabs>
