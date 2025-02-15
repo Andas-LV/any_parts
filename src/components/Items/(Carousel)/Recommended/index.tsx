@@ -26,7 +26,7 @@ export default function RecommendedCarousel() {
                     <CarouselContent className={styles.carouselContent}>
                         {items.map((item, index) => (
                             <CarouselItem key={index} className={styles.carouselItem}>
-                                <ItemCard {...item} />
+                                <ItemCard item={item} />
                             </CarouselItem>
                         ))}
                     </CarouselContent>

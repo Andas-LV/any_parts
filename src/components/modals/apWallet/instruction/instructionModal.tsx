@@ -8,7 +8,7 @@ export default function InstructionModal({ onClose }: { onClose: () => void }) {
     const {user} = useUserStore()
 
     return (
-        <ModalsLayout title="Как пополнить кошелёк" back={false} onClose={onClose}>
+        <ModalsLayout title="Как пополнить кошелёк" onClose={onClose}>
             <div className={styles.modalContent}>
                 <div className={styles.steps}>
                     <div className={styles.step}>

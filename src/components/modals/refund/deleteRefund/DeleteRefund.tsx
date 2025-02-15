@@ -27,7 +27,7 @@ const DeleteRefund = ({ onClose, itemId }: { onClose: () => void, itemId: number
     }
 
     return (
-        <ModalsLayout title={"Отменить заявку на возврат?"} back={false} onClose={onClose}>
+        <ModalsLayout title={"Отменить заявку на возврат?"} onClose={onClose}>
             <div className={styles.deleteModelWrapper}>
                 <p>Если вы отмените заявку, вернуть товар позже будет невозможно. Уверены, что хотите продолжить?</p>
 

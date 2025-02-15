@@ -7,7 +7,7 @@ import {Button} from "@components/ui/button";
 
 export default function AfterCreateRefund({ onClose }: { onClose: () => void }) {
     return (
-        <ModalsLayout title="" back={false} onClose={onClose}>
+        <ModalsLayout title="" onClose={onClose}>
             <div className={styles.modalContent}>
                 <Icons.Done width={80} height={80} />
 

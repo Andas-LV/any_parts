@@ -34,7 +34,8 @@ export const itemInfo: ItemInfoType[] = [
                             email: "user@gmail.com",
                             phone: "+77777777777",
                             apWallet: false,
-                            avatarUrl: "user.png"
+                            avatarUrl: "user.png",
+                            male: "Male"
                         },
                         imageUrl:'/items/carpet.png',
                     },
@@ -45,7 +46,8 @@ export const itemInfo: ItemInfoType[] = [
                             email: "user@gmail.com",
                             phone: "+77777777777",
                             apWallet: false,
-                            avatarUrl: "user.png"
+                            avatarUrl: "user.png",
+                            male: "Male"
                         },
                         imageUrl:'/items/evaCarpet.png',
                     },
@@ -56,7 +58,8 @@ export const itemInfo: ItemInfoType[] = [
                             email: "user@gmail.com",
                             phone: "+77777777777",
                             apWallet: false,
-                            avatarUrl: "user.png"
+                            avatarUrl: "user.png",
+                            male: "Male"
                         },
                         imageUrl:'/items/case.png',
                     },
@@ -70,7 +73,8 @@ export const itemInfo: ItemInfoType[] = [
                     email: "user@gmail.com",
                     phone: "+77777777777",
                     apWallet: false,
-                    avatarUrl: "/user.png"
+                    avatarUrl: "/user.png",
+                    male: "Male"
                 },
                 rating: 5,
                 date: '23-05-2024',
@@ -141,7 +145,8 @@ export const itemInfo: ItemInfoType[] = [
                             email: "user@gmail.com",
                             phone: "+77777777777",
                             apWallet: false,
-                            avatarUrl: "user.png"
+                            avatarUrl: "user.png",
+                            male: "Male"
                         },
                         imageUrl:'/items/carpet.png',
                     },
@@ -155,7 +160,8 @@ export const itemInfo: ItemInfoType[] = [
                     email: "user@gmail.com",
                     phone: "+77777777777",
                     apWallet: false,
-                    avatarUrl: "/user.png"
+                    avatarUrl: "/user.png",
+                    male: "Male"
                 },
                 rating: 4,
                 date: '23-05-2024',
@@ -216,7 +222,8 @@ export const itemInfo: ItemInfoType[] = [
                             email: "user@gmail.com",
                             phone: "+77777777777",
                             apWallet: false,
-                            avatarUrl: "user.png"
+                            avatarUrl: "user.png",
+                            male: "Male"
                         },
                         imageUrl:'/items/carpet.png',
                     },
@@ -230,7 +237,8 @@ export const itemInfo: ItemInfoType[] = [
                     email: "user@gmail.com",
                     phone: "+77777777777",
                     apWallet: false,
-                    avatarUrl: "/user.png"
+                    avatarUrl: "/user.png",
+                    male: "Male"
                 },
                 rating: 4,
                 date: '23-05-2024',

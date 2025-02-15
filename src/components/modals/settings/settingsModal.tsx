@@ -20,7 +20,7 @@ const SettingsModal = ({ onClose }: { onClose: () => void; }) => {
     };
 
     return (
-        <ModalsLayout title={'Настройки'} back={false} onClose={onClose}>
+        <ModalsLayout title={'Настройки'} onClose={onClose}>
             <div className={styles.wrapper}>
                 <div className={styles.param}>
                     <Label htmlFor="mailing">

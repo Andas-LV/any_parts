@@ -7,9 +7,8 @@ import ModalsLayout from "@components/modals/layout";
 import { RequisiteValidatorSchema } from "@/schemas/requisite";
 import { useRequisitesStore } from "@/store/useRequisitesStore";
 import { countryCodes } from "@components/countryCodes";
-import ConfirmEmailModal from "@components/modals/requisites/create/confirm";
 
-const CreateReq = ({ onClose }: { onClose: () => void }) => {
+const CreateReq = ({onClose, onPrev, onNext}: { onClose: () => void, onPrev: () => void, onNext: () => void }) => {
     const { registerReq, isLoading, error } = useRequisitesStore();
     const {
         register,
@@ -23,7 +22,6 @@ const CreateReq = ({ onClose }: { onClose: () => void }) => {
 
     const [selectedCountry, setSelectedCountry] = useState(countryCodes[0]);
     const [selectIsOpen, setSelectIsOpen] = useState(false);
-    const [showConfirmModal, setShowConfirmModal] = useState(false);
 
     const { ref: countryRef, ...countryRest } = register("country");
 
@@ -35,16 +33,11 @@ const CreateReq = ({ onClose }: { onClose: () => void }) => {
 
     const onSubmit = async (data: any) => {
         console.log(data);
-        setShowConfirmModal(true);
-        // onClose();
+        onNext()
     };
 
-    if (showConfirmModal) {
-        return <ConfirmEmailModal onClose={onClose} />;
-    }
-
     return (
-        <ModalsLayout title="Добавить реквизиты" back onClose={onClose}>
+        <ModalsLayout title="Добавить реквизиты" back={onPrev} onClose={onClose}>
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-start gap-5 w-[550px] max-w-[800px]">
                 <div className="relative w-full">
                     <div className="relative flex items-center w-full bg-[#F2F2F2] rounded-lg">

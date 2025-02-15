@@ -1,31 +1,25 @@
 "use client";
 
-
-import { usePaymentStore } from "@/store/usePaymentStore";
 import ModalsLayout from "@components/modals/layout";
 import {PaymentCard} from "@/types/PaymentCard";
-import styles from './deleteCard.module.css'
+import styles from './logOut.module.css'
 import {Button} from "@components/ui/button";
 import React from "react";
 import {useToast} from "@/hooks/use-toast";
+import {useAuthStore} from "@/store/useAuthStore";
 
-const DeleteCard = ({onClose, onPrev}: { onClose: () => void, onPrev: () => void }) => {
-    const { deleteCard, currentCard, isLoading, error } = usePaymentStore();
+const LogOutModal = ({onClose}: { onClose: () => void}) => {
+    const { logout, isLoading, error } = useAuthStore();
     const { toast } = useToast();
 
-    if (!currentCard){
-        return null
-    }
-
-    const handleDelete = async () => {
+    const handleLogOut = async () => {
         try{
-            await deleteCard(currentCard.id);
+            await logout()
             toast({
                 done: true,
                 variant: "deleted",
-                description: "Выбранный реквизит успешно удалён",
+                description: "Вы вышли из аккаунта",
             })
-            console.log(currentCard)
             onClose()
         } catch (error) {
             console.error(error);
@@ -33,26 +27,29 @@ const DeleteCard = ({onClose, onPrev}: { onClose: () => void, onPrev: () => void
     }
 
     return (
-        <ModalsLayout title={`Удалим Visa ·· ${currentCard.cardId.toString().slice(-4)} через 30 дней`} back={onPrev} onClose={onClose}>
-            <div className={styles.deleteModelWrapper}>
-                <p>А пока скроем из способов оплаты</p>
+        <ModalsLayout title={"Выйти из аккаунта"} onClose={onClose}>
+            <div className={styles.logOutModelWrapper}>
+                <p>
+                    Выходите? Мы всегда здесь, <br/>
+                    когда вам понадобится нужная деталь!
+                </p>
 
                 <div className={styles.actionButtons}>
                     <Button
                         variant="ghost"
                         className={styles.cancelBtn}
-                        onClick={onPrev}
+                        onClick={onClose}
                         disabled={isLoading}
                     >
-                        Оставить
+                        Остаться
                     </Button>
 
                     <Button
                         className={styles.submitButton}
-                        onClick={handleDelete}
+                        onClick={handleLogOut}
                         disabled={isLoading}
                     >
-                        Удалить
+                        Выйти
                     </Button>
                 </div>
             </div>
@@ -60,4 +57,4 @@ const DeleteCard = ({onClose, onPrev}: { onClose: () => void, onPrev: () => void
     );
 };
 
-export default DeleteCard;
+export default LogOutModal;

@@ -7,7 +7,7 @@ import { useRequisitesStore } from "@/store/useRequisitesStore";
 import {renderError} from "@/utils/renderError";
 import ModalsLayout from "@components/modals/layout";
 
-const ConfirmCodeModal = ({onClose,}: { onClose: () => void; }) => {
+const ConfirmCodeModal = ({onClose, onPrev}: { onClose: () => void, onPrev: () => void }) => {
     const { registerReq, isLoading, error } = useRequisitesStore();
     const [code, setCode] = useState("");
     const [timeLeft, setTimeLeft] = useState(120);
@@ -41,9 +41,8 @@ const ConfirmCodeModal = ({onClose,}: { onClose: () => void; }) => {
         onClose()
     };
 
-
     return (
-        <ModalsLayout title={'Введите код'} back onClose={onClose}>
+        <ModalsLayout title={'Введите код'} back={onPrev} onClose={onClose}>
             <div className={styles.wrapper}>
                 <input
                     type="text"

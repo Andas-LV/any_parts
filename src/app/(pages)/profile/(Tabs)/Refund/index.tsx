@@ -28,7 +28,7 @@ import RefundFullInfo from "@components/modals/refund/create/refundFullInfo";
 import AfterCreateRefund from "@components/modals/refund/create/afterCreate/afterCreateRefund";
 import {getStatusStyle} from './getStatusStyle'
 
-export type TModal = "itemChooseModal" | "itemFullInfoModal" | "onSuccessModal" | null
+type TModal = "itemChooseModal" | "itemFullInfoModal" | "onSuccessModal" | null
 
 export default function Refund() {
     const { getRefundItems, refunds } = useItemsStore();

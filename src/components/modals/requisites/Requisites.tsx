@@ -9,18 +9,12 @@ import ModalsLayout from "@components/modals/layout";
 import RequisiteCard from "./RequisiteCards";
 import CreateReq from "@components/modals/requisites/create/CreateReq";
 
-const Requisites = ({ onClose }: { onClose: () => void; }) => {
-    const [showCreateReq, setShowCreateReq] = useState(false);
-
-    if (showCreateReq) {
-        return <CreateReq onClose={() => setShowCreateReq(false)} />;
-    }
-
+const Requisites = ({onClose, onCreate}: { onClose: () => void, onCreate: () => void }) => {
     return (
-        <ModalsLayout title="Реквизиты" back={false} onClose={onClose}>
+        <ModalsLayout title="Реквизиты" onClose={onClose}>
             <RequisiteCard />
 
-            <button className={styles.navItem} onClick={() => setShowCreateReq(true)}>
+            <button className={styles.navItem} onClick={onCreate}>
                 <div className={styles.navHeader}>
                     <Image
                         className={styles.navImage}

@@ -7,7 +7,7 @@ import { Button } from "@components/ui/button";
 import { useAuthStore } from "@/store/useAuthStore";
 import RegisterModal from "@components/modals/auth/register";
 import {renderError} from "@/utils/renderError";
-import {confirmEmail} from "@/schemas";
+import {confirmEmail} from "@/schemas/auth";
 import ModalsLayout from "@components/modals/layout";
 
 const ConfirmEmailModal = ({
@@ -61,7 +61,7 @@ const ConfirmEmailModal = ({
     }
 
     return (
-        <ModalsLayout title={'Подтвердите номер'} back={false} onClose={onClose}>
+        <ModalsLayout title={'Подтвердите номер'} onClose={onClose}>
             <p className={styles.instruction}>
                 Укажите проверочный код - он придёт на {email} <br/>
                 в течение 2 минут.

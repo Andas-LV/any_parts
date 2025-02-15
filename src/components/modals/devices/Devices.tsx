@@ -17,7 +17,7 @@ const Devices = ({ onClose }: { onClose: () => void; }) => {
     }
 
     return (
-        <ModalsLayout title="Ваши устройства" back={false} onClose={onClose}>
+        <ModalsLayout title="Ваши устройства" onClose={onClose}>
             <div className={styles.wrapper}>
                 <p>На них вы входили в этот профиль Any Parts</p>
 

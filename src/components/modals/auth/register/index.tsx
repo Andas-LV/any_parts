@@ -26,7 +26,7 @@ const RegisterModal = ({onClose, onChangeEmail}: {
     };
 
     return (
-        <ModalsLayout title={'Регистрация'} back={false} onClose={onClose}>
+        <ModalsLayout title={'Регистрация'} onClose={onClose}>
             <p className={styles.instruction}>
                 Мы не нашли аккаунт, зарегистрированный на почту <br/>
                 <span className={styles.email}>{email}</span>

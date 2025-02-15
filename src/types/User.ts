@@ -5,6 +5,7 @@ export type User = {
     apWallet: boolean;
     username: string;
     avatarUrl?: string | null;
+    male: MaleChoice;
 }
 
 export type Login = {
@@ -21,3 +22,5 @@ export type ConfirmCode = {
     email: string;
     code: string;
 }
+
+export type MaleChoice = "Male" | "Female";

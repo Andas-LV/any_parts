@@ -41,7 +41,7 @@ const LoginModal = ({ onClose }: { onClose: () => void; }) => {
     }
 
     return (
-        <ModalsLayout title={'Войти или создать профиль'} back={false} onClose={onClose}>
+        <ModalsLayout title={'Войти или создать профиль'} onClose={onClose}>
             <div className={styles.inputWrapper}>
                 <input
                     type="text"

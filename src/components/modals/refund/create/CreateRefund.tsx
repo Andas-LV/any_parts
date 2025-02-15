@@ -27,7 +27,7 @@ export default function CreateRefund({onClose, onNext}: { onClose: () => void, o
     }
 
     return (
-        <ModalsLayout title="Выбор товара для возврата" back={false} onClose={onClose}>
+        <ModalsLayout title="Выбор товара для возврата" onClose={onClose}>
             <div className={styles.modalContent}>
                 <div className={styles.searchWrapper}>
                     <SearchIcon className={styles.searchIcon} />

@@ -11,28 +11,12 @@ import DeleteCard from "@components/modals/payment/delete/DeleteCard";
 import ModalsLayout from "@components/modals/layout";
 import { PaymentCard as PaymentCardType } from "@/types/PaymentCard";
 
-const Payment = ({ onClose }: { onClose: () => void; }) => {
-    const [showCreateCard, setShowCreateCard] = useState(false);
-    const [deletingCard, setDeletingCard] = useState<PaymentCardType | null>(null);
-
-    if (showCreateCard) {
-        return <CreateCard onClose={() => setShowCreateCard(false)} />;
-    }
-
-    if (deletingCard) {
-        return (
-            <DeleteCard
-                card={deletingCard}
-                onClose={() => setDeletingCard(null)}
-            />
-        );
-    }
-
+const Payment = ({onClose, onCreate, onDelete}: { onClose: () => void, onCreate: () => void, onDelete: () => void }) => {
     return (
-        <ModalsLayout title="Способ оплаты" back={false} onClose={onClose}>
-            <PaymentCard onDeleteCard={setDeletingCard} />
+        <ModalsLayout title="Способ оплаты" onClose={onClose}>
+            <PaymentCard onDelete={onDelete}/>
 
-            <button className={styles.navItem} onClick={() => setShowCreateCard(true)}>
+            <button className={styles.navItem} onClick={onCreate}>
                 <div className={styles.navHeader}>
                     <Image
                         className={styles.navImage}

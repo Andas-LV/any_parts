@@ -1,16 +1,17 @@
-import { Icons } from "@/assets/svg";
+import {Icons} from "@/assets/svg";
 import styles from "./paymentCard.module.css";
-import { usePaymentStore } from "@/store/usePaymentStore";
+import {usePaymentStore} from "@/store/usePaymentStore";
 import type { PaymentCard as PaymentCardType } from "@/types/PaymentCard";
 
-interface PaymentCardProps {
-    onDeleteCard: (card: PaymentCardType) => void;
-}
-
-export default function PaymentCard({ onDeleteCard }: PaymentCardProps) {
-    const { cards } = usePaymentStore();
+export default function PaymentCard({onDelete}: {onDelete: () => void}) {
+    const {cards, setCurrentCard} = usePaymentStore();
 
     if (!cards || cards.length === 0) return null;
+
+    const handleDelete = async (card: PaymentCardType) => {
+        setCurrentCard(card)
+        onDelete()
+    }
 
     return (
         <div className={styles.cardsWrapper}>
@@ -35,9 +36,9 @@ export default function PaymentCard({ onDeleteCard }: PaymentCardProps) {
 
                     <button
                         className={styles.deleteButton}
-                        onClick={() => onDeleteCard(card)}
+                        onClick={() => handleDelete(card)}
                     >
-                        <Icons.BlackClose />
+                        <Icons.BlackClose/>
                     </button>
                 </div>
             ))}

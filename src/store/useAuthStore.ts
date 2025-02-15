@@ -4,7 +4,7 @@ import * as authService from '@/service/auth.service'
 import { setAuthToken, removeAuthToken, getAuthToken } from '@/utils/cookie'
 import {ConfirmCode, Login, Register} from '@/types/User'
 import {z} from "zod";
-import {confirmEmail, loginSchema} from "@/schemas";
+import {confirmEmail, loginSchema} from "@/schemas/auth";
 
 const isClient = typeof window !== 'undefined'
 

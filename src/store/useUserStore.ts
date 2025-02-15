@@ -80,6 +80,7 @@ export const useUserStore = create<UserState>()((set) => ({
         apWallet: false,
         email: 'user@gmail.com',
         avatarUrl: '/user.png',
+        male: "Male",
     },
     sessions: exampleSessions,
     currentSession: exampleCurrentSession,
@@ -100,9 +101,19 @@ export const useUserStore = create<UserState>()((set) => ({
     updateUser: async (data) => {
         set({ isLoading: true, error: null })
         try {
-            const updatedUser = await userService.updateUserMe(data)
-            set({ user: updatedUser })
-        } catch (error) {
+            set((state) => {
+                if (!state.user) {
+                    return {}
+                }
+
+                const updatedUser: User = {
+                    ...state.user,
+                    ...data
+                }
+
+                return { user: updatedUser }
+            })
+        }  catch (error) {
             set({ error: error instanceof Error ? error.message : 'Failed to update user' })
         } finally {
             set({ isLoading: false })

@@ -10,7 +10,7 @@ import ModalsLayout from "@components/modals/layout";
 import React, { useState } from "react";
 import { cardSchema } from "@/schemas/payment";
 
-const CreateCard = ({ onClose }: { onClose: () => void }) => {
+const CreateCard = ({onClose, onPrev}: { onClose: () => void, onPrev: () => void }) => {
     const { registerCard, isLoading, error } = usePaymentStore();
     const {
         register,
@@ -62,7 +62,7 @@ const CreateCard = ({ onClose }: { onClose: () => void }) => {
     };
 
     return (
-        <ModalsLayout title="Привязка карты" back onClose={onClose}>
+        <ModalsLayout title="Привязка карты" back={onPrev} onClose={onClose}>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.modalContent}>
                 <input
                     type="text"

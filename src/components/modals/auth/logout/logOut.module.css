@@ -1,12 +1,8 @@
-.deleteModelWrapper{
+.logOutModelWrapper{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 500px;
-}
-
-.deleteModelWrapper p{
-    text-wrap: wrap;
+    width: 400px;
 }
 
 .actionButtons{

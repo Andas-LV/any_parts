@@ -89,9 +89,9 @@ export default function Main() {
                 </div>
             </div>
 
-            {activeModal && <ApCreateModal onClose={() => setActiveModal(null)} onNext={() => setActiveModal("onSuccessModal")}/>}
-            {activeModal && <AfterCreate onClose={() => setActiveModal(null)} onNext={() => setActiveModal("instructionModal")}/>}
-            {activeModal && <InstructionModal onClose={() => setActiveModal(null)}/>}
+            {activeModal === "createWallet"  && <ApCreateModal onClose={() => setActiveModal(null)} onNext={() => setActiveModal("onSuccessModal")}/>}
+            {activeModal === "onSuccessModal" && <AfterCreate onClose={() => setActiveModal(null)} onNext={() => setActiveModal("instructionModal")}/>}
+            {activeModal === "instructionModal"  && <InstructionModal onClose={() => setActiveModal(null)}/>}
         </div>
     )
 }

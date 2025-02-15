@@ -26,7 +26,7 @@ const CurrencyModal = ({ onClose }: { onClose: () => void; }) => {
     };
 
     return (
-        <ModalsLayout title={'Валюта'} back={false} onClose={onClose}>
+        <ModalsLayout title={'Валюта'} onClose={onClose}>
             <p>
                 Выберите знакомую для вас валюту, чтобы оценить стоимость
                 товаров. Валюта оплаты будет рассчитана в тенге.
