@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ChevronRight, Share2 } from 'lucide-react';
 import styles from './pageHeader.module.css';
 import {Icons} from "@/assets/svg";
-import {useItemsStore} from "@/store/useItemsStore";
+import {useItemsStore} from "@/entities/items/useItemsStore";
 
 interface ItemHeader {
     label: string;

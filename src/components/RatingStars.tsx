@@ -1,16 +1,7 @@
 import { Icons } from "@/assets/svg";
 
-export default function RatingStars({ rating }: { rating: number }) {
-    const decimal = rating % 1;
-    let roundedRating: number;
-
-    if (decimal < 0.3) {
-        roundedRating = Math.floor(rating);
-    } else if (decimal >= 0.8) {
-        roundedRating = Math.ceil(rating);
-    } else {
-        roundedRating = Math.floor(rating) + 0.5;
-    }
+export default function RatingStars({ rating, width = 16, height = 16 }: { rating: number, width?: number, height?: number }) {
+  const roundedRating = Math.round(rating * 2) / 2;
 
     const fullStars = Math.floor(roundedRating);
     const hasHalfStar = roundedRating % 1 !== 0;
@@ -19,17 +10,15 @@ export default function RatingStars({ rating }: { rating: number }) {
     return (
         <div>
             <div style={{ display: "flex", gap: "2px" }}>
-                {Array(fullStars).fill(0).map(
-                    (_, i) => <Icons.StarEmpty key={i} filled width={16} height={16}/>
-                )}
+                {Array(fullStars).fill(0).map((_, i) => (
+                    <Icons.Star key={i} width={width} height={height} />
+                ))}
 
-                {hasHalfStar &&
-                    <Icons.StarEmpty halfFilled width={16} height={16}/>
-                }
+                {hasHalfStar && <Icons.HalfStar width={width} height={height} />}
 
-                {Array(emptyStars).fill(0).map(
-                    (_, i) => <Icons.StarEmpty key={i + 5} width={16} height={16}/>
-                )}
+                {Array(emptyStars).fill(0).map((_, i) => (
+                    <Icons.StarEmpty key={i + 5} width={width} height={height} />
+                ))}
             </div>
         </div>
     );

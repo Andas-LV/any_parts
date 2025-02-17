@@ -2,7 +2,7 @@ import styles from "./topHeader.module.css"
 import Image from "next/image"
 import {Button} from "@/components/ui/button";
 import React, {useState} from "react";
-import CurrencyModal from "@components/modals/currency/currencyModal";
+import CurrencyModal from "@/widgets/modals/currency/currencyModal";
 
 export default function TopHeader() {
     const [isModalOpen, setModalOpen] = useState(false);

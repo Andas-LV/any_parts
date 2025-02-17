@@ -18,10 +18,8 @@ export default function Search() {
                         <Icons.ArrowDown className={`${styles.arrowIcon} ${isOpen ? styles.rotated : ""}`} />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                        <DropdownMenuItem>Аксессуары</DropdownMenuItem>
-                        <DropdownMenuItem>Автомобили</DropdownMenuItem>
-                        <DropdownMenuItem>Запчасти</DropdownMenuItem>
                         <DropdownMenuItem>Все</DropdownMenuItem>
+                        <DropdownMenuItem>VIN код</DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
 

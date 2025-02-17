@@ -1,6 +1,6 @@
 "use client"
 import styles from "./page.module.css"
-import {useItemsStore} from "@/store/useItemsStore";
+import {useItemsStore} from "@/entities/items/useItemsStore";
 import {Button} from "@components/ui/button";
 import {Search as SearchIcon} from "lucide-react";
 import React, {useEffect, useMemo, useState} from "react";
@@ -22,11 +22,11 @@ import {
 
 import { Icons } from "@/assets/svg";
 import {RefundItem, StatusTypes} from "@/types/Refund";
-import DeleteRefund from "@components/modals/refund/deleteRefund/DeleteRefund";
-import CreateRefund from "@components/modals/refund/create/CreateRefund";
-import RefundFullInfo from "@components/modals/refund/create/refundFullInfo";
-import AfterCreateRefund from "@components/modals/refund/create/afterCreate/afterCreateRefund";
-import {getStatusStyle} from './getStatusStyle'
+import DeleteRefund from "@/widgets/modals/refund/deleteRefund/DeleteRefund";
+import CreateRefund from "@/widgets/modals/refund/create/CreateRefund";
+import RefundFullInfo from "@/widgets/modals/refund/create/refundFullInfo";
+import AfterCreateRefund from "@/widgets/modals/refund/create/afterCreate/afterCreateRefund";
+import {getRefundStatusStyle} from './getRefundStatusStyle'
 
 type TModal = "itemChooseModal" | "itemFullInfoModal" | "onSuccessModal" | null
 
@@ -118,7 +118,7 @@ export default function Refund() {
                                             {item.price.toLocaleString("ru-RU")}
                                         </TableCell>
                                         <TableCell className={styles.tableCell}>
-                                            <span className={getStatusStyle(item.status as StatusTypes)}>
+                                            <span className={getRefundStatusStyle(item.status as StatusTypes)}>
                                                 {item.status}
                                             </span>
                                             {renderStatusAction(item)}

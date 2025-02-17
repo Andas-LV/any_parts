@@ -1,0 +1,103 @@
+.orderCardHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.headerDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    height: 80px;
+    margin: 0 !important;
+}
+
+.image {
+    width: 80px;
+    height: 80px;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+.cardTitle{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.detailWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.detailInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.link{
+    padding: 0;
+    height: fit-content;
+}
+
+.status {
+    background: #e0e0e0;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.value {
+    text-wrap: wrap;
+    max-width: 300px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.button {
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/*STATUS*/
+.statusApproved {
+    background-color: #C3ECDB;
+    color: #032416;
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    width: fit-content;
+}
+
+.statusProcessing {
+    background-color: #F2F2F2;
+    color: #4D4D4D;
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    width: fit-content;
+}
+
+.statusPending {
+    background-color: #C2D9F8;
+    color: #02142E;
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    width: fit-content;
+}

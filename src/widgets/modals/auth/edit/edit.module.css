@@ -1,0 +1,124 @@
+/* edit.module.css */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.inputsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    background: #F2F2F2;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.errorText {
+    color: var(--error);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.genderWrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.genderLabel {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.radioGroup {
+    display: flex;
+    gap: 16px;
+}
+
+.radioItem {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: 5px;
+}
+
+.submitButton {
+    margin-top: 20px;
+    padding: 25px 0;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submitButton:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+.submitButton:hover:not(:disabled) {
+    background-color: #005bb5;
+}
+
+/*COUNTRY SELECTOR*/
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    background: #F2F2F2;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.dropdownMenu{
+    z-index: 100;
+}
+
+.countrySelector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 5px 10px 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.countryCode {
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+.flag {
+    border-radius: 50%;
+}
+
+.arrowIcon {;
+    width: auto;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}

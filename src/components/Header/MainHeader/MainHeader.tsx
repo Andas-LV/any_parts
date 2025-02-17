@@ -5,9 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Search from "./Search/Search";
 import styles from './mainHeader.module.css';
-import LoginModal from "../../modals/auth/login";
+import LoginModal from "@/widgets/modals/auth/login";
 import CategoryFilter from "@components/Header/MainHeader/Category/CategoryFilter";
-import {useAuthStore} from "@/store/useAuthStore";
+import {useAuthStore} from "@/entities/auth/useAuthStore";
+import { Icons } from '@/assets/svg';
 
 const MainHeader = () => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -32,35 +33,15 @@ const MainHeader = () => {
             <nav className={styles.navigationSection}>
                 {isAuthenticated ?
                     <Link href="/profile" className={styles.navItem}>
-                        <Image
-                            src="/header/user.svg"
-                            alt="Profile"
-                            width={24}
-                            height={24}
-                        />
+                        <Icons.User width={24} height={24} />
                         <span>Профиль</span>
                     </Link>
                     :
                     <div className={styles.navItem} onClick={() => setModalOpen(true)}>
-                        <Image
-                            src="/header/user.svg"
-                            alt="Login"
-                            width={24}
-                            height={24}
-                        />
+                        <Icons.User width={24} height={24} />
                         <span>Войти</span>
                     </div>
                 }
-
-                <Link href="/profile" className={styles.navItem}>
-                    <Image
-                        src="/header/user.svg"
-                        alt="Profile"
-                        width={24}
-                        height={24}
-                    />
-                    <span>Профиль</span>
-                </Link>
 
                 <Link href="/" className={styles.navItem}>
                     <Image

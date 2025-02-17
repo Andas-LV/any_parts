@@ -1,12 +1,14 @@
-import HeaderWrapper from "@/providers/HeaderProvider";
+import HeaderWrapper from "@/layouts/HeaderProvider";
 import styles from "./profile.module.css";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@components/ui/tabs";
 import React from "react";
 import Main from './(Tabs)/Main'
 import Favorite from "@/app/(pages)/profile/(Tabs)/Favorite";
 import Refund from "@/app/(pages)/profile/(Tabs)/Refund";
+import Orders from "@/app/(pages)/profile/(Tabs)/Orders";
 
 export default function Profile() {
+
     return (
         <div>
             <HeaderWrapper>
@@ -41,6 +43,7 @@ export default function Profile() {
                             </TabsContent>
 
                             <TabsContent value="orders">
+                                <Orders/>
                             </TabsContent>
 
                             <TabsContent value="refund">

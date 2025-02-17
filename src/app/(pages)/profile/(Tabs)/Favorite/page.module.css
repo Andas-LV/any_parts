@@ -101,7 +101,7 @@
 }
 
 .noFavoriteWrapper p{
-    color: #808080;
+    color: var(--text-secondary);
     font-weight: 500;
 }
 
@@ -112,5 +112,5 @@
 
 .noResults{
     font-weight: 500;
-    color: #808080;
+    color: var(--text-secondary);
 }

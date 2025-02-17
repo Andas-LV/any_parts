@@ -70,7 +70,7 @@
 .label {
     white-space: nowrap;
     background: white;
-    color: #808080;
+    color: var(--text-secondary);
     padding-right: 10px;
 }
 

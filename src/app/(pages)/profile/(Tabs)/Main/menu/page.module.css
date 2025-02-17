@@ -42,7 +42,7 @@
 }
 
 .navs p{
-    color: #808080;
+    color: var(--text-secondary);
     font-weight: bold;
 }
 

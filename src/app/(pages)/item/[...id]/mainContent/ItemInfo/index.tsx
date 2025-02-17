@@ -7,9 +7,9 @@ import RatingStars from "@components/RatingStars";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Icons } from "@/assets/svg";
-import { copyToClipboard } from "@/utils/copyToClipboard";
+import { copyToClipboard } from "@components/copyToClipboard";
 import { useToast } from "@/hooks/use-toast";
-import {characters as charactersSerializer} from "@/schemas/characters";
+import {charactersSerializer} from "@/types/charactersSerializer";
 import {Button} from "@components/ui/button";
 
 interface ItemInfoProps extends ItemInfoType {

@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@components/ui/button";
-import { categories } from "./example";
+import { categories } from "@/exampleData/exampleCategories";
 import { Category } from "@/types/Category";
 import styles from "./CategoryFilter.module.css";
+import { Icons } from "@/assets/svg";
 
 export default function CategoryFilter() {
     const [selectedCategory, setSelectedCategory] = useState<Category | null>(categories[0]);
@@ -26,11 +27,7 @@ export default function CategoryFilter() {
     return (
         <div className={styles.container}>
             <Button className={styles.categoryBtn} onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ?
-                    <Image src="/header/X.svg" alt="Categories" width={24} height={24} />
-                    :
-                    <Image src="/header/category.svg" alt="Categories" width={24} height={24} />
-                }
+                {isOpen ? <Icons.Close/> : <Icons.Category width={25} height={24}/>}
                 Категории
             </Button>
 
@@ -62,7 +59,7 @@ export default function CategoryFilter() {
                                 </div>
 
                                 <Image
-                                    src={'/header/arrow-right.svg'}
+                                    src={'/arrows/arrow-right.svg'}
                                     alt={"arrow"}
                                     width={14}
                                     height={14}

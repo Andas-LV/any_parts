@@ -6,7 +6,7 @@ import ImageCarousel from "@/app/(pages)/item/[...id]/mainContent/ImageCarousel"
 import ItemInfo from "@/app/(pages)/item/[...id]/mainContent/ItemInfo";
 import styles from "./mainContent.module.css";
 import ActionsBlock from "@/app/(pages)/item/[...id]/mainContent/ActionsBlock";
-import {useItemsStore} from "@/store/useItemsStore";
+import {useItemsStore} from "@/entities/items/useItemsStore";
 import Loading from "@components/Loading";
 
 export default function MainContent() {

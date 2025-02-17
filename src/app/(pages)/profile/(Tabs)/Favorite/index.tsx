@@ -1,7 +1,7 @@
 "use client"
 
 import styles from "./page.module.css"
-import { useItemsStore } from "@/store/useItemsStore";
+import { useItemsStore } from "@/entities/items/useItemsStore";
 import { useEffect, useState, useMemo } from "react";
 import { Button } from "@components/ui/button";
 import { useRouter } from "next/navigation";

@@ -4,10 +4,10 @@ import styles from "./page.module.css"
 import Menu from './menu'
 import Image from 'next/image'
 import React, {useState} from "react";
-import ApCreateModal from "@components/modals/apWallet/apCreateModal";
-import {useUserStore} from "@/store/useUserStore";
-import AfterCreate from "@components/modals/apWallet/afterCreateWallet/afterCreate";
-import InstructionModal from "@components/modals/apWallet/instruction/instructionModal";
+import ApCreateModal from "@/widgets/modals/apWallet/apCreateModal";
+import {useUserStore} from "@/entities/user/useUserStore";
+import AfterCreate from "@/widgets/modals/apWallet/afterCreateWallet/afterCreate";
+import InstructionModal from "@/widgets/modals/apWallet/instruction/instructionModal";
 
 export type TModal = "createWallet" | "onSuccessModal" | "instructionModal" | null
 

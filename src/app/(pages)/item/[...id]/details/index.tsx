@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import styles from "./details.module.css";
-import { characters as charactersSerializer } from "@/schemas/characters";
-import { useItemsStore } from "@/store/useItemsStore";
+import { charactersSerializer } from "@/types/charactersSerializer";
+import { useItemsStore } from "@/entities/items/useItemsStore";
 import Loading from "@components/Loading";
 
 export default function Details() {

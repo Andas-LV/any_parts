@@ -2,18 +2,19 @@
 
 import Image from "next/image"
 import styles from "./page.module.css"
-import {useUserStore} from "@/store/useUserStore";
+import {useUserStore} from "@/entities/user/useUserStore";
 import React, {useState} from "react";
-import Payment from "@components/modals/payment/Payment";
-import Requisites from "@components/modals/requisites/Requisites";
-import SettingsModal from "@components/modals/settings/settingsModal";
-import Devices from "@components/modals/devices/Devices";
-import CreateCard from "@components/modals/payment/create/CreateCard";
-import DeleteCard from "@components/modals/payment/delete/DeleteCard";
-import CreateReq from "@components/modals/requisites/create/CreateReq";
-import ConfirmCodeModal from "@components/modals/requisites/create/confirm";
-import LogOutModal from "@components//modals/auth/logout/LogOut"
-import EditModal from "@components/modals/auth/edit/Edit";
+import Payment from "@/widgets/modals/payment/Payment";
+import Requisites from "@/widgets/modals/requisites/Requisites";
+import SettingsModal from "@/widgets/modals/settings/settingsModal";
+import Devices from "@/widgets/modals/devices/Devices";
+import CreateCard from "@/widgets/modals/payment/create/CreateCard";
+import DeleteCard from "@/widgets/modals/payment/delete/DeleteCard";
+import CreateReq from "@/widgets/modals/requisites/create/CreateReq";
+import ConfirmReqCodeModal from "@/widgets/modals/requisites/create/confirm";
+import LogOutModal from "@/widgets/modals/auth/logout/LogOut"
+import EditModal from "@/widgets/modals/auth/edit/Edit";
+import {Icons} from "@/assets/svg";
 
 type TPaymentModal = "paymentModal" | "createPaymentModal" | "deletePaymentModal" |  null
 type TReqModal = "reqModal" | "createReqModal" | "confirmReqModal" |  null
@@ -32,13 +33,7 @@ export default function Menu() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.userInfo} onClick={() => {setIsEditModal(true)}} title="Редактировать">
-                <Image
-                    className={styles.avatarUrl}
-                    src={'/header/user.svg'}
-                    alt="avatar"
-                    fill
-                    sizes={'48px'}
-                />
+                <Icons.User width={48} height={48} />
 
                 <h2>{user?.username}</h2>
             </div>
@@ -143,7 +138,7 @@ export default function Menu() {
             }
 
             {activeReqModal === "confirmReqModal" && (
-                <ConfirmCodeModal
+                <ConfirmReqCodeModal
                     onClose={() => setActiveReqModal(null)}
                     onPrev={() => setActiveReqModal("createReqModal")}
                 />)

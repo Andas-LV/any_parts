@@ -2,14 +2,14 @@
 
 import React, { use } from "react";
 import styles from "./itemPage.module.css";
-import HeaderWrapper from "@/providers/HeaderProvider";
+import HeaderWrapper from "@/layouts/HeaderProvider";
 import ItemHeader from "./pageHeader/index";
 import MainContent from "./mainContent";
 import Details from "./details";
-import RecommendedCarousel from "@/components/Items/(Carousel)/Recommended";
-import PurchasedCarousel from "@/components/Items/(Carousel)/Purchased";
+import RecommendedCarousel from "@/widgets/Items/(Carousel)/Recommended";
+import PurchasedCarousel from "@/widgets/Items/(Carousel)/Purchased";
 import { Comments } from "@/app/(pages)/item/[...id]/comments";
-import { useItemsStore } from "@/store/useItemsStore";
+import { useItemsStore } from "@/entities/items/useItemsStore";
 import { useEffect } from "react";
 import Loading from "@components/Loading";
 
