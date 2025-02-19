@@ -1,12 +1,14 @@
 import { create } from "zustand";
 import * as paymentService from "@/entities/payment/payment.service";
-import type { Payment, PaymentCardValidator } from "@/types/Payment";
+import {Payment, PaymentCardValidator, TTransAction} from "@/types/Payment";
 import { z } from "zod";
-import {examplePayments} from "@/exampleData/examplePayments";
+import {examplePayments, exampleTransActions} from "@/exampleData/examplePayments";
 
 interface PaymentState {
+    balance: number;
     currentCard: Payment | null;
     cards: Payment[] | null;
+    transActions: TTransAction[] | null;
     isLoading: boolean;
     error: z.ZodError | string | null;
 
@@ -18,7 +20,9 @@ interface PaymentState {
 }
 
 export const usePaymentStore = create<PaymentState>()((set) => ({
+    balance: 0,
     cards: examplePayments,
+    transActions: exampleTransActions,
     currentCard: null,
     isLoading: false,
     error: null,

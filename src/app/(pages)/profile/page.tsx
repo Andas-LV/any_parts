@@ -6,6 +6,7 @@ import Main from './(Tabs)/Main'
 import Favorite from "@/app/(pages)/profile/(Tabs)/Favorite";
 import Refund from "@/app/(pages)/profile/(Tabs)/Refund";
 import Orders from "@/app/(pages)/profile/(Tabs)/Orders";
+import Purse from "@/app/(pages)/profile/(Tabs)/Purse";
 
 export default function Profile() {
 
@@ -55,6 +56,7 @@ export default function Profile() {
                             </TabsContent>
 
                             <TabsContent value="purse">
+                                <Purse/>
                             </TabsContent>
 
                             <TabsContent value="feedback">
