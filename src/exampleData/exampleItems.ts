@@ -1,5 +1,6 @@
 import {ItemCard, ItemInfoType} from "@/types/Item";
 import {RefundItem} from "@/types/Refund";
+import {exampleFeedbacks} from "@/exampleData/exampleFeedbacks";
 
 export const itemInfo: ItemInfoType[] = [
     {
@@ -65,25 +66,7 @@ export const itemInfo: ItemInfoType[] = [
                     },
                 ]
             },
-            list: [{
-                id: 1,
-                user:{
-                    id: 3,
-                    username: "user2",
-                    email: "user@gmail.com",
-                    phone: "+77777777777",
-                    apWallet: false,
-                    avatarUrl: "/user.png",
-                    male: "Male"
-                },
-                rating: 5,
-                date: '23-05-2024',
-                text: 'Lorem ipsum dolor sit amet consectetur. Mattis mattis augue a in egestas pharetra. Vitae nulla nulla lectus nulla pellentesque augue. Quis suspendisse aenean ac tempus velit vulputate sed. Massa sed pellentesque ornare lacus tempus.',
-                images: [],
-                likes: 94,
-                replies: [],
-                updatedAt: '23-05-2024',
-            }],
+            list: exampleFeedbacks,
         },
 
 
@@ -152,25 +135,7 @@ export const itemInfo: ItemInfoType[] = [
                     },
                 ]
             },
-            list: [{
-                id: 1,
-                user:{
-                    id: 3,
-                    username: "user2",
-                    email: "user@gmail.com",
-                    phone: "+77777777777",
-                    apWallet: false,
-                    avatarUrl: "/user.png",
-                    male: "Male"
-                },
-                rating: 4,
-                date: '23-05-2024',
-                text: 'Lorem ipsum dolor sit amet consectetur. Mattis mattis augue a in egestas pharetra. Vitae nulla nulla lectus nulla pellentesque augue. Quis suspendisse aenean ac tempus velit vulputate sed. Massa sed pellentesque ornare lacus tempus.',
-                images: [],
-                likes: 94,
-                replies: [],
-                updatedAt: '23-05-2024',
-            }],
+            list: exampleFeedbacks,
         },
         sold: 90,
         article: 15978954613,
@@ -229,25 +194,7 @@ export const itemInfo: ItemInfoType[] = [
                     },
                 ]
             },
-            list: [{
-                id: 1,
-                user:{
-                    id: 3,
-                    username: "user2",
-                    email: "user@gmail.com",
-                    phone: "+77777777777",
-                    apWallet: false,
-                    avatarUrl: "/user.png",
-                    male: "Male"
-                },
-                rating: 4,
-                date: '23-05-2024',
-                text: 'Lorem ipsum dolor sit amet consectetur. Mattis mattis augue a in egestas pharetra. Vitae nulla nulla lectus nulla pellentesque augue. Quis suspendisse aenean ac tempus velit vulputate sed. Massa sed pellentesque ornare lacus tempus.',
-                images: [],
-                likes: 94,
-                replies: [],
-                updatedAt: '23-05-2024',
-            }],
+            list: exampleFeedbacks,
         },
         sold: 210,
         article: 15978954613,

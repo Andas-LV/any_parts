@@ -1,15 +1,20 @@
+"use client"
+
 import styles from "./comment.module.css";
-import RatingStars from "@components/RatingStars";
+import RatingStars from "@components/stars/RatingStars";
 import {Icons} from "@/assets/svg";
 import Image from "next/image";
-import {Comment} from "@/types/Comments";
+import {Feedback} from "@/types/Feedbacks";
 import {Button} from "@components/ui/button";
+import {useState} from "react";
 
 interface CommentItemProps {
-    comment: Comment;
+    comment: Feedback;
 }
 
 export default function CommentItem({ comment }: CommentItemProps) {
+    const [liked, setLiked] = useState(comment.likedByMe);
+
     return (
         <div key={comment.id} className={styles.commentItem}>
             <div className={styles.commentHeader}>
@@ -36,8 +41,11 @@ export default function CommentItem({ comment }: CommentItemProps) {
                 <p>{comment.text}</p>
             </div>
             <div className={styles.commentFooter}>
-                <Button variant="ghost" className={styles.likeBtn}>
-                    <Icons.ThumbsUp width={24} height={24}/>
+                <Button onClick={() => setLiked(!liked)} variant="ghost" className={styles.likeBtn}>
+                    {liked ?
+                        <Icons.ThumbsUpFilled width={24} height={24}/> :
+                        <Icons.ThumbsUp width={24} height={24}/>
+                    }
                     {comment.likes}
                 </Button>
 

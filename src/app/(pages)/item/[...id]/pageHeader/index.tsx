@@ -17,7 +17,7 @@ interface ItemHeaderProps {
 }
 
 const ItemHeader: React.FC<ItemHeaderProps> = ({ routes }) => {
-    const {  currentItem } = useItemsStore();
+    const { currentItem } = useItemsStore();
 
     const [isFixed, setIsFixed] = useState(false);
     const [isFavorite, setIsFavorite] = useState(currentItem?.favorite);

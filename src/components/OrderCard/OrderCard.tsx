@@ -87,7 +87,7 @@ export default function OrderCard({ order }: OrderCardProps) {
                 </Button>
             </CardFooter>
 
-            {isFeedbackOpen && <CreateFeedback onClose={() => setIsFeedbackOpen(false)} itemId={orderId} />}
+            {isFeedbackOpen && <CreateFeedback feedbackType={"Новый"} onClose={() => setIsFeedbackOpen(false)} itemId={orderId} />}
         </Card>
     );
 }

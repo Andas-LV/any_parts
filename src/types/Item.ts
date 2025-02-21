@@ -1,4 +1,4 @@
-import {Comment} from "@/types/Comments";
+import {Feedback} from "@/types/Feedbacks";
 import {User} from "@/types/User";
 import {StatusTypes} from "@/types/Refund";
 
@@ -28,8 +28,8 @@ export type ItemInfoType = {
 
     comments: {
         amount: number;
-        images: commentImages,
-        list: Comment[];
+        images: feedbackImages,
+        list: Feedback[];
     },
     images: string[],
 
@@ -43,7 +43,34 @@ export type ItemInfoType = {
     description: string,
 }
 
-export type commentImages = {
+export type TFilteredItemInfo = {
+    id: number,
+    name: string,
+    price: number,
+    currentPrice: number | null,
+    discount: number | null,
+    rating: number,
+    comments: number,
+    favorite: boolean,
+    images: string[],
+
+    autoType: AutoType,
+    color: string,
+    itemType: string,
+    brand: string,
+    material: string,
+    description: string,
+}
+
+export type AutoType = {
+    id: number,
+    brand: string,
+    model: string,
+    generation: string,
+    manuFacturer: string,
+}
+
+export type feedbackImages = {
     totalImages: number;
     image: {
         user: User,

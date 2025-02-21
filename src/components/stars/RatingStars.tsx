@@ -1,6 +1,7 @@
 import { Icons } from "@/assets/svg";
 
-export default function RatingStars({ rating, width = 16, height = 16 }: { rating: number, width?: number, height?: number }) {
+export default function RatingStars({ rating, width = 16, height = 16, gap = 2 }:
+{ rating: number, width?: number, height?: number, gap?: number }) {
   const roundedRating = Math.round(rating * 2) / 2;
 
     const fullStars = Math.floor(roundedRating);
@@ -9,7 +10,7 @@ export default function RatingStars({ rating, width = 16, height = 16 }: { ratin
 
     return (
         <div>
-            <div style={{ display: "flex", gap: "2px" }}>
+            <div style={{ display: "flex", gap: `${gap}px` }}>
                 {Array(fullStars).fill(0).map((_, i) => (
                     <Icons.Star key={i} width={width} height={height} />
                 ))}

@@ -36,7 +36,7 @@ export const ImageCarousel = ({ images, alt, width = 250 }: ImageCarouselProps) 
     };
 
     return (
-        <div className={styles.container} style={{ width: `${width}px` }}>
+        <div className={styles.container} >
             <div
                 className={styles.imageContainer}
                 onMouseEnter={() => setIsHovering(true)}

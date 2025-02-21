@@ -11,7 +11,7 @@
 
 .prices{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 30px;
 }
 

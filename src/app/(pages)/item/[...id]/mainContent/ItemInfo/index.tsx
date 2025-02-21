@@ -3,7 +3,7 @@
 import { ItemInfoType } from "@/types/Item";
 import React from "react";
 import styles from "./itemInfo.module.css";
-import RatingStars from "@components/RatingStars";
+import RatingStars from "@components/stars/RatingStars";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Icons } from "@/assets/svg";

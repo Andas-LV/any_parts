@@ -2,7 +2,7 @@
 
 import {ItemInfoType} from "@/types/Item";
 import styles from "./leftSide.module.css";
-import RatingStars from "@components/RatingStars";
+import RatingStars from "@components/stars/RatingStars";
 import React, {useState} from "react";
 import {Icons} from "@/assets/svg";
 import {Progress} from "@components/ui/progress";

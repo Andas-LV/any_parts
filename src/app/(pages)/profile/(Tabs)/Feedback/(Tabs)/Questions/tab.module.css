@@ -1,0 +1,30 @@
+.questionCardsWrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/*NO CONTENT*/
+.noContentWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.noContentWrapper p{
+    width: 400px;
+    color: var(--text-secondary);
+}
+
+.noContentTitle{
+    font-weight: bold;
+    font-size: large;
+}
+
+.routerBtn{
+    width: 300px;
+    padding: 25px 0;
+    border-radius: 15px;
+}

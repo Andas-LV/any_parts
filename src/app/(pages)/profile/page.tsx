@@ -1,3 +1,5 @@
+"use client"
+
 import HeaderWrapper from "@/layouts/HeaderProvider";
 import styles from "./profile.module.css";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@components/ui/tabs";
@@ -7,14 +9,22 @@ import Favorite from "@/app/(pages)/profile/(Tabs)/Favorite";
 import Refund from "@/app/(pages)/profile/(Tabs)/Refund";
 import Orders from "@/app/(pages)/profile/(Tabs)/Orders";
 import Purse from "@/app/(pages)/profile/(Tabs)/Purse";
+import Feedback from "@/app/(pages)/profile/(Tabs)/Feedback";
+import {useUserStore} from "@/entities/user/useUserStore";
+import {TProfileTabs} from "@/types/Profile";
 
 export default function Profile() {
+    const { activeProfileTab, setActiveProfileTab } = useUserStore();
 
     return (
         <div>
             <HeaderWrapper>
                 <div className={styles.wrapper}>
-                    <Tabs defaultValue="main" className={styles.tabsContainer}>
+                    <Tabs
+                        value={activeProfileTab}
+                        onValueChange={(value) => setActiveProfileTab(value  as TProfileTabs)}
+                        className={styles.tabsContainer}
+                    >
                         <div className={styles.tabsListWrapper}>
                             <TabsList className={styles.tabsList}>
                                 <TabsTrigger value="main" className={styles.tabsTrigger}>
@@ -60,6 +70,7 @@ export default function Profile() {
                             </TabsContent>
 
                             <TabsContent value="feedback">
+                                <Feedback/>
                             </TabsContent>
                         </div>
                     </Tabs>

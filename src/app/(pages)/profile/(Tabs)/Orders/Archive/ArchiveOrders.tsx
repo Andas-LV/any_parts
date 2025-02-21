@@ -1,3 +1,5 @@
+"use client"
+
 import styles from "./archiveOrders.module.css";
 import {Search as SearchIcon} from "lucide-react";
 import {Icons} from "@/assets/svg";

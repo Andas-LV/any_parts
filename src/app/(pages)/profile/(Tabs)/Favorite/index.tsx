@@ -19,6 +19,8 @@ export default function Favorite() {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const [selectedSort, setSelectedSort] = useState(itemSorts[0].value);
 
+    const favoriteItemsEmpty = !favoriteItems || favoriteItems.length === 0
+
     useEffect(() => {
         getFavoriteItems();
     }, []);
@@ -34,7 +36,7 @@ export default function Favorite() {
     return (
         <div className={styles.wrapper}>
             <h2>Избранное</h2>
-            {!favoriteItems || favoriteItems.length === 0 ? (
+            {favoriteItemsEmpty ? (
                 <div className={styles.noFavoriteWrapper}>
                     <div className={styles.noFavoriteTitle}>В избранном пока пусто</div>
                     <p>Сохраняйте товары, которые понравились, <br/> чтобы долго не искать</p>

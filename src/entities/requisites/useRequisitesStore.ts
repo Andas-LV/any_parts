@@ -4,7 +4,7 @@ import type { Requisites, RequisiteValidator } from "@/types/Requisites";
 import { z } from "zod";
 import {exampleReq} from "@/exampleData/exampleReq";
 
-interface PaymentState {
+interface RequisiteState {
     currentReq: Requisites | null;
     requisites: Requisites[] | null;
     isLoading: boolean;
@@ -17,7 +17,7 @@ interface PaymentState {
     clearError: () => void;
 }
 
-export const useRequisitesStore = create<PaymentState>()((set) => ({
+export const useRequisitesStore = create<RequisiteState>()((set) => ({
     requisites: exampleReq,
     currentReq: null,
     isLoading: false,

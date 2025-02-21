@@ -9,10 +9,22 @@ import LoginModal from "@/widgets/modals/auth/login";
 import CategoryFilter from "@components/Header/MainHeader/Category/CategoryFilter";
 import {useAuthStore} from "@/entities/auth/useAuthStore";
 import { Icons } from '@/assets/svg';
+import {useUserStore} from "@/entities/user/useUserStore";
+import {TProfileTabs} from "@/types/Profile";
+import {useRouter} from "next/navigation";
 
 const MainHeader = () => {
-    const [isModalOpen, setModalOpen] = useState(false);
     const { isAuthenticated } = useAuthStore();
+    const { setActiveProfileTab, activeProfileTab } = useUserStore();
+
+    const router = useRouter();
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const routeToProfileSection = (section: TProfileTabs) => {
+        setActiveProfileTab(section)
+        router.push(`/profile`);
+        console.log(activeProfileTab)
+    }
 
     return (
         <div className={styles.container}>
@@ -32,10 +44,10 @@ const MainHeader = () => {
 
             <nav className={styles.navigationSection}>
                 {isAuthenticated ?
-                    <Link href="/profile" className={styles.navItem}>
+                    <div onClick={() => routeToProfileSection("main")} className={styles.navItem}>
                         <Icons.User width={24} height={24} />
                         <span>Профиль</span>
-                    </Link>
+                    </div>
                     :
                     <div className={styles.navItem} onClick={() => setModalOpen(true)}>
                         <Icons.User width={24} height={24} />
@@ -43,7 +55,7 @@ const MainHeader = () => {
                     </div>
                 }
 
-                <Link href="/" className={styles.navItem}>
+                <div onClick={() => routeToProfileSection("orders")} className={styles.navItem}>
                     <Image
                         src="/header/order.svg"
                         alt="Orders"
@@ -51,9 +63,9 @@ const MainHeader = () => {
                         height={24}
                     />
                     <span>Заказы</span>
-                </Link>
+                </div>
 
-                <Link href="/" className={styles.navItem}>
+                <div onClick={() => routeToProfileSection("favorite")} className={styles.navItem}>
                     <Image
                         src="/header/favorite.svg"
                         alt="Favorites"
@@ -61,7 +73,7 @@ const MainHeader = () => {
                         height={24}
                     />
                     <span>Избранное</span>
-                </Link>
+                </div>
 
                 <Link href="/" className={styles.navItem}>
                     <Image

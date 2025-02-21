@@ -7,11 +7,18 @@ import { useToast } from "@/hooks/use-toast";
 import Loading from "@components/Loading";
 import { Textarea } from "@components/ui/textarea";
 import { Icons } from "@/assets/svg";
-import RatingStars from "@components/RatingStars";
+import ReviewStars from "@components/stars/ReviewStars";
 
-export default function CreateFeedback({ onClose, itemId }: { onClose: () => void; itemId: number }) {
+interface FeedbackProps {
+    onClose: () => void;
+    itemId: number;
+    feedbackType: "Новый" | "Дополнительный";
+}
+
+export default function CreateFeedback({ onClose, itemId, feedbackType }: FeedbackProps) {
     const { currentItem, isLoading } = useItemsStore();
     const [description, setDescription] = useState("");
+    const [rating, setRating] = useState(0);
     const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
     const { toast } = useToast();
 
@@ -19,7 +26,6 @@ export default function CreateFeedback({ onClose, itemId }: { onClose: () => voi
         return <Loading />;
     }
 
-    // Функция загрузки файлов
     const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files) {
             const filesArray = Array.from(e.target.files);
@@ -37,15 +43,21 @@ export default function CreateFeedback({ onClose, itemId }: { onClose: () => voi
 
     const submitFeedback = async () => {
         try {
-            // await createFeedback(itemId);
+            if (feedbackType === "Новый"){
+                // await createFeedback(itemId);
+            } else {
+                // await additionalFeedback(itemId);
+            }
+
             console.log({
                 description,
+                rating,
                 uploadedFiles,
-            })
+            });
             toast({
                 done: true,
                 variant: "deleted",
-                description: "Ваш отзыв опубликован",
+                description: `Ваш ${feedbackType} отзыв опубликован`,
             });
             onClose();
         } catch (error) {
@@ -54,7 +66,7 @@ export default function CreateFeedback({ onClose, itemId }: { onClose: () => voi
     };
 
     return (
-        <ModalsLayout title="Новый отзыв" onClose={onClose}>
+        <ModalsLayout title={`${feedbackType} отзыв`} onClose={onClose}>
             <div className={styles.feedbackModelWrapper}>
                 {/* Item Details */}
                 <div className={styles.itemCard}>
@@ -69,7 +81,12 @@ export default function CreateFeedback({ onClose, itemId }: { onClose: () => voi
                 </div>
 
                 <div className={styles.contentScrollSection}>
-                    <RatingStars rating={currentItem.rating} width={30} height={30} />
+                    <ReviewStars
+                        initialRating={rating}
+                        width={30}
+                        height={30}
+                        onChange={(value) => setRating(value)}
+                    />
 
                     {/* Review Section */}
                     <div className={styles.section}>
@@ -82,15 +99,19 @@ export default function CreateFeedback({ onClose, itemId }: { onClose: () => voi
                         />
                     </div>
 
-                    {/* Photo Upload Section */}
                     <div className={styles.section}>
                         <h3>Фото отчёт</h3>
                         <p className={styles.photoDescription}>
                             Добавьте до 10 фото, так отзыв станет нагляднее и полезнее
                         </p>
 
-                        {/* Сетка загруженных фото */}
-                        <div className={styles.photoGrid}>
+                        <div
+                            className={styles.photoGrid}
+                            style={{
+                                gridTemplateColumns:
+                                    uploadedFiles.length > 0 ? "repeat(4, 1fr)" : "1fr",
+                            }}
+                        >
                             {uploadedFiles.map((file, index) => (
                                 <div key={index} className={styles.uploadedWrapper}>
                                     <img
@@ -108,7 +129,6 @@ export default function CreateFeedback({ onClose, itemId }: { onClose: () => voi
                                 </div>
                             ))}
 
-                            {/* Кнопка загрузки нового фото (если еще не 10) */}
                             {uploadedFiles.length < 10 && (
                                 <label className={styles.photoUpload}>
                                     <Icons.CameraPlus width={40} height={40} />
@@ -126,7 +146,6 @@ export default function CreateFeedback({ onClose, itemId }: { onClose: () => voi
                     </div>
                 </div>
 
-                {/* Action Buttons */}
                 <div className={styles.actionButtons}>
                     <Button variant="secondary" className={styles.cancelBtn} onClick={onClose} disabled={isLoading}>
                         Отменить

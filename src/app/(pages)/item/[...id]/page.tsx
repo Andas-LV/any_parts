@@ -25,10 +25,7 @@ export default function ItemPage({ params }: { params: Promise<{ id: string }> }
 
     const breadcrumbItems = [
         { label: "Главная", href: "/" },
-        { label: "Транспорт", href: "/transport" },
         { label: "Запчасти и аксессуары", href: "/transport/accessories" },
-        { label: "Аксессуары", href: "/transport/accessories/details" },
-        { label: "Для салона", href: "/transport/accessories/details/salon" },
     ];
 
     if (!currentItem) {

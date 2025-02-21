@@ -1,0 +1,23 @@
+.wrapper{
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    min-height: calc(100vh - var(--top-header-height));
+    padding: 2rem 7rem;
+}
+
+.rightSideWrapper{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.griddedCards{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+}

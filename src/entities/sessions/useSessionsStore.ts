@@ -3,7 +3,7 @@ import * as sessionsService from '@/entities/sessions/sessions.service'
 import {Session} from "@/types/Session";
 import {exampleCurrentSession, exampleSessions} from "@/exampleData/exampleSessions";
 
-interface UserState {
+interface SessionState {
     sessions: Session[] | null
     currentSession: Session | null
 
@@ -16,7 +16,7 @@ interface UserState {
     clearError: () => void
 }
 
-export const useSessionsStore = create<UserState>()((set) => ({
+export const useSessionsStore = create<SessionState>()((set) => ({
     sessions: exampleSessions,
     currentSession: exampleCurrentSession,
     isLoading: false,

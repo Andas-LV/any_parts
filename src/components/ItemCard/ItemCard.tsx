@@ -1,7 +1,7 @@
 "use client"
 
 import styles from './itemCard.module.css';
-import { ItemCard as ItemCardType } from "@/types/Item";
+import { ItemCard as ItemCardType, TFilteredItemInfo } from "@/types/Item";
 import { ImageCarousel } from './ImageCarousel';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import Loading from "@components/Loading";
 
 interface ItemCardProps {
-    item: ItemCardType;
+    item: ItemCardType | TFilteredItemInfo;
     showFavorite?: boolean;
 }
 
@@ -35,7 +35,6 @@ export default function ItemCard({ item, showFavorite }: ItemCardProps) {
             <ImageCarousel
                 images={images}
                 alt={name}
-                width={250}
             />
 
             <div className={styles.content}>

@@ -1,7 +1,7 @@
 "use client"
 
 import Banner from "@/components/Banner/Banner";
-import { Items } from "../../widgets/Items";
+import { Items } from "@/widgets/Items";
 import HeaderProvider from "@/layouts/HeaderProvider";
 import React, {useEffect } from "react";
 import {useSearchParams} from "next/navigation";
