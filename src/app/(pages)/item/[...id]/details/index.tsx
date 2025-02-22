@@ -25,7 +25,6 @@ export default function Details() {
 
     return (
         <div className={styles.details}>
-            {/* Описание */}
             <div className={styles.description}>
                 <h1>Описание</h1>
                 <p>
@@ -40,7 +39,6 @@ export default function Details() {
                 )}
             </div>
 
-            {/* Характеристики */}
             <div className={styles.characteristicsWrapper}>
                 <h1>Характеристики</h1>
 

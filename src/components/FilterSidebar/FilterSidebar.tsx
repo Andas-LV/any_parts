@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import styles from "./filterSidebar.module.css";
 
 import { FilterSaleAndRating } from "./FilterSaleAndRating";
@@ -9,28 +9,18 @@ import { FilterPrice } from "./FilterPrice";
 import { FilterTypes } from "./FilterTypes";
 import { FilterColors } from "./FilterColors";
 import { FilterManufacturers } from "./FilterManufacturers";
-
-import {
-    exampleBrands,
-    exampleColors,
-    exampleFilterTypes,
-    exampleManufacturers,
-    MAX_PRICE,
-    MIN_PRICE,
-} from "@/exampleData/exampleFilters";
+import { useFiltersStore } from "@/entities/items/useFiltersStore";
 
 export default function FilterSidebar() {
-    const [sale, setSale] = useState(false);
-    const [highRated, setHighRated] = useState(false);
-
-    const [brandSearch, setBrandSearch] = useState("");
-    const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
-
-    const [priceRange, setPriceRange] = useState<number[]>([MIN_PRICE, MAX_PRICE]);
-
-    const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-    const [selectedColors, setSelectedColors] = useState<string[]>([]);
-    const [selectedManufacturers, setSelectedManufacturers] = useState<string[]>([]);
+    const {
+        sale,
+        highRated,
+        selectedBrands,
+        priceRange,
+        selectedTypes,
+        selectedColors,
+        selectedManufacturers,
+    } = useFiltersStore();
 
     useEffect(() => {
         const filters = {
@@ -49,45 +39,17 @@ export default function FilterSidebar() {
         <aside className={styles.sidebar}>
             <h2 className={styles.title}>Фильтры</h2>
 
-            <FilterSaleAndRating
-                sale={sale}
-                onSaleChange={setSale}
-                highRated={highRated}
-                onHighRatedChange={setHighRated}
-            />
+            <FilterSaleAndRating/>
 
-            <FilterBrands
-                brands={exampleBrands}
-                brandSearch={brandSearch}
-                onBrandSearchChange={setBrandSearch}
-                selectedBrands={selectedBrands}
-                onSelectedBrandsChange={setSelectedBrands}
-            />
+            <FilterBrands/>
 
-            <FilterPrice
-                priceRange={priceRange}
-                onPriceRangeChange={setPriceRange}
-                min={MIN_PRICE}
-                max={MAX_PRICE}
-            />
+            <FilterPrice/>
 
-            <FilterTypes
-                types={exampleFilterTypes}
-                selectedTypes={selectedTypes}
-                onSelectedTypesChange={setSelectedTypes}
-            />
+            <FilterTypes/>
 
-            <FilterColors
-                colors={exampleColors}
-                selectedColors={selectedColors}
-                onSelectedColorsChange={setSelectedColors}
-            />
+            <FilterColors/>
 
-            <FilterManufacturers
-                manufacturers={exampleManufacturers}
-                selectedManufacturers={selectedManufacturers}
-                onSelectedManufacturersChange={setSelectedManufacturers}
-            />
+            <FilterManufacturers/>
         </aside>
     );
 }

@@ -6,36 +6,28 @@ import { Label } from "@components/ui/label";
 import { Button } from "@components/ui/button";
 import styles from "./filterSidebar.module.css";
 import { TypeOption } from "@/types/Filters";
+import { useFiltersStore } from "@/entities/items/useFiltersStore";
+import { exampleFilterTypes } from "@/exampleData/exampleFilters";
 
-interface FilterTypesProps {
-    types: TypeOption[];
-    selectedTypes: string[];
-    onSelectedTypesChange: (val: string[]) => void;
-}
-
-export function FilterTypes({
-                                types,
-                                selectedTypes,
-                                onSelectedTypesChange,
-                            }: FilterTypesProps) {
+export function FilterTypes() {
+    const { selectedTypes, setSelectedTypes } = useFiltersStore();
     const [showAll, setShowAll] = useState(false);
 
     const handleTypeChange = (typeValue: string) => {
         if (selectedTypes.includes(typeValue)) {
-            onSelectedTypesChange(selectedTypes.filter((t) => t !== typeValue));
+            setSelectedTypes(selectedTypes.filter((t) => t !== typeValue));
         } else {
-            onSelectedTypesChange([...selectedTypes, typeValue]);
+            setSelectedTypes([...selectedTypes, typeValue]);
         }
     };
 
-    // Отображаем только первые 5 типов, если showAll === false
-    const typesToShow = showAll ? types : types.slice(0, 5);
+    const typesToShow = showAll ? exampleFilterTypes : exampleFilterTypes.slice(0, 5);
 
     return (
         <div className={styles.section}>
             <h3 className={styles.sectionTitle}>Тип</h3>
             <div className={styles.checkboxesList}>
-                {typesToShow.map((type) => (
+                {typesToShow.map((type: TypeOption) => (
                     <div key={type.label} className={styles.checkboxItem}>
                         <Checkbox
                             id={type.label}
@@ -47,10 +39,9 @@ export function FilterTypes({
                     </div>
                 ))}
             </div>
-
-            {types.length > 5 && (
+            {exampleFilterTypes.length > 5 && (
                 <Button
-                    variant={"link"}
+                    variant="link"
                     className={styles.showAllBtn}
                     onClick={() => setShowAll((prev) => !prev)}
                 >

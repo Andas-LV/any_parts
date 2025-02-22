@@ -40,7 +40,6 @@ export default function ActionsBlock({...item}: ItemInfoType) {
                         c AP Кошельком
                     </div>
                 </div>
-
             </div>
 
             <div>

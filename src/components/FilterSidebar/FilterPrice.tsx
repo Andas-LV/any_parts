@@ -3,23 +3,20 @@
 import { Slider } from "@components/ui/slider";
 import styles from "./filterSidebar.module.css";
 import React from "react";
+import { useFiltersStore } from "@/entities/items/useFiltersStore";
+import { MIN_PRICE, MAX_PRICE } from "@/exampleData/exampleFilters";
 
-interface FilterPriceProps {
-    priceRange: number[];
-    onPriceRangeChange: (val: number[]) => void;
-    min: number;
-    max: number;
-}
+export function FilterPrice() {
+    const { priceRange, setPriceRange } = useFiltersStore();
 
-export function FilterPrice({priceRange, onPriceRangeChange, min, max}: FilterPriceProps) {
     const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newMin = Number(e.target.value);
-        onPriceRangeChange([newMin, priceRange[1]]);
+        setPriceRange([newMin, priceRange[1]]);
     };
 
     const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newMax = Number(e.target.value);
-        onPriceRangeChange([priceRange[0], newMax]);
+        setPriceRange([priceRange[0], newMax]);
     };
 
     return (
@@ -27,19 +24,18 @@ export function FilterPrice({priceRange, onPriceRangeChange, min, max}: FilterPr
             <h3 className={styles.sectionTitle}>Цена</h3>
             <div className={styles.sliderContainer}>
                 <Slider
-                    defaultValue={[min, max]}
+                    defaultValue={[MIN_PRICE, MAX_PRICE]}
                     value={priceRange}
-                    min={min}
-                    max={max}
+                    min={MIN_PRICE}
+                    max={MAX_PRICE}
                     step={1000}
-                    onValueChange={(val) => onPriceRangeChange(val)}
+                    onValueChange={(val) => setPriceRange(val)}
                 />
             </div>
-
             <div className={styles.inputRow}>
                 <input
                     type="number"
-                    placeholder={`${min.toString()}₸`}
+                    placeholder={`${MIN_PRICE.toString()}₸`}
                     value={priceRange[0]}
                     onChange={handleMinChange}
                     className={styles.input}
@@ -47,7 +43,7 @@ export function FilterPrice({priceRange, onPriceRangeChange, min, max}: FilterPr
                 />
                 <input
                     type="number"
-                    placeholder={max.toString()}
+                    placeholder={MAX_PRICE.toString()}
                     value={priceRange[1]}
                     onChange={handleMaxChange}
                     className={styles.input}

@@ -1,4 +1,4 @@
-import {ItemInfoType} from "@/types/Item";
+import {ItemInfoType, TFilteredItemInfo} from "@/types/Item";
 
 export const charactersSerializer = (item: ItemInfoType) => {
     return [

@@ -6,40 +6,30 @@ import { Label } from "@components/ui/label";
 import { Button } from "@components/ui/button";
 import styles from "./filterSidebar.module.css";
 import { ManufacturerOption } from "@/types/Filters";
+import { useFiltersStore } from "@/entities/items/useFiltersStore";
+import { exampleManufacturers } from "@/exampleData/exampleFilters";
 
-interface FilterManufacturersProps {
-    manufacturers: ManufacturerOption[];
-    selectedManufacturers: string[];
-    onSelectedManufacturersChange: (val: string[]) => void;
-}
-
-export function FilterManufacturers({
-                                        manufacturers,
-                                        selectedManufacturers,
-                                        onSelectedManufacturersChange,
-                                    }: FilterManufacturersProps) {
+export function FilterManufacturers() {
+    const { selectedManufacturers, setSelectedManufacturers } = useFiltersStore();
     const [showAll, setShowAll] = useState(false);
 
     const handleManufacturerChange = (manValue: string) => {
         if (selectedManufacturers.includes(manValue)) {
-            onSelectedManufacturersChange(
-                selectedManufacturers.filter((m) => m !== manValue)
-            );
+            setSelectedManufacturers(selectedManufacturers.filter((m) => m !== manValue));
         } else {
-            onSelectedManufacturersChange([...selectedManufacturers, manValue]);
+            setSelectedManufacturers([...selectedManufacturers, manValue]);
         }
     };
 
-    // Отображаем только первые 5 производителей, если showAll === false
     const manufacturersToShow = showAll
-        ? manufacturers
-        : manufacturers.slice(0, 5);
+        ? exampleManufacturers
+        : exampleManufacturers.slice(0, 5);
 
     return (
         <div className={styles.section}>
             <h3 className={styles.sectionTitle}>Страна-изготовитель</h3>
             <div className={styles.checkboxesList}>
-                {manufacturersToShow.map((man) => (
+                {manufacturersToShow.map((man: ManufacturerOption) => (
                     <div key={man.label} className={styles.checkboxItem}>
                         <Checkbox
                             id={man.label}
@@ -51,10 +41,9 @@ export function FilterManufacturers({
                     </div>
                 ))}
             </div>
-
-            {manufacturers.length > 5 && (
+            {exampleManufacturers.length > 5 && (
                 <Button
-                    variant={"link"}
+                    variant="link"
                     className={styles.showAllBtn}
                     onClick={() => setShowAll((prev) => !prev)}
                 >
