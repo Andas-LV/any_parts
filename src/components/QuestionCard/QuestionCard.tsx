@@ -1,3 +1,5 @@
+"use client"
+
 import {Card} from "@components/ui/card";
 import styles from './questionCard.module.css'
 import {Button} from "@components/ui/button";
@@ -24,14 +26,14 @@ export default function QuestionCard({ item, comment }: QuestionItemProps) {
                     className={styles.itemImage}
                 />
                 <div className={styles.itemInfo}>
-                    <div className={styles.itemNamePrice}>
-                        <span>{item.marketName} / {item.name}</span>
-                        <span className={styles.itemPrice}>{item.price.toLocaleString("ru-RU")} ₸</span>
-                    </div>
-                    <div className={styles.itemDetails}>
-                        <span>Артикул: {item.article}</span>
+                    <div className={styles.itemLeftSection}>
+                        <span className={styles.marketName}>{item.marketName} / {item.name}</span>
                         <span>Order configuration</span>
                     </div>
+
+                    <Button variant={"outline"} className={styles.linkToItem}>
+                        К товару
+                    </Button>
                 </div>
             </div>
 

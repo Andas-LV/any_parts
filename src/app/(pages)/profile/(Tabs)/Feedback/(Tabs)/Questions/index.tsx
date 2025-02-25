@@ -1,47 +1,54 @@
-import {useFeedbacksStore} from "@/entities/feedbacks/useFeedbackStore";
-import {useEffect} from "react";
-import styles from './tab.module.css'
+import styles from './tab.module.css';
 import {Button} from "@components/ui/button";
 import {useUserStore} from "@/entities/user/useUserStore";
-import WaitingFeedback from "@/app/(pages)/profile/(Tabs)/Feedback/(Tabs)/Feedbacks/WaitingFeedback";
 import QuestionCard from "@components/QuestionCard/QuestionCard";
 import {useItemsStore} from "@/entities/items/useItemsStore";
+import React, {useEffect} from "react";
+import {useFeedbacksStore} from "@/entities/feedbacks/useFeedbackStore";
 
 export default function Questions() {
-    const { setActiveProfileTab } = useUserStore()
-    const {} = useItemsStore()
-    const { questions, getQuestions, isLoading, error } = useFeedbacksStore()
-
-    const questionsEmpty = !questions || questions.length === 0
+    const { setActiveProfileTab } = useUserStore();
+    const { itemInfo } = useItemsStore();
+    const { getQuestions, isLoading } = useFeedbacksStore();
 
     useEffect(() => {
         getQuestions();
-    }, [])
+    }, []);
 
-    return(
+    const noItems = !itemInfo || itemInfo.length === 0;
+
+    return (
         <div className={styles.wrapper}>
-            <div className={styles.block}>
-                <p>Эти вопросы ждут ответа</p>
-                {/*<QuestionCard item={}/>*/}
-            </div>
+            <p className={styles.title}>Эти вопросы ждут ответа</p>
 
-            {questionsEmpty ? (
+            {noItems ? (
                 <div className={styles.noContentWrapper}>
                     <div className={styles.noContentTitle}>
                         Здесь будут ваши вопросы
                     </div>
-                    <p>
-                        Задавайте интересующие вас вопросы в разделе товаров
-                    </p>
+                    <p>Задавайте интересующие вас вопросы в разделе товаров</p>
 
-                    <Button onClick={() => setActiveProfileTab("orders")} className={styles.routerBtn}>
+                    <Button
+                        onClick={() => setActiveProfileTab("orders")}
+                        className={styles.routerBtn}
+                    >
                         Перейти в товары
                     </Button>
                 </div>
             ) : (
-                <div>
-                    <div className={styles.questionCardsWrapper}>
+                <div className={styles.contentWrapper}>
+                    <div className={styles.griddedQuestions}>
+                        {itemInfo.map((item) => {
+                            if (!item.comments || !item.comments.list) return null;
 
+                            return item.comments.list.map((comment) => (
+                                <QuestionCard
+                                    key={comment.id}
+                                    item={item}
+                                    comment={comment}
+                                />
+                            ));
+                        })}
                     </div>
 
                     <Button variant="outline" disabled={isLoading}>
@@ -50,5 +57,5 @@ export default function Questions() {
                 </div>
             )}
         </div>
-    )
+    );
 }

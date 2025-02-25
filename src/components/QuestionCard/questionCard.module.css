@@ -1,10 +1,18 @@
 .card{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     padding: 20px;
 }
 /*ITEM INFO*/
+.item{
+    display: flex;
+    gap: 20px;
+    background-color: #f1f5fc;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .itemImage {
     width: 80px;
     height: 80px;
@@ -15,22 +23,26 @@
 .itemInfo {
     flex: 1;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
-.itemNamePrice {
+.itemLeftSection {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
     font-size: 14px;
+    text-wrap: wrap;
+    max-width: 300px;
 }
 
-.itemNamePrice span{
+.marketName{
     font-weight: bold;
 }
 
-.itemPrice {
-    font-weight: 600;
+.linkToItem{
+    border: 1px solid gray;
+    border-radius: 10px;
 }
 
 /*USER INFO*/
@@ -60,4 +72,30 @@
 .commentDate {
     color: #888;
     font-size: 12px;
+}
+
+/*ACTIONS*/
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.likeBtn{
+    width: fit-content;
+    display: flex;
+    border: 1px solid #B3B3B3;
+    padding: 8px 12px;
+}
+
+.replyBtn{
+    background-color: #F2F2F2;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 20px;
+}
+
+.replyBtn:hover{
+    background-color: #E6E6E6;
 }
