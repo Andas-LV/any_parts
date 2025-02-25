@@ -97,6 +97,10 @@ export default function ListedCard({ item, showFavorite }: ItemCardProps) {
                                 <span className={styles.value}>{char.value}</span>
                             </div>
                         ))}
+
+                        <Button variant="link" className={styles.allDetails}>
+                            Все характеристики
+                        </Button>
                     </div>
                 ) : (
                     <p>Нет характеристик</p>

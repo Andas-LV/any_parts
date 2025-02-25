@@ -31,10 +31,10 @@ export function Comments() {
 
                 <div className={styles.tabsContent}>
                     <TabsContent value="comments">
-                        <ShowComments {...currentItem}/>
+                        <ShowComments/>
                     </TabsContent>
                     <TabsContent value="askQuestion">
-                        <AskQuestion {...currentItem}/>
+                        <AskQuestion/>
                     </TabsContent>
                 </div>
             </Tabs>

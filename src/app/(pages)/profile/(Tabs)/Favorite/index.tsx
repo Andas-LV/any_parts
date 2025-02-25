@@ -19,6 +19,7 @@ export default function Favorite() {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const [selectedSort, setSelectedSort] = useState(itemSorts[0].value);
 
+    const selectedSortName = itemSorts.find(sort => sort.value === selectedSort)?.name || "Выберите сортировку";
     const favoriteItemsEmpty = !favoriteItems || favoriteItems.length === 0
 
     useEffect(() => {
@@ -30,8 +31,6 @@ export default function Favorite() {
             item.name.toLowerCase().includes(search.toLowerCase())
         ) || [];
     }, [search, favoriteItems]);
-
-    const selectedSortName = itemSorts.find(sort => sort.value === selectedSort)?.name || "Выберите сортировку";
 
     return (
         <div className={styles.wrapper}>

@@ -9,8 +9,16 @@ import {Progress} from "@components/ui/progress";
 import CommentItem from "@/app/(pages)/item/[...id]/comments/showComments/leftSide/Comment/Comment";
 import {Button} from "@components/ui/button";
 import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@components/ui/dropdown-menu";
+import {useItemsStore} from "@/entities/items/useItemsStore";
 
-export function CommentsSection({ ...item }: ItemInfoType) {
+export function CommentsSection() {
+    const { currentItem } = useItemsStore();
+    const item = currentItem;
+
+    if (!item) {
+        return null;
+    }
+
     const [isOpen, setIsOpen] = useState(false);
     const [isRatingOpen, setIsRatingOpen] = useState(false);
 

@@ -1,0 +1,136 @@
+"use client";
+
+import styles from "./basketCard.module.css";
+import { Plus, Minus } from "lucide-react";
+import { ImageCarousel } from "../ImageCarousel";
+import { Card } from "@/components/ui/card";
+import { Icons } from "@/assets/svg";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import Loading from "@components/Loading";
+import { CartItem, useBasketStore } from "@/entities/basket/useBasketStore";
+import { Checkbox } from "@components/ui/checkbox";
+
+interface ItemCardProps {
+    item: CartItem;
+}
+
+export default function BasketCard({ item }: ItemCardProps) {
+    const router = useRouter();
+
+    const { removeItem, updateQuantity, toggleSelect } = useBasketStore();
+
+    if (!item) {
+        return <Loading />;
+    }
+
+    const {
+        id,
+        name,
+        price,
+        currentPrice,
+        discount,
+        images,
+        favorite,
+        quantity,
+        selected,
+    } = item;
+
+    const [isFavorite, setIsFavorite] = useState(favorite);
+    const finalPrice = currentPrice ?? price;
+
+    const handleMinus = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const newQty = Math.max(1, quantity - 1);
+        updateQuantity(id, newQty);
+    };
+
+    const toggleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        e.preventDefault();
+        setIsFavorite((prev) => !prev);
+        // Логика сохранения избранного на сервере или в сторе — по желанию
+    };
+
+    return (
+        <Card className={styles.card}>
+            <Checkbox
+                id={String(id)}
+                checked={selected}
+                onCheckedChange={() => toggleSelect(id)}
+                className={styles.checkbox}
+            />
+
+            <label htmlFor={String(id)} className={styles.cardContent}>
+                <div className={styles.imageContainer}>
+                    <ImageCarousel images={images} alt={name} width={200} />
+                </div>
+
+                <div className={styles.mainInfo}>
+                    <div className={styles.cardHeader}>
+                        <div className={styles.cardName}>{name}</div>
+
+                        <div className={styles.priceContainer}>
+                            <div className={styles.mainPrice}>
+                                {finalPrice.toLocaleString()} ₸
+                            </div>
+
+                            {discount && currentPrice && (
+                                <div className={styles.priceInfo}>
+                                  <span className={styles.oldPrice}>
+                                    {price.toLocaleString()} ₸
+                                  </span>
+                                    <span className={styles.discount}>-{discount}%</span>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    <p className={styles.colorText}>цвет: черный</p>
+
+                    <div className={styles.actionButtons}>
+                        <button
+                            className={styles.favoriteButton}
+                            title={isFavorite ? "Убрать из избранного" : "Добавить в избранное"}
+                            onClick={toggleFavorite}
+                        >
+                            {isFavorite ? <Icons.HeartFilled /> : <Icons.HeartOutline />}
+                        </button>
+
+                        <button
+                            className={styles.deleteButton}
+                            title="Удалить из корзины"
+                            onClick={() => removeItem(id)}
+                        >
+                            <Icons.Trash width={20} height={20} />
+                        </button>
+
+                        <button className={styles.buyButton} title="Купить сейчас">
+                            <Icons.Lightning width={20} height={20} />
+                            <p>Купить</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div className={styles.rightSideContent}>
+                    <div className={styles.quantityContainer}>
+                        <button
+                            className={styles.quantityActionBtn}
+                            onClick={handleMinus}
+                            disabled={quantity === 1}
+                        >
+                            <Minus />
+                        </button>
+
+                        <span>{quantity}</span>
+
+                        <button className={styles.quantityActionBtn} onClick={() => updateQuantity(id, quantity + 1)}>
+                            <Plus />
+                        </button>
+                    </div>
+                </div>
+            </label>
+        </Card>
+    );
+}

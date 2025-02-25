@@ -75,7 +75,7 @@ const MainHeader = () => {
                     <span>Избранное</span>
                 </div>
 
-                <Link href="/" className={styles.navItem}>
+                <Link href="/basket" className={styles.navItem}>
                     <Image
                         src="/header/basket.svg"
                         alt="Cart"

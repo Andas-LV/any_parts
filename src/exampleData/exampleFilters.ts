@@ -37,6 +37,21 @@ export const exampleManufacturers = [
 export const MIN_PRICE = 0;
 export const MAX_PRICE = 100000;
 
+export const exampleSearchKeyWords = [
+    {
+        value: "autoItems",
+        name: "Аксессуары для авто"
+    },
+    {
+        value: "autoItemsOptom",
+        name: "Аксессуары для авто оптом"
+    },
+    {
+        value: "cargoItems",
+        name: "Аксессуары для грузовых авто"
+    },
+]
+
 export const exampleData: TFilteredItemInfo[] = [
     {
         id: 1,

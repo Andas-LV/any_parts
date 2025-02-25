@@ -3,7 +3,6 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from "@components/ui/tabs";
 import React from "react";
 import Feedbacks from "@/app/(pages)/profile/(Tabs)/Feedback/(Tabs)/Feedbacks";
 import Questions from "@/app/(pages)/profile/(Tabs)/Feedback/(Tabs)/Questions";
-import WaitingFeedback from "@/app/(pages)/profile/(Tabs)/Feedback/(Tabs)/WaitingFeedback";
 
 export default function Feedback() {
     return (
@@ -14,9 +13,7 @@ export default function Feedback() {
                         <TabsTrigger value="feedbacks" className={styles.tabsTrigger}>
                             Отзывы
                         </TabsTrigger>
-                        <TabsTrigger value="waitingFeedback" className={styles.tabsTrigger}>
-                            Ждут отзыва
-                        </TabsTrigger>
+
                         <TabsTrigger value="questions" className={styles.tabsTrigger}>
                             Вопросы
                         </TabsTrigger>
@@ -26,10 +23,6 @@ export default function Feedback() {
                 <div className={styles.tabsContent}>
                     <TabsContent value="feedbacks">
                         <Feedbacks/>
-                    </TabsContent>
-
-                    <TabsContent value="waitingFeedback">
-                        <WaitingFeedback/>
                     </TabsContent>
 
                     <TabsContent value="questions">

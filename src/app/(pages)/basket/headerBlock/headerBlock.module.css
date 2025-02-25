@@ -1,0 +1,35 @@
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bold;
+}
+
+.actions p{
+    padding: 10px 0;
+}
+
+.deleteAllBtn{
+    color: #F43625;
+}
+
+.share{
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}

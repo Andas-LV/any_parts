@@ -4,12 +4,13 @@ import styles from './tab.module.css'
 import {Button} from "@components/ui/button";
 import {useUserStore} from "@/entities/user/useUserStore";
 import FeedbackCard from "@components/FeedbackCard";
+import WaitingFeedback from "./WaitingFeedback";
 
 export default function Feedbacks() {
     const { setActiveProfileTab } = useUserStore()
     const { myFeedbacks, getMyFeedbacks, isLoading, error } = useFeedbacksStore()
 
-    const favoriteItemsEmpty = !myFeedbacks || myFeedbacks.length === 0
+    const feedbackItemsEmpty = !myFeedbacks || myFeedbacks.length === 0
 
     useEffect(() => {
         getMyFeedbacks();
@@ -17,32 +18,40 @@ export default function Feedbacks() {
 
     return(
         <div className={styles.wrapper}>
-            {favoriteItemsEmpty ? (
-                <div className={styles.noContentWrapper}>
-                    <div className={styles.noContentTitle}>
-                        Здесь будут ваши отзывы
-                    </div>
-                    <p>
-                        Помогите другим покупателям сделать выбор — поделитесь мнением о товарах в разделе Покупки
-                    </p>
+            <div className={styles.block}>
+                <p>Эти товары ждут отзыва</p>
+                <WaitingFeedback/>
+            </div>
 
-                    <Button onClick={() => setActiveProfileTab("orders")} className={styles.routerBtn}>
-                        Перейти в покупки
-                    </Button>
-                </div>
-            ) : (
-                <div>
-                    <div className={styles.feedbackCardsWrapper}>
-                        {myFeedbacks.map((feedback, index) => (
-                            <FeedbackCard key={index} feedback={feedback}/>
-                        ))}
-                    </div>
+            <div className={styles.block}>
+                <p>Вы уже оценили</p>
+                {feedbackItemsEmpty ? (
+                    <div className={styles.noContentWrapper}>
+                        <div className={styles.noContentTitle}>
+                            Здесь будут ваши отзывы
+                        </div>
+                        <p>
+                            Помогите другим покупателям сделать выбор — поделитесь мнением о товарах в разделе Покупки
+                        </p>
 
-                    <Button variant="outline" disabled={isLoading}>
-                        Показать ещё
-                    </Button>
-                </div>
-            )}
+                        <Button onClick={() => setActiveProfileTab("orders")} className={styles.routerBtn}>
+                            Перейти в покупки
+                        </Button>
+                    </div>
+                ) : (
+                    <div>
+                        <div className={styles.feedbackCardsWrapper}>
+                            {myFeedbacks.map((feedback, index) => (
+                                <FeedbackCard key={index} feedback={feedback}/>
+                            ))}
+                        </div>
+
+                        <Button variant="outline" disabled={isLoading}>
+                            Показать ещё
+                        </Button>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

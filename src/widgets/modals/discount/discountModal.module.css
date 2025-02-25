@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 400px;
+}
+
+.rowsContainer{
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.itemName {
+    max-width: 200px;
+    font-size: 14px;
+    font-weight: 500;
+    text-wrap: wrap;
+}
+
+.discountValue {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.totalRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.totalLabel, .totalDiscount  {
+    font-weight: bold;
+    font-size: 24px;
+}
+

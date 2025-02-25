@@ -4,7 +4,9 @@
     padding: 2rem 7rem;
     background-color: #F2F4F8;
 }
-
+.tabsListWrapper{
+    width: 100%;
+}
 .tabsList {
     display: flex;
     align-items: center;

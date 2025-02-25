@@ -26,23 +26,23 @@ export default function Profile() {
                         className={styles.tabsContainer}
                     >
                         <div className={styles.tabsListWrapper}>
-                            <TabsList className={styles.tabsList}>
-                                <TabsTrigger value="main" className={styles.tabsTrigger}>
+                                <TabsList className={`flex justify-between items-center mb-8`}>
+                                <TabsTrigger value="main" className={"text-gray-800 text-md px-0 data-[state=active]:text-primary font-bold"}>
                                     Главная
                                 </TabsTrigger>
-                                <TabsTrigger value="orders" className={styles.tabsTrigger}>
+                                <TabsTrigger value="orders" className={"text-gray-800 text-md px-0 data-[state=active]:text-primary font-bold"}>
                                     Заказы
                                 </TabsTrigger>
-                                <TabsTrigger value="refund" className={styles.tabsTrigger}>
+                                <TabsTrigger value="refund" className={"text-gray-800 text-md  px-0 data-[state=active]:text-primary font-bold"}>
                                     Возврат
                                 </TabsTrigger>
-                                <TabsTrigger value="favorite" className={styles.tabsTrigger}>
+                                <TabsTrigger value="favorite" className={"text-gray-800 text-md px-0 data-[state=active]:text-primary font-bold"}>
                                     Избранное
                                 </TabsTrigger>
-                                <TabsTrigger value="purse" className={styles.tabsTrigger}>
+                                <TabsTrigger value="purse" className={"text-gray-800 text-md px-0 data-[state=active]:text-primary font-bold"}>
                                     AP кошелёк
                                 </TabsTrigger>
-                                <TabsTrigger value="feedback" className={styles.tabsTrigger}>
+                                <TabsTrigger value="feedback" className={"text-gray-800 text-md px-0 data-[state=active]:text-primary font-bold"}>
                                     Отзывы и вопросы
                                 </TabsTrigger>
                             </TabsList>

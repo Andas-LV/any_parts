@@ -4,8 +4,16 @@ import {ItemInfoType} from "@/types/Item";
 import styles from './photosSection.module.css'
 import {Button} from "@components/ui/button";
 import Image from "next/image";
+import {useItemsStore} from "@/entities/items/useItemsStore";
 
-export function PhotosSection({ ...item }: ItemInfoType) {
+export function PhotosSection() {
+    const { currentItem } = useItemsStore();
+    const item = currentItem;
+
+    if (!item) {
+        return null;
+    }
+
     return (
         <div className={styles.photosWrapper}>
             <div className={styles.photosHeader}>

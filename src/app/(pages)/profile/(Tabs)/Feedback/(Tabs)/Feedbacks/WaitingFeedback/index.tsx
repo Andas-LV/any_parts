@@ -59,7 +59,7 @@ export default function WaitingFeedback() {
                                     </div>
                                 </CardHeader>
 
-                                <div className={styles.commentRating} onClick={() => selectItemToFeedback(order.id)}>
+                                <div title={"Оценить"} className={styles.commentRating} onClick={() => selectItemToFeedback(order.id)}>
                                     <RatingStars rating={0} width={48} height={48} gap={10}/>
                                 </div>
                             </Card>
