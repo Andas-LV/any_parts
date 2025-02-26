@@ -8,30 +8,75 @@ import {
 
 import { items } from "@/exampleData/exampleItems";
 import ItemCard from "@components/ItemCard/ItemCard";
-import styles from "./page.module.css";
 
 export default function RecommendedCarousel() {
     return (
-        <div className={styles.container}>
-            <h1>Рекомендуем также</h1>
+        <div className="flex flex-col gap-5 my-[50px]">
+            {/* Заголовок */}
+            <h1 className="text-[24px] font-bold">Рекомендуем также</h1>
 
-            <div className={styles.wrapper}>
+            <div className="w-full p-0">
                 <Carousel
                     opts={{
                         align: "start",
                         slidesToScroll: 1,
                     }}
-                    className={styles.carousel}
+                    className="relative w-full mx-auto"
                 >
-                    <CarouselContent className={styles.carouselContent}>
+                    {/* Контейнер с карточками */}
+                    <CarouselContent className="flex gap-[15px] px-[15px]">
                         {items.map((item, index) => (
-                            <CarouselItem key={index} className={styles.carouselItem}>
+                            <CarouselItem
+                                key={index}
+                                // Стили для flex-basis под разные экраны (mobile-first)
+                                className="
+                  p-0
+                  flex-none
+                  basis-[calc(20%-12px)]        /* Desktop (по умолчанию) */
+                  max-[1400px]:basis-[calc(25%-12px)]
+                  max-[1100px]:basis-[calc(33.333%-12px)]
+                  max-[768px]:basis-[calc(50%-8px)]
+                  max-[480px]:basis-[calc(100%-15px)]
+                "
+                            >
                                 <ItemCard item={item} />
                             </CarouselItem>
                         ))}
                     </CarouselContent>
-                    <CarouselPrevious className={styles.carouselButton}/>
-                    <CarouselNext className={styles.carouselButton}/>
+
+                    {/* Кнопка "предыдущий" */}
+                    <CarouselPrevious
+                        className="
+              bg-white
+              border border-gray-200
+              rounded-full
+              w-10 h-10
+              shadow-sm
+              absolute
+              top-1/2
+              -translate-y-1/2
+              z-10
+              hover:bg-gray-50
+              -left-5
+            "
+                    />
+
+                    {/* Кнопка "следующий" */}
+                    <CarouselNext
+                        className="
+              bg-white
+              border border-gray-200
+              rounded-full
+              w-10 h-10
+              shadow-sm
+              absolute
+              top-1/2
+              -translate-y-1/2
+              z-10
+              hover:bg-gray-50
+              -right-5
+            "
+                    />
                 </Carousel>
             </div>
         </div>
