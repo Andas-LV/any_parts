@@ -5,27 +5,16 @@
 }
 
 .tabsListWrapper {
-    position: relative;
+    position: sticky;
+    top: var(--main-header-height);
     z-index: 40;
     transition: all 0.3s ease;
-}
-
-.tabsListWrapper.fixed {
-    position: fixed;
     background-color: white;
-    top: var(--main-header-height);
-    left: 0;
-    right: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 0 7rem;
+    width: 100%;
 }
 
 .tabsContent {
     padding-top: var(--tabs-height);
-}
-
-.tabsListWrapper.fixed + .tabsContent {
-    margin-top: var(--tabs-height);
 }
 
 .tabsList {
@@ -34,8 +23,10 @@
     justify-content: flex-start;
     gap: 20px;
     background-color: transparent !important;
+    padding: 2rem 0;
 }
 
+/*TRIGGER*/
 .tabsTrigger {
     padding: 12px 0;
     height: auto;
@@ -59,7 +50,6 @@
     color: #374151;
     background-color: transparent !important;
 }
-
 
 .tabsTrigger[data-state="active"]::after {
     content: none;

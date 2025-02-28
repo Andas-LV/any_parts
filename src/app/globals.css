@@ -4,7 +4,8 @@
   --tabs-height: 45px;
   --brand-primary: #0C66E4;
   --text-secondary: #808080;
-  --error: #d82020
+  --skeleton: #e0e0e0;
+  --error: #d82020;
 }
 
 .custom-toast-provider {
@@ -140,3 +141,11 @@ input:active {
     @apply bg-background text-foreground;
   }
 }
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;}
+  body {
+    @apply bg-background text-foreground;}}

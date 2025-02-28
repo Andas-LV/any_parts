@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { manrope } from "@/assets//fonts";
-import "../styles/globals.css";
-import React, {Suspense} from "react";
-import { Toaster } from "@/components/ui/toaster"
-import Loading from "@components/Loading"
+import "./globals.css";
+import React, { Suspense } from "react";
+import { Toaster } from "@/components/ui/toaster";
+import Loading from "@components/Loading";
 
 export const metadata: Metadata = {
   title: "Any Parts",
@@ -17,12 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <body className={`${manrope.className}`}>
-          <Suspense fallback={<Loading/>}>
-            {children}
-            <Toaster />
-          </Suspense>
-       </body>
+      <body className={`${manrope.className}`}>
+        <Suspense fallback={<Loading />}>
+          {children}
+          <Toaster />
+        </Suspense>
+      </body>
     </html>
   );
 }

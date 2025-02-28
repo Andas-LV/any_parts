@@ -1,0 +1,55 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 10px;
+    gap: 20px;
+    background-color: white;
+}
+
+.wrapper h1{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+/*PAYMENT*/
+.navItem{
+    width: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-wrap: nowrap;
+    gap: 10px;
+    background-color: #f0f0f0;
+}
+
+.navItem:hover{
+    background-color: #d8d8d8;
+}
+
+.navHeader{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navImage{
+    position: relative !important;
+    width: 20px !important;
+    height: auto !important;
+}
+
+.navItem p{
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}

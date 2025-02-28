@@ -5,6 +5,7 @@
 .ordersGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    width: 100%;
     gap: 20px;
     margin: 20px 0;
 }

@@ -1,26 +1,29 @@
 export type User = {
-    id: number;
-    email: string;
-    phone: string;
-    apWallet: boolean;
-    username: string;
-    avatarUrl?: string | null;
-    male: MaleChoice;
-}
+  id: number;
+  email: string;
+  phone: string;
+  apWallet: boolean;
+  username: string;
+  avatarUrl?: string | null;
+  male: MaleChoice;
+  currency: Currency;
+};
 
 export type Login = {
-    email: string;
-    agreed: boolean;
-}
+  email: string;
+  agreed: boolean;
+};
 
 export type Register = {
-    email: string;
-    username: string;
-}
+  email: string;
+  username: string;
+};
 
 export type ConfirmCode = {
-    email: string;
-    code: string;
-}
+  email: string;
+  code: string;
+};
 
 export type MaleChoice = "Male" | "Female";
+
+export type Currency = "KZT" | "RUB";

@@ -1,7 +1,7 @@
 import styles from './tab.module.css';
 import {Button} from "@components/ui/button";
 import {useUserStore} from "@/entities/user/useUserStore";
-import QuestionCard from "@components/QuestionCard/QuestionCard";
+import QuestionCard from "@components/cards/QuestionCard/QuestionCard";
 import {useItemsStore} from "@/entities/items/useItemsStore";
 import React, {useEffect} from "react";
 import {useFeedbacksStore} from "@/entities/feedbacks/useFeedbackStore";

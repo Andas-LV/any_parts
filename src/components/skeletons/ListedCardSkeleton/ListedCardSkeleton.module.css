@@ -1,0 +1,198 @@
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: stretch;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.imageContainer {
+    width: clamp(180px, 250px, 300px);
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.image {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.mainInfo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+    padding-bottom: 15px;
+}
+
+.titleHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.3;
+}
+
+.favoriteButton {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #f3f7fe;
+    cursor: pointer;
+    transition: all 0.4s;
+    border: none;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.favoriteButton:hover {
+    background-color: #d5e3fd;
+}
+
+.title {
+    background-color: #e0e0e0;
+    height: 18px;
+    width: 100%;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.priceContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    gap: 10px;
+}
+
+.mainPrice {
+    background-color: #e0e0e0;
+    height: 18px;
+    width: 100px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.priceInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.apPrice {
+    background-color: #e0e0e0;
+    height: 18px;
+    width: 100px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.characteristics {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.characteristic {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    width: 100%;
+    position: relative;
+    background-color: #e0e0e0;
+    height: 14px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.allDetails {
+    background-color: #e0e0e0;
+    height: 14px;
+    width: 50%;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.rightSideContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    width: clamp(180px, 250px, 300px);
+}
+
+.marketName {
+    background-color: #e0e0e0;
+    height: 16px;
+    width: 100%;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.stats {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+.ratingValue {
+    background-color: #e0e0e0;
+    height: 14px;
+    flex:1 1 auto;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.ratingStars {
+    flex:1 1 auto;
+    height: 14px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.commentsValue {
+    background-color: #e0e0e0;
+    height: 14px;
+    flex:1 1 auto;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.cartButton {
+    background-color: #e0e0e0;
+    height: 36px;
+    width: 100%;
+    border-radius: 10px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: #e0e0e0;
+    }
+    50% {
+        background-color: #d6d6d6;
+    }
+    100% {
+        background-color: #e0e0e0;
+    }
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use } from "react";
+import React, { use, useState, useEffect } from "react";
 import styles from "./itemPage.module.css";
 import HeaderWrapper from "@/layouts/HeaderProvider";
 import ItemHeader from "./pageHeader/index";
@@ -10,40 +10,57 @@ import RecommendedCarousel from "@/widgets/Items/(Carousel)/Recommended";
 import PurchasedCarousel from "@/widgets/Items/(Carousel)/Purchased";
 import { Comments } from "@/app/(pages)/item/[...id]/comments";
 import { useItemsStore } from "@/entities/items/useItemsStore";
-import { useEffect } from "react";
 import Loading from "@components/Loading";
+import ItemStickyHeader from "@/app/(pages)/item/[...id]/ItemStickyHeader/ItemHeader";
 
-export default function ItemPage({ params }: { params: Promise<{ id: string }> }) {
-    const { id: idStr } = use(params);
-    const id = Number(idStr);
+export default function ItemPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id: idStr } = use(params);
+  const id = Number(idStr);
 
-    const { fetchItemById, currentItem } = useItemsStore();
+  const { fetchItemById, currentItem } = useItemsStore();
 
-    useEffect(() => {
-        fetchItemById(id);
-    }, [id]);
+  useEffect(() => {
+    fetchItemById(id);
+  }, [id]);
 
-    const breadcrumbItems = [
-        { label: "Главная", href: "/" },
-        { label: "Запчасти и аксессуары", href: "/transport/accessories" },
-    ];
+  const [showStickyHeader, setShowStickyHeader] = useState(false);
 
-    if (!currentItem) {
-        return <Loading/>;
-    }
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowStickyHeader(window.scrollY > window.innerHeight);
+    };
 
-    return (
-        <div>
-            <HeaderWrapper>
-                <div className={styles.wrapper}>
-                    <ItemHeader routes={breadcrumbItems} />
-                    <MainContent />
-                    <RecommendedCarousel />
-                    <PurchasedCarousel />
-                    <Details />
-                    <Comments />
-                </div>
-            </HeaderWrapper>
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const breadcrumbItems = [
+    { label: "Главная", href: "/" },
+    { label: "Запчасти и аксессуары", href: "/transport/accessories" },
+  ];
+
+  if (!currentItem) {
+    return <Loading />;
+  }
+
+  return (
+    <div>
+      <HeaderWrapper>
+        {showStickyHeader && <ItemStickyHeader />}
+
+        <div className={styles.wrapper}>
+          <ItemHeader routes={breadcrumbItems} />
+          <MainContent />
+          <RecommendedCarousel />
+          <PurchasedCarousel />
+          <Details />
+          <Comments />
         </div>
-    );
+      </HeaderWrapper>
+    </div>
+  );
 }

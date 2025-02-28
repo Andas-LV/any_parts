@@ -38,13 +38,12 @@
 .getSeller{
     max-height: var(--top-header-height);
     padding: var(--padding);
-    font-weight: bold;
-    background-color: #E7F0FC;
-    color: var(--brand-primary);
+    color: var(--brand-primary) !important;
+    font-weight: bold !important;
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
 
 .getSeller:hover{
-    background-color: #c5dbf6;
+    background-color: #d5e6fa !important;
 }

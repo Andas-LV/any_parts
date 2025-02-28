@@ -22,6 +22,7 @@
 
 .deleteAllBtn{
     color: #F43625;
+    cursor: pointer;
 }
 
 .share{
@@ -32,4 +33,8 @@
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.share:disabled, .deleteAllBtn:disabled {
+    cursor: not-allowed;
 }
