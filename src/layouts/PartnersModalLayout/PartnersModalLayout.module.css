@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     z-index: 100;
+    padding: 0 10px;
     background-color: #f1f5fc;
 }
 
@@ -19,8 +20,9 @@
     background: white;
     padding: 40px;
     border-radius: 15px;
-    max-width: 800px;
-    max-height: 80%;
+    max-width: 600px;
+    max-height: clamp(70%, 80%, 90%);
+    overflow-y: scroll;
     position: relative;
 }
 

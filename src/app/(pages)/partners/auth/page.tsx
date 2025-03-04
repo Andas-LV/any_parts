@@ -9,8 +9,6 @@ import PartnerRegisterModal from "@/widgets/modals/auth/partners/register";
 import ChooseCompany from "@/widgets/modals/auth/partners/chooseCompany/chooseCompany";
 import CreateCompany from "@/widgets/modals/auth/partners/createCompany/createCompany";
 
-interface PartnerAuthProps {}
-
 export type TModal =
   | "login"
   | "confirmEmail"
