@@ -78,7 +78,7 @@
     width: 100%;
     padding: 0 5px;
     font-size: 16px;
-    background-color: #F2F2F2;
+    background-color: var(--brand-gray);
     display: flex;
     justify-content: center;
     align-items: center;

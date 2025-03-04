@@ -1,0 +1,57 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background-color: #f1f5fc;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 800px;
+    max-height: 80%;
+    position: relative;
+}
+
+.titleWrapper{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.modal h2{
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: -30px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.backButton{
+    cursor: pointer;
+}
+
+.children{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

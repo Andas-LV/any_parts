@@ -9,4 +9,5 @@ export const exampleUser: User = {
   avatarUrl: "/user.png",
   male: "Male",
   currency: "KZT",
+  role: "dealer",
 };

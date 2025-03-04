@@ -61,7 +61,7 @@
 }
 
 .replyBtn{
-    background-color: #F2F2F2;
+    background-color: var(--brand-gray);
     font-weight: bold;
     border: none;
     border-radius: 10px;

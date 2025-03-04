@@ -53,9 +53,13 @@ const CurrencyModal = ({ onClose }: { onClose: () => void }) => {
                   className={styles.flag}
                 />
                 {selectedCountry.currencyDesc},{selectedCountry.currency}
-                <Icons.ArrowDown
-                  className={`${styles.arrowIcon} ${selectIsOpen ? styles.rotated : ""}`}
-                />
+                <div className={styles.arrowIcon}>
+                  {selectIsOpen ? (
+                    <Icons.ArrowUp width={12} height={12} />
+                  ) : (
+                    <Icons.ArrowDown />
+                  )}
+                </div>
               </div>
             </DropdownMenuTrigger>
           </div>

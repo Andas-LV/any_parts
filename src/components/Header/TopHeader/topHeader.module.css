@@ -29,8 +29,8 @@
 }
 
 .currencyImg {
-    width: 23px;
-    height: 23px;
+    width: fit-content;
+    height: auto;
     border-radius: 10%;
     object-fit: cover;
 }

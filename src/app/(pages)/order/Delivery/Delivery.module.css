@@ -68,7 +68,7 @@
     color: black;
     border-radius: 15px;
     padding: 10px;
-    background-color: #F2F2F2;
+    background-color: var(--brand-gray);
 }
 
 .userInfo:hover{

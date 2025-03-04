@@ -25,7 +25,9 @@ export default function BasketCard({ item, notToShare }: ItemCardProps) {
   const { removeItem, updateQuantity, toggleSelect } = useBasketStore();
   const { user } = useUserStore();
 
-  if (item === null) {
+  const [isFavorite, setIsFavorite] = useState(item ? item.favorite : false);
+
+  if (!item) {
     return <BasketCardSkeleton />;
   }
 
@@ -41,8 +43,8 @@ export default function BasketCard({ item, notToShare }: ItemCardProps) {
     selected,
   } = item;
 
-  const [isFavorite, setIsFavorite] = useState(favorite);
   const finalPrice = currentPrice ?? price;
+  const currencySymbol = useCurrencySymbol(user ? user.currency : "KZT");
 
   const handleMinus = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -80,15 +82,13 @@ export default function BasketCard({ item, notToShare }: ItemCardProps) {
 
             <div className={styles.priceContainer}>
               <div className={styles.mainPrice}>
-                {finalPrice.toLocaleString()}{" "}
-                {user && useCurrencySymbol(user.currency)}
+                {finalPrice.toLocaleString()} {currencySymbol}
               </div>
 
               {discount && currentPrice && (
                 <div className={styles.priceInfo}>
                   <span className={styles.oldPrice}>
-                    {price.toLocaleString()}{" "}
-                    {user && useCurrencySymbol(user.currency)}
+                    {price.toLocaleString()} {currencySymbol}
                   </span>
                   <span className={styles.discount}>-{discount}%</span>
                 </div>
