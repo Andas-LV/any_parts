@@ -83,7 +83,7 @@
 }
 
 .statusProcessing {
-    background-color: #F2F2F2;
+    background-color: var(--brand-gray);
     color: #4D4D4D;
     padding: 0.25rem 0.5rem;
     border-radius: 10px;

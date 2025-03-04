@@ -12,6 +12,7 @@ export const exampleFeedbacks: Feedback[] = [
       avatarUrl: "/user.png",
       male: "Male",
       currency: "KZT",
+      role: "user",
     },
     rating: 5,
     date: "23-05-2024",

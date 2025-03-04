@@ -87,7 +87,7 @@
 }
 
 .categoryButton:hover, .categoryButton.active {
-    background: #F2F2F2;
+    background: var(--brand-gray);
 }
 
 .content {

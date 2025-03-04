@@ -7,23 +7,11 @@ export type User = {
   avatarUrl?: string | null;
   male: MaleChoice;
   currency: Currency;
-};
-
-export type Login = {
-  email: string;
-  agreed: boolean;
-};
-
-export type Register = {
-  email: string;
-  username: string;
-};
-
-export type ConfirmCode = {
-  email: string;
-  code: string;
+  role: Roles;
 };
 
 export type MaleChoice = "Male" | "Female";
+
+export type Roles = "user" | "dealer";
 
 export type Currency = "KZT" | "RUB";

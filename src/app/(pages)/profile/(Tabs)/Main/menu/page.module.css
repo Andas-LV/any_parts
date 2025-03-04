@@ -21,7 +21,7 @@
 }
 
 .userInfo:hover{
-    background-color: #F2F2F2;
+    background-color: var(--brand-gray);
 }
 
 .userInfo h2{

@@ -21,7 +21,7 @@
     align-items: center;
     width: 100%;
     position: relative;
-    background: #F2F2F2;
+    background: var(--brand-gray);
     border-radius: 15px;
     margin-top: 10px;
 }
@@ -73,16 +73,6 @@
 
 .rotated {
     transform: rotate(180deg);
-}
-
-.terms{
-    color: var(--brand-primary);
-    word-spacing: 5px;
-    line-height: 1.2;
-}
-.terms span{
-    color: #4D4D4D;
-    margin-right: 5px;
 }
 
 .error {

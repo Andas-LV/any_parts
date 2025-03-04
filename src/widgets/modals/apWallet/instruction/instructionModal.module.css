@@ -30,7 +30,7 @@
 }
 
 .stepNumber{
-    background-color: #F2F2F2;
+    background-color: var(--brand-gray);
     color: #000000;
     font-weight: bold;
     padding: 10px;

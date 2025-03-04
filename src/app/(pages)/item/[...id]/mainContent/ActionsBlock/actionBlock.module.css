@@ -75,7 +75,34 @@
     align-items: center;
     gap: 3px;
 }
+/*CHART start*/
+.chartWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f1f9f6;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
+.priceRange {
+    display: flex;
+    align-items: center;
+    flex: 0.5;
+    color: #009E60;
+    font-weight: bold;
+}
+
+.priceRange p {
+    text-wrap: nowrap;
+    margin: 0 0.5rem;
+}
+
+.negative {
+    color: var(--error);
+}
+/*chart end*/
 .actionButtons{
     display: flex;
     align-items: center;

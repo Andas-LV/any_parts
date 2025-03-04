@@ -5,9 +5,11 @@ import React, { useState } from "react";
 import CurrencyModal from "@/widgets/modals/currency/currencyModal";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { countryCodes } from "@/constants/countryCodes";
+import { useRouter } from "next/navigation";
 
 export default function TopHeader() {
   const [isModalOpen, setModalOpen] = useState(false);
+  const router = useRouter();
   const { user } = useUserStore();
   const userCurrency = user?.currency || "KZT";
   const selectedCountry =
@@ -26,8 +28,8 @@ export default function TopHeader() {
             className={styles.currencyImg}
             src={selectedCountry.flag}
             alt={selectedCountry.name}
-            width={23}
-            height={23}
+            width={25}
+            height={25}
           />
           {selectedCountry.currencyDesc} • {userCurrency}
         </Button>
@@ -43,7 +45,11 @@ export default function TopHeader() {
         </Button>
       </div>
 
-      <Button variant={"secondary"} className={styles.getSeller}>
+      <Button
+        onClick={() => router.push("/partners/auth/")}
+        variant={"secondary"}
+        className={styles.getSeller}
+      >
         Стать продавцом
       </Button>
 

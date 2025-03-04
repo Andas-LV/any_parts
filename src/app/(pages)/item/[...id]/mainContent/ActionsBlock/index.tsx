@@ -7,13 +7,20 @@ import { Button } from "@components/ui/button";
 import dynamic from "next/dynamic";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
+import { exampleChartData } from "@/exampleData/exampleChartData";
+import { useState } from "react";
+import ChartModal from "@/widgets/modals/chartModal/ChartModal";
 
-const SmallChart = dynamic(() => import("@components/Chart"), { ssr: false });
+const Chart = dynamic(() => import("@components/Chart"), { ssr: false });
 
 export default function ActionsBlock({ ...item }: ItemInfoType) {
   const { user } = useUserStore();
+  const [chartModal, setChartModal] = useState(false);
 
   const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
+  const priceRange =
+    exampleChartData.medianPrice - exampleChartData.currentPrice;
+  const isNegative = priceRange < 0;
 
   return (
     <div className={styles.actionsBlockContainer}>
@@ -42,8 +49,24 @@ export default function ActionsBlock({ ...item }: ItemInfoType) {
         </div>
       </div>
 
-      <div>
-        <SmallChart />
+      <div onClick={() => setChartModal(true)} className={styles.chartWrapper}>
+        <div
+          className={`${styles.priceRange} ${isNegative ? styles.negative : ""}`}
+        >
+          {isNegative ? (
+            <Icons.ArrowUp width={30} height={30} color={"var(--error)"} />
+          ) : (
+            <Icons.ArrowDown width={30} height={30} color={"#009E60"} />
+          )}
+          <p>
+            {priceRange} {currencySymbol}
+          </p>
+          <Chart
+            data={exampleChartData.values}
+            color={isNegative ? "var(--error)" : "#009E60"}
+          />
+        </div>
+        <Icons.ArrowRight width={20} height={20} />
       </div>
 
       <div className={styles.actionButtons}>
@@ -64,6 +87,8 @@ export default function ActionsBlock({ ...item }: ItemInfoType) {
           <Icons.ArrowDown width={12} height={12} />
         </div>
       </div>
+
+      {chartModal && <ChartModal onClose={() => setChartModal(false)} />}
     </div>
   );
 }

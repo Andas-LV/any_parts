@@ -1,0 +1,126 @@
+/*MAIN CONTENT*/
+.scrollableContent{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/*COMPANY INFO*/
+.companyInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.companyInfo h3 {
+  font-size: 20px;
+  color: #333;
+}
+
+.companyInfo p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/*SEARCH*/
+.searchWrapper {
+  display: flex;
+  min-width: 300px;
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 40px 8px 35px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #9ca3af;
+}
+
+.searchInput:focus {
+  outline: none;
+  border: 2px solid #d4d4da;
+}
+
+/*BUTTONS*/
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.submitButton {
+  flex: 1;
+  padding: 25px 0;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.changeEmailButton {
+  flex: 1;
+  padding: 25px 0;
+  background-color: var(--brand-gray);
+  color: black;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.changeEmailButton:disabled,
+.changeEmailButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: var(--error);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/*ADD COMPANY*/
+.addCompanyWrapper, .companyWrapper, .addedCompanyWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px;
+  border: 1px solid var(--skeleton);
+  border-radius: 0.5rem;
+  padding: 20px;
+}
+
+.addedCompanyWrapper{
+  background-color: #F3F7FE;
+}
+
+.companyCreateCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 15px;
+  border-radius: 0.5rem;
+  background-color: var(--brand-gray);
+  cursor: pointer;
+}
+

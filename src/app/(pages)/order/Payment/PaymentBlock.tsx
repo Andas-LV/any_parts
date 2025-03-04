@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { useBasketStore } from "@/entities/basket/useBasketStore";
 import { Icons } from "@/assets/svg";
 import BasketShareModal from "@/widgets/modals/basketShareModal/BasketShareModal";
-import PaymentCard from "@/widgets/modals/payment/PaymentCards";
+import PaymentCard from "../../../../components/cards/PaymentCards";
 import Image from "next/image";
 import { usePaymentStore } from "@/entities/payment/usePaymentStore";
 import CreateCard from "@/widgets/modals/payment/create/CreateCard";

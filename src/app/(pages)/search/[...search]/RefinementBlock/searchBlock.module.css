@@ -23,7 +23,7 @@
 
 .input {
     flex: 1;
-    background-color: #F2F2F2;
+    background-color: var(--brand-gray);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
