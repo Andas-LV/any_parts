@@ -11,6 +11,13 @@ import { PartnerRegister, organizationTypes } from "@/types/Auth";
 import { usePartnerAuthStore } from "@/entities/partners/auth/usePartnersAuthStore";
 import { countryCodes } from "@/constants/countryCodes";
 import { Icons } from "@/assets/svg";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@components/ui/select";
 
 interface PartnerRegisterModalProps {
   onChangeEmail: () => void;
@@ -72,6 +79,7 @@ const PartnerRegisterModal = ({
           className={styles.nameInput}
           {...register("marketName")}
         />
+
         {errors.marketName && (
           <span className={styles.error}>{errors.marketName.message}</span>
         )}
@@ -89,6 +97,7 @@ const PartnerRegisterModal = ({
             <Icons.ArrowDown />
           </div>
         </div>
+
         <p>
           Поменять страну после регистрации не получится. Чтобы открыть магазин
           в другой стране, создайте новый аккаунт.

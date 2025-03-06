@@ -10,15 +10,6 @@
     margin: 0 5px;
 }
 
-.nameInput {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    background: var(--brand-gray);
-}
-
 .changeNumberBtn {
     color: var(--brand-primary);
 }
@@ -48,23 +39,29 @@
     margin: 5px;
 }
 /*SELECT*/
-select.nameInput {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding-right: 30px;
-    background-size: 16px;
-}
-
-/* ... существующие стили ... */
-
 .selectWrapper {
     position: relative;
 }
 
-.selectWrapper select {
+.nameInput {
+    appearance: none;
+    outline: none;
     width: 100%;
-    padding-right: 40px; /* дополнительное пространство для стрелки */
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: var(--brand-gray);
+}
+
+select.nameInput {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .selectArrow {
@@ -72,7 +69,5 @@ select.nameInput {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    pointer-events: none; /* чтобы клики попадали в select, а не в иконку */
+    pointer-events: none;
 }
-
-/* ... остальные стили ... */

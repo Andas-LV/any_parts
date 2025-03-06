@@ -38,7 +38,7 @@ export default function ChooseCompany({ onPrev, onNext }: ChooseCompanyProps) {
   const handleSubmit = async () => {
     // await запрос;
     console.log(selectedCompany);
-    router.push("/");
+    router.push("/partners");
   };
 
   return (

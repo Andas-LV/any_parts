@@ -54,9 +54,9 @@ export default function ActionsBlock({ ...item }: ItemInfoType) {
           className={`${styles.priceRange} ${isNegative ? styles.negative : ""}`}
         >
           {isNegative ? (
-            <Icons.ArrowUp width={30} height={30} color={"var(--error)"} />
+            <Icons.ArrowUp className={styles.arrowIcon} />
           ) : (
-            <Icons.ArrowDown width={30} height={30} color={"#009E60"} />
+            <Icons.ArrowDown className={styles.arrowIcon} />
           )}
           <p>
             {priceRange} {currencySymbol}

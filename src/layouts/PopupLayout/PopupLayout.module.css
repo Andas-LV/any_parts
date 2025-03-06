@@ -4,26 +4,25 @@
     left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     z-index: 100;
     padding: 0 10px;
-    background-color: #f1f5fc;
 }
 
 .modal {
-    width: clamp(300px, 500px, 600px);
-    max-height: clamp(70%, 80%, 90%);
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
     background: white;
     padding: clamp(10px, 30px, 40px);
-    border-radius: 15px;
-    overflow-y: scroll;
+    border-radius: 0 0 15px 15px;
+    width: clamp(80%, 90%, 80vw);
+    position: relative;
+    z-index: 105;
 }
 
 .titleWrapper{
@@ -40,15 +39,11 @@
 
 .closeButton {
     position: absolute;
-    top: 0;
+    top: 10px;
     right: -30px;
     border: none;
     cursor: pointer;
     font-size: 20px;
-}
-
-.backButton{
-    cursor: pointer;
 }
 
 .children{
