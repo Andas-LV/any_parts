@@ -1,3 +1,6 @@
+import { z } from "zod";
+import { RequisiteValidatorSchema } from "@/schemas/requisite";
+
 export type Requisites = {
   id: number;
   name: string;
@@ -6,12 +9,6 @@ export type Requisites = {
   fullName: string;
 };
 
-export type RequisiteValidator = {
-  country: CountryValidator;
-  name: string;
-  BIK: number;
-  account: number;
-  fullName: string;
-};
+export type RequisiteValidator = z.infer<typeof RequisiteValidatorSchema>;
 
-type CountryValidator = "kazakh" | "russia";
+export type CountryValidator = "kazakh" | "russia";

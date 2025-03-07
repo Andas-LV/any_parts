@@ -49,7 +49,6 @@ export default function CreateItem() {
         </Stepper>
       </Box>
 
-      {/* Логика шагов реализована через react-step-wizard */}
       <StepWizard onStepChange={onStepChange}>
         <GeneralInfo />
         <Characters />

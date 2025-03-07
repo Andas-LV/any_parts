@@ -7,6 +7,7 @@ import ModalsLayout from "@/layouts/modalLayout/layout";
 import { RequisiteValidatorSchema } from "@/schemas/requisite";
 import { useRequisitesStore } from "@/entities/requisites/useRequisitesStore";
 import { countryCodes } from "@/constants/countryCodes";
+import { RequisiteValidator } from "@/types/Requisites";
 
 interface ICreateReq {
   onClose: () => void;
@@ -21,7 +22,7 @@ const CreateReq = ({ onClose, onPrev, onNext }: ICreateReq) => {
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm({
+  } = useForm<RequisiteValidator>({
     resolver: zodResolver(RequisiteValidatorSchema),
     defaultValues: {
       country: countryCodes[0].value,

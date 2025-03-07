@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Characters.module.css";
-import { Button } from "@components/ui/button";
+import CharacteristicsForm from "@/forms/CharacteristicsForm/CharacteristicsForm";
 
 interface CharactersProps {
   nextStep?: () => void;
@@ -13,12 +13,8 @@ export default function Characters({
 }: CharactersProps) {
   return (
     <div className={styles.Characters}>
-      <h1>Characters component</h1>
-
-      <Button variant={"secondary"} onClick={previousStep}>
-        Назад
-      </Button>
-      <Button onClick={nextStep}>Далее</Button>
+      <h1>Характеристика</h1>
+      <CharacteristicsForm nextStep={nextStep} previousStep={previousStep} />
     </div>
   );
 }

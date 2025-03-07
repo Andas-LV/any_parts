@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Configuration.module.css";
-import { Button } from "@components/ui/button";
+import ConfigurationForm from "@/forms/ConfigurationForm/ConfigurationForm";
 
 interface ConfigurationProps {
   nextStep?: () => void;
@@ -13,9 +13,9 @@ export default function Configuration({
 }: ConfigurationProps) {
   return (
     <div className={styles.Configuration}>
-      <h1>Configuration component</h1>
-      <Button onClick={previousStep}>Назад</Button>
-      <Button onClick={nextStep}>Далее</Button>
+      <h1>Конфигурация</h1>
+
+      <ConfigurationForm nextStep={nextStep} previousStep={previousStep} />
     </div>
   );
 }

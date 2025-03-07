@@ -1,13 +1,13 @@
 "use client";
 
+import React, { useState } from "react";
 import styles from "./basketCard.module.css";
 import { Plus, Minus } from "lucide-react";
 import { ImageCarousel } from "../ImageCarousel";
 import { Card } from "@components/ui/card";
 import { Icons } from "@/assets/svg";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
-import Loading from "@components/Loading";
+
 import { CartItem, useBasketStore } from "@/entities/basket/useBasketStore";
 import { Checkbox } from "@components/ui/checkbox";
 import BasketCardSkeleton from "@components/skeletons/BasketCardSkeleton/BasketCardSkeleton";

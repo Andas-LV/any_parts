@@ -2,6 +2,8 @@ import { z } from "zod";
 
 export const CurrencyValidator = z.enum(["KZT", "RUB"]);
 
+export const ManufactorersValidator = z.enum(["kazakh", "russia"]);
+
 export const generalInfoSchema = z.object({
   productName: z
     .string({
@@ -46,22 +48,74 @@ export const generalInfoSchema = z.object({
 
 export const characteristicsSchema = z.object({
   description: z
-    .string({ required_error: "Введите описание" })
+    .string({
+      required_error: "Введите описание",
+      invalid_type_error: "Описание должно быть строкой",
+    })
     .min(1, { message: "Описание не может быть пустым" }),
 
-  packageLength: z.number({ required_error: "Укажите длину упаковки" }),
+  packageLength: z
+    .number({
+      invalid_type_error: "Длина упаковки должна быть числом",
+    })
+    .optional(),
 
-  packageWidth: z.number({ required_error: "Укажите ширину упаковки" }),
+  packageWidth: z
+    .number({
+      invalid_type_error: "Ширина упаковки должна быть числом",
+    })
+    .optional(),
 
-  packageHeight: z.number({ required_error: "Укажите высоту упаковки" }),
+  packageHeight: z
+    .number({
+      invalid_type_error: "Высота упаковки должна быть числом",
+    })
+    .optional(),
 
-  weight: z.number({ required_error: "Укажите вес" }),
+  weight: z.number({
+    required_error: "Укажите вес",
+    invalid_type_error: "Вес должен быть числом",
+  }),
 
   material: z
-    .string({ required_error: "Укажите материал" })
+    .string({
+      required_error: "Укажите материал",
+      invalid_type_error: "Материал должен быть строкой",
+    })
     .min(1, { message: "Материал не может быть пустым" }),
 
+  manuFactored: ManufactorersValidator.refine((val) => !!val, {
+    message: "Укажите производителя",
+  }),
+
   features: z
-    .array(z.string())
+    .string({
+      invalid_type_error: "Особенность должна быть строкой",
+    })
     .min(1, { message: "Добавьте хотя бы одну особенность" }),
+});
+
+export const configurationSchema = z.object({
+  colors: z
+    .array(
+      z.object({
+        colorName: z
+          .string()
+          .min(1, { message: "Название цвета не может быть пустым" }),
+        // Если нужно загружать файл (File) — z.any().optional().
+        // Если хранится URL — z.string().url().optional().
+        photo: z.any().optional(),
+      }),
+    )
+    .min(1, { message: "Добавьте хотя бы один цвет" }),
+
+  sizes: z
+    .array(
+      z.object({
+        sizeName: z
+          .string()
+          .min(1, { message: "Название размера не может быть пустым" }),
+      }),
+    )
+    .min(1, { message: "Добавьте хотя бы один размер" }),
 });

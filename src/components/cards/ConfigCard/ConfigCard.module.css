@@ -1,0 +1,65 @@
+.ConfigCard {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.checkbox {
+    border: #4D4D4D solid 2px;
+    margin-right: 0.5rem;
+}
+.checkbox[data-state="checked"] {
+    border: none;
+    background-color: #4D4D4D;
+    color: white;
+}
+
+.cardContent {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 0.75rem;
+    position: relative;
+}
+
+.nameInput {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 16px;
+    background: var(--brand-gray);
+}
+
+.uploadedImageBlock {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.uploadedMedia {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+}
+
+.actionImageBtn{
+    padding: 0;
+}
+
+.deleteRowBtn{
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+}
+
+.deleteRowBtn:hover {
+    background: #F2F2F2;
+}
+
+.fileInput {
+    display: none;
+}

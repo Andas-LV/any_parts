@@ -9,6 +9,7 @@ interface GeneralInfoProps {
 export default function GeneralInfo({ nextStep }: GeneralInfoProps) {
   return (
     <div className={styles.GeneralInfo}>
+      <h1>Основная информация</h1>
       <GeneralInfoForm nextStep={nextStep} />
     </div>
   );

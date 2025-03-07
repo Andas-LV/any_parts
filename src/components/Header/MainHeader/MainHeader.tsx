@@ -53,11 +53,6 @@ const MainHeader = () => {
           </div>
         )}
 
-        <div className={styles.navItem} onClick={() => setModalOpen(true)}>
-          <Icons.User width={24} height={24} />
-          <span>Войти</span>
-        </div>
-
         <div
           onClick={() => routeToProfileSection("orders")}
           className={styles.navItem}

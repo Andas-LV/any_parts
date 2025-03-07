@@ -80,7 +80,11 @@ const CurrencyModal = ({ onClose }: { onClose: () => void }) => {
         </DropdownMenu>
       </div>
 
-      <Button className={styles.submitButton} onClick={handleSubmit}>
+      <Button
+        className={styles.submitButton}
+        onClick={handleSubmit}
+        disabled={isLoading}
+      >
         Сохранить
       </Button>
     </ModalsLayout>

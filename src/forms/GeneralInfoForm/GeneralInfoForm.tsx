@@ -16,12 +16,15 @@ import {
 } from "@components/ui/select";
 import { TGeneralInfoSchema } from "@/types/CreateItem";
 import { Icons } from "@/assets/svg";
+import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
 
 interface GeneralInfoFormProps {
   nextStep?: () => void;
 }
 
 export default function GeneralInfoForm({ nextStep }: GeneralInfoFormProps) {
+  const { setGeneralInfo } = useCreateItemStore();
+
   const [images, setImages] = useState<(File | null)[]>(Array(15).fill(null));
 
   const {
@@ -71,6 +74,7 @@ export default function GeneralInfoForm({ nextStep }: GeneralInfoFormProps) {
 
   const onFormSubmit = (data: TGeneralInfoSchema) => {
     // ЛОГИКА АККУМУЛЯЦИИ
+    setGeneralInfo(data);
     console.log("Форма отправлена:", data);
     if (nextStep) {
       nextStep();
