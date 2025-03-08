@@ -25,6 +25,7 @@ export default function ConfigurationForm({
   const {
     register,
     handleSubmit,
+    setValue,
     control,
     reset,
     formState: { errors },
@@ -55,9 +56,9 @@ export default function ConfigurationForm({
   });
 
   const onFormSubmit = (data: TConfigurationSchema) => {
-    // ЛОГИКА АККУМУЛЯЦИИ
-    setConfig(data);
     console.log("Форма config отправлена:", data);
+    setConfig(data);
+
     if (nextStep) {
       nextStep();
     }
@@ -65,10 +66,6 @@ export default function ConfigurationForm({
 
   const onError = (formErrors: any) => {
     console.log("Ошибки от zod:", formErrors);
-  };
-
-  const handleReset = () => {
-    reset();
   };
 
   return (
@@ -87,6 +84,7 @@ export default function ConfigurationForm({
                 config={`colors.${index}`}
                 placeholder="Название цвета"
                 register={register}
+                setValue={setValue}
                 removeCard={() => removeColor(index)}
               />
             </div>
@@ -136,7 +134,7 @@ export default function ConfigurationForm({
       </form>
 
       <div className={styles.actions}>
-        <Button variant="secondary" onClick={handleReset}>
+        <Button variant="secondary" onClick={() => reset()}>
           Очистить
         </Button>
         <div className={styles.stepsButtons}>

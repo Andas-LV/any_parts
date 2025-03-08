@@ -57,7 +57,7 @@
 
 /* -- Основной слот (слот #0) -- */
 .mainImage {
-    min-width: 150px;
+    max-width: 250px;
     aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 0.5rem;

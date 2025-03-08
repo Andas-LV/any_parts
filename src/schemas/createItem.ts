@@ -119,3 +119,33 @@ export const configurationSchema = z.object({
     )
     .min(1, { message: "Добавьте хотя бы один размер" }),
 });
+
+export const priceMakingSchema = z.object({
+  colors: z
+    .array(
+      z.object({
+        colorName: z
+          .string()
+          .min(1, { message: "Название цвета не может быть пустым" }),
+        photo: z.any().optional(),
+        sizes: z
+          .array(
+            z.object({
+              sizeName: z
+                .string()
+                .min(1, { message: "Название размера не может быть пустым" }),
+              price: z
+                .number()
+                .nonnegative({ message: "Введите корректную цену" }),
+              discountPrice: z
+                .number()
+                .nonnegative({ message: "Введите корректную цену" })
+                .optional(),
+              barcode: z.string().optional(),
+            }),
+          )
+          .min(1, { message: "Добавьте хотя бы один размер" }),
+      }),
+    )
+    .min(1, { message: "Добавьте хотя бы один цвет" }),
+});

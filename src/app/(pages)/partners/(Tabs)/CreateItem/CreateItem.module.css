@@ -3,4 +3,7 @@
     font-weight: bold;
 }
 
-/*STEPS*/
+.react-step-wizard-container {
+    height: auto !important;
+}
+

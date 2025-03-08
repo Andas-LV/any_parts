@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./PriceMaking.module.css";
 import { Button } from "@components/ui/button";
+import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
+import PriceMakingForm from "@/forms/PriceMakingForm/PriceMakingForm";
 
 interface PriceMakingProps {
   nextStep?: () => void;
@@ -13,9 +15,8 @@ export default function PriceMaking({
 }: PriceMakingProps) {
   return (
     <div className={styles.PriceMaking}>
-      <h1>PriceMaking component</h1>
-      <Button onClick={previousStep}>Назад</Button>
-      <Button onClick={nextStep}>Далее</Button>
+      <h1>Ценообразование</h1>
+      <PriceMakingForm nextStep={nextStep} previousStep={previousStep} />
     </div>
   );
 }

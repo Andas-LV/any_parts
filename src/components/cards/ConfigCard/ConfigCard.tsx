@@ -15,6 +15,7 @@ interface ConfigCardProps {
   config: TBaseConfigPath;
   placeholder: string;
   register: UseFormRegister<TConfigurationSchema>;
+  setValue?: any;
   removeCard?: () => void;
 }
 
@@ -22,6 +23,7 @@ export default function ConfigCard({
   config,
   placeholder,
   register,
+  setValue,
   removeCard,
 }: ConfigCardProps) {
   const [preview, setPreview] = useState<string | null>(null);
@@ -33,6 +35,7 @@ export default function ConfigCard({
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       setPreview(URL.createObjectURL(file));
+      setValue(`${config}.photo` as TPhotoPath, URL.createObjectURL(file));
     }
   };
 
@@ -91,7 +94,6 @@ export default function ConfigCard({
                     type="file"
                     accept="image/*,video/*"
                     className={styles.fileInput}
-                    {...register(`${config}.photo` as TPhotoPath)}
                     onChange={handleFileChange}
                   />
                 </label>
