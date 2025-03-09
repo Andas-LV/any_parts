@@ -1,87 +1,86 @@
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2rem;
-    border-radius: 10px;
-    gap: 20px;
-    background-color: white;
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 2rem;
+	border-radius: 10px;
+	gap: 20px;
+	background-color: white;
 }
 
-.wrapper h1{
-    font-size: 24px;
-    font-weight: bold;
+.wrapper h1 {
+	font-size: 24px;
+	font-weight: bold;
 }
 
-.addressWrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+.addressWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.addressWrapper p{
-    font-weight: 500;
+.addressWrapper p {
+	font-weight: 500;
 }
 
-.address{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.address {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-.detailWrapper{
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.detailWrapper {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
-.detailInfo{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.detailInfo {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
-
 
 .label {
-    font-size: 16px;
-    font-weight: bold;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 .value {
-    text-wrap: wrap;
-    max-width: 300px;
-    font-size: 14px;
-    color: var(--text-secondary);
+	text-wrap: wrap;
+	max-width: 300px;
+	font-size: 14px;
+	color: var(--text-secondary);
 }
 
 /*USER INFO*/
-.userInfo{
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    color: black;
-    border-radius: 15px;
-    padding: 10px;
-    background-color: var(--brand-gray);
+.userInfo {
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	cursor: pointer;
+	color: black;
+	border-radius: 15px;
+	padding: 10px;
+	background-color: var(--brand-gray);
 }
 
-.userInfo:hover{
-    background-color: #d8d8d8;
+.userInfo:hover {
+	background-color: #d8d8d8;
 }
 
-.userInfo h2{
-    font-size: 16px;
-    font-weight: bold;
+.userInfo h2 {
+	font-size: 16px;
+	font-weight: bold;
 }
 
-.avatarUrl{
-    position: relative !important;
-    width: 24px !important;
-    height: auto !important;
+.avatarUrl {
+	position: relative !important;
+	width: 24px !important;
+	height: auto !important;
 }

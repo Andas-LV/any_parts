@@ -14,75 +14,75 @@ import { TProfileTabs } from "@/types/Profile";
 import { useRouter } from "next/navigation";
 
 const MainHeader = () => {
-  const { isAuthenticated } = useAuthStore();
-  const { setActiveProfileTab, activeProfileTab } = useUserStore();
+	const { isAuthenticated } = useAuthStore();
+	const { setActiveProfileTab, activeProfileTab } = useUserStore();
 
-  const router = useRouter();
-  const [isModalOpen, setModalOpen] = useState(false);
+	const router = useRouter();
+	const [isModalOpen, setModalOpen] = useState(false);
 
-  const routeToProfileSection = (section: TProfileTabs) => {
-    setActiveProfileTab(section);
-    router.push(`/profile`);
-    console.log(activeProfileTab);
-  };
+	const routeToProfileSection = (section: TProfileTabs) => {
+		setActiveProfileTab(section);
+		router.push(`/profile`);
+		console.log(activeProfileTab);
+	};
 
-  return (
-    <div className={styles.container}>
-      <Link href="/" className={styles.logo}>
-        <Icons.Logo width={45} height={35} />
-        <h1>Any Parts</h1>
-      </Link>
+	return (
+		<div className={styles.container}>
+			<Link href="/" className={styles.logo}>
+				<Icons.Logo width={45} height={35} />
+				<h1>Any Parts</h1>
+			</Link>
 
-      <CategoryFilter />
+			<CategoryFilter />
 
-      <Search />
+			<Search />
 
-      <nav className={styles.navigationSection}>
-        {isAuthenticated ? (
-          <div
-            onClick={() => routeToProfileSection("main")}
-            className={styles.navItem}
-          >
-            <Icons.User width={24} height={24} />
-            <span>Профиль</span>
-          </div>
-        ) : (
-          <div className={styles.navItem} onClick={() => setModalOpen(true)}>
-            <Icons.User width={24} height={24} />
-            <span>Войти</span>
-          </div>
-        )}
+			<nav className={styles.navigationSection}>
+				{isAuthenticated ? (
+					<div
+						onClick={() => routeToProfileSection("main")}
+						className={styles.navItem}
+					>
+						<Icons.User width={24} height={24} />
+						<span>Профиль</span>
+					</div>
+				) : (
+					<div className={styles.navItem} onClick={() => setModalOpen(true)}>
+						<Icons.User width={24} height={24} />
+						<span>Войти</span>
+					</div>
+				)}
 
-        <div
-          onClick={() => routeToProfileSection("orders")}
-          className={styles.navItem}
-        >
-          <Image src="/header/order.svg" alt="Orders" width={24} height={24} />
-          <span>Заказы</span>
-        </div>
+				<div
+					onClick={() => routeToProfileSection("orders")}
+					className={styles.navItem}
+				>
+					<Image src="/header/order.svg" alt="Orders" width={24} height={24} />
+					<span>Заказы</span>
+				</div>
 
-        <div
-          onClick={() => routeToProfileSection("favorite")}
-          className={styles.navItem}
-        >
-          <Image
-            src="/header/favorite.svg"
-            alt="Favorites"
-            width={24}
-            height={24}
-          />
-          <span>Избранное</span>
-        </div>
+				<div
+					onClick={() => routeToProfileSection("favorite")}
+					className={styles.navItem}
+				>
+					<Image
+						src="/header/favorite.svg"
+						alt="Favorites"
+						width={24}
+						height={24}
+					/>
+					<span>Избранное</span>
+				</div>
 
-        <Link href="/basket" className={styles.navItem}>
-          <Image src="/header/basket.svg" alt="Cart" width={24} height={24} />
-          <span>Корзина</span>
-        </Link>
-      </nav>
+				<Link href="/basket" className={styles.navItem}>
+					<Image src="/header/basket.svg" alt="Cart" width={24} height={24} />
+					<span>Корзина</span>
+				</Link>
+			</nav>
 
-      {isModalOpen && <LoginModal onClose={() => setModalOpen(false)} />}
-    </div>
-  );
+			{isModalOpen && <LoginModal onClose={() => setModalOpen(false)} />}
+		</div>
+	);
 };
 
 export default MainHeader;

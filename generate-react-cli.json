@@ -1,19 +1,19 @@
 {
-  "usesTypeScript": true,
-  "usesStyledComponents": false,
-  "usesCssModule": true,
-  "cssPreprocessor": "css",
-  "testLibrary": "None",
-  "component": {
-    "default": {
-      "path": "src/components",
-      "withStyle": true,
-      "withTest": false,
-      "withStory": false,
-      "withLazy": false,
-      "customTemplates": {
-        "component": "src/components/templates/component/TemplateName.tsx"
-      }
-    }
-  }
+	"usesTypeScript": true,
+	"usesStyledComponents": false,
+	"usesCssModule": true,
+	"cssPreprocessor": "css",
+	"testLibrary": "None",
+	"component": {
+		"default": {
+			"path": "src/components",
+			"withStyle": true,
+			"withTest": false,
+			"withStory": false,
+			"withLazy": false,
+			"customTemplates": {
+				"component": "src/components/templates/component/TemplateName.tsx"
+			}
+		}
+	}
 }

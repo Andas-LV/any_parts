@@ -3,19 +3,19 @@ import styles from "./Configuration.module.css";
 import ConfigurationForm from "@/forms/ConfigurationForm/ConfigurationForm";
 
 interface ConfigurationProps {
-  nextStep?: () => void;
-  previousStep?: () => void;
+	nextStep?: () => void;
+	previousStep?: () => void;
 }
 
 export default function Configuration({
-  nextStep,
-  previousStep,
+	nextStep,
+	previousStep,
 }: ConfigurationProps) {
-  return (
-    <div className={styles.Configuration}>
-      <h1>Конфигурация</h1>
+	return (
+		<div className={styles.Configuration}>
+			<h1>Конфигурация</h1>
 
-      <ConfigurationForm nextStep={nextStep} previousStep={previousStep} />
-    </div>
-  );
+			<ConfigurationForm nextStep={nextStep} previousStep={previousStep} />
+		</div>
+	);
 }

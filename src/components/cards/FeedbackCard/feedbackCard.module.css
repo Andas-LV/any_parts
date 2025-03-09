@@ -1,164 +1,164 @@
 .card {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #E6E6E6;
-    background-color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px;
+	border-radius: 10px;
+	border: 1px solid #e6e6e6;
+	background-color: white;
 }
 
 .headerWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
 }
 
 .cardHeader {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-    padding: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 20px;
+	padding: 0;
 }
 
 .headerDetails {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 10px;
-    height: 80px;
-    margin: 0 !important;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 10px;
+	height: 80px;
+	margin: 0 !important;
 }
 
 .image {
-    width: 80px;
-    height: 80px;
-    border-radius: 0;
-    object-fit: cover;
+	width: 80px;
+	height: 80px;
+	border-radius: 0;
+	object-fit: cover;
 }
 
 .images {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
 }
 
 .feedbackImage {
-    width: 160px;
-    height: 160px;
-    border-radius: 5px;
-    object-fit: cover;
+	width: 160px;
+	height: 160px;
+	border-radius: 5px;
+	object-fit: cover;
 }
 
 .cardTitle {
-    font-weight: bold;
-    font-size: 20px;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 .commentBody {
-    line-height: 1.5;
-    color: #333;
+	line-height: 1.5;
+	color: #333;
 }
 
 .commentFooter {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 .likeBtn {
-    width: fit-content;
-    display: flex;
-    border: 1px solid #B3B3B3;
-    padding: 8px 12px;
+	width: fit-content;
+	display: flex;
+	border: 1px solid #b3b3b3;
+	padding: 8px 12px;
 }
 
 .replyBtn {
-    background-color: var(--brand-gray);
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    padding: 5px 20px;
+	background-color: var(--brand-gray);
+	font-weight: bold;
+	border: none;
+	border-radius: 10px;
+	padding: 5px 20px;
 }
 
 .replyBtn:hover {
-    background-color: #E6E6E6;
+	background-color: #e6e6e6;
 }
 
 .carousel {
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
 }
 
 .carouselContent {
-    display: flex;
-    gap: 15px;
-    padding: 0 15px;
+	display: flex;
+	gap: 15px;
+	padding: 0 15px;
 }
 
 .carouselItem {
-    padding: 0;
+	padding: 0;
 }
 
 .carouselButton {
-    border: 1px solid #e2e8f0;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
+	border: 1px solid #e2e8f0;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 10;
 }
 
 .carouselButton:hover {
-    background-color: #f7fafc;
+	background-color: #f7fafc;
 }
 
 @media (min-width: 768px) {
-    .carouselItem {
-        flex: 0 0 calc(25% - 5px);
-    }
-    .carouselButton:global(.carousel-prev) {
-        left: 10px;
-    }
-    .carouselButton:global(.carousel-next) {
-        right: 10px;
-    }
+	.carouselItem {
+		flex: 0 0 calc(25% - 5px);
+	}
+	.carouselButton:global(.carousel-prev) {
+		left: 10px;
+	}
+	.carouselButton:global(.carousel-next) {
+		right: 10px;
+	}
 }
 
 @media (max-width: 1400px) and (min-width: 768px) {
-    .carouselItem {
-        flex: 0 0 calc(33.333% - 5px);
-    }
+	.carouselItem {
+		flex: 0 0 calc(33.333% - 5px);
+	}
 }
 
 @media (max-width: 1100px) and (min-width: 768px) {
-    .carouselItem {
-        flex: 0 0 calc(50% - 5px);
-    }
+	.carouselItem {
+		flex: 0 0 calc(50% - 5px);
+	}
 }
 
 @media (max-width: 768px) {
-    .carouselItem {
-        flex: 0 0 calc(50% - 5px);
-    }
+	.carouselItem {
+		flex: 0 0 calc(50% - 5px);
+	}
 }
 
 @media (max-width: 480px) {
-    .carouselItem {
-        flex: 0 0 calc(100% - 5px);
-    }
+	.carouselItem {
+		flex: 0 0 calc(100% - 5px);
+	}
 }
 
 @media (min-width: 1024px) {
-    .carouselItem {
-        flex-basis: calc(25% - 5px);
-    }
+	.carouselItem {
+		flex-basis: calc(25% - 5px);
+	}
 }

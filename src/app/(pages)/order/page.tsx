@@ -12,48 +12,48 @@ import Delivery from "@/app/(pages)/order/Delivery/Delivery";
 import { Icons } from "@/assets/svg";
 
 export default function Order() {
-  const { cartItems } = useBasketStore();
-  const router = useRouter();
+	const { cartItems } = useBasketStore();
+	const router = useRouter();
 
-  return (
-    <HeaderWrapper>
-      <div className={styles.wrapper}>
-        <div>
-          <Button
-            onClick={() => router.push("/basket")}
-            variant={"link"}
-            className={styles.goBack}
-          >
-            Вернуться в корзину
-          </Button>
-          <h1>Оформление заказа</h1>
-        </div>
+	return (
+		<HeaderWrapper>
+			<div className={styles.wrapper}>
+				<div>
+					<Button
+						onClick={() => router.push("/basket")}
+						variant={"link"}
+						className={styles.goBack}
+					>
+						Вернуться в корзину
+					</Button>
+					<h1>Оформление заказа</h1>
+				</div>
 
-        <div className={styles.content}>
-          <div className={styles.cardsBlock}>
-            <PaymentBlock />
-            <Delivery />
-          </div>
+				<div className={styles.content}>
+					<div className={styles.cardsBlock}>
+						<PaymentBlock />
+						<Delivery />
+					</div>
 
-          <div className={styles.rightSection}>
-            <OrderRegister type={"order"} />
+					<div className={styles.rightSection}>
+						<OrderRegister type={"order"} />
 
-            <div className={styles.promoWrapper}>
-              <h2 className={styles.certificateTitle}>Промокод</h2>
+						<div className={styles.promoWrapper}>
+							<h2 className={styles.certificateTitle}>Промокод</h2>
 
-              <div className={styles.inputWrapper}>
-                <Icons.Percent width={24} height={24} />
+							<div className={styles.inputWrapper}>
+								<Icons.Percent width={24} height={24} />
 
-                <input
-                  type="text"
-                  placeholder="Код активации"
-                  className={styles.input}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </HeaderWrapper>
-  );
+								<input
+									type="text"
+									placeholder="Код активации"
+									className={styles.input}
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</HeaderWrapper>
+	);
 }

@@ -1,48 +1,49 @@
-.ConfigurationForm, .form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.ConfigurationForm,
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
 
-.addBtn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    font-weight: bold;
-    width: fit-content;
+.addBtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	font-weight: bold;
+	width: fit-content;
 }
 
 /* ========================= SECTION ========================= */
 .section {
-    /*width: 100%;*/
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+	/*width: 100%;*/
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
 
 .section h3 {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0;
 }
 
 /* ========================= ACTIONS ========================= */
 .actions {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 2rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 2rem;
 }
 
-.stepsButtons{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.stepsButtons {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
 }
 
 .error {
-    color: var(--error);
-    font-size: 14px;
+	color: var(--error);
+	font-size: 14px;
 }

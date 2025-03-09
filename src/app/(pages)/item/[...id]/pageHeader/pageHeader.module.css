@@ -1,67 +1,68 @@
 .itemHeaderContainer {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 20px 0;
-    background-color: white;
-    z-index: 15;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 20px 0;
+	background-color: white;
+	z-index: 15;
 }
 
 .itemHeaderContainer.fixed {
-    position: fixed;
-    top: var(--main-header-height);
-    left: 0;
-    right: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    padding: 1rem 7rem;
+	position: fixed;
+	top: var(--main-header-height);
+	left: 0;
+	right: 0;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	padding: 1rem 7rem;
 }
 
 .itemHeaderLink {
-    color: #6b7280;
-    font-size: 0.875rem;
-    text-decoration: none;
-    transition: color 0.2s;
+	color: #6b7280;
+	font-size: 0.875rem;
+	text-decoration: none;
+	transition: color 0.2s;
 }
 
 .itemHeaderLink:hover {
-    color: #374151;
+	color: #374151;
 }
 
 .itemHeaderLink.active {
-    color: #111827;
-    font-weight: 500;
+	color: #111827;
+	font-weight: 500;
 }
 
 .separatorIcon {
-    color: #9ca3af;
-    margin: 0 0.25rem;
+	color: #9ca3af;
+	margin: 0 0.25rem;
 }
 
 .actionButtons {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
 }
 
-.favorite, .share {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.favorite,
+.share {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .favoriteIcon,
 .shareIcon {
-    color: #6b7280;
-    cursor: pointer;
-    transition: color 0.2s;
+	color: #6b7280;
+	cursor: pointer;
+	transition: color 0.2s;
 }
 
 .favoriteIcon {
-    color: var(--brand-primary);
+	color: var(--brand-primary);
 }
 
 .favoriteIcon:hover,
 .shareIcon:hover {
-    color: #374151;
+	color: #374151;
 }

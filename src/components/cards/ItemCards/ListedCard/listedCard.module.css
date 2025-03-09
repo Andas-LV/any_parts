@@ -1,207 +1,207 @@
 .card {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: stretch;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: box-shadow 0.2s;
-    cursor: pointer;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	align-items: stretch;
+	border-radius: 5px;
+	overflow: hidden;
+	transition: box-shadow 0.2s;
+	cursor: pointer;
 }
 
 .imageContainer {
-    width: clamp(180px, 250px, 300px);
-    flex-shrink: 0;
-    overflow: hidden;
+	width: clamp(180px, 250px, 300px);
+	flex-shrink: 0;
+	overflow: hidden;
 }
 
 .mainInfo {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding-bottom: 15px;
 }
 
 /* Заголовок + кнопка избранного */
 .titleHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    font-size: 18px;
-    font-weight: 600;
-    color: #111827;
-    line-height: 1.3;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	font-size: 18px;
+	font-weight: 600;
+	color: #111827;
+	line-height: 1.3;
 }
 
 /* Кнопка "Избранное" (сердечко) */
 .favoriteButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: #F3F7FE;
-    cursor: pointer;
-    transition: all 0.4s;
-    border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background-color: #f3f7fe;
+	cursor: pointer;
+	transition: all 0.4s;
+	border: none;
 }
 
 .favoriteButton:hover {
-    background-color: #d5e3fd;
+	background-color: #d5e3fd;
 }
 
 .favoriteIcon {
-    width: 20px;
-    height: 20px;
-    color: #ff3b3b;
+	width: 20px;
+	height: 20px;
+	color: #ff3b3b;
 }
 
 /* Блок с ценой (основная цена, старая цена, скидка) */
 .priceContainer {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    overflow-x: hidden;
-    gap: 10px;
-    margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	overflow-x: hidden;
+	gap: 10px;
+	margin-bottom: 20px;
 }
 
 .mainPrice {
-    font-size: 18px;
-    font-weight: 700;
-    color: #111827;
-    text-wrap: nowrap;
+	font-size: 18px;
+	font-weight: 700;
+	color: #111827;
+	text-wrap: nowrap;
 }
 
 .priceInfo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 
 .oldPrice {
-    text-wrap: nowrap;
-    font-size: 14px;
-    color: #6b7280;
-    text-decoration: line-through;
+	text-wrap: nowrap;
+	font-size: 14px;
+	color: #6b7280;
+	text-decoration: line-through;
 }
 
 .discount {
-    color: #ef4444;
-    background-color: #ffeeec;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 2px 6px;
+	color: #ef4444;
+	background-color: #ffeeec;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 2px 6px;
 }
 
 .apPrice {
-    font-size: 18px;
-    color: var(--brand-primary);
+	font-size: 18px;
+	color: var(--brand-primary);
 }
 
-.apPrice span{
-    font-weight: bold;
+.apPrice span {
+	font-weight: bold;
 }
 
 /*CHARACTERISTICS*/
 .characteristics {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 .characteristic {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-    width: 100%;
-    position: relative;
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 500;
+	color: black;
+	width: 100%;
+	position: relative;
 }
 
 .label {
-    white-space: nowrap;
-    background: white;
-    color: var(--text-secondary);
-    padding-right: 10px;
+	white-space: nowrap;
+	background: white;
+	color: var(--text-secondary);
+	padding-right: 10px;
 }
 
 .value {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    white-space: nowrap;
-    font-weight: 500;
-    min-width: 150px;
-    text-align: left;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	white-space: nowrap;
+	font-weight: 500;
+	min-width: 150px;
+	text-align: left;
 }
 
 .dots {
-    flex-grow: 1;
-    border-bottom: 1px dotted #b5b5b5;
-    height: 1px;
-    margin-right: 10px;
+	flex-grow: 1;
+	border-bottom: 1px dotted #b5b5b5;
+	height: 1px;
+	margin-right: 10px;
 }
 
-.allDetails{
-    padding: 0;
-    display: flex;
-    justify-content: start;
+.allDetails {
+	padding: 0;
+	display: flex;
+	justify-content: start;
 }
 
 /* Правая часть (магазин, рейтинг, кнопка) */
 .rightSideContent {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
-    width: clamp(180px, 250px, 300px);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 20px;
+	width: clamp(180px, 250px, 300px);
 }
 
 /* Название магазина */
 .rightSideContent p {
-    width: clamp(180px, 250px, 300px);
-    font-size: 16px;
-    font-weight: 600;
-    color: #111827;
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+	width: clamp(180px, 250px, 300px);
+	font-size: 16px;
+	font-weight: 600;
+	color: #111827;
+	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /* Рейтинг и отзывы */
 .stats {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    font-size: 14px;
-    color: #4b5563;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+	font-size: 14px;
+	color: #4b5563;
 }
 
 .ratingValue {
-    font-weight: 600;
-    color: #000;
+	font-weight: 600;
+	color: #000;
 }
 
 .commentsValue {
-    color: var(--brand-primary);
+	color: var(--brand-primary);
 }
 
 /* Кнопка "В корзину" */
 .cartButton {
-    width: 100%;
-    border-radius: 10px;
+	width: 100%;
+	border-radius: 10px;
 }
 
 .cartButton:hover {
-    background: #1d4ed8;
+	background: #1d4ed8;
 }

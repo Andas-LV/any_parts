@@ -1,31 +1,31 @@
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
 } from "@components/ui/carousel";
 import { items } from "@/exampleData/exampleItems";
 import ItemCard from "@components/cards/ItemCards/ItemCard/ItemCard";
 
 export default function PurchasedCarousel() {
-  return (
-    <div className="flex flex-col gap-5 my-[50px]">
-      <h1 className="text-[24px] font-bold">Покупают вместе</h1>
+	return (
+		<div className="flex flex-col gap-5 my-[50px]">
+			<h1 className="text-[24px] font-bold">Покупают вместе</h1>
 
-      <div className="w-full p-0">
-        <Carousel
-          opts={{
-            align: "start",
-            slidesToScroll: 1,
-          }}
-          className="relative w-full mx-auto"
-        >
-          <CarouselContent className="flex gap-[15px] px-[15px]">
-            {items.map((item, index) => (
-              <CarouselItem
-                key={index}
-                className="
+			<div className="w-full p-0">
+				<Carousel
+					opts={{
+						align: "start",
+						slidesToScroll: 1,
+					}}
+					className="relative w-full mx-auto"
+				>
+					<CarouselContent className="flex gap-[15px] px-[15px]">
+						{items.map((item, index) => (
+							<CarouselItem
+								key={index}
+								className="
                                   p-0
                                   flex-none
                                   basis-[calc(20%-12px)]
@@ -34,14 +34,14 @@ export default function PurchasedCarousel() {
                                   max-[768px]:basis-[calc(50%-8px)]
                                   max-[480px]:basis-[calc(100%-15px)]
                                 "
-              >
-                <ItemCard item={item} showFavorite />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
+							>
+								<ItemCard item={item} showFavorite />
+							</CarouselItem>
+						))}
+					</CarouselContent>
 
-          <CarouselPrevious
-            className="
+					<CarouselPrevious
+						className="
                           bg-white
                           border border-gray-200
                           rounded-full
@@ -54,10 +54,10 @@ export default function PurchasedCarousel() {
                           hover:bg-gray-50
                           -left-5
                         "
-          />
+					/>
 
-          <CarouselNext
-            className="
+					<CarouselNext
+						className="
                           bg-white
                           border border-gray-200
                           rounded-full
@@ -70,9 +70,9 @@ export default function PurchasedCarousel() {
                           hover:bg-gray-50
                           -right-5
                         "
-          />
-        </Carousel>
-      </div>
-    </div>
-  );
+					/>
+				</Carousel>
+			</div>
+		</div>
+	);
 }

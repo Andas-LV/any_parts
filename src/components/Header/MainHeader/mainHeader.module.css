@@ -1,78 +1,78 @@
 .container {
-    height: 100%;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-    padding: 15px 0;
-    z-index: 55;
+	height: 100%;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 25px;
+	padding: 15px 0;
+	z-index: 55;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #000;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	text-decoration: none;
+	color: #000;
 }
 
 .logo h1 {
-    font-size: 26px;
-    font-weight: bold;
-    text-wrap: nowrap;
+	font-size: 26px;
+	font-weight: bold;
+	text-wrap: nowrap;
 }
 
 .navigationSection {
-    display: flex;
-    align-items: center;
-    gap: 24px;
+	display: flex;
+	align-items: center;
+	gap: 24px;
 }
 
 .navItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #4b5563;
-    cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-decoration: none;
+	color: #4b5563;
+	cursor: pointer;
 }
 
 .navItem:hover {
-    color: #111827;
+	color: #111827;
 }
 
 .navItem span {
-    margin-top: 4px;
-    font-size: 12px;
-    font-weight: bold;
+	margin-top: 4px;
+	font-size: 12px;
+	font-weight: bold;
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 0 12px;
-    }
+	.container {
+		padding: 0 12px;
+	}
 
-    .searchSection {
-        max-width: 200px;
-        margin: 0 12px;
-    }
+	.searchSection {
+		max-width: 200px;
+		margin: 0 12px;
+	}
 
-    .navigationSection {
-        gap: 16px;
-    }
+	.navigationSection {
+		gap: 16px;
+	}
 }
 
 @media (max-width: 640px) {
-    .logo span {
-        display: none;
-    }
+	.logo span {
+		display: none;
+	}
 
-    .searchSection {
-        max-width: 150px;
-    }
+	.searchSection {
+		max-width: 150px;
+	}
 
-    .navItem span {
-        display: none;
-    }
+	.navItem span {
+		display: none;
+	}
 }

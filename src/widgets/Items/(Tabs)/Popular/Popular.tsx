@@ -3,11 +3,11 @@ import ItemCard from "@components/cards/ItemCards/ItemCard/ItemCard";
 import styles from "./page.module.css";
 
 export default function Popular() {
-  return (
-    <div className={styles.wrapper}>
-      {items.map((item, index) => (
-        <ItemCard key={index} item={item} showFavorite={true} />
-      ))}
-    </div>
-  );
+	return (
+		<div className={styles.wrapper}>
+			{items.map((item, index) => (
+				<ItemCard key={index} item={item} showFavorite={true} />
+			))}
+		</div>
+	);
 }

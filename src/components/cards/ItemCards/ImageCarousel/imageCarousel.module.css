@@ -1,69 +1,69 @@
 .container {
-    width: 100%;
+	width: 100%;
 }
 
 .imageContainer {
-    position: relative;
-    width: 100%;
-    padding-bottom: 75%;
-    overflow: hidden;
+	position: relative;
+	width: 100%;
+	padding-bottom: 75%;
+	overflow: hidden;
 }
 
 .image {
-    object-fit: cover;
-    border-radius: 5px;
-    transition: opacity 0.3s ease;
+	object-fit: cover;
+	border-radius: 5px;
+	transition: opacity 0.3s ease;
 }
 
 .progressIndicators {
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
-    right: 5px;
-    height: 4px;
-    display: flex;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.1);
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	height: 4px;
+	display: flex;
+	z-index: 10;
+	background: rgba(0, 0, 0, 0.1);
 }
 
 .indicator {
-    height: 100%;
-    background: rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
 }
 
 .activeIndicator {
-    background: white;
-    border-radius: 3px;
+	background: white;
+	border-radius: 3px;
 }
 
 .hoverZones {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    z-index: 5;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	z-index: 5;
 }
 
 .hoverZone {
-    height: 100%;
-    cursor: pointer;
+	height: 100%;
+	cursor: pointer;
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 5px;
 }

@@ -1,161 +1,166 @@
 .card {
-    width: 100%;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    overflow: hidden;
-    transition: box-shadow 0.2s;
-    cursor: pointer;
-    padding: 1rem;
-    border-radius: 10px;
+	width: 100%;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	overflow: hidden;
+	transition: box-shadow 0.2s;
+	cursor: pointer;
+	padding: 1rem;
+	border-radius: 10px;
 }
 
-.cardContent{
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 20px;
-    width: 100%;
+.cardContent {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	gap: 20px;
+	width: 100%;
 }
 
 .imageContainer {
-    width: clamp(160px, 200px, 250px);
-    flex-shrink: 0;
-    overflow: hidden;
+	width: clamp(160px, 200px, 250px);
+	flex-shrink: 0;
+	overflow: hidden;
 }
 
 .mainInfo {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 10px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	gap: 10px;
 }
 
 .cardHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 30px;
 }
-.cardName{
-    font-weight: bold;
-    font-size: 18px;
-    max-width: 300px;
-    text-wrap: wrap;
+.cardName {
+	font-weight: bold;
+	font-size: 18px;
+	max-width: 300px;
+	text-wrap: wrap;
 }
 .priceContainer {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 .mainPrice {
-    font-size: 18px;
-    font-weight: 700;
-    text-wrap: nowrap;
+	font-size: 18px;
+	font-weight: 700;
+	text-wrap: nowrap;
 }
 
 .priceInfo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
 }
 
 .oldPrice {
-    font-size: 14px;
-    color: #6b7280;
-    text-decoration: line-through;
-    text-wrap: nowrap;
+	font-size: 14px;
+	color: #6b7280;
+	text-decoration: line-through;
+	text-wrap: nowrap;
 }
 
 .discount {
-    color: #ef4444;
-    background-color: #ffeeec;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 2px 6px;
+	color: #ef4444;
+	background-color: #ffeeec;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 2px 6px;
 }
 
-.colorText, .quantity {
-    font-size: 14px;
-    color: var(--text-secondary);
+.colorText,
+.quantity {
+	font-size: 14px;
+	color: var(--text-secondary);
 }
 
 .actionButtons {
-    display: flex;
-    align-items: stretch;
-    gap: 1rem;
-    margin-top: auto;
+	display: flex;
+	align-items: stretch;
+	gap: 1rem;
+	margin-top: auto;
 }
 
-.favoriteButton, .deleteButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: #f0f0f0;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.4s;
+.favoriteButton,
+.deleteButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background-color: #f0f0f0;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.4s;
 }
 
 .buyButton {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background-color: #f0f0f0;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #000;
-    font-weight: 500;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	background-color: #f0f0f0;
+	border: none;
+	padding: 8px 12px;
+	border-radius: 10px;
+	cursor: pointer;
+	color: #000;
+	font-weight: 500;
 }
 
 .buyButton p {
-    margin: 0;
+	margin: 0;
 }
 
-.deleteButton:hover, .buyButton:hover, .favoriteButton:hover, .quantityActionBtn:hover {
-    background-color: #e2e2e2;
+.deleteButton:hover,
+.buyButton:hover,
+.favoriteButton:hover,
+.quantityActionBtn:hover {
+	background-color: #e2e2e2;
 }
 
 .rightSideContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
 }
 
 .quantityContainer {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .quantityActionBtn {
-    background-color: #f0f0f0;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    line-height: 1;
-    font-weight: 600;
-    transition: background-color 0.2s;
+	background-color: #f0f0f0;
+	padding: 10px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	line-height: 1;
+	font-weight: 600;
+	transition: background-color 0.2s;
 }
 
 .quantityContainer span {
-    width: 30px;
-    text-align: center;
-    font-weight: 600;
+	width: 30px;
+	text-align: center;
+	font-weight: 600;
 }
 
-.quantityActionBtn:disabled{
-    opacity: 0.5;
-    cursor: not-allowed;
+.quantityActionBtn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
 }

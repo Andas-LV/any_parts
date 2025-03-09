@@ -1,57 +1,57 @@
 .modalContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-width: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	max-width: 500px;
 }
 
-.modalContent h2{
-    text-align: center;
-    font-weight: bold;
-    line-height: 1.3;
+.modalContent h2 {
+	text-align: center;
+	font-weight: bold;
+	line-height: 1.3;
 }
 
-.modalContent p{
-    font-weight: 500;
-    text-align: center;
+.modalContent p {
+	font-weight: 500;
+	text-align: center;
 }
 
-.apPercentage{
-    color: var(--brand-primary);
+.apPercentage {
+	color: var(--brand-primary);
 }
 
 .submitButton {
-    width: 100%;
-    margin-top: 30px;
-    padding: 20px 0;
-    background-color: var(--brand-primary);
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
+	width: 100%;
+	margin-top: 30px;
+	padding: 20px 0;
+	background-color: var(--brand-primary);
+	color: white;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 .submitButton:hover {
-    background-color: #0c5bc8;
+	background-color: #0c5bc8;
 }
 
 .submitButton:disabled {
-    background-color: gray;
-    cursor: not-allowed;
+	background-color: gray;
+	cursor: not-allowed;
 }
 
-.securityInfo{
-    font-size: 16px;
-    color: var(--text-secondary);
-    line-height: 1.3;
-    text-align: justify;
+.securityInfo {
+	font-size: 16px;
+	color: var(--text-secondary);
+	line-height: 1.3;
+	text-align: justify;
 }
 
-.securityInfo span{
-    font-weight: 500;
-    color: black;
-    margin: 0 5px;
+.securityInfo span {
+	font-weight: 500;
+	color: black;
+	margin: 0 5px;
 }

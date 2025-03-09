@@ -1,54 +1,54 @@
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px 0;
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px 0;
 }
 
-.title{
-    font-weight: bold;
-    font-size: 16px;
+.title {
+	font-weight: bold;
+	font-size: 16px;
 }
 
-.questionCardsWrapper{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin: 20px 0;
+.questionCardsWrapper {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+	margin: 20px 0;
 }
 /*CONTENT*/
-.contentWrapper{
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
-    gap: 20px;
+.contentWrapper {
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
+	gap: 20px;
 }
 
-.griddedQuestions{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+.griddedQuestions {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
 }
 /*NO CONTENT*/
-.noContentWrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 20px 0;
+.noContentWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin: 20px 0;
 }
 
-.noContentWrapper p{
-    width: 400px;
-    color: var(--text-secondary);
+.noContentWrapper p {
+	width: 400px;
+	color: var(--text-secondary);
 }
 
-.noContentTitle{
-    font-weight: bold;
-    font-size: large;
+.noContentTitle {
+	font-weight: bold;
+	font-size: large;
 }
 
-.routerBtn{
-    width: 300px;
-    padding: 25px 0;
-    border-radius: 15px;
+.routerBtn {
+	width: 300px;
+	padding: 25px 0;
+	border-radius: 15px;
 }

@@ -1,31 +1,31 @@
 .instruction {
-    color: #333;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 24px;
-    font-weight: 600;
+	color: #333;
+	font-size: 16px;
+	line-height: 1.5;
+	margin-bottom: 24px;
+	font-weight: 600;
 }
 
 .email {
-    margin: 0 5px;
+	margin: 0 5px;
 }
 
 .nameInput {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    background: var(--brand-gray);
-    margin-bottom: 16px;
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 8px;
+	font-size: 16px;
+	background: var(--brand-gray);
+	margin-bottom: 16px;
 }
 
-.changeNumberBtn{
-    color: var(--brand-primary);
+.changeNumberBtn {
+	color: var(--brand-primary);
 }
 
 .submitButton {
-    width: 100%;
-    padding: 25px 0;
-    border-radius: 15px;
+	width: 100%;
+	padding: 25px 0;
+	border-radius: 15px;
 }

@@ -1,15 +1,15 @@
 .instruction {
-    color: #333;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    font-weight: 600;
+	color: #333;
+	font-size: 16px;
+	line-height: 1.5;
+	margin-bottom: 1rem;
+	font-weight: 600;
 }
 
 .email {
-    margin: 0 5px;
+	margin: 0 5px;
 }
 
 .changeNumberBtn {
-    color: var(--brand-primary);
+	color: var(--brand-primary);
 }

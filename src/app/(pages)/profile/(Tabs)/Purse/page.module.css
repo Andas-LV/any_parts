@@ -1,37 +1,37 @@
-.purseWrapper{
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
+.purseWrapper {
+	display: flex;
+	align-items: flex-start;
+	gap: 50px;
 }
 
-.purseWrapper h1{
-    font-size: 32px;
-    font-weight: bold;
+.purseWrapper h1 {
+	font-size: 32px;
+	font-weight: bold;
 }
 
-.menuBar{
-    display: flex;
-    flex-direction: column;
+.menuBar {
+	display: flex;
+	flex-direction: column;
 }
 
-.noTransActions{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 10px;
-    max-width: 300px;
-    margin: 100px 0 0 100px;
+.noTransActions {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 10px;
+	max-width: 300px;
+	margin: 100px 0 0 100px;
 }
 
-.noTransActions h3{
-    color: black;
-    font-weight: bold;
-    font-size: 16px;
+.noTransActions h3 {
+	color: black;
+	font-weight: bold;
+	font-size: 16px;
 }
 
-.noTransActions p{
-    color: var(--text-secondary);
-    font-size: 16px;
-    line-height: 1.3;
+.noTransActions p {
+	color: var(--text-secondary);
+	font-size: 16px;
+	line-height: 1.3;
 }

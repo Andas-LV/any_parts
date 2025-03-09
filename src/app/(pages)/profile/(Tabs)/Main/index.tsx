@@ -11,107 +11,107 @@ import InstructionModal from "@/widgets/modals/apWallet/instruction/instructionM
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 
 export type TModal =
-  | "createWallet"
-  | "onSuccessModal"
-  | "instructionModal"
-  | null;
+	| "createWallet"
+	| "onSuccessModal"
+	| "instructionModal"
+	| null;
 
 export default function Main() {
-  const { user } = useUserStore();
+	const { user } = useUserStore();
 
-  const [activeModal, setActiveModal] = useState<TModal>(null);
+	const [activeModal, setActiveModal] = useState<TModal>(null);
 
-  return (
-    <div className={styles.wrapper}>
-      <Menu />
+	return (
+		<div className={styles.wrapper}>
+			<Menu />
 
-      <div className={styles.actionCards}>
-        <div className={styles.actionCard}>
-          <div className={styles.itemName}>
-            <h2>0 {user && useCurrencySymbol(user.currency)}</h2>
-            <p>Баланс</p>
-          </div>
+			<div className={styles.actionCards}>
+				<div className={styles.actionCard}>
+					<div className={styles.itemName}>
+						<h2>0 {user && useCurrencySymbol(user.currency)}</h2>
+						<p>Баланс</p>
+					</div>
 
-          {user?.apWallet ? (
-            <button className={styles.createWalletButton}>
-              <Image
-                className={styles.walletImg}
-                src={"/profile/APwallet.png"}
-                alt={"wallet"}
-                fill
-                sizes={"20px"}
-              />
+					{user?.apWallet ? (
+						<button className={styles.createWalletButton}>
+							<Image
+								className={styles.walletImg}
+								src={"/profile/APwallet.png"}
+								alt={"wallet"}
+								fill
+								sizes={"20px"}
+							/>
 
-              <p>Пополнить</p>
-            </button>
-          ) : (
-            <button
-              className={styles.createWalletButton}
-              onClick={() => setActiveModal("createWallet")}
-            >
-              <Image
-                className={styles.walletImg}
-                src={"/profile/APwallet.png"}
-                alt={"wallet"}
-                fill
-                sizes={"20px"}
-              />
+							<p>Пополнить</p>
+						</button>
+					) : (
+						<button
+							className={styles.createWalletButton}
+							onClick={() => setActiveModal("createWallet")}
+						>
+							<Image
+								className={styles.walletImg}
+								src={"/profile/APwallet.png"}
+								alt={"wallet"}
+								fill
+								sizes={"20px"}
+							/>
 
-              <p>Открыть AP Кошелёк</p>
-            </button>
-          )}
-        </div>
+							<p>Открыть AP Кошелёк</p>
+						</button>
+					)}
+				</div>
 
-        <div className={styles.actionCard}>
-          <div className={styles.itemName}>
-            <h2>Избранное</h2>
-            <p>0 товаров</p>
-          </div>
+				<div className={styles.actionCard}>
+					<div className={styles.itemName}>
+						<h2>Избранное</h2>
+						<p>0 товаров</p>
+					</div>
 
-          <button className={styles.favoriteButton}>
-            <Image
-              className={styles.likedImg}
-              src={"/profile/liked.png"}
-              alt={"liked"}
-              fill
-              sizes={"30px"}
-            />
-          </button>
-        </div>
+					<button className={styles.favoriteButton}>
+						<Image
+							className={styles.likedImg}
+							src={"/profile/liked.png"}
+							alt={"liked"}
+							fill
+							sizes={"30px"}
+						/>
+					</button>
+				</div>
 
-        <div className={styles.actionCard}>
-          <div className={styles.itemName}>
-            <h2>Покупки</h2>
-            <p>Пока пусто</p>
-          </div>
+				<div className={styles.actionCard}>
+					<div className={styles.itemName}>
+						<h2>Покупки</h2>
+						<p>Пока пусто</p>
+					</div>
 
-          <button className={styles.bagButton}>
-            <Image
-              className={styles.bagImg}
-              src={"/profile/Bag.png"}
-              alt={"bag"}
-              fill
-              sizes={"30px"}
-            />
-          </button>
-        </div>
-      </div>
+					<button className={styles.bagButton}>
+						<Image
+							className={styles.bagImg}
+							src={"/profile/Bag.png"}
+							alt={"bag"}
+							fill
+							sizes={"30px"}
+						/>
+					</button>
+				</div>
+			</div>
 
-      {activeModal === "createWallet" && (
-        <ApCreateModal
-          onClose={() => setActiveModal(null)}
-          onNext={() => setActiveModal("onSuccessModal")}
-        />
-      )}
-      {activeModal === "onSuccessModal" && (
-        <AfterCreate
-          onClose={() => setActiveModal(null)}
-          onNext={() => setActiveModal("instructionModal")}
-        />
-      )}
-      {activeModal === "instructionModal" && (
-        <InstructionModal onClose={() => setActiveModal(null)} />
-      )}
-    </div>
-  );
+			{activeModal === "createWallet" && (
+				<ApCreateModal
+					onClose={() => setActiveModal(null)}
+					onNext={() => setActiveModal("onSuccessModal")}
+				/>
+			)}
+			{activeModal === "onSuccessModal" && (
+				<AfterCreate
+					onClose={() => setActiveModal(null)}
+					onNext={() => setActiveModal("instructionModal")}
+				/>
+			)}
+			{activeModal === "instructionModal" && (
+				<InstructionModal onClose={() => setActiveModal(null)} />
+			)}
+		</div>
+	);
 }

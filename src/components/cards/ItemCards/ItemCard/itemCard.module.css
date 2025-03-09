@@ -1,138 +1,138 @@
 .card {
-    width: 100%;
+	width: 100%;
 
-    height: 100%;
+	height: 100%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 
-    border-radius: 5px;
-    overflow: hidden;
-    transition: box-shadow 0.2s;
-    background-color: #fff;
-    border: 0;
-    cursor: pointer;
+	border-radius: 5px;
+	overflow: hidden;
+	transition: box-shadow 0.2s;
+	background-color: #fff;
+	border: 0;
+	cursor: pointer;
 }
 
 .card:hover {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
 .imageContainer {
-    position: relative;
-    width: 100%;
-    padding-bottom: 75%;
+	position: relative;
+	width: 100%;
+	padding-bottom: 75%;
 }
 
 .image {
-    object-fit: cover;
-    border-radius: 5px;
+	object-fit: cover;
+	border-radius: 5px;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 10px;
 }
 
 .priceContainer {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 8px;
 }
 
 .mainPrice {
-    font-size: 24px;
-    font-weight: 700;
-    color: #111827;
+	font-size: 24px;
+	font-weight: 700;
+	color: #111827;
 }
 
 .priceInfo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 5px 0;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 5px 0;
 }
 
 .oldPrice {
-    font-size: 14px;
-    color: #6b7280;
-    text-decoration: line-through;
+	font-size: 14px;
+	color: #6b7280;
+	text-decoration: line-through;
 }
 
 .discount {
-    color: #ef4444;
-    background-color: #ffeeec;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 600;
+	color: #ef4444;
+	background-color: #ffeeec;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 600;
 }
 
 .title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #000;
-    margin: 8px 0;
+	font-size: 16px;
+	font-weight: 600;
+	color: #000;
+	margin: 8px 0;
 }
 
 .ratingWrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 12px;
 }
 
 .rating {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
 
-    font-size: 16px;
+	font-size: 16px;
 }
 
 .ratingNumber {
-    font-weight: bold;
-    font-size: 14px;
+	font-weight: bold;
+	font-size: 14px;
 }
 
 .comments {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #6b7280;
-    font-size: 14px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	color: #6b7280;
+	font-size: 14px;
 }
 
 .actions {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 12px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	margin-top: 12px;
 }
 
 .cartButton {
-    flex: 1;
+	flex: 1;
 }
 
 .cartButton:hover {
-    background: #1d4ed8;
+	background: #1d4ed8;
 }
 
 .favoriteButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: #F3F7FE;
-    cursor: pointer;
-    transition: all 0.4s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background-color: #f3f7fe;
+	cursor: pointer;
+	transition: all 0.4s;
 }
 
 .favoriteButton:hover {
-    background-color: #d5e3fd;
+	background-color: #d5e3fd;
 }

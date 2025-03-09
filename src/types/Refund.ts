@@ -1,44 +1,47 @@
 export type RefundItem = {
-    id: number;
-    price: number;
+	id: number;
+	price: number;
 
-    status: StatusTypes;
-    comment?: string;
-    images: Media[];
+	status: StatusTypes;
+	comment?: string;
+	images: Media[];
 
-    createdAt: Date;
-}
+	createdAt: Date;
+};
 
 export type RefundItemValidator = {
-    shopName: string;
-    productName: string;
+	shopName: string;
+	productName: string;
 
-    refundCause: RefundCauseTypes;
-    price: number;
+	refundCause: RefundCauseTypes;
+	price: number;
 
-    detailedContext: string;
-    images: Media[];
+	detailedContext: string;
+	images: Media[];
 
-    createdAt: Date;
-}
+	createdAt: Date;
+};
 
 export interface Media {
-    id?: number
-    file: string
-    file_type: string
-    file_name?: string
+	id?: number;
+	file: string;
+	file_type: string;
+	file_name?: string;
 }
 
 export type RefundCauseTypes =
-    'Товар с браком' |
-    'Не оригинал' |
-    'Есть повреждения' |
-    'Товаром пользовались'|
-    'Другое'
+	| "Товар с браком"
+	| "Не оригинал"
+	| "Есть повреждения"
+	| "Товаром пользовались"
+	| "Другое";
 
 export type PhotoOptions =
-    "Товар целиком" | "Бирка или этикетка"|
-    "Штрихкод на упаковке" | "Дефект товара" |
-    "Срок годности или № партии" | "Видео дефекта"
+	| "Товар целиком"
+	| "Бирка или этикетка"
+	| "Штрихкод на упаковке"
+	| "Дефект товара"
+	| "Срок годности или № партии"
+	| "Видео дефекта";
 
-export type StatusTypes = 'На рассмотрении' | 'Одобрено' | 'Не одобрено';
+export type StatusTypes = "На рассмотрении" | "Одобрено" | "Не одобрено";

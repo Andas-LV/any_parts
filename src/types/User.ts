@@ -1,13 +1,13 @@
 export type User = {
-  id: number;
-  email: string;
-  phone: string;
-  apWallet: boolean;
-  username: string;
-  avatarUrl?: string | null;
-  male: MaleChoice;
-  currency: Currency;
-  role: Roles;
+	id: number;
+	email: string;
+	phone: string;
+	apWallet: boolean;
+	username: string;
+	avatarUrl?: string | null;
+	male: MaleChoice;
+	currency: Currency;
+	role: Roles;
 };
 
 export type MaleChoice = "Male" | "Female";

@@ -1,35 +1,35 @@
-.wrapper{
-    width: 100%;
-    min-height: calc(100vh - var(--top-header-height));
-    padding: 2rem 7rem;
-    background-color: #F2F4F8;
+.wrapper {
+	width: 100%;
+	min-height: calc(100vh - var(--top-header-height));
+	padding: 2rem 7rem;
+	background-color: #f2f4f8;
 }
-.tabsListWrapper{
-    width: 100%;
+.tabsListWrapper {
+	width: 100%;
 }
 .tabsList {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: transparent !important;
-    margin-bottom: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: transparent !important;
+	margin-bottom: 30px;
 }
 
 .tabsTrigger {
-    padding: 12px 0;
-    height: auto;
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
-    background-color: transparent !important;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s ease;
+	padding: 12px 0;
+	height: auto;
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
+	background-color: transparent !important;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	transition: color 0.3s ease;
 }
 
 .tabsTrigger[data-state="active"] {
-    color: var(--brand-primary);
-    background-color: transparent !important;
-    box-shadow: none !important;
+	color: var(--brand-primary);
+	background-color: transparent !important;
+	box-shadow: none !important;
 }

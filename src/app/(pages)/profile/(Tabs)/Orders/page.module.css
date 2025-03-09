@@ -1,119 +1,117 @@
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
 }
 
-.wrapper h2{
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
+.wrapper h2 {
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 20px;
 }
-
 
 /*Tabs*/
 .tabsContainer {
-    position: relative;
-    margin: 0;
-    width: 100%;
+	position: relative;
+	margin: 0;
+	width: 100%;
 }
 
 .tabsListWrapper {
-    position: relative;
-    z-index: 40;
-    transition: all 0.3s ease;
+	position: relative;
+	z-index: 40;
+	transition: all 0.3s ease;
 }
 
 .tabsListWrapper.fixed + .tabsContent {
-    margin-top: var(--tabs-height);
+	margin-top: var(--tabs-height);
 }
 
 .tabsList {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 40px;
-    padding: 0;
-    background-color: transparent !important;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 40px;
+	padding: 0;
+	background-color: transparent !important;
 }
 
-.tabsContent{
-    width: 100%;
+.tabsContent {
+	width: 100%;
 }
 
 .tabsTrigger {
-    padding: 12px 0;
-    height: auto;
-    font-size: 32px;
-    font-weight: bold;
-    color: #6b7280;
-    background-color: transparent !important;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s ease;
+	padding: 12px 0;
+	height: auto;
+	font-size: 32px;
+	font-weight: bold;
+	color: #6b7280;
+	background-color: transparent !important;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	transition: color 0.3s ease;
 }
 
 .tabsTrigger[data-state="active"] {
-    color: #111827;
-    background-color: transparent !important;
-    box-shadow: none !important;
+	color: #111827;
+	background-color: transparent !important;
+	box-shadow: none !important;
 }
 
 .tabsTrigger:hover {
-    color: #374151;
-    background-color: transparent !important;
+	color: #374151;
+	background-color: transparent !important;
 }
 
-
 .tabsTrigger[data-state="active"]::after {
-    content: none;
+	content: none;
 }
 
 @media (max-width: 768px) {
-    .tabsList {
-        gap: 16px;
-    }
+	.tabsList {
+		gap: 16px;
+	}
 
-    .tabsTrigger {
-        font-size: 14px;
-    }
+	.tabsTrigger {
+		font-size: 14px;
+	}
 }
 
 @media (max-width: 480px) {
-    .tabsList {
-        gap: 12px;
-    }
+	.tabsList {
+		gap: 12px;
+	}
 
-    .tabsTrigger {
-        font-size: 12px;
-        padding: 8px 0;
-    }
+	.tabsTrigger {
+		font-size: 12px;
+		padding: 8px 0;
+	}
 }
 
 /*NO ORDERS*/
-.noOrdersWrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+.noOrdersWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
 }
 
-.noOrdersWrapper p{
-    color: var(--text-secondary);
-    font-weight: 500;
+.noOrdersWrapper p {
+	color: var(--text-secondary);
+	font-weight: 500;
 }
 
 .noOrdersTitle {
-    color: black;
-    font-weight: bold;
+	color: black;
+	font-weight: bold;
 }
 /*NO AUTH*/
-.nonAuth{
-    color:var(--text-secondary);
+.nonAuth {
+	color: var(--text-secondary);
 }
 
-.linkToLogin{
-    padding: 5px;
+.linkToLogin {
+	padding: 5px;
 }

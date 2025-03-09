@@ -1,9 +1,9 @@
 import { z } from "zod";
 import {
-  characteristicsSchema,
-  configurationSchema,
-  generalInfoSchema,
-  priceMakingSchema,
+	characteristicsSchema,
+	configurationSchema,
+	generalInfoSchema,
+	priceMakingSchema,
 } from "@/schemas/createItem";
 
 export type TGeneralInfoSchema = z.infer<typeof generalInfoSchema>;
@@ -15,6 +15,6 @@ export type TConfigurationSchema = z.infer<typeof configurationSchema>;
 export type TPriceMakingSchema = z.infer<typeof priceMakingSchema>;
 
 export type TCreateItemFullInfo = TGeneralInfoSchema &
-  TCharacteristicsSchema &
-  TConfigurationSchema &
-  TPriceMakingSchema;
+	TCharacteristicsSchema &
+	TConfigurationSchema &
+	TPriceMakingSchema;

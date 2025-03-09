@@ -9,27 +9,27 @@ import { useItemsStore } from "@/entities/items/useItemsStore";
 import Loading from "@components/Loading";
 
 export default function MainContent() {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+	const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const { currentItem } = useItemsStore();
+	const { currentItem } = useItemsStore();
 
-  if (!currentItem) {
-    return <Loading />;
-  }
+	if (!currentItem) {
+		return <Loading />;
+	}
 
-  return (
-    <div className={styles.mainContent}>
-      <ImageCarousel
-        images={currentItem.images}
-        selectedIndex={selectedIndex}
-        setSelectedIndexAction={setSelectedIndex}
-      />
-      <ItemInfo
-        {...currentItem}
-        selectedIndex={selectedIndex}
-        setSelectedIndexAction={setSelectedIndex}
-      />
-      <ActionsBlock {...currentItem} />
-    </div>
-  );
+	return (
+		<div className={styles.mainContent}>
+			<ImageCarousel
+				images={currentItem.images}
+				selectedIndex={selectedIndex}
+				setSelectedIndexAction={setSelectedIndex}
+			/>
+			<ItemInfo
+				{...currentItem}
+				selectedIndex={selectedIndex}
+				setSelectedIndexAction={setSelectedIndex}
+			/>
+			<ActionsBlock {...currentItem} />
+		</div>
+	);
 }

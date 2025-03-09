@@ -1,49 +1,51 @@
-.wrapper{
-    --padding: 2px 10px;
+.wrapper {
+	--padding: 2px 10px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 5px 0;
-    z-index: 55;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 5px 0;
+	z-index: 55;
 }
 
-.leftSide{
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.leftSide {
+	display: flex;
+	align-items: center;
+	gap: 15px;
 }
 
-.currency, .address{
-    max-height: var(--top-header-height);
-    padding: var(--padding);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
+.currency,
+.address {
+	max-height: var(--top-header-height);
+	padding: var(--padding);
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	cursor: pointer;
 }
 
-.currency:hover, .address:hover{
-    background-color: var(--skeleton);
+.currency:hover,
+.address:hover {
+	background-color: var(--skeleton);
 }
 
 .currencyImg {
-    width: fit-content;
-    height: auto;
-    border-radius: 10%;
-    object-fit: cover;
+	width: fit-content;
+	height: auto;
+	border-radius: 10%;
+	object-fit: cover;
 }
 
-.getSeller{
-    max-height: var(--top-header-height);
-    padding: var(--padding);
-    color: var(--brand-primary) !important;
-    font-weight: bold !important;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
+.getSeller {
+	max-height: var(--top-header-height);
+	padding: var(--padding);
+	color: var(--brand-primary) !important;
+	font-weight: bold !important;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
 }
 
-.getSeller:hover{
-    background-color: #d5e6fa !important;
+.getSeller:hover {
+	background-color: #d5e6fa !important;
 }

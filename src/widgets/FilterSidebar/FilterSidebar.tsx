@@ -12,44 +12,52 @@ import { FilterManufacturers } from "./FilterManufacturers";
 import { useFiltersStore } from "@/entities/items/useFiltersStore";
 
 export default function FilterSidebar() {
-    const {
-        sale,
-        highRated,
-        selectedBrands,
-        priceRange,
-        selectedTypes,
-        selectedColors,
-        selectedManufacturers,
-    } = useFiltersStore();
+	const {
+		sale,
+		highRated,
+		selectedBrands,
+		priceRange,
+		selectedTypes,
+		selectedColors,
+		selectedManufacturers,
+	} = useFiltersStore();
 
-    useEffect(() => {
-        const filters = {
-            sale,
-            highRated,
-            selectedBrands,
-            priceRange,
-            selectedTypes,
-            selectedColors,
-            selectedManufacturers,
-        };
-        console.log("Выбранные фильтры:", filters);
-    }, [sale, highRated, selectedBrands, priceRange, selectedTypes, selectedColors, selectedManufacturers]);
+	useEffect(() => {
+		const filters = {
+			sale,
+			highRated,
+			selectedBrands,
+			priceRange,
+			selectedTypes,
+			selectedColors,
+			selectedManufacturers,
+		};
+		console.log("Выбранные фильтры:", filters);
+	}, [
+		sale,
+		highRated,
+		selectedBrands,
+		priceRange,
+		selectedTypes,
+		selectedColors,
+		selectedManufacturers,
+	]);
 
-    return (
-        <aside className={styles.sidebar}>
-            <h2 className={styles.title}>Фильтры</h2>
+	return (
+		<aside className={styles.sidebar}>
+			<h2 className={styles.title}>Фильтры</h2>
 
-            <FilterSaleAndRating/>
+			<FilterSaleAndRating />
 
-            <FilterBrands/>
+			<FilterBrands />
 
-            <FilterPrice/>
+			<FilterPrice />
 
-            <FilterTypes/>
+			<FilterTypes />
 
-            <FilterColors/>
+			<FilterColors />
 
-            <FilterManufacturers/>
-        </aside>
-    );
+			<FilterManufacturers />
+		</aside>
+	);
 }

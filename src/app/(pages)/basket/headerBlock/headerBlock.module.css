@@ -1,40 +1,41 @@
-.wrapper{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 10px;
-    gap: 20px;
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #fff;
+	padding: 1rem;
+	border-radius: 10px;
+	gap: 20px;
 }
 
-.actions{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    font-weight: bold;
+.actions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	font-weight: bold;
 }
 
-.actions p{
-    padding: 10px 0;
+.actions p {
+	padding: 10px 0;
 }
 
-.deleteAllBtn{
-    color: #F43625;
-    cursor: pointer;
+.deleteAllBtn {
+	color: #f43625;
+	cursor: pointer;
 }
 
-.share{
-    display: flex;
-    gap: 5px;
-    padding: 10px;
-    background-color: var(--brand-gray);
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
+.share {
+	display: flex;
+	gap: 5px;
+	padding: 10px;
+	background-color: var(--brand-gray);
+	border-radius: 10px;
+	font-weight: bold;
+	cursor: pointer;
 }
 
-.share:disabled, .deleteAllBtn:disabled {
-    cursor: not-allowed;
+.share:disabled,
+.deleteAllBtn:disabled {
+	cursor: not-allowed;
 }

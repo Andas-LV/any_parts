@@ -1,178 +1,178 @@
 .card {
-    width: 100%;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    overflow: hidden;
-    transition: box-shadow 0.2s;
-    background-color: transparent;
-    cursor: pointer;
-    padding: 1rem;
-    border-radius: 10px;
+	width: 100%;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	overflow: hidden;
+	transition: box-shadow 0.2s;
+	background-color: transparent;
+	cursor: pointer;
+	padding: 1rem;
+	border-radius: 10px;
 }
 
 .checkboxContainer {
-    display: flex;
-    justify-content: flex-start;
-    padding: 10px;
+	display: flex;
+	justify-content: flex-start;
+	padding: 10px;
 }
 
 .checkbox {
-    width: 20px;
-    height: 20px;
-    background-color: #e0e0e0;
-    border-radius: 4px;
-    animation: pulse 1.5s infinite ease-in-out;
+	width: 20px;
+	height: 20px;
+	background-color: #e0e0e0;
+	border-radius: 4px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .cardContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 20px;
-    width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	gap: 20px;
+	width: 100%;
 }
 
 .imageContainer {
-    width: clamp(160px, 200px, 250px);
-    flex-shrink: 0;
-    overflow: hidden;
+	width: clamp(160px, 200px, 250px);
+	flex-shrink: 0;
+	overflow: hidden;
 }
 
 .image {
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
-    animation: pulse 1.5s infinite ease-in-out;
+	background-color: #e0e0e0;
+	border-radius: 10px;
+	height: 100%;
+	width: 100%;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .mainInfo {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 10px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	gap: 10px;
 }
 
 .cardHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 30px;
 }
 
 .cardName {
-    background-color: #e0e0e0;
-    height: 18px;
-    width: 100%;
-    border-radius: 4px;
-    animation: pulse 1.5s infinite ease-in-out;
+	background-color: #e0e0e0;
+	height: 18px;
+	width: 100%;
+	border-radius: 4px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .priceContainer {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 .mainPrice {
-    background-color: #e0e0e0;
-    height: 18px;
-    width: 100px;
-    border-radius: 4px;
-    animation: pulse 1.5s infinite ease-in-out;
+	background-color: #e0e0e0;
+	height: 18px;
+	width: 100px;
+	border-radius: 4px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .priceInfo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
 }
 
 .oldPrice {
-    background-color: #e0e0e0;
-    height: 14px;
-    width: 70px;
-    border-radius: 4px;
-    animation: pulse 1.5s infinite ease-in-out;
+	background-color: #e0e0e0;
+	height: 14px;
+	width: 70px;
+	border-radius: 4px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .discount {
-    background-color: #e0e0e0;
-    height: 14px;
-    width: 40px;
-    border-radius: 4px;
-    animation: pulse 1.5s infinite ease-in-out;
+	background-color: #e0e0e0;
+	height: 14px;
+	width: 40px;
+	border-radius: 4px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .colorText,
 .quantity {
-    background-color: #e0e0e0;
-    height: 14px;
-    width: 80%;
-    border-radius: 4px;
-    animation: pulse 1.5s infinite ease-in-out;
+	background-color: #e0e0e0;
+	height: 14px;
+	width: 80%;
+	border-radius: 4px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .actionButtons {
-    display: flex;
-    align-items: stretch;
-    gap: 1rem;
-    margin-top: auto;
+	display: flex;
+	align-items: stretch;
+	gap: 1rem;
+	margin-top: auto;
 }
 
 .favoriteButton,
 .deleteButton {
-    background-color: #e0e0e0;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	background-color: #e0e0e0;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .buyButton {
-    background-color: #e0e0e0;
-    height: 36px;
-    width: 100px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	background-color: #e0e0e0;
+	height: 36px;
+	width: 100px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .rightSideContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
 }
 
 .quantityContainer {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .quantityActionBtn {
-    background-color: #e0e0e0;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	background-color: #e0e0e0;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .quantityActionBtn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
 @keyframes pulse {
-    0% {
-        background-color: #e0e0e0;
-    }
-    50% {
-        background-color: #d6d6d6;
-    }
-    100% {
-        background-color: #e0e0e0;
-    }
+	0% {
+		background-color: #e0e0e0;
+	}
+	50% {
+		background-color: #d6d6d6;
+	}
+	100% {
+		background-color: #e0e0e0;
+	}
 }

@@ -1,45 +1,45 @@
 .inputWrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-top: 1.5rem;
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-top: 1.5rem;
 }
 
 .emailInput {
-    width: 100%;
-    padding: 10px;
-    background: var(--brand-gray);
-    border-radius: 15px;
-    font-size: 18px;
+	width: 100%;
+	padding: 10px;
+	background: var(--brand-gray);
+	border-radius: 15px;
+	font-size: 18px;
 }
 
 .submitButton {
-    width: 100%;
-    padding: 25px 0;
-    margin-top: 10px;
-    border-radius: 15px;
+	width: 100%;
+	padding: 25px 0;
+	margin-top: 10px;
+	border-radius: 15px;
 }
 
 .checkbox {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 10px;
 }
 
-.terms{
-    color: var(--brand-primary);
-    word-spacing: 5px;
-    line-height: 1.2;
+.terms {
+	color: var(--brand-primary);
+	word-spacing: 5px;
+	line-height: 1.2;
 }
-.terms span{
-    color: #4D4D4D;
-    margin-right: 5px;
+.terms span {
+	color: #4d4d4d;
+	margin-right: 5px;
 }
 
 .error {
-    color: var(--error);
-    font-size: 14px;
-    margin-bottom: 16px;
+	color: var(--error);
+	font-size: 14px;
+	margin-bottom: 16px;
 }

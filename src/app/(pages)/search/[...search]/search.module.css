@@ -1,109 +1,110 @@
-.wrapper{
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    width: 100%;
-    min-height: calc(100vh - var(--top-header-height));
-    padding: 0 7rem;
+.wrapper {
+	display: flex;
+	align-items: flex-start;
+	gap: 2rem;
+	width: 100%;
+	min-height: calc(100vh - var(--top-header-height));
+	padding: 0 7rem;
 }
 
-.rightSideWrapper{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+.rightSideWrapper {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
 }
 
 /*FILTER*/
-.filter{
-    display: flex;
-    align-items: center;
+.filter {
+	display: flex;
+	align-items: center;
 }
 .sortSelect {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 5px;
-    border-right: none;
-    border-radius: 10px 0 0 10px;
-    font-size: 14px;
-    cursor: pointer;
-    appearance: none;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 5px;
+	border-right: none;
+	border-radius: 10px 0 0 10px;
+	font-size: 14px;
+	cursor: pointer;
+	appearance: none;
 }
 
 .arrowIcon {
-    transition: transform 0.3s ease;
+	transition: transform 0.3s ease;
 }
 
 .rotated {
-    transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 
 /*CARDS*/
-.griddedCards{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-    margin: 0;
+.griddedCards {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 10px;
+	margin: 0;
 }
-.ListedCards{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.ListedCards {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 /*TABS*/
-.tabsListWrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
+.tabsListWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 30px;
 }
 
-.tabsContent, .tabsContainer{
-    width: 100%;
+.tabsContent,
+.tabsContainer {
+	width: 100%;
 }
 
 .tabsList {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 5px;
-    background-color: transparent !important;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 5px;
+	background-color: transparent !important;
 }
-.tabsList p{
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
+.tabsList p {
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
 }
 .tabsTrigger {
-    padding: 12px 0;
-    height: auto;
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
-    background-color: transparent !important;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s ease;
+	padding: 12px 0;
+	height: auto;
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
+	background-color: transparent !important;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	transition: color 0.3s ease;
 }
 
 .tabsTrigger[data-state="active"] {
-    background-color: transparent !important;
-    box-shadow: none !important;
+	background-color: transparent !important;
+	box-shadow: none !important;
 }
 
 /*basic info*/
-.basicInfo{
-    padding: 2rem 7rem;
-    color: var(--text-secondary);
+.basicInfo {
+	padding: 2rem 7rem;
+	color: var(--text-secondary);
 }
 
-.basicInfo span{
-    color: black;
-    font-weight: 500;
+.basicInfo span {
+	color: black;
+	font-weight: 500;
 }

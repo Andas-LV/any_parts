@@ -1,69 +1,69 @@
-.wrapper{
-    flex: 1;
-    height: fit-content;
-    padding: 2rem;
-    border-radius: 10px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.wrapper {
+	flex: 1;
+	height: fit-content;
+	padding: 2rem;
+	border-radius: 10px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
-.btn{
-    width: 100%;
-    padding: 25px;
-    border-radius: 10px;
+.btn {
+	width: 100%;
+	padding: 25px;
+	border-radius: 10px;
 }
 
 .subtitle {
-    font-size: 14px;
-    color: var(--text-secondary);
+	font-size: 14px;
+	color: var(--text-secondary);
 }
 
 .cartInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 10px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 10px 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .cartTitle {
-    font-size: 20px;
-    font-weight: 600;
+	font-size: 20px;
+	font-weight: 600;
 }
 
 .row {
-    display: flex;
-    justify-content: space-between;
-    font-weight: 500;
+	display: flex;
+	justify-content: space-between;
+	font-weight: 500;
 }
 
-.description{
-    color: var(--text-secondary);
+.description {
+	color: var(--text-secondary);
 }
 
-.price{
-    font-weight: bold;
-    text-wrap: nowrap;
+.price {
+	font-weight: bold;
+	text-wrap: nowrap;
 }
 
 .discount {
-    color: var(--error);
-    text-wrap: nowrap;
+	color: var(--error);
+	text-wrap: nowrap;
 }
 
 .detailsLink {
-    width: fit-content;
-    color: var(--brand-primary);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
+	width: fit-content;
+	color: var(--brand-primary);
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 600;
 }
 
 .total {
-    text-wrap: nowrap;
-    font-weight: 600;
-    font-size: 20px;
+	text-wrap: nowrap;
+	font-weight: 600;
+	font-size: 20px;
 }

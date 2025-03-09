@@ -15,130 +15,130 @@ import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 interface ItemCardProps {
-  item: TFilteredItemInfo;
-  showFavorite?: boolean;
+	item: TFilteredItemInfo;
+	showFavorite?: boolean;
 }
 
 export default function ListedCard({ item, showFavorite }: ItemCardProps) {
-  const router = useRouter();
+	const router = useRouter();
 
-  if (!item) {
-    return <ListedCardSkeleton />;
-  }
+	if (!item) {
+		return <ListedCardSkeleton />;
+	}
 
-  const {
-    id,
-    name,
-    price,
-    currentPrice,
-    discount,
-    rating,
-    comments,
-    images,
-    favorite,
-    material,
-    itemType,
-    brand,
-    color,
-    apPrice,
-    marketName,
-  } = item;
+	const {
+		id,
+		name,
+		price,
+		currentPrice,
+		discount,
+		rating,
+		comments,
+		images,
+		favorite,
+		material,
+		itemType,
+		brand,
+		color,
+		apPrice,
+		marketName,
+	} = item;
 
-  const { user } = useUserStore();
+	const { user } = useUserStore();
 
-  const characters = [
-    { name: "Тип", value: itemType },
-    { name: "Цвет", value: color },
-    { name: "Брэнд", value: brand },
-    { name: "Материал", value: material },
-  ].filter((c) => c.value);
+	const characters = [
+		{ name: "Тип", value: itemType },
+		{ name: "Цвет", value: color },
+		{ name: "Брэнд", value: brand },
+		{ name: "Материал", value: material },
+	].filter((c) => c.value);
 
-  const [isFavorite, setIsFavorite] = useState(favorite);
+	const [isFavorite, setIsFavorite] = useState(favorite);
 
-  const toggleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
-    setIsFavorite((prev) => !prev);
-    // Здесь можно добавить логику запроса на сервер
-  };
+	const toggleFavorite = (e: React.MouseEvent<HTMLButtonElement>) => {
+		e.stopPropagation();
+		setIsFavorite((prev) => !prev);
+		// Здесь можно добавить логику запроса на сервер
+	};
 
-  return (
-    <Card className={styles.card} onClick={() => router.push(`/item/${id}`)}>
-      <div className={styles.imageContainer}>
-        <ImageCarousel images={images} alt={name} width={200} />
-      </div>
+	return (
+		<Card className={styles.card} onClick={() => router.push(`/item/${id}`)}>
+			<div className={styles.imageContainer}>
+				<ImageCarousel images={images} alt={name} width={200} />
+			</div>
 
-      <div className={styles.mainInfo}>
-        <div className={styles.titleHeader}>
-          {name}
+			<div className={styles.mainInfo}>
+				<div className={styles.titleHeader}>
+					{name}
 
-          {showFavorite && (
-            <button onClick={toggleFavorite} className={styles.favoriteButton}>
-              {isFavorite ? (
-                <Icons.HeartFilled className={styles.favoriteIcon} />
-              ) : (
-                <Icons.HeartOutline className={styles.favoriteIcon} />
-              )}
-            </button>
-          )}
-        </div>
+					{showFavorite && (
+						<button onClick={toggleFavorite} className={styles.favoriteButton}>
+							{isFavorite ? (
+								<Icons.HeartFilled className={styles.favoriteIcon} />
+							) : (
+								<Icons.HeartOutline className={styles.favoriteIcon} />
+							)}
+						</button>
+					)}
+				</div>
 
-        {/* Цены */}
-        <div className={styles.priceContainer}>
-          <div className={styles.mainPrice}>
-            {currentPrice?.toLocaleString() || price.toLocaleString()}
-            {user && useCurrencySymbol(user.currency)}
-          </div>
+				{/* Цены */}
+				<div className={styles.priceContainer}>
+					<div className={styles.mainPrice}>
+						{currentPrice?.toLocaleString() || price.toLocaleString()}
+						{user && useCurrencySymbol(user.currency)}
+					</div>
 
-          {discount && currentPrice && (
-            <div className={styles.priceInfo}>
-              <span className={styles.oldPrice}>
-                {price.toLocaleString()}
-                {user && useCurrencySymbol(user.currency)}
-              </span>
+					{discount && currentPrice && (
+						<div className={styles.priceInfo}>
+							<span className={styles.oldPrice}>
+								{price.toLocaleString()}
+								{user && useCurrencySymbol(user.currency)}
+							</span>
 
-              <span className={styles.discount}>-{discount}%</span>
-            </div>
-          )}
+							<span className={styles.discount}>-{discount}%</span>
+						</div>
+					)}
 
-          {apPrice && (
-            <div className={styles.apPrice}>
-              <span>{apPrice}</span> c AP Кошельком
-            </div>
-          )}
-        </div>
+					{apPrice && (
+						<div className={styles.apPrice}>
+							<span>{apPrice}</span> c AP Кошельком
+						</div>
+					)}
+				</div>
 
-        {characters.length > 0 ? (
-          <div className={styles.characteristics}>
-            {characters.map((char, index) => (
-              <div key={index} className={styles.characteristic}>
-                <span className={styles.label}>{char.name}</span>
-                <span className={styles.dots}></span>
-                <span className={styles.value}>{char.value}</span>
-              </div>
-            ))}
+				{characters.length > 0 ? (
+					<div className={styles.characteristics}>
+						{characters.map((char, index) => (
+							<div key={index} className={styles.characteristic}>
+								<span className={styles.label}>{char.name}</span>
+								<span className={styles.dots}></span>
+								<span className={styles.value}>{char.value}</span>
+							</div>
+						))}
 
-            <Button variant="link" className={styles.allDetails}>
-              Все характеристики
-            </Button>
-          </div>
-        ) : (
-          <p>Нет характеристик</p>
-        )}
-      </div>
+						<Button variant="link" className={styles.allDetails}>
+							Все характеристики
+						</Button>
+					</div>
+				) : (
+					<p>Нет характеристик</p>
+				)}
+			</div>
 
-      <div className={styles.rightSideContent}>
-        <p>{marketName}</p>
+			<div className={styles.rightSideContent}>
+				<p>{marketName}</p>
 
-        <div className={styles.stats}>
-          <span className={styles.ratingValue}>{rating}</span>
-          <RatingStars rating={rating} />
-          <div className={styles.commentsValue}>{comments} отзывов</div>
-        </div>
+				<div className={styles.stats}>
+					<span className={styles.ratingValue}>{rating}</span>
+					<RatingStars rating={rating} />
+					<div className={styles.commentsValue}>{comments} отзывов</div>
+				</div>
 
-        <Button className={styles.cartButton}>
-          <Icons.Basket />В корзину
-        </Button>
-      </div>
-    </Card>
-  );
+				<Button className={styles.cartButton}>
+					<Icons.Basket />В корзину
+				</Button>
+			</div>
+		</Card>
+	);
 }

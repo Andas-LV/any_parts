@@ -1,57 +1,57 @@
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-    padding: 0 10px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	padding: 0 10px;
 }
 
 .modal {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    background: white;
-    padding: clamp(10px, 30px, 40px);
-    border-radius: 15px;
-    max-width: 800px;
-    position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
+	background: white;
+	padding: clamp(10px, 30px, 40px);
+	border-radius: 15px;
+	max-width: 800px;
+	position: relative;
 }
 
-.titleWrapper{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.titleWrapper {
+	display: flex;
+	align-items: center;
+	gap: 20px;
 }
 
-.modal h2{
-    text-align: center;
-    font-size: 26px;
-    font-weight: 700;
+.modal h2 {
+	text-align: center;
+	font-size: 26px;
+	font-weight: 700;
 }
 
 .closeButton {
-    position: absolute;
-    top: 0;
-    right: -30px;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
+	position: absolute;
+	top: 0;
+	right: -30px;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
 }
 
-.backButton{
-    cursor: pointer;
+.backButton {
+	cursor: pointer;
 }
 
-.children{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.children {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
 }

@@ -1,19 +1,19 @@
 .mainHeaderWrapper {
-    height: var(--main-header-height);
-    position: relative;
-    z-index: 50;
-    background-color: white;
-    transition: all 0.5s ease;
+	height: var(--main-header-height);
+	position: relative;
+	z-index: 50;
+	background-color: white;
+	transition: all 0.5s ease;
 }
 
 .mainHeaderWrapper.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 0 7rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 0 7rem;
 }
 
 .mainHeaderWrapper.fixed + * {
-    margin-top: var(--main-header-height);
+	margin-top: var(--main-header-height);
 }

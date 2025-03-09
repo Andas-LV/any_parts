@@ -8,24 +8,24 @@ import { useSearchParams } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Home() {
-  const { toast } = useToast();
-  const searchParams = useSearchParams();
+	const { toast } = useToast();
+	const searchParams = useSearchParams();
 
-  useEffect(() => {
-    if (searchParams.get("redirected") === "true") {
-      toast({
-        title: "Вы не авторизованы.",
-        description: "Пожалуйста зарегистрируйтесь.",
-      });
-    }
-  }, [searchParams]);
+	useEffect(() => {
+		if (searchParams.get("redirected") === "true") {
+			toast({
+				title: "Вы не авторизованы.",
+				description: "Пожалуйста зарегистрируйтесь.",
+			});
+		}
+	}, [searchParams]);
 
-  return (
-    <HeaderProvider>
-      <div className="px-28">
-        <Banner />
-        <Items />
-      </div>
-    </HeaderProvider>
-  );
+	return (
+		<HeaderProvider>
+			<div className="px-28">
+				<Banner />
+				<Items />
+			</div>
+		</HeaderProvider>
+	);
 }

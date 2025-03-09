@@ -14,65 +14,65 @@ import DeleteCard from "@/widgets/modals/payment/delete/DeleteCard";
 import { TPaymentModal } from "@/app/(pages)/profile/(Tabs)/Main/menu";
 
 export default function PaymentBlock() {
-  const { deleteCard } = usePaymentStore();
+	const { deleteCard } = usePaymentStore();
 
-  const [activePaymentModal, setActivePaymentModal] =
-    useState<TPaymentModal>(null);
+	const [activePaymentModal, setActivePaymentModal] =
+		useState<TPaymentModal>(null);
 
-  return (
-    <div className={styles.wrapper}>
-      <h1>Способ оплаты</h1>
+	return (
+		<div className={styles.wrapper}>
+			<h1>Способ оплаты</h1>
 
-      <PaymentCard
-        onDelete={() => setActivePaymentModal("deletePaymentModal")}
-      />
+			<PaymentCard
+				onDelete={() => setActivePaymentModal("deletePaymentModal")}
+			/>
 
-      <div className={styles.actions}>
-        <button
-          className={styles.navItem}
-          onClick={() => setActivePaymentModal("createPaymentModal")}
-        >
-          <div className={styles.navHeader}>
-            <Image
-              className={styles.navImage}
-              src={"/profile/CreditCard.png"}
-              alt="navImage"
-              fill
-              sizes={"20px"}
-            />
-            <p>Привязать карту</p>
-          </div>
-          <Icons.ArrowRight />
-        </button>
+			<div className={styles.actions}>
+				<button
+					className={styles.navItem}
+					onClick={() => setActivePaymentModal("createPaymentModal")}
+				>
+					<div className={styles.navHeader}>
+						<Image
+							className={styles.navImage}
+							src={"/profile/CreditCard.png"}
+							alt="navImage"
+							fill
+							sizes={"20px"}
+						/>
+						<p>Привязать карту</p>
+					</div>
+					<Icons.ArrowRight />
+				</button>
 
-        <button className={styles.navItem}>
-          <div className={styles.navHeader}>
-            <Image
-              className={styles.navImage}
-              src={"/profile/CreditCard.png"}
-              alt="navImage"
-              fill
-              sizes={"20px"}
-            />
-            <p>Привязать счёт (к примеру СБП)</p>
-          </div>
-          <Icons.ArrowRight />
-        </button>
-      </div>
+				<button className={styles.navItem}>
+					<div className={styles.navHeader}>
+						<Image
+							className={styles.navImage}
+							src={"/profile/CreditCard.png"}
+							alt="navImage"
+							fill
+							sizes={"20px"}
+						/>
+						<p>Привязать счёт (к примеру СБП)</p>
+					</div>
+					<Icons.ArrowRight />
+				</button>
+			</div>
 
-      {activePaymentModal === "createPaymentModal" && (
-        <CreateCard
-          onClose={() => setActivePaymentModal(null)}
-          onPrev={() => setActivePaymentModal(null)}
-        />
-      )}
+			{activePaymentModal === "createPaymentModal" && (
+				<CreateCard
+					onClose={() => setActivePaymentModal(null)}
+					onPrev={() => setActivePaymentModal(null)}
+				/>
+			)}
 
-      {activePaymentModal === "deletePaymentModal" && (
-        <DeleteCard
-          onClose={() => setActivePaymentModal(null)}
-          onPrev={() => setActivePaymentModal(null)}
-        />
-      )}
-    </div>
-  );
+			{activePaymentModal === "deletePaymentModal" && (
+				<DeleteCard
+					onClose={() => setActivePaymentModal(null)}
+					onPrev={() => setActivePaymentModal(null)}
+				/>
+			)}
+		</div>
+	);
 }

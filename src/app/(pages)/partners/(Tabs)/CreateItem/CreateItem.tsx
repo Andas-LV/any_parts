@@ -9,53 +9,58 @@ import Characters from "@/app/(pages)/partners/(Tabs)/CreateItem/(Steps)/Charact
 import Configuration from "@/app/(pages)/partners/(Tabs)/CreateItem/(Steps)/Configuration/Configuration";
 import PriceMaking from "@/app/(pages)/partners/(Tabs)/CreateItem/(Steps)/PriceMaking/PriceMaking";
 import Preview from "@/app/(pages)/partners/(Tabs)/CreateItem/(Steps)/Preview/Preview";
-import CustomStepIcon, { CustomConnector } from "@components/CustomStepIcon";
+import CustomStepIcon, { CustomConnector } from "@components/ui/CustomStepIcon";
 
 export const steps = [
-  { title: "Основная информация" },
-  { title: "Характеристика" },
-  { title: "Конфигурация" },
-  { title: "Ценообразование" },
-  { title: "Предварительный просмотр" },
+	{ title: "Основная информация" },
+	{ title: "Характеристика" },
+	{ title: "Конфигурация" },
+	{ title: "Ценообразование" },
+	{ title: "Предварительный просмотр" },
 ];
 
 export default function CreateItem() {
-  const [currentStep, setCurrentStep] = useState(0);
+	const [currentStep, setCurrentStep] = useState(0);
 
-  const onStepChange = (stats: any) => {
-    setCurrentStep(stats.activeStep - 1);
-  };
+	const onStepChange = (stats: any) => {
+		setCurrentStep(stats.activeStep - 1);
+	};
 
-  return (
-    <div className={styles.CreateItem}>
-      <h1>Создание товара</h1>
-      <Box sx={{ width: "100%", my: 3 }}>
-        <Stepper activeStep={currentStep} connector={<CustomConnector />}>
-          {steps.map((step, index) => (
-            <Step key={index} sx={{ p: 0 }}>
-              <StepLabel
-                StepIconComponent={(props) => <CustomStepIcon {...props} />}
-                sx={{
-                  "& .MuiStepLabel-label": {
-                    color:
-                      currentStep === index ? "#000" : "var(--text-secondary)",
-                  },
-                }}
-              >
-                {step.title}
-              </StepLabel>
-            </Step>
-          ))}
-        </Stepper>
-      </Box>
+	return (
+		<div className={styles.CreateItem}>
+			<h1>Создание товара</h1>
+			<Box sx={{ width: "100%", my: 3 }}>
+				<Stepper activeStep={currentStep} connector={<CustomConnector />}>
+					{steps.map((step, index) => (
+						<Step key={index} sx={{ p: 0 }}>
+							<StepLabel
+								slots={{ stepIcon: CustomStepIcon }}
+								slotProps={{
+									stepIcon: {
+										active: currentStep === index,
+									},
+								}}
+								sx={{
+									"& .MuiStepLabel-label": {
+										color:
+											currentStep === index ? "#000" : "var(--text-secondary)",
+									},
+								}}
+							>
+								{step.title}
+							</StepLabel>
+						</Step>
+					))}
+				</Stepper>
+			</Box>
 
-      <StepWizard onStepChange={onStepChange}>
-        <GeneralInfo />
-        <Characters />
-        <Configuration />
-        <PriceMaking />
-        <Preview />
-      </StepWizard>
-    </div>
-  );
+			<StepWizard onStepChange={onStepChange}>
+				<GeneralInfo />
+				<Characters />
+				<Configuration />
+				<PriceMaking />
+				<Preview />
+			</StepWizard>
+		</div>
+	);
 }

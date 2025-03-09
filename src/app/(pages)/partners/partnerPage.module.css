@@ -1,34 +1,36 @@
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 0 7rem;
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 0 7rem;
 }
 
 /*TABS*/
 .tabsList {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1.5rem;
-    border-bottom: 2px solid var(--brand-gray);
-    background-color: transparent;
-    padding: 0;
-    margin-bottom: 2rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 1.5rem;
+	border-bottom: 2px solid var(--brand-gray);
+	background-color: transparent;
+	padding: 0;
+	margin-bottom: 2rem;
 }
 
 .tabsTrigger {
-    position: relative;
-    padding: 0.5rem 0;
-    color: var(--text-secondary);
-    border-bottom: 2px solid transparent;
-    border-radius: 0;
-    transition: color 0.2s, border-color 0.2s;
+	position: relative;
+	padding: 0.5rem 0;
+	color: var(--text-secondary);
+	border-bottom: 2px solid transparent;
+	border-radius: 0;
+	transition:
+		color 0.2s,
+		border-color 0.2s;
 }
 
 .tabsTrigger[data-state="active"] {
-    border-bottom: 2px solid var(--brand-primary);
-    color: black;
-    font-weight: 600;
+	border-bottom: 2px solid var(--brand-primary);
+	color: black;
+	font-weight: 600;
 }

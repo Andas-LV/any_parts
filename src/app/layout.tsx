@@ -6,23 +6,23 @@ import { Toaster } from "@/components/ui/toaster";
 import Loading from "@components/Loading";
 
 export const metadata: Metadata = {
-  title: "Any Parts",
-  description: "Any Parts",
+	title: "Any Parts",
+	description: "Any Parts",
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={`${manrope.className}`}>
-        <Suspense fallback={<Loading />}>
-          {children}
-          <Toaster />
-        </Suspense>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body className={`${manrope.className}`}>
+				<Suspense fallback={<Loading />}>
+					{children}
+					<Toaster />
+				</Suspense>
+			</body>
+		</html>
+	);
 }

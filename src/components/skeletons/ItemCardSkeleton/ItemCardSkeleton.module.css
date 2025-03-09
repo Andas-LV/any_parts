@@ -1,95 +1,95 @@
 .card {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 5px;
+	overflow: hidden;
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
 }
 
 .imageContainer {
-    position: relative;
-    width: 100%;
-    padding-bottom: 75%;
-    background-color: var(--skeleton);
-    border-radius: 10px;
+	position: relative;
+	width: 100%;
+	padding-bottom: 75%;
+	background-color: var(--skeleton);
+	border-radius: 10px;
 }
 
 .image {
-    background-color: var(--skeleton);
-    border-radius: 5px;
-    height: 100%;
-    width: 100%;
+	background-color: var(--skeleton);
+	border-radius: 5px;
+	height: 100%;
+	width: 100%;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-top: 10px;
 }
 
 .priceInfo {
-    background-color: var(--skeleton);
-    height: 24px;
-    border-radius: 4px;
-    width: 100%;
+	background-color: var(--skeleton);
+	height: 24px;
+	border-radius: 4px;
+	width: 100%;
 }
 
 .title {
-    background-color: var(--skeleton);
-    height: 16px;
-    border-radius: 4px;
-    width: 100%;
-    margin: 8px 0;
+	background-color: var(--skeleton);
+	height: 16px;
+	border-radius: 4px;
+	width: 100%;
+	margin: 8px 0;
 }
 
 .ratingWrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 12px;
 }
 
 .rating,
 .comments {
-    background-color: var(--skeleton);
-    height: 14px;
-    border-radius: 4px;
-    width: 60%;
+	background-color: var(--skeleton);
+	height: 14px;
+	border-radius: 4px;
+	width: 60%;
 }
 
 .actions {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 12px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	margin-top: 12px;
 }
 
 .cartButton,
 .favoriteButton {
-    background-color: var(--skeleton);
-    height: 36px;
-    flex: 1;
-    border-radius: 10px;
+	background-color: var(--skeleton);
+	height: 36px;
+	flex: 1;
+	border-radius: 10px;
 }
 
 .favoriteButton {
-    flex: .2;
+	flex: 0.2;
 }
 
 @keyframes pulse {
-    0% {
-        background-color: var(--skeleton);
-    }
-    50% {
-        background-color: #d6d6d6;
-    }
-    100% {
-        background-color: var(--skeleton);
-    }
+	0% {
+		background-color: var(--skeleton);
+	}
+	50% {
+		background-color: #d6d6d6;
+	}
+	100% {
+		background-color: var(--skeleton);
+	}
 }

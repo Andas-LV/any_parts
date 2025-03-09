@@ -12,50 +12,50 @@ import { useUserStore } from "@/entities/user/useUserStore";
 const Chart = dynamic(() => import("@components/Chart"), { ssr: false });
 
 interface ChartModalProps {
-  onClose: () => void;
+	onClose: () => void;
 }
 
 export default function ChartModal({ onClose }: ChartModalProps) {
-  const { user } = useUserStore();
-  const { medianPrice, currentPrice, values } = exampleChartData;
+	const { user } = useUserStore();
+	const { medianPrice, currentPrice, values } = exampleChartData;
 
-  const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
-  const minValue = Math.min(...values.map((item) => item.value));
-  const maxValue = Math.max(...values.map((item) => item.value));
+	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
+	const minValue = Math.min(...values.map((item) => item.value));
+	const maxValue = Math.max(...values.map((item) => item.value));
 
-  const startDate = values[0].date;
-  const endDate = values[values.length - 1].date;
+	const startDate = values[0].date;
+	const endDate = values[values.length - 1].date;
 
-  return (
-    <ModalsLayout title={`${currentPrice} ${currencySymbol}`} onClose={onClose}>
-      <div className={styles.chartContainer}>
-        <div className={styles.priceRange}>
-          Диапазон: {minValue} ₸ – {maxValue} ₸
-        </div>
+	return (
+		<ModalsLayout title={`${currentPrice} ${currencySymbol}`} onClose={onClose}>
+			<div className={styles.chartContainer}>
+				<div className={styles.priceRange}>
+					Диапазон: {minValue} ₸ – {maxValue} ₸
+				</div>
 
-        <div className={styles.chartWrapper}>
-          <Chart
-            data={values}
-            color={"var(--brand-primary)"}
-            height={100}
-            dot={true}
-            tooltip={true}
-          />
-        </div>
+				<div className={styles.chartWrapper}>
+					<Chart
+						data={values}
+						color={"var(--brand-primary)"}
+						height={100}
+						dot={true}
+						tooltip={true}
+					/>
+				</div>
 
-        <div className={styles.dates}>
-          <span>{startDate}</span>
-          <span>{endDate}</span>
-        </div>
+				<div className={styles.dates}>
+					<span>{startDate}</span>
+					<span>{endDate}</span>
+				</div>
 
-        <p className={styles.subtext}>
-          Показываем цены без учёта скидок и при оплате AP Кошельком
-        </p>
+				<p className={styles.subtext}>
+					Показываем цены без учёта скидок и при оплате AP Кошельком
+				</p>
 
-        <Button className={styles.closeButton} onClick={onClose}>
-          Закрыть
-        </Button>
-      </div>
-    </ModalsLayout>
-  );
+				<Button className={styles.closeButton} onClick={onClose}>
+					Закрыть
+				</Button>
+			</div>
+		</ModalsLayout>
+	);
 }

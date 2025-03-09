@@ -1,207 +1,207 @@
 .ItemHeader {
-  position: fixed;
-  top: var(--main-header-height);
-  background-color: white;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  padding: 1rem 7rem;
-  animation: fadeInDown 0.3s ease-in-out;
+	position: fixed;
+	top: var(--main-header-height);
+	background-color: white;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.3);
+	width: 100%;
+	padding: 1rem 7rem;
+	animation: fadeInDown 0.3s ease-in-out;
 }
 
 @keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 /*WRAPPER END*/
 
 .itemInfoWrapper {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+	display: flex;
+	align-items: center;
+	gap: 20px;
 }
 
 .itemInfo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 .image {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
 }
 
 .infoTexts {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 .itemTitle {
-  font-weight: bold;
-  font-size: 16px;
-  color: #111827;
-  margin-bottom: 4px;
+	font-weight: bold;
+	font-size: 16px;
+	color: #111827;
+	margin-bottom: 4px;
 }
 
 .ratingBlock {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-weight: 500;
-  color: var(--brand-primary);
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	font-weight: 500;
+	color: var(--brand-primary);
 }
 
 .ratingBlock button {
-  padding: 0;
-  font-size: 16px;
+	padding: 0;
+	font-size: 16px;
 }
 
 .rating {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #000;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000;
 }
 
 .nav {
-  color: var(--brand-primary);
-  cursor: pointer;
+	color: var(--brand-primary);
+	cursor: pointer;
 }
 
 .prices {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
+	display: flex;
+	align-items: flex-start;
+	gap: 20px;
 }
 
 .leftSidePrice,
 .rightSidePrice {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .actualPrice {
-  font-weight: 700;
-  font-size: 20px;
-  color: #111827;
+	font-weight: 700;
+	font-size: 20px;
+	color: #111827;
 }
 
 .discountWrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 .oldPrice {
-  color: #6b7280;
-  text-decoration: line-through;
+	color: #6b7280;
+	text-decoration: line-through;
 }
 
 .discount {
-  font-weight: 600;
-  border-radius: 5px;
-  background-color: #fef5f4;
-  color: #f43625;
-  padding: 2px 6px;
+	font-weight: 600;
+	border-radius: 5px;
+	background-color: #fef5f4;
+	color: #f43625;
+	padding: 2px 6px;
 }
 
 .apPrice {
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--brand-primary);
+	font-weight: 700;
+	font-size: 20px;
+	color: var(--brand-primary);
 }
 
 .apText {
-  color: var(--brand-primary);
-  font-size: 16px;
+	color: var(--brand-primary);
+	font-size: 16px;
 }
 
 .actionButtons {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 .basket,
 .buyNow {
-  padding: 20px;
-  font-size: 16px;
-  font-weight: 500;
-  border-radius: 10px;
+	padding: 20px;
+	font-size: 16px;
+	font-weight: 500;
+	border-radius: 10px;
 }
 
 .buyNow {
-  background-color: #000;
-  color: #fff;
+	background-color: #000;
+	color: #fff;
 }
 
 .favoriteButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background-color: #f3f7fe;
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.3s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background-color: #f3f7fe;
+	cursor: pointer;
+	border: none;
+	transition: background-color 0.3s;
 }
 
 .favoriteButton:hover {
-  background-color: #d5e3fd;
+	background-color: #d5e3fd;
 }
 
 .favoriteIcon {
-  width: 20px;
-  height: 20px;
+	width: 20px;
+	height: 20px;
 }
 
 @media (max-width: 1024px) {
-  .ItemHeader {
-    padding: 1rem 3rem;
-  }
+	.ItemHeader {
+		padding: 1rem 3rem;
+	}
 }
 
 @media (max-width: 768px) {
-  .ItemHeader {
-    flex-wrap: wrap;
-    row-gap: 1rem;
-  }
+	.ItemHeader {
+		flex-wrap: wrap;
+		row-gap: 1rem;
+	}
 }
 
 @media (max-width: 480px) {
-  .ItemHeader {
-    padding: 0.5rem 1rem;
-  }
+	.ItemHeader {
+		padding: 0.5rem 1rem;
+	}
 
-  .itemTitle {
-    font-size: 14px;
-  }
+	.itemTitle {
+		font-size: 14px;
+	}
 
-  .basket,
-  .buyNow {
-    font-size: 14px;
-    padding: 12px 16px;
-  }
+	.basket,
+	.buyNow {
+		font-size: 14px;
+		padding: 12px 16px;
+	}
 
-  .favoriteButton {
-    width: 36px;
-    height: 36px;
-  }
+	.favoriteButton {
+		width: 36px;
+		height: 36px;
+	}
 }

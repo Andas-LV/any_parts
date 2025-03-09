@@ -9,52 +9,52 @@ import { useToast } from "@/hooks/use-toast";
 import { useAuthStore } from "@/entities/auth/useAuthStore";
 
 const LogOutModal = ({ onClose }: { onClose: () => void }) => {
-  const { logout, isLoading, error } = useAuthStore();
-  const { toast } = useToast();
+	const { logout, isLoading, error } = useAuthStore();
+	const { toast } = useToast();
 
-  const handleLogOut = async () => {
-    try {
-      await logout();
-      toast({
-        done: true,
-        variant: "success",
-        description: "Вы вышли из аккаунта",
-      });
-      onClose();
-    } catch (error) {
-      console.error(error);
-    }
-  };
+	const handleLogOut = async () => {
+		try {
+			await logout();
+			toast({
+				done: true,
+				variant: "success",
+				description: "Вы вышли из аккаунта",
+			});
+			onClose();
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
-  return (
-    <ModalsLayout title={"Выйти из аккаунта"} onClose={onClose}>
-      <div className={styles.logOutModelWrapper}>
-        <p>
-          Выходите? Мы всегда здесь, <br />
-          когда вам понадобится нужная деталь!
-        </p>
+	return (
+		<ModalsLayout title={"Выйти из аккаунта"} onClose={onClose}>
+			<div className={styles.logOutModelWrapper}>
+				<p>
+					Выходите? Мы всегда здесь, <br />
+					когда вам понадобится нужная деталь!
+				</p>
 
-        <div className={styles.actionButtons}>
-          <Button
-            variant="ghost"
-            className={styles.cancelBtn}
-            onClick={onClose}
-            disabled={isLoading}
-          >
-            Остаться
-          </Button>
+				<div className={styles.actionButtons}>
+					<Button
+						variant="ghost"
+						className={styles.cancelBtn}
+						onClick={onClose}
+						disabled={isLoading}
+					>
+						Остаться
+					</Button>
 
-          <Button
-            className={styles.submitButton}
-            onClick={handleLogOut}
-            disabled={isLoading}
-          >
-            Выйти
-          </Button>
-        </div>
-      </div>
-    </ModalsLayout>
-  );
+					<Button
+						className={styles.submitButton}
+						onClick={handleLogOut}
+						disabled={isLoading}
+					>
+						Выйти
+					</Button>
+				</div>
+			</div>
+		</ModalsLayout>
+	);
 };
 
 export default LogOutModal;

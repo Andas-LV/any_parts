@@ -1,93 +1,93 @@
 .PriceMakingForm {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
 
 .form {
-    width: 100%;
-    overflow-x: auto;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 1rem;
+	width: 100%;
+	overflow-x: auto;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	margin-top: 1rem;
 }
 
 /* Таблица целиком */
 .PriceMakingForm table {
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #e0e0e0;
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #e0e0e0;
 }
 
 /* Шапка таблицы */
 .PriceMakingForm thead tr {
-    background-color: #f8f8f8;
+	background-color: #f8f8f8;
 }
 
 .PriceMakingForm th,
 .PriceMakingForm td {
-    width: 20%;
-    padding: 0.75rem;
-    border-bottom: 1px solid #e0e0e0;
-    border-right: 1px solid #e0e0e0;
-    font-size: 16px;
-    vertical-align: middle;
-    text-align: left;
+	width: 20%;
+	padding: 0.75rem;
+	border-bottom: 1px solid #e0e0e0;
+	border-right: 1px solid #e0e0e0;
+	font-size: 16px;
+	vertical-align: middle;
+	text-align: left;
 }
 
 .PriceMakingForm th {
-    font-weight: 500;
-    color: black;
+	font-weight: 500;
+	color: black;
 }
 
 /* Поля ввода внутри таблицы */
 .PriceMakingForm input[type="number"],
 .PriceMakingForm input[type="text"] {
-    appearance: none;
-    outline: none;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 16px;
-    background: var(--brand-gray);
+	appearance: none;
+	outline: none;
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 0.5rem;
+	font-size: 16px;
+	background: var(--brand-gray);
 }
 
 /* Если нужно подсветить при ховере */
 .PriceMakingForm tbody tr:hover {
-    background-color: #fafafa;
+	background-color: #fafafa;
 }
 
 /* Стили для ячейки с цветом + фото */
 .colorCell {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .colorImage {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
 }
 
 /* ========================= ACTIONS ========================= */
 .actions {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 2rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 2rem;
 }
 
 .stepsButtons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
 }
 
 .error {
-    color: var(--error);
-    font-size: 14px;
+	color: var(--error);
+	font-size: 14px;
 }
