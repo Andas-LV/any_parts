@@ -34,8 +34,9 @@ export default function ConfigCard({
 	const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		if (e.target.files && e.target.files[0]) {
 			const file = e.target.files[0];
-			setPreview(URL.createObjectURL(file));
-			setValue(`${config}.photo` as TPhotoPath, URL.createObjectURL(file));
+			const previewUrl = URL.createObjectURL(file);
+			setPreview(previewUrl);
+			setValue(`${config}.photo` as TPhotoPath, previewUrl);
 		}
 	};
 

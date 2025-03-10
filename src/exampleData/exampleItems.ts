@@ -13,6 +13,9 @@ export const itemInfo: ItemInfoType[] = [
 		discount: 25,
 		favorite: true,
 
+		colors: ["черный", "белый"],
+		sizes: ["средний", "большой"],
+
 		marketName: "Market_name",
 		rating: 3.6,
 		ratingDistribution: {
@@ -85,141 +88,6 @@ export const itemInfo: ItemInfoType[] = [
 			"/items/steeringWheel.png",
 			"/items/case.png",
 			"/items/evaCarpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
-		],
-		description:
-			"Lorem ipsum dolor sit amet consectetur. " +
-			"Enim lectus et lorem auctor fermentum tellus purus enim. " +
-			"Amet luctus sit mauris non euismod sagittis sit amet suscipit. " +
-			"Quisque morbi scelerisque neque vulputate pharetra est. " +
-			"Sed eleifend elit parturient eleifend scelerisque. " +
-			"Etiam viverra vel amet tincidunt felis. " +
-			"Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. " +
-			"Quam nisl porttitor eget elit ornare pellentesque eget sapien. " +
-			"Eu imperdiet malesuada semper in in purus urna velit. " +
-			"Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. " +
-			"Vestibulum cursus morbi sed egestas sed viverra sagittis cras.",
-	},
-	{
-		id: 2,
-		name: "Коврики эва ева с бортами, EVA с бортиками 3D",
-
-		price: 3200,
-		apPrice: 1800,
-		currentPrice: null,
-		discount: null,
-		favorite: false,
-
-		marketName: "Market_name",
-		rating: 4.5,
-		ratingDistribution: {
-			1: 2,
-			2: 4,
-			3: 9,
-			4: 13,
-			5: 86,
-		},
-
-		comments: {
-			amount: 34,
-			images: {
-				totalImages: 75,
-				image: [
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/carpet.png",
-					},
-				],
-			},
-			list: exampleFeedbacks,
-		},
-		sold: 90,
-		article: 15978954613,
-		options: ["Черный", "Серый", "Бежевый"],
-		type: ["Коврики", "Защита интерьера"],
-		brand: "EvaLux",
-		material: "Полиуретан",
-		images: ["/items/evaCarpet.png"],
-		description:
-			"Lorem ipsum dolor sit amet consectetur. " +
-			"Enim lectus et lorem auctor fermentum tellus purus enim. " +
-			"Amet luctus sit mauris non euismod sagittis sit amet suscipit. " +
-			"Quisque morbi scelerisque neque vulputate pharetra est. " +
-			"Sed eleifend elit parturient eleifend scelerisque. " +
-			"Etiam viverra vel amet tincidunt felis. " +
-			"Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. " +
-			"Quam nisl porttitor eget elit ornare pellentesque eget sapien. " +
-			"Eu imperdiet malesuada semper in in purus urna velit. " +
-			"Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. " +
-			"Vestibulum cursus morbi sed egestas sed viverra sagittis cras.",
-	},
-	{
-		id: 3,
-		name: "Комплект премиальных чехлов на сидения",
-		price: 4500,
-		apPrice: 1800,
-		currentPrice: 3900,
-		discount: 13,
-		favorite: true,
-
-		marketName: "Market_name",
-		rating: 4.8,
-		ratingDistribution: {
-			1: 2,
-			2: 4,
-			3: 9,
-			4: 13,
-			5: 86,
-		},
-
-		comments: {
-			amount: 34,
-			images: {
-				totalImages: 75,
-				image: [
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/carpet.png",
-					},
-				],
-			},
-			list: exampleFeedbacks,
-		},
-		sold: 210,
-		article: 15978954613,
-		options: ["Эко-кожа", "Алькантара", "Ткань"],
-		type: ["Чехлы", "Тюнинг"],
-		brand: "SeatCover Pro",
-		material: "Эко-кожа",
-		images: [
-			"/items/steeringWheel.png",
-			"/items/case.png",
-			"/items/evaCarpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
 			"/items/seatCovers.png",
 			"/items/wheelItems.png",
 			"/items/carpet.png",

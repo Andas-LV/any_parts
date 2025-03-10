@@ -4,7 +4,7 @@ import { useItemsStore } from "@/entities/items/useItemsStore";
 import { Button } from "@components/ui/button";
 import { Icons } from "@/assets/svg";
 import { useUserStore } from "@/entities/user/useUserStore";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useCurrencySymbol } from "@/utils/useCurrency";
 
 interface ItemHeaderProps {}
 

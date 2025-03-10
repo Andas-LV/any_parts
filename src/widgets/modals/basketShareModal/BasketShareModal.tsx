@@ -5,7 +5,7 @@ import BasketCard from "@components/cards/ItemCards/BasketCard/BasketCard";
 import ModalsLayout from "@/layouts/modalLayout/layout";
 import { Button } from "@components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useCurrencySymbol } from "@/utils/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 interface BasketShareModalProps {

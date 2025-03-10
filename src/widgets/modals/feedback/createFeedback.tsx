@@ -9,7 +9,7 @@ import { Textarea } from "@components/ui/textarea";
 import { Icons } from "@/assets/svg";
 import ReviewStars from "@components/stars/ReviewStars";
 import { useUserStore } from "@/entities/user/useUserStore";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useCurrencySymbol } from "@/utils/useCurrency";
 
 interface FeedbackProps {
 	onClose: () => void;

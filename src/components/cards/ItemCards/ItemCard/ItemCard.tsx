@@ -9,7 +9,7 @@ import { Icons } from "@/assets/svg";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import ItemCardSkeleton from "@components/skeletons/ItemCardSkeleton/ItemCardSkeleton";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useCurrencySymbol } from "@/utils/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 interface ItemCardProps {

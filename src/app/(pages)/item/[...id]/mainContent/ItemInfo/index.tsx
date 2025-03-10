@@ -12,16 +12,17 @@ import { useToast } from "@/hooks/use-toast";
 import { charactersSerializer } from "@/types/charactersSerializer";
 import { Button } from "@components/ui/button";
 
-interface ItemInfoProps extends ItemInfoType {
+interface ItemPageProps {
 	selectedIndex: number;
 	setSelectedIndexAction: (index: number) => void;
+	item: ItemInfoType;
 }
 
 export default function ItemInfo({
 	selectedIndex,
 	setSelectedIndexAction,
-	...item
-}: ItemInfoProps) {
+	item,
+}: ItemPageProps) {
 	const { toast } = useToast();
 
 	const characters = charactersSerializer(item);

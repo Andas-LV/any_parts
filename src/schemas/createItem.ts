@@ -31,7 +31,7 @@ export const generalInfoSchema = z.object({
 
 	currency: CurrencyValidator,
 
-	brandName: z
+	brand: z
 		.string({
 			required_error: "Введите название бренда",
 		})
@@ -140,6 +140,7 @@ export const priceMakingSchema = z.object({
 							discountPrice: z
 								.number()
 								.nonnegative({ message: "Введите корректную цену" })
+								.nullable()
 								.optional(),
 							barcode: z.string().optional(),
 						}),

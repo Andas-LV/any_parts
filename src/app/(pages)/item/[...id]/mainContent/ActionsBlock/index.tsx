@@ -5,7 +5,7 @@ import { Icons } from "@/assets/svg";
 import styles from "./actionBlock.module.css";
 import { Button } from "@components/ui/button";
 import dynamic from "next/dynamic";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useCurrencySymbol } from "@/utils/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { exampleChartData } from "@/exampleData/exampleChartData";
 import { useState } from "react";
@@ -13,7 +13,11 @@ import ChartModal from "@/widgets/modals/chartModal/ChartModal";
 
 const Chart = dynamic(() => import("@components/Chart"), { ssr: false });
 
-export default function ActionsBlock({ ...item }: ItemInfoType) {
+interface IActionsBlock {
+	item: ItemInfoType;
+}
+
+export default function ActionsBlock({ item }: IActionsBlock) {
 	const { user } = useUserStore();
 	const [chartModal, setChartModal] = useState(false);
 

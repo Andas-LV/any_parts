@@ -4,7 +4,7 @@ import { Icons } from "@/assets/svg";
 import styles from "./filterHeader.module.css";
 import { useFiltersStore } from "@/entities/items/useFiltersStore";
 import { MIN_PRICE, MAX_PRICE } from "@/exampleData/exampleFilters";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useCurrencySymbol } from "@/utils/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 export default function FilteredItemsHeader() {

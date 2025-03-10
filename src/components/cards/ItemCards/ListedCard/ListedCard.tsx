@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import Loading from "@components/Loading";
 import RatingStars from "@components/stars/RatingStars";
 import ListedCardSkeleton from "@components/skeletons/ListedCardSkeleton/ListedCardSkeleton";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useCurrencySymbol } from "@/utils/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 interface ItemCardProps {

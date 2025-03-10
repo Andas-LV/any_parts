@@ -6,7 +6,7 @@ import { useBasketStore } from "@/entities/basket/useBasketStore";
 import DiscountModal from "@/widgets/modals/discount/discountModal";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useCurrencySymbol } from "@/utils/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 interface IOrderProps {

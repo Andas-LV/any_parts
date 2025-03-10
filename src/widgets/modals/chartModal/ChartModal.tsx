@@ -6,7 +6,7 @@ import ModalsLayout from "@/layouts/modalLayout/layout";
 import dynamic from "next/dynamic";
 import { Button } from "@components/ui/button";
 import { exampleChartData } from "@/exampleData/exampleChartData";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useCurrencySymbol } from "@/utils/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 const Chart = dynamic(() => import("@components/Chart"), { ssr: false });

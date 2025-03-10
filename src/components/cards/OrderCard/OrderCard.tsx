@@ -15,7 +15,7 @@ import { Icons } from "@/assets/svg";
 import { getOrderStatusStyle, getOrderAction } from "./getOrderStatusStyle";
 import CreateFeedback from "@/widgets/modals/feedback/createFeedback";
 import OrderCardSkeleton from "@components/skeletons/OrderCardSkeleton/OrderCardSkeleton";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useCurrencySymbol } from "@/utils/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 interface OrderCardProps {

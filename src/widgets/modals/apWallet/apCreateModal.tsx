@@ -7,7 +7,7 @@ import {
 	COMPANY_NAME,
 } from "@/constants/apConstants";
 import { useUserStore } from "@/entities/user/useUserStore";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useCurrencySymbol } from "@/utils/useCurrency";
 
 export default function ApCreateModal({
 	onClose,

@@ -78,8 +78,8 @@ export default function PriceMakingForm({
 						<TableRow>
 							<TableHead>Цвет</TableHead>
 							<TableHead>Размер</TableHead>
-							<TableHead>Ваша цена *</TableHead>
-							<TableHead>Цена до скидки</TableHead>
+							<TableHead>Цена</TableHead>
+							<TableHead>Цена со скидкой</TableHead>
 							<TableHead>Штрихкод товара</TableHead>
 						</TableRow>
 					</TableHeader>

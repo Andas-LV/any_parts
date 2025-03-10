@@ -8,7 +8,7 @@ import CreateCard from "@/widgets/modals/payment/create/CreateCard";
 import DeleteCard from "@/widgets/modals/payment/delete/DeleteCard";
 import { usePaymentStore } from "@/entities/payment/usePaymentStore";
 import { Button } from "@components/ui/button";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useCurrencySymbol } from "@/utils/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 type TPaymentModal =
