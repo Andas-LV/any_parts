@@ -8,7 +8,7 @@ import ApCreateModal from "@/widgets/modals/apWallet/apCreateModal";
 import { useUserStore } from "@/entities/user/useUserStore";
 import AfterCreate from "@/widgets/modals/apWallet/afterCreateWallet/afterCreate";
 import InstructionModal from "@/widgets/modals/apWallet/instruction/instructionModal";
-import { useCurrencySymbol } from "@/utils/useCurrency";
+import { useCurrencySymbol } from "@/hooks/useCurrency";
 
 export type TModal =
 	| "createWallet"

@@ -23,13 +23,16 @@ export type ItemInfoType = {
 	discount: number | null;
 	favorite: boolean;
 
-	colors: string[];
-	sizes?: string[];
-
 	rating: number;
 	ratingDistribution: RatingDistribution;
-	comments: Comments;
+
+	comments: {
+		amount: number;
+		images: feedbackImages;
+		list: Feedback[];
+	};
 	images: string[];
+
 	marketName: string;
 	article: number;
 	sold: number | null;
@@ -59,12 +62,6 @@ export type TFilteredItemInfo = {
 	brand: string;
 	material: string;
 	description: string;
-};
-
-export type Comments = {
-	amount: number;
-	images: feedbackImages;
-	list: Feedback[];
 };
 
 export type AutoType = {

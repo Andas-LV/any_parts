@@ -8,7 +8,7 @@ import { Textarea } from "@components/ui/textarea";
 import { Icons } from "@/assets/svg";
 import Loading from "@components/Loading";
 import AfterCreateRefund from "@/widgets/modals/refund/create/afterCreate/afterCreateRefund";
-import { useCurrencySymbol } from "@/utils/useCurrency";
+import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 export default function RefundFullInfo({

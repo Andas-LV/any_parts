@@ -50,7 +50,7 @@ export default function ItemPage({
 	return (
 		<div>
 			<HeaderWrapper>
-				{showStickyHeader && currentItem && <ItemStickyHeader />}
+				{showStickyHeader && <ItemStickyHeader />}
 
 				<div className={styles.wrapper}>
 					<ItemHeader routes={breadcrumbItems} />

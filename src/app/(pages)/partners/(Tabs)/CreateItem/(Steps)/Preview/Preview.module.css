@@ -1,11 +1,2 @@
 .Preview {
-    width: clamp(50%, 70vw, 100%);
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding-bottom: 2rem;
-}
-
-.Preview h1 {
-    font-size: 1.5rem;
 }

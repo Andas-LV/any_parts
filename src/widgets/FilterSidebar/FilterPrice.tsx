@@ -5,7 +5,7 @@ import styles from "./filterSidebar.module.css";
 import React from "react";
 import { useFiltersStore } from "@/entities/items/useFiltersStore";
 import { MIN_PRICE, MAX_PRICE } from "@/exampleData/exampleFilters";
-import { useCurrencySymbol } from "@/utils/useCurrency";
+import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 export function FilterPrice() {

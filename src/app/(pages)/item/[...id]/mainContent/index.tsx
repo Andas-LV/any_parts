@@ -25,11 +25,11 @@ export default function MainContent() {
 				setSelectedIndexAction={setSelectedIndex}
 			/>
 			<ItemInfo
-				item={currentItem}
+				{...currentItem}
 				selectedIndex={selectedIndex}
 				setSelectedIndexAction={setSelectedIndex}
 			/>
-			<ActionsBlock item={currentItem} />
+			<ActionsBlock {...currentItem} />
 		</div>
 	);
 }

@@ -197,7 +197,7 @@ export default function GeneralInfoForm({ nextStep }: GeneralInfoFormProps) {
 					type="text"
 					placeholder="Название бренда"
 					className={styles.nameInput}
-					{...register("brand")}
+					{...register("brandName")}
 				/>
 				<p>
 					Нет вашего?
@@ -207,8 +207,8 @@ export default function GeneralInfoForm({ nextStep }: GeneralInfoFormProps) {
 					(по умолчанию нет бренда)
 				</p>
 			</div>
-			{errors.brand && (
-				<span className={styles.error}>{errors.brand.message}</span>
+			{errors.brandName && (
+				<span className={styles.error}>{errors.brandName.message}</span>
 			)}
 
 			{/* ===== Блок изображений ===== */}

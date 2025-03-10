@@ -27,7 +27,7 @@ import CreateRefund from "@/widgets/modals/refund/create/CreateRefund";
 import RefundFullInfo from "@/widgets/modals/refund/create/refundFullInfo";
 import AfterCreateRefund from "@/widgets/modals/refund/create/afterCreate/afterCreateRefund";
 import { getRefundStatusStyle } from "./getRefundStatusStyle";
-import { useCurrencySymbol } from "@/utils/useCurrency";
+import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 type TModal = "itemChooseModal" | "itemFullInfoModal" | "onSuccessModal" | null;

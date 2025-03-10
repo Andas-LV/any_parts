@@ -1,9 +1,6 @@
-import { ItemInfoType } from "@/types/Item";
-import { TCreateItemFullInfo } from "@/types/CreateItem";
+import { ItemInfoType, TFilteredItemInfo } from "@/types/Item";
 
-export const charactersSerializer = (
-	item: ItemInfoType | TCreateItemFullInfo,
-) => {
+export const charactersSerializer = (item: ItemInfoType) => {
 	return [
 		{ name: "Артикул", value: item.article },
 		{ name: "Тип", value: item.type },

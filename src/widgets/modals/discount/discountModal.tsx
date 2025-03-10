@@ -5,7 +5,7 @@ import styles from "./discountModal.module.css";
 
 import { useBasketStore } from "@/entities/basket/useBasketStore";
 import ModalsLayout from "@/layouts/modalLayout/layout";
-import { useCurrencySymbol } from "@/utils/useCurrency";
+import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 const DiscountModal = ({ onClose }: { onClose: () => void }) => {

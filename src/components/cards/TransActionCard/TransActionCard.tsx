@@ -1,7 +1,7 @@
 import styles from "./transaction.module.css";
 import { TTransAction } from "@/types/Payment";
 import { Plus, Minus } from "lucide-react";
-import { useCurrencySymbol } from "@/utils/useCurrency";
+import { useCurrencySymbol } from "@/hooks/useCurrency";
 
 interface TransactionCardProps {
 	transaction: TTransAction;

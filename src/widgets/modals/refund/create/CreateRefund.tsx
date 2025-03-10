@@ -5,7 +5,7 @@ import { Button } from "@components/ui/button";
 import { Search as SearchIcon } from "lucide-react";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 import { RadioGroup, RadioGroupItem } from "@components/ui/radio-group";
-import { useCurrencySymbol } from "@/utils/useCurrency";
+import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 export default function CreateRefund({

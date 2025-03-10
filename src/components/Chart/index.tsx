@@ -2,7 +2,7 @@
 
 import React from "react";
 import { LineChart, Line, ResponsiveContainer, Tooltip } from "recharts";
-import { useCurrencySymbol } from "@/utils/useCurrency";
+import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { ChartDataPoint } from "@/exampleData/exampleChartData";
 import styles from "./chart.module.css";
