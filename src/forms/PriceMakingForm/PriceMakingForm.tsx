@@ -38,7 +38,7 @@ export default function PriceMakingForm({
 			...color,
 			sizes: sizes.map((size) => ({
 				...size,
-				price: undefined,
+				price: 0,
 				discountPrice: undefined,
 				barcode: "",
 			})),
