@@ -1,16 +1,57 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import styles from "./Preview.module.css";
 import { Button } from "@components/ui/button";
+import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
+import PreviewItem from "@/widgets/PreviewItem/PreviewItem";
+import { useToast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 
 interface PreviewProps {
 	previousStep?: () => void;
+	isActive?: boolean;
 }
 
-export default function Preview({ previousStep }: PreviewProps) {
+export default function Preview({ previousStep, isActive }: PreviewProps) {
+	const { setFullInfo, fullInfo } = useCreateItemStore();
+	const { toast } = useToast();
+	const router = useRouter();
+
+	useEffect(() => {
+		if (isActive) setFullInfo();
+	}, [isActive]);
+
+	const createItem = () => {
+		console.log(fullInfo);
+		router.push("/partners");
+		toast({
+			done: true,
+			variant: "success",
+			title: "Товар успешно создан!",
+			description:
+				"Ваш товар добавлен в каталог. Теперь его могут увидеть покупатели",
+		});
+	};
+
 	return (
 		<div className={styles.Preview}>
-			<h1>Preview component</h1>
-			<Button onClick={previousStep}>Назад</Button>
+			<h1>Предварительный просмотр</h1>
+			<PreviewItem />
+
+			<div className={styles.actions}>
+				<Button
+					className={styles.button}
+					variant={"secondary"}
+					onClick={previousStep}
+				>
+					Назад
+				</Button>
+
+				<Button className={styles.button} onClick={createItem}>
+					Отправить запрос на создание товара
+				</Button>
+			</div>
 		</div>
 	);
 }

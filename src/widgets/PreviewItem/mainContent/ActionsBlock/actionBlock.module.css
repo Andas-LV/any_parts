@@ -1,0 +1,134 @@
+.actionsBlockContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	flex: 1;
+	height: auto;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.prices {
+	display: flex;
+	align-items: flex-start;
+	gap: 30px;
+}
+
+.leftSidePrice,
+.rightSidePrice {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.actualPrice {
+	font-weight: 700;
+	font-size: 26px;
+}
+
+.discountWrapper {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.oldPrice {
+	color: #6b7280;
+	text-decoration: line-through;
+}
+
+.discount {
+	width: fit-content;
+	height: fit-content;
+	font-weight: 600;
+	border-radius: 5px;
+	background-color: #fef5f4;
+	color: #f43625;
+}
+
+.apPrice {
+	color: var(--brand-primary);
+	font-weight: 700;
+	font-size: 30px;
+}
+
+.apText {
+	color: var(--brand-primary);
+}
+
+.marketInfo {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.marketInfo h3 {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	font-weight: 500;
+	font-size: 16px;
+}
+
+.marketRating {
+	display: flex;
+	align-items: center;
+	gap: 3px;
+}
+/*CHART start*/
+.chartWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #f1f9f6;
+	padding: 15px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.priceRange {
+	display: flex;
+	align-items: center;
+	flex: 0.5;
+	color: #009e60;
+	font-weight: bold;
+}
+
+.priceRange p {
+	text-wrap: nowrap;
+	margin: 0 0.5rem;
+}
+
+.negative {
+	color: var(--error);
+}
+/*chart end*/
+.actionButtons {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	width: 100%;
+}
+
+.basket,
+.buyNow {
+	flex: 1;
+	padding: 25px;
+	font-size: 16px;
+	font-weight: 500;
+	border-radius: 10px;
+}
+
+.buyNow {
+	background-color: black;
+	color: white;
+}
+
+/*ICON*/
+.arrowIcon {
+	width: 30px;
+	height: 30px;
+	transition: transform 0.3s ease;
+}

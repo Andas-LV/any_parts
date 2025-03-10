@@ -31,7 +31,7 @@ export const generalInfoSchema = z.object({
 
 	currency: CurrencyValidator,
 
-	brandName: z
+	brand: z
 		.string({
 			required_error: "Введите название бренда",
 		})

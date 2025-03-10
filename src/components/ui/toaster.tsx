@@ -26,7 +26,7 @@ export function Toaster() {
 			}) {
 				return (
 					<Toast key={id} {...props}>
-						<div className="flex items-center gap-1">
+						<div className="flex items-start gap-1">
 							{done && <Icons.Done width={24} height={24} />}
 
 							<div className="grid gap-1">

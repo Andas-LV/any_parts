@@ -28,7 +28,7 @@ export default function PriceMakingForm({
 	nextStep,
 	previousStep,
 }: PriceMakingFormProps) {
-	const { config } = useCreateItemStore();
+	const { config, setPriceMaking } = useCreateItemStore();
 
 	const colors = config?.colors || examplePriceMakingColors;
 	const sizes = config?.sizes || examplePriceMakingSizes;
@@ -39,7 +39,7 @@ export default function PriceMakingForm({
 			sizes: sizes.map((size) => ({
 				...size,
 				price: 0,
-				discountPrice: undefined,
+				discountPrice: 0,
 				barcode: "",
 			})),
 		})),
@@ -57,6 +57,7 @@ export default function PriceMakingForm({
 
 	const onSubmit = (data: TPriceMakingSchema) => {
 		console.log("Данные формы:", data);
+		setPriceMaking(data);
 		if (nextStep) {
 			nextStep();
 		}
@@ -78,8 +79,8 @@ export default function PriceMakingForm({
 						<TableRow>
 							<TableHead>Цвет</TableHead>
 							<TableHead>Размер</TableHead>
-							<TableHead>Ваша цена *</TableHead>
-							<TableHead>Цена до скидки</TableHead>
+							<TableHead>Цена *</TableHead>
+							<TableHead>Цена со скидкой</TableHead>
 							<TableHead>Штрихкод товара</TableHead>
 						</TableRow>
 					</TableHeader>

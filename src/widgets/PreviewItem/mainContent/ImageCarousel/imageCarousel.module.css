@@ -1,0 +1,92 @@
+.carousel {
+	--height: 400px;
+
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.thumbnailContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5px;
+}
+
+.thumbnails {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	max-height: var(--height);
+	overflow: hidden;
+}
+
+.thumbnail {
+	width: 60px;
+	height: 60px;
+	border: none;
+	border-radius: 5px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: border 0.1s ease;
+}
+
+.thumbnail:hover {
+	border: 2px solid var(--brand-primary);
+}
+
+.active {
+	border: 2px solid var(--brand-primary);
+	padding: 5px;
+}
+
+.videoThumbnail {
+	width: 60px;
+	height: 60px;
+	background: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+}
+
+.playIcon {
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.mainMedia {
+	max-height: var(--height);
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.image {
+	max-height: var(--height);
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.video {
+	max-width: 100%;
+	border-radius: 10px;
+}
+
+.scrollButton {
+	width: 100%;
+	padding: 0 5px;
+	font-size: 16px;
+	background-color: var(--brand-gray);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+}
+
+.scrollButton svg {
+	height: 20px;
+	width: 15px;
+}

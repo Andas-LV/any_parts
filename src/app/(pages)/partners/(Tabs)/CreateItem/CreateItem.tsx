@@ -20,7 +20,7 @@ export const steps = [
 ];
 
 export default function CreateItem() {
-	const [currentStep, setCurrentStep] = useState(2);
+	const [currentStep, setCurrentStep] = useState(0);
 
 	const onStepChange = (stats: any) => {
 		setCurrentStep(stats.activeStep - 1);
@@ -55,8 +55,8 @@ export default function CreateItem() {
 			</Box>
 
 			<StepWizard onStepChange={onStepChange}>
-				{/*<GeneralInfo />*/}
-				{/*<Characters />*/}
+				<GeneralInfo />
+				<Characters />
 				<Configuration />
 				<PriceMaking />
 				<Preview />

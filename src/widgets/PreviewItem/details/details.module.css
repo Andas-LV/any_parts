@@ -1,0 +1,94 @@
+.details {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 50px;
+	margin: 50px 0;
+}
+
+.description,
+.characteristicsWrapper {
+	max-width: 1000px;
+}
+
+.description h1,
+.characteristicsWrapper h1 {
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+
+.description p {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 18px;
+	text-align: justify;
+}
+
+.toggleButton {
+	margin-top: 10px;
+	background-color: transparent;
+	border: none;
+	color: #007bff;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.toggleButton:hover {
+	text-decoration: underline;
+}
+
+.characteristicsWrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.characteristicsWrapper p {
+	font-weight: 700;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.characteristics {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.characteristic {
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	font-weight: 500;
+	color: black;
+	width: 100%;
+	position: relative;
+}
+
+.label {
+	white-space: nowrap;
+	background: white;
+	color: var(--text-secondary);
+	padding-right: 10px;
+}
+
+.value {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	white-space: nowrap;
+	font-weight: 500;
+	min-width: 150px;
+	text-align: left;
+}
+
+.dots {
+	flex-grow: 1;
+	border-bottom: 1px dotted #b5b5b5;
+	height: 1px;
+	margin-right: 10px;
+}
