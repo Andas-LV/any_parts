@@ -15,26 +15,28 @@ export default function ActionsBlock({ item }: IActionsBlock) {
 
 	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 
+	console.log("fullInfo", item);
+
 	return (
 		<div className={styles.actionsBlockContainer}>
 			<div className={styles.prices}>
 				<div className={styles.leftSidePrice}>
 					<div className={styles.actualPrice}>
-						{item.colors[0].sizes[0].discountPrice
-							? `${item.colors[0].sizes[0].discountPrice.toLocaleString()} ${currencySymbol}`
-							: `${item.colors[0].sizes[0].price.toLocaleString()} ${currencySymbol}`}
+						{item.prices[0].sizes[0].discountPrice
+							? `${item.prices[0].sizes[0].discountPrice.toLocaleString()} ${currencySymbol}`
+							: `${item.prices[0].sizes[0].price.toLocaleString()} ${currencySymbol}`}
 					</div>
-					{item.colors[0].sizes[0].discountPrice ? (
+					{item.prices[0].sizes[0].discountPrice ? (
 						<div className={styles.discountWrapper}>
 							<div className={styles.oldPrice}>
-								{item.colors[0].sizes[0].price.toLocaleString()}{" "}
+								{item.prices[0].sizes[0].price.toLocaleString()}{" "}
 								{currencySymbol}
 							</div>
 							<div className={styles.discount}>
 								-
 								{calculateDiscountPercentage(
-									item.colors[0].sizes[0].price,
-									item.colors[0].sizes[0].discountPrice,
+									Number(item.prices[0].sizes[0].price),
+									Number(item.prices[0].sizes[0].discountPrice),
 								)}
 								%
 							</div>
@@ -44,7 +46,7 @@ export default function ActionsBlock({ item }: IActionsBlock) {
 
 				<div className={styles.rightSidePrice}>
 					<div className={styles.apPrice}>
-						{item.colors[0].sizes[0].price} {currencySymbol}
+						{item.prices[0].sizes[0].price} {currencySymbol}
 					</div>
 					<div className={styles.apText}>c AP Кошельком</div>
 				</div>

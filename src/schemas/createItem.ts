@@ -122,7 +122,7 @@ export const configurationSchema = z.object({
 });
 
 export const priceMakingSchema = z.object({
-	colors: z
+	prices: z
 		.array(
 			z.object({
 				colorName: z
@@ -135,14 +135,15 @@ export const priceMakingSchema = z.object({
 							sizeName: z
 								.string()
 								.min(1, { message: "Название размера не может быть пустым" }),
-							price: z
-								.number()
-								.nonnegative({ message: "Введите корректную цену" }),
-							discountPrice: z
-								.number()
-								.nonnegative({ message: "Введите корректную цену" })
-								.optional(),
-							barcode: z.string().optional(),
+							price: z.string({
+								invalid_type_error: "Цена должна быть числом",
+							}),
+							discountPrice: z.string({
+								invalid_type_error: "Цена(со скидкой) должна быть числом",
+							}),
+							barcode: z.string({
+								invalid_type_error: "Код должен быть числом",
+							}),
 						}),
 					)
 					.min(1, { message: "Добавьте хотя бы один размер" }),

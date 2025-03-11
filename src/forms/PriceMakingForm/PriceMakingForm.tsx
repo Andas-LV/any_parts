@@ -34,12 +34,13 @@ export default function PriceMakingForm({
 	const sizes = config?.sizes || examplePriceMakingSizes;
 
 	const defaultPriceMakingData = {
-		colors: colors.map((color) => ({
-			...color,
+		prices: colors.map((color) => ({
+			colorName: color.colorName,
+			photo: color.photo,
 			sizes: sizes.map((size) => ({
 				...size,
-				price: 0,
-				discountPrice: 0,
+				price: "",
+				discountPrice: "",
 				barcode: "",
 			})),
 		})),
@@ -112,17 +113,14 @@ export default function PriceMakingForm({
 												placeholder="Цена"
 												type="text"
 												{...register(
-													`colors.${colorIndex}.sizes.${sizeIndex}.price`,
-													{
-														valueAsNumber: true,
-													},
+													`prices.${colorIndex}.sizes.${sizeIndex}.price`,
 												)}
 											/>
-											{errors.colors?.[colorIndex]?.sizes?.[sizeIndex]
+											{errors.prices?.[colorIndex]?.sizes?.[sizeIndex]
 												?.price && (
 												<p className={styles.error}>
 													{
-														errors.colors[colorIndex].sizes[sizeIndex].price!
+														errors.prices[colorIndex].sizes[sizeIndex].price!
 															.message
 													}
 												</p>
@@ -137,17 +135,14 @@ export default function PriceMakingForm({
 												placeholder="Цена"
 												type="text"
 												{...register(
-													`colors.${colorIndex}.sizes.${sizeIndex}.discountPrice`,
-													{
-														valueAsNumber: true,
-													},
+													`prices.${colorIndex}.sizes.${sizeIndex}.discountPrice`,
 												)}
 											/>
-											{errors.colors?.[colorIndex]?.sizes?.[sizeIndex]
+											{errors.prices?.[colorIndex]?.sizes?.[sizeIndex]
 												?.discountPrice && (
 												<p className={styles.error}>
 													{
-														errors.colors[colorIndex].sizes[sizeIndex]
+														errors.prices[colorIndex].sizes[sizeIndex]
 															.discountPrice!.message
 													}
 												</p>
@@ -162,14 +157,14 @@ export default function PriceMakingForm({
 												placeholder="Код"
 												type="text"
 												{...register(
-													`colors.${colorIndex}.sizes.${sizeIndex}.barcode`,
+													`prices.${colorIndex}.sizes.${sizeIndex}.barcode`,
 												)}
 											/>
-											{errors.colors?.[colorIndex]?.sizes?.[sizeIndex]
+											{errors.prices?.[colorIndex]?.sizes?.[sizeIndex]
 												?.barcode && (
 												<p className={styles.error}>
 													{
-														errors.colors[colorIndex].sizes[sizeIndex].barcode!
+														errors.prices[colorIndex].sizes[sizeIndex].barcode!
 															.message
 													}
 												</p>
