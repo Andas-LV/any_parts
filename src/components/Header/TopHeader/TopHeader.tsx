@@ -6,6 +6,7 @@ import CurrencyModal from "@/widgets/modals/currency/currencyModal";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { countryCodes } from "@/constants/countryCodes";
 import { useRouter } from "next/navigation";
+import { routes } from "@/configs/routes";
 
 export default function TopHeader() {
 	const [isModalOpen, setModalOpen] = useState(false);
@@ -46,7 +47,7 @@ export default function TopHeader() {
 			</div>
 
 			<Button
-				onClick={() => router.push("/partners/auth/")}
+				onClick={() => router.push(routes.partnersAuth())}
 				variant={"secondary"}
 				className={styles.getSeller}
 			>

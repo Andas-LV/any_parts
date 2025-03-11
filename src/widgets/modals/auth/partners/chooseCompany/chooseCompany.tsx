@@ -9,6 +9,7 @@ import { Search as SearchIcon } from "lucide-react";
 import { useCompanyStore } from "@/entities/partners/company/useCompanyStore";
 import { useRouter } from "next/navigation";
 import { Company } from "@/types/Company";
+import { routes } from "@/configs/routes";
 
 interface ChooseCompanyProps {
 	onNext: () => void;
@@ -38,7 +39,7 @@ export default function ChooseCompany({ onPrev, onNext }: ChooseCompanyProps) {
 	const handleSubmit = async () => {
 		// await запрос;
 		console.log(selectedCompany);
-		router.push("/partners");
+		router.push(routes.partners());
 	};
 
 	return (

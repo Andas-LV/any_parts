@@ -31,6 +31,7 @@ export default function ConfigurationForm({
 		formState: { errors },
 	} = useForm<TConfigurationSchema>({
 		resolver: zodResolver(configurationSchema),
+		mode: "onChange",
 		defaultValues: {
 			colors: [{ colorName: "" }],
 			sizes: [{ sizeName: "" }],

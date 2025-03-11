@@ -5,6 +5,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import styles from "./imageCarousel.module.css";
 import { Icons } from "@/assets/svg";
+import ImagesSkeleton from "@components/skeletons/ItemPageSkeleton/ImagesSkeleton/ImagesSkeleton";
 
 interface ImageCarouselProps {
 	images: string[];

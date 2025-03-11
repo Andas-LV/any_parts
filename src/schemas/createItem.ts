@@ -52,7 +52,8 @@ export const characteristicsSchema = z.object({
 			required_error: "Введите описание",
 			invalid_type_error: "Описание должно быть строкой",
 		})
-		.min(1, { message: "Описание не может быть пустым" }),
+		.min(1, { message: "Описание не может быть пустым" })
+		.max(2000, { message: "Описание не может быть больше 2000 символов" }),
 
 	packageLength: z
 		.number({

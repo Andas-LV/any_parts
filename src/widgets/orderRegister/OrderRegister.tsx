@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
+import { routes } from "@/configs/routes";
 
 interface IOrderProps {
 	type: "basket" | "order" | null;
@@ -25,7 +26,10 @@ export default function OrderRegister({ type }: IOrderProps) {
 	return (
 		<div className={styles.wrapper}>
 			{type === "basket" && (
-				<Button onClick={() => router.push("/order")} className={styles.btn}>
+				<Button
+					onClick={() => router.push(routes.order())}
+					className={styles.btn}
+				>
 					Перейти к оформлению
 				</Button>
 			)}

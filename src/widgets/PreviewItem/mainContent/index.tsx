@@ -7,13 +7,22 @@ import styles from "./mainContent.module.css";
 import ActionsBlock from "./ActionsBlock";
 import Loading from "@components/Loading";
 import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
+import ImagesSkeleton from "@components/skeletons/ItemPageSkeleton/ImagesSkeleton/ImagesSkeleton";
+import MainInfoSkeleton from "@components/skeletons/ItemPageSkeleton/MainInfoSkeleton/MainInfoSkeleton";
+import ActionsBlockSkeleton from "@components/skeletons/ItemPageSkeleton/ActionBlockSkeleton/ActionBlockSkeleton";
 
 export default function MainContent() {
-	const { fullInfo } = useCreateItemStore();
+	const { fullInfo, isLoading } = useCreateItemStore();
 	const [selectedIndex, setSelectedIndex] = useState(0);
 
-	if (!fullInfo) {
-		return <Loading />;
+	if (!fullInfo || isLoading) {
+		return (
+			<div className={styles.noContentWrapper}>
+				<ImagesSkeleton />
+				<MainInfoSkeleton />
+				<ActionsBlockSkeleton />
+			</div>
+		);
 	}
 
 	return (

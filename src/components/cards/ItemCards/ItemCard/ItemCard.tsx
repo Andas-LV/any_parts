@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import ItemCardSkeleton from "@components/skeletons/ItemCardSkeleton/ItemCardSkeleton";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
+import { routes } from "@/configs/routes";
 
 interface ItemCardProps {
 	item: ItemCardType | TFilteredItemInfo;
@@ -45,7 +46,10 @@ export default function ItemCard({ item, showFavorite }: ItemCardProps) {
 	};
 
 	return (
-		<Card className={styles.card} onClick={() => router.push(`/item/${id}`)}>
+		<Card
+			className={styles.card}
+			onClick={() => router.push(routes.itemPage(id))}
+		>
 			<ImageCarousel images={images} alt={name} />
 
 			<div className={styles.content}>

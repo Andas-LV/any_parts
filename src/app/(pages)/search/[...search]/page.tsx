@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import { useSearchParams } from "next/navigation";
 import { Icons } from "@/assets/svg";
 import ListedCard from "@components/cards/ItemCards/ListedCard/ListedCard";
@@ -25,23 +25,23 @@ export default function SearchPage({
 }: {
 	params: Promise<{ search: string }>;
 }) {
+	const { search } = use(params);
+	const searchParams = useSearchParams();
 	const [isFilterOpen, setIsFilterOpen] = useState(false);
 	const [selectedSort, setSelectedSort] = useState(itemSearchedSorts[0].value);
-	const itemsAmount = 512;
-	const [searchQuery, setSearchQuery] = useState("");
 	const [searchName, setSearchName] = useState("");
+
+	const itemsAmount = 512;
 
 	const selectedSortName =
 		itemSearchedSorts.find((sort) => sort.value === selectedSort)?.name ||
 		"Выберите сортировку";
 
-	const searchParams = useSearchParams();
-
 	useEffect(() => {
-		const query = searchParams?.get("name") || "";
-		const value = searchParams?.get("search") || "";
-		setSearchQuery(value);
-		setSearchName(query);
+		const name = searchParams?.get("name") || "";
+		setSearchName(name);
+
+		console.log("name:", name, "/ value:", search[0]);
 	}, [searchParams]);
 
 	return (

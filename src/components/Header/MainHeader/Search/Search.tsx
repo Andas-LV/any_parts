@@ -13,6 +13,12 @@ import { Icons } from "@/assets/svg";
 import { itemSearchTypes } from "@/constants/item";
 import { exampleSearchKeyWords } from "@/exampleData/exampleFilters";
 import { useRouter } from "next/navigation";
+import { routes } from "@/configs/routes";
+
+export interface ISearchParams {
+	value: string;
+	name: string;
+}
 
 export default function Search() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -34,9 +40,8 @@ export default function Search() {
 		item.name.toLowerCase().startsWith(query.toLowerCase()),
 	);
 
-	// Pass the entire item object to the search page
-	const goToSearch = (item: { value: string; name: string }) => {
-		router.push(`/search/${item.value}/?name=${item.name}`);
+	const goToSearch = (item: ISearchParams) => {
+		router.push(routes.searchedPage({ value: item.value, name: item.name }));
 	};
 
 	return (

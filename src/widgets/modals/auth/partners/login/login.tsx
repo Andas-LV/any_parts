@@ -6,7 +6,7 @@ import { Button } from "@components/ui/button";
 import { Checkbox } from "@components/ui/checkbox";
 import { Label } from "@components/ui/label";
 import { usePartnerAuthStore } from "@/entities/partners/auth/usePartnersAuthStore";
-import { renderError } from "@/utils/renderError";
+import { renderError } from "@/hooks/renderError";
 import PartnersModalLayout from "@/layouts/PartnersModalLayout/PartnersModalLayout";
 
 interface PartnerLoginModalProps {

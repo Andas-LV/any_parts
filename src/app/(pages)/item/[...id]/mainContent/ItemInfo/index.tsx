@@ -11,16 +11,18 @@ import { copyToClipboard } from "@components/copyToClipboard";
 import { useToast } from "@/hooks/use-toast";
 import { charactersSerializer } from "@/types/charactersSerializer";
 import { Button } from "@components/ui/button";
+import MainInfoSkeleton from "@components/skeletons/ItemPageSkeleton/MainInfoSkeleton/MainInfoSkeleton";
 
-interface ItemInfoProps extends ItemInfoType {
+interface ItemInfoProps {
 	selectedIndex: number;
 	setSelectedIndexAction: (index: number) => void;
+	item: ItemInfoType;
 }
 
 export default function ItemInfo({
 	selectedIndex,
 	setSelectedIndexAction,
-	...item
+	item,
 }: ItemInfoProps) {
 	const { toast } = useToast();
 

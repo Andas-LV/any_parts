@@ -15,6 +15,7 @@ import {
 	DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu";
 import { itemSorts } from "@/constants/item";
+import { routes } from "@/configs/routes";
 
 export default function Favorite() {
 	const { getFavoriteItems, favoriteItems } = useItemsStore();
@@ -51,7 +52,10 @@ export default function Favorite() {
 						Сохраняйте товары, которые понравились, <br /> чтобы долго не искать
 					</p>
 
-					<Button onClick={() => router.push("/")} className={styles.toMainBtn}>
+					<Button
+						onClick={() => router.push(routes.home())}
+						className={styles.toMainBtn}
+					>
 						Перейти на главную
 					</Button>
 				</div>

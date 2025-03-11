@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import styles from "./confirm.module.css";
 import { Button } from "@components/ui/button";
 import { useRequisitesStore } from "@/entities/requisites/useRequisitesStore";
-import { renderError } from "@/utils/renderError";
+import { renderError } from "@/hooks/renderError";
 import ModalsLayout from "@/layouts/modalLayout/layout";
-import { formatTime } from "@/utils/formatTime";
+import { formatTime } from "@/hooks/formatTime";
 import Timer, { useTimer } from "@/hooks/useTimer";
 
 const ConfirmReqCodeModal = ({

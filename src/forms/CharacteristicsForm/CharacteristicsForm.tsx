@@ -32,13 +32,17 @@ export default function CharacteristicsForm({
 		handleSubmit,
 		control,
 		reset,
+		watch,
 		formState: { errors },
 	} = useForm<TCharacteristicsSchema>({
 		resolver: zodResolver(characteristicsSchema),
+		mode: "onChange",
 	});
 
+	const descriptionValue = watch("description", "");
+	const descriptionLength = descriptionValue ? descriptionValue.length : 0;
+
 	const onFormSubmit = (data: TCharacteristicsSchema) => {
-		// ЛОГИКА АККУМУЛЯЦИИ
 		setCharacteristics(data);
 		console.log("Форма отправлена:", data);
 		if (nextStep) {
@@ -62,7 +66,10 @@ export default function CharacteristicsForm({
 				onSubmit={handleSubmit(onFormSubmit, onError)}
 			>
 				<div className={styles.section}>
-					<h3>Описание</h3>
+					<div className={styles.sectionHeader}>
+						<h3>Описание</h3>
+						<div className={styles.charCount}>{descriptionLength}/2000</div>
+					</div>
 					<Textarea
 						{...register("description")}
 						className={styles.textarea}
@@ -88,7 +95,6 @@ export default function CharacteristicsForm({
 							className={styles.nameInput}
 							{...register("packageWidth", { valueAsNumber: true })}
 						/>
-
 						<input
 							type="number"
 							placeholder="Высота (см)"
@@ -96,11 +102,9 @@ export default function CharacteristicsForm({
 							{...register("packageHeight", { valueAsNumber: true })}
 						/>
 					</div>
-
 					{errors.packageHeight && (
 						<span className={styles.error}>{errors.packageHeight.message}</span>
 					)}
-
 					<input
 						type="number"
 						placeholder="Вес товара с упаковкой (г)"
@@ -123,7 +127,6 @@ export default function CharacteristicsForm({
 					{errors.material && (
 						<span className={styles.error}>{errors.material.message}</span>
 					)}
-
 					<div className={styles.selectWrapper}>
 						<Controller
 							name="manuFactored"

@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
 import ActiveOrders from "@/app/(pages)/profile/(Tabs)/Orders/Active/ActiveOrders";
 import ArchiveOrders from "@/app/(pages)/profile/(Tabs)/Orders/Archive/ArchiveOrders";
+import { routes } from "@/configs/routes";
 
 export default function Orders() {
 	const { isAuthenticated } = useAuthStore();
@@ -49,7 +50,7 @@ export default function Orders() {
 
 					<Button
 						variant={"outline"}
-						onClick={() => router.push("/")}
+						onClick={() => router.push(routes.home())}
 						className={styles.toMainBtn}
 					>
 						Перейти на главную

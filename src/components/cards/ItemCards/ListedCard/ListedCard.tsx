@@ -13,6 +13,7 @@ import RatingStars from "@components/stars/RatingStars";
 import ListedCardSkeleton from "@components/skeletons/ListedCardSkeleton/ListedCardSkeleton";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
+import { routes } from "@/configs/routes";
 
 interface ItemCardProps {
 	item: TFilteredItemInfo;
@@ -62,7 +63,10 @@ export default function ListedCard({ item, showFavorite }: ItemCardProps) {
 	};
 
 	return (
-		<Card className={styles.card} onClick={() => router.push(`/item/${id}`)}>
+		<Card
+			className={styles.card}
+			onClick={() => router.push(routes.itemPage(id))}
+		>
 			<div className={styles.imageContainer}>
 				<ImageCarousel images={images} alt={name} width={200} />
 			</div>

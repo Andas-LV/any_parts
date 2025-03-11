@@ -7,6 +7,7 @@ import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
 import PreviewItem from "@/widgets/PreviewItem/PreviewItem";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
+import { routes } from "@/configs/routes";
 
 interface PreviewProps {
 	previousStep?: () => void;
@@ -24,7 +25,7 @@ export default function Preview({ previousStep, isActive }: PreviewProps) {
 
 	const createItem = () => {
 		console.log(fullInfo);
-		router.push("/partners");
+		router.push(routes.partners());
 		toast({
 			done: true,
 			variant: "success",

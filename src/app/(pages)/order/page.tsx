@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import PaymentBlock from "@/app/(pages)/order/Payment/PaymentBlock";
 import Delivery from "@/app/(pages)/order/Delivery/Delivery";
 import { Icons } from "@/assets/svg";
+import { routes } from "@/configs/routes";
 
 export default function Order() {
 	const { cartItems } = useBasketStore();
@@ -20,7 +21,7 @@ export default function Order() {
 			<div className={styles.wrapper}>
 				<div>
 					<Button
-						onClick={() => router.push("/basket")}
+						onClick={() => router.push(routes.basket())}
 						variant={"link"}
 						className={styles.goBack}
 					>

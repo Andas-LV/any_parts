@@ -13,7 +13,11 @@ import ChartModal from "@/widgets/modals/chartModal/ChartModal";
 
 const Chart = dynamic(() => import("@components/Chart"), { ssr: false });
 
-export default function ActionsBlock({ ...item }: ItemInfoType) {
+interface IActionsBlock {
+	item: ItemInfoType;
+}
+
+export default function ActionsBlock({ item }: IActionsBlock) {
 	const { user } = useUserStore();
 	const [chartModal, setChartModal] = useState(false);
 
@@ -27,14 +31,13 @@ export default function ActionsBlock({ ...item }: ItemInfoType) {
 			<div className={styles.prices}>
 				<div className={styles.leftSidePrice}>
 					<div className={styles.actualPrice}>
-						{item?.currentPrice
-							? `${item.currentPrice.toLocaleString()} ${currencySymbol}`
-							: `${item.price.toLocaleString()} ${currencySymbol}`}
+						{(item?.currentPrice ?? item?.price).toLocaleString()}{" "}
+						{currencySymbol}
 					</div>
 					{item?.currentPrice ? (
 						<div className={styles.discountWrapper}>
 							<div className={styles.oldPrice}>
-								{item.price.toLocaleString()} {currencySymbol}
+								{item.price?.toLocaleString()} {currencySymbol}
 							</div>
 							<div className={styles.discount}>-{item.discount}%</div>
 						</div>
@@ -43,7 +46,7 @@ export default function ActionsBlock({ ...item }: ItemInfoType) {
 
 				<div className={styles.rightSidePrice}>
 					<div className={styles.apPrice}>
-						{item?.apPrice} {currencySymbol}
+						{item.apPrice} {currencySymbol}
 					</div>
 					<div className={styles.apText}>c AP Кошельком</div>
 				</div>

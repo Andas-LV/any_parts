@@ -2,7 +2,7 @@ import { z } from "zod";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import * as partnerAuthService from "@/entities/partners/auth/auth.service";
-import { setAuthToken, removeAuthToken, getAuthToken } from "@/utils/cookie";
+import { setAuthToken, removeAuthToken, getAuthToken } from "@/configs/cookie";
 import { ConfirmCode, Login, PartnerRegister } from "@/types/Auth";
 
 const isClient = typeof window !== "undefined";

@@ -10,7 +10,6 @@ import RecommendedCarousel from "@/widgets/Items/(Carousel)/Recommended";
 import PurchasedCarousel from "@/widgets/Items/(Carousel)/Purchased";
 import { Comments } from "@/app/(pages)/item/[...id]/feedbacks";
 import { useItemsStore } from "@/entities/items/useItemsStore";
-import Loading from "@components/Loading";
 import ItemStickyHeader from "@/app/(pages)/item/[...id]/ItemStickyHeader/ItemHeader";
 
 export default function ItemPage({
@@ -21,7 +20,7 @@ export default function ItemPage({
 	const { id: idStr } = use(params);
 	const id = Number(idStr);
 
-	const { fetchItemById, currentItem } = useItemsStore();
+	const { fetchItemById } = useItemsStore();
 
 	useEffect(() => {
 		fetchItemById(id);
@@ -42,10 +41,6 @@ export default function ItemPage({
 		{ label: "Главная", href: "/" },
 		{ label: "Запчасти и аксессуары", href: "/transport/accessories" },
 	];
-
-	if (!currentItem) {
-		return <Loading />;
-	}
 
 	return (
 		<div>

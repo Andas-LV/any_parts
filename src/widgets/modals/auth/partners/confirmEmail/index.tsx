@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import styles from "./confirmEmail.module.css";
 import { Button } from "@components/ui/button";
 import { usePartnerAuthStore } from "@/entities/partners/auth/usePartnersAuthStore";
-import { renderError } from "@/utils/renderError";
+import { renderError } from "@/hooks/renderError";
 import Timer, { useTimer } from "@/hooks/useTimer";
-import { formatTime } from "@/utils/formatTime";
+import { formatTime } from "@/hooks/formatTime";
 import PartnersModalLayout from "@/layouts/PartnersModalLayout/PartnersModalLayout";
 
 interface PartnerConfirmEmailModalProps {

@@ -36,6 +36,7 @@ export default function GeneralInfoForm({ nextStep }: GeneralInfoFormProps) {
 		formState: { errors },
 	} = useForm<TGeneralInfoSchema>({
 		resolver: zodResolver(generalInfoSchema),
+		mode: "onChange",
 	});
 
 	useEffect(() => {

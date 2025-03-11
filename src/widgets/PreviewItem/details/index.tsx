@@ -3,15 +3,15 @@
 import React, { useState } from "react";
 import styles from "./details.module.css";
 import { charactersSerializer } from "@/types/charactersSerializer";
-import Loading from "@components/Loading";
 import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
+import DetailsSkeleton from "@components/skeletons/ItemPageSkeleton/DetailsSkeleton/DetailsSkeleton";
 
 export default function Details() {
 	const { fullInfo } = useCreateItemStore();
 	const [isExpanded, setIsExpanded] = useState(false); // Перемещаем useState наверх
 
 	if (!fullInfo) {
-		return <Loading />;
+		return <DetailsSkeleton />;
 	}
 
 	const description = fullInfo.description || "Нет описания";

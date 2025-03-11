@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import * as authService from "@/entities/auth/auth.service";
-import { setAuthToken, removeAuthToken, getAuthToken } from "@/utils/cookie";
+import { setAuthToken, removeAuthToken, getAuthToken } from "@/configs/cookie";
 import { ConfirmCode, Login, Register } from "@/types/Auth";
 import { z } from "zod";
 import { confirmEmail, loginSchema } from "@/schemas/auth";

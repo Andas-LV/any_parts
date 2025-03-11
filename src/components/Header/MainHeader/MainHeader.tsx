@@ -12,6 +12,7 @@ import { Icons } from "@/assets/svg";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { TProfileTabs } from "@/types/Profile";
 import { useRouter } from "next/navigation";
+import { routes } from "@/configs/routes";
 
 const MainHeader = () => {
 	const { isAuthenticated } = useAuthStore();
@@ -22,7 +23,7 @@ const MainHeader = () => {
 
 	const routeToProfileSection = (section: TProfileTabs) => {
 		setActiveProfileTab(section);
-		router.push(`/profile`);
+		router.push(routes.profile());
 		console.log(activeProfileTab);
 	};
 

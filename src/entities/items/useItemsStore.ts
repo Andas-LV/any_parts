@@ -33,7 +33,7 @@ export const useItemsStore = create<ItemState>()((set, get) => ({
 	refunds: null,
 	favoriteItems: null,
 
-	currentItem: itemInfo[0],
+	currentItem: null,
 	isLoading: false,
 	error: null,
 

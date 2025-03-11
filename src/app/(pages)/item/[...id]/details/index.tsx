@@ -4,24 +4,23 @@ import React, { useState } from "react";
 import styles from "./details.module.css";
 import { charactersSerializer } from "@/types/charactersSerializer";
 import { useItemsStore } from "@/entities/items/useItemsStore";
-import Loading from "@components/Loading";
+import DetailsSkeleton from "@components/skeletons/ItemPageSkeleton/DetailsSkeleton/DetailsSkeleton";
 
 export default function Details() {
 	const { currentItem } = useItemsStore();
+	const [isExpanded, setIsExpanded] = useState(false);
+
+	const toggleExpand = () => setIsExpanded(!isExpanded);
 
 	if (!currentItem) {
-		return <Loading />;
+		return <DetailsSkeleton />;
 	}
 
 	const description = currentItem.description || "Нет описания";
 	const characters = charactersSerializer(currentItem) || [];
 
 	const hasCharacters = characters.length > 0;
-
-	const [isExpanded, setIsExpanded] = useState(false);
 	const MAX_LENGTH = 300;
-
-	const toggleExpand = () => setIsExpanded(!isExpanded);
 
 	return (
 		<div className={styles.details}>
