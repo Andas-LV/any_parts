@@ -3,7 +3,7 @@
 import styles from "./actionBlock.module.css";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
-import { TCreateItemFullInfo } from "@/types/CreateItem";
+import { TCreateItemFullInfo } from "@/types/items/CreateItem";
 import { calculateDiscountPercentage } from "@/hooks/calculateDiscountPercentage";
 
 interface IActionsBlock {

@@ -1,15 +1,11 @@
 import { Icons } from "@/assets/svg";
-import styles from "./afterCreateRefund.module.css";
+import styles from "./requestSended.module.css";
 import ModalsLayout from "@/layouts/modalLayout/layout";
 import React from "react";
 import { REFUND_START_PENDING } from "@/constants/item";
 import { Button } from "@components/ui/button";
 
-export default function AfterCreateRefund({
-	onClose,
-}: {
-	onClose: () => void;
-}) {
+export default function RequestSended({ onClose }: { onClose: () => void }) {
 	return (
 		<ModalsLayout title="" onClose={onClose}>
 			<div className={styles.modalContent}>

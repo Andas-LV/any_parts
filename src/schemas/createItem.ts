@@ -135,12 +135,14 @@ export const priceMakingSchema = z.object({
 							sizeName: z
 								.string()
 								.min(1, { message: "Название размера не может быть пустым" }),
-							price: z.string({
+							price: z.number({
 								invalid_type_error: "Цена должна быть числом",
 							}),
-							discountPrice: z.string({
-								invalid_type_error: "Цена(со скидкой) должна быть числом",
-							}),
+							discountPrice: z
+								.number({
+									invalid_type_error: "Цена(со скидкой) должна быть числом",
+								})
+								.optional(),
 							barcode: z.string({
 								invalid_type_error: "Код должен быть числом",
 							}),

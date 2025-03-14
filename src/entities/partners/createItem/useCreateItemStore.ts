@@ -5,7 +5,7 @@ import type {
 	TConfigurationSchema,
 	TCreateItemFullInfo,
 	TPriceMakingSchema,
-} from "@/types/CreateItem";
+} from "@/types/items/CreateItem";
 
 interface CreateItemState {
 	generalInfo: TGeneralInfoSchema | null;

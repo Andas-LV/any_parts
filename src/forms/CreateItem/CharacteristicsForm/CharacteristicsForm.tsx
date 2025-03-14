@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./CharacteristicsForm.module.css";
 import { Button } from "@components/ui/button";
 import { Controller, useForm } from "react-hook-form";
-import { TCharacteristicsSchema } from "@/types/CreateItem";
+import { TCharacteristicsSchema } from "@/types/items/CreateItem";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { characteristicsSchema } from "@/schemas/createItem";
-import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
+import { useCreateItemStore } from "@/entities/partners/createItem/useCreateItemStore";
 import { Textarea } from "@components/ui/textarea";
 import {
 	Select,

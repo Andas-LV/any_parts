@@ -14,9 +14,9 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@components/ui/select";
-import { TGeneralInfoSchema } from "@/types/CreateItem";
+import { TGeneralInfoSchema } from "@/types/items/CreateItem";
 import { Icons } from "@/assets/svg";
-import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
+import { useCreateItemStore } from "@/entities/partners/createItem/useCreateItemStore";
 
 interface GeneralInfoFormProps {
 	nextStep?: () => void;

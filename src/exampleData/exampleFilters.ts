@@ -1,4 +1,4 @@
-import { TFilteredItemInfo } from "@/types/Item";
+import { TFilteredItemInfo } from "@/types/items/Item";
 
 export const exampleBrands = [
 	{ value: "BMW", label: "BMW" },

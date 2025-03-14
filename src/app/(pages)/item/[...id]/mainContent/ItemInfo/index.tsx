@@ -1,6 +1,6 @@
 "use client";
 
-import { ItemInfoType } from "@/types/Item";
+import { ItemInfoType } from "@/types/items/Item";
 import React from "react";
 import styles from "./itemInfo.module.css";
 import RatingStars from "@components/stars/RatingStars";
@@ -9,7 +9,7 @@ import Image from "next/image";
 import { Icons } from "@/assets/svg";
 import { copyToClipboard } from "@components/copyToClipboard";
 import { useToast } from "@/hooks/use-toast";
-import { charactersSerializer } from "@/types/charactersSerializer";
+import { charactersSerializer } from "@/types/items/charactersSerializer";
 import { Button } from "@components/ui/button";
 import MainInfoSkeleton from "@components/skeletons/ItemPageSkeleton/MainInfoSkeleton/MainInfoSkeleton";
 

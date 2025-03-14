@@ -15,6 +15,9 @@ import {
 } from "@components/ui/dropdown-menu";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 
+const ratings = [1, 2, 3, 4, 5];
+const filters = ["Сначала полезные", "Сначала популярные"];
+
 export function CommentsSection() {
 	const { currentItem } = useItemsStore();
 	const item = currentItem;
@@ -31,7 +34,7 @@ export function CommentsSection() {
 		0,
 	);
 
-	const ratingRows = [5, 4, 3, 2, 1].map((stars) => {
+	const ratingRows = ratings.reverse().map((stars) => {
 		const count =
 			item.ratingDistribution[stars as keyof typeof item.ratingDistribution] ||
 			0;
@@ -82,25 +85,24 @@ export function CommentsSection() {
 							/>
 						</DropdownMenuTrigger>
 						<DropdownMenuContent>
-							<DropdownMenuItem>1</DropdownMenuItem>
-							<DropdownMenuItem>2</DropdownMenuItem>
-							<DropdownMenuItem>3</DropdownMenuItem>
-							<DropdownMenuItem>4</DropdownMenuItem>
-							<DropdownMenuItem>5</DropdownMenuItem>
+							{ratings.map((star, i) => (
+								<DropdownMenuItem key={i}>{star}</DropdownMenuItem>
+							))}
 						</DropdownMenuContent>
 					</DropdownMenu>
 				</div>
 
 				<DropdownMenu onOpenChange={setIsOpen}>
 					<DropdownMenuTrigger className={styles.ratingSelect}>
-						Сначала полезные
+						{filters[0]}
 						<Icons.ArrowDown
 							className={`${styles.arrowIcon} ${isOpen ? styles.rotated : ""}`}
 						/>
 					</DropdownMenuTrigger>
 					<DropdownMenuContent>
-						<DropdownMenuItem>Сначала полезные</DropdownMenuItem>
-						<DropdownMenuItem>Сначала популярные</DropdownMenuItem>
+						{filters.map((filter) => (
+							<DropdownMenuItem key={filter}>{filter}</DropdownMenuItem>
+						))}
 					</DropdownMenuContent>
 				</DropdownMenu>
 			</div>

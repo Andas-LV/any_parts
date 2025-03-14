@@ -10,15 +10,20 @@ export interface ChartDataPoint {
 }
 
 export const exampleChartData: ChartData = {
-	medianPrice: 2500,
-	currentPrice: 2450,
+	medianPrice: 3500,
+	currentPrice: 3050,
 	values: [
-		{ date: "12 дек - 19 дек", value: 2500 },
-		{ date: "19 дек - 26 дек", value: 2400 },
-		{ date: "26 дек - 03 янв", value: 2700 },
-		{ date: "03 янв - 10 янв", value: 2850 },
-		{ date: "10 янв - 17 янв", value: 2600 },
-		{ date: "17 янв - 24 янв", value: 2500 },
-		{ date: "24 янв - 31 янв", value: 2450 },
+		{ date: "Янв", value: 25000 },
+		{ date: "Февр", value: 24000 },
+		{ date: "Март", value: 27000 },
+		{ date: "Апр", value: 28500 },
+		{ date: "Май", value: 26000 },
+		{ date: "Июнь", value: 25000 },
+		{ date: "Июль", value: 24500 },
+		{ date: "Авг", value: 28000 },
+		{ date: "Сен", value: 18000 },
+		{ date: "Окт", value: 21000 },
+		{ date: "Нояб", value: 26000 },
+		{ date: "Дек", value: 30000 },
 	],
 };

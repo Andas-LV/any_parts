@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./details.module.css";
-import { charactersSerializer } from "@/types/charactersSerializer";
+import { charactersSerializer } from "@/types/items/charactersSerializer";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 import DetailsSkeleton from "@components/skeletons/ItemPageSkeleton/DetailsSkeleton/DetailsSkeleton";
 

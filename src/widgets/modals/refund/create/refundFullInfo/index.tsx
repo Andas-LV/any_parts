@@ -7,7 +7,7 @@ import { PHOTO_OPTIONS, RETURN_REASONS } from "@/constants/item";
 import { Textarea } from "@components/ui/textarea";
 import { Icons } from "@/assets/svg";
 import Loading from "@components/Loading";
-import AfterCreateRefund from "@/widgets/modals/refund/create/afterCreate/afterCreateRefund";
+import RequestSended from "@/widgets/modals/requestSended/requestSended";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
@@ -152,7 +152,7 @@ export default function RefundFullInfo({
 				Создать заявку
 			</Button>
 
-			{showAfterCreate && <AfterCreateRefund onClose={onClose} />}
+			{showAfterCreate && <RequestSended onClose={onClose} />}
 		</ModalsLayout>
 	);
 }

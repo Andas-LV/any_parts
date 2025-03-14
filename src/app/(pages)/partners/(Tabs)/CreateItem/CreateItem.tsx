@@ -11,7 +11,7 @@ import PriceMaking from "@/app/(pages)/partners/(Tabs)/CreateItem/(Steps)/PriceM
 import Preview from "@/app/(pages)/partners/(Tabs)/CreateItem/(Steps)/Preview/Preview";
 import CustomStepIcon, { CustomConnector } from "@components/ui/CustomStepIcon";
 
-export const steps = [
+const steps = [
 	{ title: "Основная информация" },
 	{ title: "Характеристика" },
 	{ title: "Конфигурация" },

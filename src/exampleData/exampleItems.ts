@@ -1,4 +1,4 @@
-import { ItemCard, ItemInfoType } from "@/types/Item";
+import { ItemCard, ItemInfoType } from "@/types/items/Item";
 import { RefundItem } from "@/types/Refund";
 import { exampleFeedbacks } from "@/exampleData/exampleFeedbacks";
 

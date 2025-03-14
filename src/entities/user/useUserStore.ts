@@ -12,6 +12,7 @@ interface UserState {
 	user: User | null;
 	activeProfileTab: TProfileTabs;
 	isDealer: boolean;
+	isModerated: boolean;
 	isLoading: boolean;
 	error: string | null;
 
@@ -19,14 +20,16 @@ interface UserState {
 	updateUser: (data: Partial<User>) => Promise<void>;
 	changeCurrency: (currency: Currency) => Promise<void>;
 	updateAvatar: (file: File) => Promise<void>;
-	setActiveProfileTab: (activeProfileTab: TProfileTabs) => void;
 	createApWallet: () => Promise<void>;
+	setModeratedUser: (moderation: boolean) => Promise<void>;
+	setActiveProfileTab: (activeProfileTab: TProfileTabs) => void;
 	clearError: () => void;
 }
 
 export const useUserStore = create<UserState>()((set) => ({
 	user: exampleUser,
 	isDealer: exampleUser?.role === "dealer",
+	isModerated: exampleUser?.moderated === true,
 	activeProfileTab: "main",
 	sessions: exampleSessions,
 	currentSession: exampleCurrentSession,
@@ -113,6 +116,25 @@ export const useUserStore = create<UserState>()((set) => ({
 			set({
 				error:
 					error instanceof Error ? error.message : "Failed to change currency",
+			});
+		} finally {
+			set({ isLoading: false });
+		}
+	},
+
+	setModeratedUser: async (moderation) => {
+		set({ isLoading: true, error: null });
+		try {
+			set((state) => ({
+				user: state.user
+					? { ...state.user, moderation: { moderated: moderation } }
+					: null,
+				isModerated: moderation,
+			}));
+		} catch (error) {
+			set({
+				error:
+					error instanceof Error ? error.message : "Failed to moderate user",
 			});
 		} finally {
 			set({ isLoading: false });

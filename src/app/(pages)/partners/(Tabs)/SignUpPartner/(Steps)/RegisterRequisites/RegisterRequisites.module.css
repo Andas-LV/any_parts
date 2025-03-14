@@ -1,0 +1,9 @@
+.RegisterRequisites {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.RegisterRequisites h1{
+    font-size: 2rem;
+}

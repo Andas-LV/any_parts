@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./listedCard.module.css";
-import { TFilteredItemInfo } from "@/types/Item";
+import { TFilteredItemInfo } from "@/types/items/Item";
 import { ImageCarousel } from "../ImageCarousel";
 import { Card } from "@components/ui/card";
 import { Button } from "@components/ui/button";

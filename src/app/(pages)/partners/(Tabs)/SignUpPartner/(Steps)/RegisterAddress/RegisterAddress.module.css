@@ -1,0 +1,9 @@
+.RegisterAddress {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.RegisterAddress h1{
+    font-size: 2rem;
+}

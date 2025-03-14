@@ -7,7 +7,7 @@ import { Icons } from "@/assets/svg";
 import React, { useState } from "react";
 import { Feedback } from "@/types/Feedbacks";
 import Image from "next/image";
-import { ItemInfoType } from "@/types/Item";
+import { ItemInfoType } from "@/types/items/Item";
 
 interface QuestionItemProps {
 	item: ItemInfoType;

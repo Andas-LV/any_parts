@@ -1,6 +1,6 @@
 "use client";
 
-import { ItemInfoType } from "@/types/Item";
+import { ItemInfoType } from "@/types/items/Item";
 import { Icons } from "@/assets/svg";
 import styles from "./actionBlock.module.css";
 import { Button } from "@components/ui/button";
@@ -20,10 +20,10 @@ interface IActionsBlock {
 export default function ActionsBlock({ item }: IActionsBlock) {
 	const { user } = useUserStore();
 	const [chartModal, setChartModal] = useState(false);
+	const { medianPrice, currentPrice } = exampleChartData;
 
 	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
-	const priceRange =
-		exampleChartData.medianPrice - exampleChartData.currentPrice;
+	const priceRange = medianPrice - currentPrice;
 	const isNegative = priceRange < 0;
 
 	return (

@@ -10,4 +10,5 @@ export const exampleUser: User = {
 	male: "Male",
 	currency: "KZT",
 	role: "dealer",
+	moderated: true,
 };

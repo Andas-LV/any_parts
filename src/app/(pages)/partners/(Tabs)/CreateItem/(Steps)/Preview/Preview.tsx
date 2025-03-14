@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import styles from "./Preview.module.css";
 import { Button } from "@components/ui/button";
-import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
+import { useCreateItemStore } from "@/entities/partners/createItem/useCreateItemStore";
 import PreviewItem from "@/widgets/PreviewItem/PreviewItem";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";

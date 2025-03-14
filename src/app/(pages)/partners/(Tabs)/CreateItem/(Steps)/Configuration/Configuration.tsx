@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Configuration.module.css";
-import ConfigurationForm from "@/forms/ConfigurationForm/ConfigurationForm";
+import ConfigurationForm from "@/forms/CreateItem/ConfigurationForm/ConfigurationForm";
 
 interface ConfigurationProps {
 	nextStep?: () => void;

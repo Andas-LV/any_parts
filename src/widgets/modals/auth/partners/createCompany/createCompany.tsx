@@ -3,7 +3,7 @@ import styles from "./createCompany.module.css";
 import { countryCodes } from "@/constants/countryCodes";
 import { Icons } from "@/assets/svg";
 import { organizationTypes } from "@/types/Auth";
-import { AddCompany } from "@/types/Company";
+import { AddCompany } from "@/types/partners/Company";
 import { Button } from "@components/ui/button";
 import PartnersModalLayout from "@/layouts/PartnersModalLayout/PartnersModalLayout";
 import { useForm } from "react-hook-form";

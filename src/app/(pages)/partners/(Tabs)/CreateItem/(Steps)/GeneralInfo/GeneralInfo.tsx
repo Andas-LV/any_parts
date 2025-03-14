@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./GeneralInfo.module.css";
-import GeneralInfoForm from "@/forms/GeneralInfoForm/GeneralInfoForm";
+import GeneralInfoForm from "@/forms/CreateItem/GeneralInfoForm/GeneralInfoForm";
 
 interface GeneralInfoProps {
 	nextStep?: () => void;

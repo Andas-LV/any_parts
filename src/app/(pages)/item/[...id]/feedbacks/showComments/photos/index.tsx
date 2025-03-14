@@ -1,6 +1,6 @@
 "use client";
 
-import { ItemInfoType } from "@/types/Item";
+import { ItemInfoType } from "@/types/items/Item";
 import styles from "./photosSection.module.css";
 import { Button } from "@components/ui/button";
 import Image from "next/image";

@@ -8,6 +8,7 @@ export type User = {
 	male: MaleChoice;
 	currency: Currency;
 	role: Roles;
+	moderated?: boolean;
 };
 
 export type MaleChoice = "Male" | "Female";

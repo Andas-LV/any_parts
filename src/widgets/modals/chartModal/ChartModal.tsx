@@ -1,5 +1,3 @@
-// "use client"
-
 import React from "react";
 import styles from "./ChartModal.module.css";
 import ModalsLayout from "@/layouts/modalLayout/layout";
@@ -17,7 +15,7 @@ interface ChartModalProps {
 
 export default function ChartModal({ onClose }: ChartModalProps) {
 	const { user } = useUserStore();
-	const { medianPrice, currentPrice, values } = exampleChartData;
+	const { currentPrice, values } = exampleChartData;
 
 	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 	const minValue = Math.min(...values.map((item) => item.value));

@@ -8,7 +8,7 @@ import { Button } from "@components/ui/button";
 import { Search as SearchIcon } from "lucide-react";
 import { useCompanyStore } from "@/entities/partners/company/useCompanyStore";
 import { useRouter } from "next/navigation";
-import { Company } from "@/types/Company";
+import { Company } from "@/types/partners/Company";
 import { routes } from "@/configs/routes";
 
 interface ChooseCompanyProps {

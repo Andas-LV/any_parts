@@ -3,9 +3,9 @@ import styles from "./ConfigurationForm.module.css";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { TConfigurationSchema } from "@/types/CreateItem";
+import { TConfigurationSchema } from "@/types/items/CreateItem";
 import { configurationSchema } from "@/schemas/createItem";
-import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
+import { useCreateItemStore } from "@/entities/partners/createItem/useCreateItemStore";
 import { Button } from "@components/ui/button";
 
 import ConfigCard from "@components/cards/ConfigCard/ConfigCard";

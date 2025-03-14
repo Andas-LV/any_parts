@@ -19,7 +19,7 @@ export default function PartnersHeader() {
 
 			<div className={styles.navs}>
 				<nav onClick={() => setIsOpen(!isOpen)}>
-					Главная
+					Название магазина
 					<Icons.ArrowDown
 						className={`${styles.arrowIcon} ${isOpen ? styles.rotated : ""}`}
 					/>

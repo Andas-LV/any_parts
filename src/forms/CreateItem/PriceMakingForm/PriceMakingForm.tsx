@@ -1,10 +1,10 @@
 import styles from "./PriceMakingForm.module.css";
 import { Button } from "@components/ui/button";
 import { useForm } from "react-hook-form";
-import { TPriceMakingSchema } from "@/types/CreateItem";
+import { TPriceMakingSchema } from "@/types/items/CreateItem";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { priceMakingSchema } from "@/schemas/createItem";
-import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
+import { useCreateItemStore } from "@/entities/partners/createItem/useCreateItemStore";
 
 import {
 	Table,
@@ -13,7 +13,7 @@ import {
 	TableHead,
 	TableHeader,
 	TableRow,
-} from "@/components/ui/table";
+} from "@components/ui/table";
 import {
 	examplePriceMakingColors,
 	examplePriceMakingSizes,
@@ -39,8 +39,8 @@ export default function PriceMakingForm({
 			photo: color.photo,
 			sizes: sizes.map((size) => ({
 				...size,
-				price: "",
-				discountPrice: "",
+				price: 0,
+				discountPrice: 0,
 				barcode: "",
 			})),
 		})),
@@ -114,6 +114,7 @@ export default function PriceMakingForm({
 												type="text"
 												{...register(
 													`prices.${colorIndex}.sizes.${sizeIndex}.price`,
+													{ valueAsNumber: true },
 												)}
 											/>
 											{errors.prices?.[colorIndex]?.sizes?.[sizeIndex]
@@ -132,10 +133,11 @@ export default function PriceMakingForm({
 									<TableCell>
 										<div className={styles.inputWrapper}>
 											<input
-												placeholder="Цена"
+												placeholder="Цена(не обязательно)"
 												type="text"
 												{...register(
 													`prices.${colorIndex}.sizes.${sizeIndex}.discountPrice`,
+													{ valueAsNumber: true },
 												)}
 											/>
 											{errors.prices?.[colorIndex]?.sizes?.[sizeIndex]

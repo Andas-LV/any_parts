@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Characters.module.css";
-import CharacteristicsForm from "@/forms/CharacteristicsForm/CharacteristicsForm";
+import CharacteristicsForm from "@/forms/CreateItem/CharacteristicsForm/CharacteristicsForm";
 
 interface CharactersProps {
 	nextStep?: () => void;

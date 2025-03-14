@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import styles from "./details.module.css";
-import { charactersSerializer } from "@/types/charactersSerializer";
-import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
+import { charactersSerializer } from "@/types/items/charactersSerializer";
+import { useCreateItemStore } from "@/entities/partners/createItem/useCreateItemStore";
 import DetailsSkeleton from "@components/skeletons/ItemPageSkeleton/DetailsSkeleton/DetailsSkeleton";
 
 export default function Details() {

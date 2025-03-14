@@ -25,7 +25,7 @@ import { RefundItem, StatusTypes } from "@/types/Refund";
 import DeleteRefund from "@/widgets/modals/refund/deleteRefund/DeleteRefund";
 import CreateRefund from "@/widgets/modals/refund/create/CreateRefund";
 import RefundFullInfo from "@/widgets/modals/refund/create/refundFullInfo";
-import AfterCreateRefund from "@/widgets/modals/refund/create/afterCreate/afterCreateRefund";
+import RequestSended from "@/widgets/modals/requestSended/requestSended";
 import { getRefundStatusStyle } from "./getRefundStatusStyle";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
@@ -177,7 +177,7 @@ export default function Refund() {
 				/>
 			)}
 			{activeModal === "onSuccessModal" && (
-				<AfterCreateRefund onClose={() => setActiveModal(null)} />
+				<RequestSended onClose={() => setActiveModal(null)} />
 			)}
 		</div>
 	);

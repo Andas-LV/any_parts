@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { ItemCard, ItemInfoType } from "@/types/Item";
+import type { ItemCard, ItemInfoType } from "@/types/items/Item";
 import { items, itemInfo, itemsForRefund } from "@/exampleData/exampleItems";
 import { RefundItem } from "@/types/Refund";
 

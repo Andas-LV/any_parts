@@ -4,9 +4,9 @@ import Image from "next/image";
 import { Icons } from "@/assets/svg";
 import { copyToClipboard } from "@components/copyToClipboard";
 import { useToast } from "@/hooks/use-toast";
-import { charactersSerializer } from "@/types/charactersSerializer";
+import { charactersSerializer } from "@/types/items/charactersSerializer";
 import { Button } from "@components/ui/button";
-import { TCreateItemFullInfo } from "@/types/CreateItem";
+import { TCreateItemFullInfo } from "@/types/items/CreateItem";
 
 interface ItemInfoProps {
 	item: TCreateItemFullInfo;

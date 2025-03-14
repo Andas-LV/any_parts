@@ -1,4 +1,4 @@
-import { Company } from "@/types/Company";
+import { Company } from "@/types/partners/Company";
 
 export const exampleCompanies: Company[] = [
 	{

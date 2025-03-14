@@ -1,5 +1,5 @@
-import { ItemInfoType } from "@/types/Item";
-import { TCreateItemFullInfo } from "@/types/CreateItem";
+import { ItemInfoType } from "@/types/items/Item";
+import { TCreateItemFullInfo } from "@/types/items/CreateItem";
 
 export const charactersSerializer = (
 	item: ItemInfoType | TCreateItemFullInfo,

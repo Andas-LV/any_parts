@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { ItemCard } from "@/types/Item";
+import { ItemCard } from "@/types/items/Item";
 import { items } from "@/exampleData/exampleItems";
 
 export type CartItem = ItemCard & {

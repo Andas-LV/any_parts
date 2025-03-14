@@ -3,7 +3,7 @@ import {
 	addCompany,
 	getCompanies,
 } from "@/entities/partners/company/company.service";
-import { AddCompany, Company } from "@/types/Company";
+import { AddCompany, Company } from "@/types/partners/Company";
 import { exampleCompanies } from "@/exampleData/exampleCompanies";
 
 interface CompanyState {

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import styles from "./PriceMaking.module.css";
 import { Button } from "@components/ui/button";
-import { useCreateItemStore } from "@/entities/items/useCreateItemStore";
-import PriceMakingForm from "@/forms/PriceMakingForm/PriceMakingForm";
+import { useCreateItemStore } from "@/entities/partners/createItem/useCreateItemStore";
+import PriceMakingForm from "@/forms/CreateItem/PriceMakingForm/PriceMakingForm";
 
 interface PriceMakingProps {
 	nextStep?: () => void;

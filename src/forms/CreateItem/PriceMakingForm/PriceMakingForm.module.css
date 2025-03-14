@@ -22,6 +22,7 @@
 /* Шапка таблицы */
 .PriceMakingForm thead tr {
 	background-color: #f8f8f8;
+	font-weight: bold;
 }
 
 .PriceMakingForm th,

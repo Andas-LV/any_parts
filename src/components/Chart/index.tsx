@@ -1,7 +1,13 @@
-"use client";
-
 import React from "react";
-import { LineChart, Line, ResponsiveContainer, Tooltip } from "recharts";
+import {
+	AreaChart,
+	Area,
+	ResponsiveContainer,
+	Tooltip,
+	XAxis,
+	YAxis,
+	CartesianGrid,
+} from "recharts";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { ChartDataPoint } from "@/exampleData/exampleChartData";
@@ -10,9 +16,10 @@ import styles from "./chart.module.css";
 export interface ChartProps {
 	data: ChartDataPoint[];
 	color: string;
-	height?: number;
+	height?: number | string;
 	dot?: boolean;
 	tooltip?: boolean;
+	fullChart?: boolean;
 }
 
 function CustomTooltip({ active, payload }: any) {
@@ -37,20 +44,65 @@ export default function Chart({
 	height = 16,
 	dot = false,
 	tooltip = false,
+	fullChart = false,
 }: ChartProps) {
+	const areaDot = !!dot;
+	const areaActiveDot = dot ? undefined : { r: 3, fill: "white" };
+
 	return (
-		<ResponsiveContainer width="100%" height={height}>
-			<LineChart data={data}>
+		<ResponsiveContainer height={height} className={styles.Container}>
+			<AreaChart data={data}>
+				<defs>
+					<linearGradient id="myGradient" x1="0" y1="0" x2="0" y2="1">
+						<stop
+							offset="0%"
+							stopColor={"var(--brand-primary)"}
+							stopOpacity="0.5"
+						/>
+						<stop
+							offset="50%"
+							stopColor={"var(--brand-primary)"}
+							stopOpacity="0"
+						/>
+					</linearGradient>
+				</defs>
+
+				{fullChart && (
+					<XAxis
+						dataKey="date"
+						axisLine={false}
+						tickLine={false}
+						tickMargin={10}
+					/>
+				)}
+
+				{fullChart && (
+					<YAxis axisLine={false} tickLine={false} tickMargin={0} />
+				)}
+
+				{fullChart && (
+					<CartesianGrid
+						stroke="var(--skeleton)"
+						strokeDasharray="5 5"
+						horizontal={true}
+						vertical={false}
+					/>
+				)}
+
 				{tooltip && <Tooltip content={<CustomTooltip />} />}
 
-				<Line
-					type="monotone"
+				<Area
+					className={styles.chartArea}
+					type="natural"
 					dataKey="value"
 					stroke={color}
-					strokeWidth={2}
-					dot={dot}
+					fill="url(#myGradient)"
+					strokeWidth={3}
+					dot={areaDot}
+					animationDuration={1000}
+					activeDot={areaActiveDot}
 				/>
-			</LineChart>
+			</AreaChart>
 		</ResponsiveContainer>
 	);
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./ConfigCard.module.css";
 import { Checkbox } from "@components/ui/checkbox";
 import { UseFormRegister } from "react-hook-form";
-import { TConfigurationSchema } from "@/types/CreateItem";
+import { TConfigurationSchema } from "@/types/items/CreateItem";
 import { Icons } from "@/assets/svg";
 import { Button } from "@components/ui/button";
 

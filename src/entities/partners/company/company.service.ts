@@ -1,4 +1,4 @@
-import { AddCompany } from "@/types/Company";
+import { AddCompany } from "@/types/partners/Company";
 import axiosInstance from "@/lib/axiosInstance";
 
 export async function addCompany(body: AddCompany) {

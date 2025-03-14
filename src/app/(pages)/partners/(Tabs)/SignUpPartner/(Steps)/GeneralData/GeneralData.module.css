@@ -1,0 +1,9 @@
+.GeneralData {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.GeneralData h1{
+    font-size: 2rem;
+}
