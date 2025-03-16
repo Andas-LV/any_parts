@@ -1,0 +1,13 @@
+/*PAGINATION*/
+.paginationWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.paginationBtn{
+    cursor: pointer;
+    font-weight: 500;
+    border: 1px solid var(--skeleton);
+    border-radius: 0.5rem;
+}

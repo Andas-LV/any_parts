@@ -2,7 +2,6 @@ export type TPartnerItemStatuses = {
 	status: string;
 	value: ItemStatusValues;
 	backgroundColor: string;
-	icon: boolean;
 };
 
 export type ItemStatusValues =
@@ -10,6 +9,8 @@ export type ItemStatusValues =
 	| "selling"
 	| "standardPromotion"
 	| "premiumPromotion";
+
+export const PromotionStatuses = ["standardPromotion", "premiumPromotion"];
 
 export type TableItem = {
 	id: number;

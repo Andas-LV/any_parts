@@ -14,6 +14,10 @@
 	font-size: 14px;
 }
 
+.addPhotoBtn{
+	position: relative;
+}
+
 /* ========================= IMAGES WRAPPER ========================= */
 .imagesWrapper {
 	display: flex;

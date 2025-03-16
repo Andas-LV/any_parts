@@ -10,6 +10,7 @@ import Configuration from "@/app/(pages)/partners/(Tabs)/CreateItem/(Steps)/Conf
 import PriceMaking from "@/app/(pages)/partners/(Tabs)/CreateItem/(Steps)/PriceMaking/PriceMaking";
 import Preview from "@/app/(pages)/partners/(Tabs)/CreateItem/(Steps)/Preview/Preview";
 import CustomStepIcon, { CustomConnector } from "@components/ui/CustomStepIcon";
+import { transitions } from "@/lib/StepperTransitions/StepperTransitions";
 
 const steps = [
 	{ title: "Основная информация" },
@@ -54,7 +55,11 @@ export default function CreateItem() {
 				</Stepper>
 			</Box>
 
-			<StepWizard onStepChange={onStepChange}>
+			<StepWizard
+				onStepChange={onStepChange}
+				transitions={transitions}
+				isLazyMount
+			>
 				<GeneralInfo />
 				<Characters />
 				<Configuration />

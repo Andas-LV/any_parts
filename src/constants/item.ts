@@ -76,24 +76,20 @@ export const partnerItemStatuses: TPartnerItemStatuses[] = [
 		status: "Не продается",
 		value: "notSelling",
 		backgroundColor: "var(--skeleton)",
-		icon: false,
 	},
 	{
 		status: "Продается",
 		value: "selling",
 		backgroundColor: "#c2ebda",
-		icon: false,
 	},
 	{
 		status: "Стандарт-продвижение",
 		value: "standardPromotion",
 		backgroundColor: "#c1d8f6",
-		icon: true,
 	},
 	{
 		status: "Премиум-продвижение",
 		value: "premiumPromotion",
 		backgroundColor: "linear-gradient(90deg, #DBB4F7 0%, #c2d9f8 100%)",
-		icon: true,
 	},
 ];

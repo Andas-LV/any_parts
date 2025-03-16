@@ -221,7 +221,15 @@ export default function GeneralInfoForm({ nextStep }: GeneralInfoFormProps) {
 							{images.filter((img) => img !== null).length}/15
 						</span>
 					</div>
-					<Button variant="outline">Добавить фото</Button>
+					<Button className={styles.addPhotoBtn} variant="outline">
+						Добавить фото
+						<input
+							type="file"
+							accept="image/*, video/*"
+							className={styles.fileInput}
+							onChange={(e) => handleFileChange(e, 0)}
+						/>
+					</Button>
 				</div>
 
 				<div className={styles.images}>

@@ -1,12 +1,12 @@
 .PartnerItemsList {}
 
-.header{
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.header h2{
+.header h2 {
     font-weight: bold;
     font-size: 26px;
 }
@@ -17,136 +17,4 @@
     gap: 20px;
     position: relative;
     margin: 30px 0;
-}
-
-/* ========================= SEARCH SECTION ========================= */
-.searchWrapper {
-    display: flex;
-    min-width: 300px;
-    position: relative;
-}
-
-.searchInput {
-    width: 100%;
-    padding: 8px 40px 8px 35px;
-    border: 2px solid #e5e7eb;
-    border-radius: 10px;
-    font-size: 14px;
-}
-
-.searchIcon {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    color: #9ca3af;
-}
-
-.searchInput:focus {
-    outline: none;
-    border: 2px solid #d4d4da;
-}
-
-.statusSelect {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    border: 2px solid #e5e7eb;
-    border-radius: 0.5rem;
-    padding: 10px;
-    font-size: 14px;
-    cursor: pointer;
-    appearance: none;
-}
-
-.filter {
-    display: flex;
-    align-items: center;
-}
-
-/* ========================= STATUS ========================= */
-.status{
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    border-radius: 1rem;
-    padding: 0.2rem 0.5rem;
-    font-weight: 500;
-}
-
-/* ========================= ARROWS ========================= */
-.arrowIcon {
-    transition: transform 0.3s ease;
-}
-
-.rotated {
-    transform: rotate(180deg);
-}
-
-/* ========================= TABLE ========================= */
-.PartnerItemsList table {
-    width: 100%;
-    table-layout: auto;
-    border-collapse: collapse;
-    border: 1px solid #e0e0e0;
-}
-
-/* Шапка таблицы */
-.PartnerItemsList thead tr {
-    background-color: #f8f8f8;
-    font-weight: bold;
-}
-
-.PartnerItemsList th,
-.PartnerItemsList td {
-    padding: 0.75rem;
-    border: 1px solid #e0e0e0;
-    font-size: 16px;
-    vertical-align: middle;
-    text-align: left;
-}
-
-.PartnerItemsList th {
-    font-weight: 500;
-    color: black;
-}
-
-.PartnerItemsList tbody tr:hover {
-    background-color: #fafafa;
-}
-
-.tableCell{
-    color: var(--text-secondary)
-}
-
-.tableProductCell{
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: var(--text-secondary)
-}
-
-.tableStatusCell {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.productName, .article{
-    color: black;
-    font-weight: bold;
-}
-
-.image{
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-}
-
-.checkBox{
-    padding: 0.5rem !important;
 }

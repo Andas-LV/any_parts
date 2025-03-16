@@ -10,6 +10,7 @@ import Request from "@/app/(pages)/partners/(Tabs)/SignUpPartner/(Steps)/Request
 import GeneralData from "@/app/(pages)/partners/(Tabs)/SignUpPartner/(Steps)/GeneralData/GeneralData";
 import RegisterAddress from "@/app/(pages)/partners/(Tabs)/SignUpPartner/(Steps)/RegisterAddress/RegisterAddress";
 import RegisterRequisites from "@/app/(pages)/partners/(Tabs)/SignUpPartner/(Steps)/RegisterRequisites/RegisterRequisites";
+import { transitions } from "@/lib/StepperTransitions/StepperTransitions";
 
 const steps = [
 	{ title: "Проверка данных" },
@@ -18,14 +19,6 @@ const steps = [
 	{ title: "Платёжные реквизиты" },
 	{ title: "Заключение договора" },
 ];
-
-const custom = {
-	enterRight: "step-transition enterRight",
-	enterLeft: "step-transition enterLeft",
-	exitRight: "step-transition exitRight",
-	exitLeft: "step-transition exitLeft",
-	intro: "step-transition intro",
-};
 
 export default function SignUpPartner() {
 	const [currentStep, setCurrentStep] = useState(0);
@@ -73,7 +66,7 @@ export default function SignUpPartner() {
 			<div className={styles.stepWrapper}>
 				<StepWizard
 					onStepChange={onStepChange}
-					transitions={custom}
+					transitions={transitions}
 					isLazyMount
 				>
 					<GeneralData />
