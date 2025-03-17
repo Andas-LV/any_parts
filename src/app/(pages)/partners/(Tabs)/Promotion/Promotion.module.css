@@ -1,0 +1,76 @@
+.Promotion {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.Promotion h1{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.promotionCards{
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+/* ========================= ACTIONS ========================= */
+.actionsContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    margin: 30px 0;
+}
+
+.promotionBtns{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 30px 0;
+}
+.standard, .premium{
+    border-radius: 0.75rem;
+    color: white;
+}
+
+.premium{
+    background: var(--premium-gradient);
+}
+
+/* ========================= NO CONTENT ========================= */
+.noContent{
+    height: 100%;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: #f1f5fc;
+    border-radius: 1rem;
+    padding: 200px 0;
+}
+
+.noContent h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.noContent p{
+    font-size: var(--brand-gray);
+}
+
+.createItemBtn{
+    padding: 25px;
+    border-radius: 1rem;
+}

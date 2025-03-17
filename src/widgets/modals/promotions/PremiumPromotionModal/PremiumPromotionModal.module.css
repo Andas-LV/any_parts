@@ -1,0 +1,44 @@
+.PremiumPromotionModal {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 500px;
+}
+
+.StandardPromotionModal p{
+    color: var(--text-secondary);
+}
+
+.actionButtons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.error {
+    color: var(--error);
+    font-size: 14px;
+}
+.cancelBtn {
+    flex: 1;
+    padding: 25px 0;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.submitButton {
+    flex: 1;
+    padding: 25px 0;
+    color: white;
+    background: var(--premium-gradient);
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.submitButton:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
