@@ -63,7 +63,6 @@ export default function CreateFeedback({
 			});
 			toast({
 				done: true,
-				variant: "success",
 				description: `Ваш ${feedbackType} отзыв опубликован`,
 			});
 			onClose();

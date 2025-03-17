@@ -15,7 +15,6 @@ export default function RequisiteCard() {
 
 		toast({
 			done: true,
-			variant: "success",
 			description: "Выбранный реквизит удалён.",
 		});
 	};

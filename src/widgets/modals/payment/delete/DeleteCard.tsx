@@ -27,7 +27,6 @@ const DeleteCard = ({
 			await deleteCard(currentCard.id);
 			toast({
 				done: true,
-				variant: "success",
 				description: "Выбранный реквизит успешно удалён",
 			});
 			console.log(currentCard);
@@ -43,7 +42,7 @@ const DeleteCard = ({
 			back={onPrev}
 			onClose={onClose}
 		>
-			<div className={styles.deleteModelWrapper}>
+			<div className={styles.deleteModalWrapper}>
 				<p>А пока скроем из способов оплаты</p>
 
 				<div className={styles.actionButtons}>

@@ -30,7 +30,7 @@
 		border-color 0.2s;
 }
 
-.tabsTrigger[data-state="active"] {
+.tabsTriggerActive, .tabsTrigger[data-state="active"] {
 	border-bottom: 2px solid var(--brand-primary);
 	color: black;
 	font-weight: 600;

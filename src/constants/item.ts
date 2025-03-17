@@ -1,5 +1,4 @@
 import { PhotoOptions } from "@/types/Refund";
-import { TPartnerItemStatuses } from "@/types/partners/TableItem";
 
 export const itemSearchTypes = [
 	{
@@ -69,27 +68,4 @@ export const PHOTO_OPTIONS: PhotoOptions[] = [
 	"Дефект товара",
 	"Срок годности или № партии",
 	"Видео дефекта",
-];
-
-export const partnerItemStatuses: TPartnerItemStatuses[] = [
-	{
-		status: "Не продается",
-		value: "notSelling",
-		backgroundColor: "var(--skeleton)",
-	},
-	{
-		status: "Продается",
-		value: "selling",
-		backgroundColor: "#c2ebda",
-	},
-	{
-		status: "Стандарт-продвижение",
-		value: "standardPromotion",
-		backgroundColor: "#c1d8f6",
-	},
-	{
-		status: "Премиум-продвижение",
-		value: "premiumPromotion",
-		backgroundColor: "linear-gradient(90deg, #DBB4F7 0%, #c2d9f8 100%)",
-	},
 ];

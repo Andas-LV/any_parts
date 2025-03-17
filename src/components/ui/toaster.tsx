@@ -22,12 +22,14 @@ export function Toaster() {
 				description,
 				action,
 				done,
+				failed,
 				...props
 			}) {
 				return (
 					<Toast key={id} {...props}>
 						<div className="flex items-start gap-1">
 							{done && <Icons.Done width={24} height={24} />}
+							{failed && <Icons.XCircle width={24} height={24} />}
 
 							<div className="grid gap-1">
 								{title && <ToastTitle>{title}</ToastTitle>}

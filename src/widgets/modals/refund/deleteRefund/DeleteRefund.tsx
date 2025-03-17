@@ -22,7 +22,6 @@ const DeleteRefund = ({
 			await deleteRefundItem(itemId);
 			toast({
 				done: true,
-				variant: "success",
 				description: "Выбранный возврат успешно удалён",
 			});
 			console.log(itemId);

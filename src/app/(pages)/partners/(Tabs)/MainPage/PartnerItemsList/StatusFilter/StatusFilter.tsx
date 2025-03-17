@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -7,35 +7,31 @@ import {
 } from "@components/ui/dropdown-menu";
 import { Checkbox } from "@components/ui/checkbox";
 import { Icons } from "@/assets/svg";
-import { partnerItemStatuses } from "@/constants/item";
 import styles from "./StatusFilter.module.css";
 import {
-	ItemStatusValues,
 	PromotionStatuses,
-} from "@/types/partners/TableItem";
+	TPartnerItemStatuses,
+	TPromotionStatuses,
+} from "@/types/partners/Items";
+import { useDealerItemsStore } from "@/entities/partners/items/useDealerItemsStore";
 
 interface StatusFilterProps {
-	selectedStatuses: ItemStatusValues[];
-	setSelectedStatuses: React.Dispatch<React.SetStateAction<ItemStatusValues[]>>;
+	statuses: TPartnerItemStatuses[];
 }
 
-export default function StatusFilter({
-	selectedStatuses,
-	setSelectedStatuses,
-}: StatusFilterProps) {
-	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+export default function StatusFilter({ statuses }: StatusFilterProps) {
+	const { filterStatus, setFilterStatus } = useDealerItemsStore();
+	const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
 
 	const handleStatusChange = (
-		statusValue: ItemStatusValues,
+		statusValue: TPromotionStatuses,
 		checked: boolean,
 	) => {
-		if (checked) {
-			setSelectedStatuses((prev) => [...prev, statusValue]);
-		} else {
-			setSelectedStatuses((prev) =>
-				prev.filter((status) => status !== statusValue),
-			);
-		}
+		setFilterStatus(
+			checked
+				? [...filterStatus, statusValue]
+				: filterStatus.filter((status) => status !== statusValue),
+		);
 	};
 
 	return (
@@ -48,22 +44,27 @@ export default function StatusFilter({
 					/>
 				</DropdownMenuTrigger>
 				<DropdownMenuContent>
-					{partnerItemStatuses.map((status) => (
+					{statuses.map((status) => (
 						<DropdownMenuItem key={status.value}>
 							<Checkbox
 								className={styles.checkbox}
-								checked={selectedStatuses.includes(status.value)}
+								checked={filterStatus.includes(
+									status.value as TPromotionStatuses,
+								)}
 								onCheckedChange={(checked) =>
-									handleStatusChange(status.value, !!checked)
+									handleStatusChange(
+										status.value as TPromotionStatuses,
+										!!checked,
+									)
 								}
 							/>
 							<div
 								className={styles.status}
 								style={{ background: `${status.backgroundColor}` }}
 							>
-								{PromotionStatuses.includes(status.value) && (
-									<Icons.ArrowLineUp color={"black"} />
-								)}
+								{PromotionStatuses.includes(
+									status.value as TPromotionStatuses,
+								) && <Icons.ArrowLineUp color={"black"} />}
 								{status.status}
 							</div>
 						</DropdownMenuItem>

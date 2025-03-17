@@ -21,7 +21,6 @@ const BasketShareModal = ({ onClose }: BasketShareModalProps) => {
 		onClose();
 		toast({
 			done: true,
-			variant: "success",
 			description: "Ссылка скопирована.",
 		});
 	};

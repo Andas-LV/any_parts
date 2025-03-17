@@ -70,7 +70,6 @@ const CreateCard = ({
 
 		toast({
 			done: true,
-			variant: "success",
 			description: "Карта успешно привязана.",
 		});
 	};

@@ -16,7 +16,6 @@ export const copyToClipboard = (
 			console.log("Скопировано:", strValue);
 			toast({
 				done: true,
-				variant: "success",
 				description: `Скопировано: ${strValue}`,
 				duration: 3000,
 			});

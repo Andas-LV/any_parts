@@ -9,8 +9,12 @@ import {
 	TableRow,
 } from "@components/ui/table";
 import { Checkbox } from "@components/ui/checkbox";
-import { partnerItemStatuses } from "@/constants/item";
-import { PromotionStatuses, TableItem } from "@/types/partners/TableItem";
+import { partnerItemStatuses } from "@/constants/status";
+import {
+	PromotionStatuses,
+	Items,
+	TPromotionStatuses,
+} from "@/types/partners/Items";
 import styles from "./ProductTable.module.css";
 import { Icons } from "@/assets/svg";
 import {
@@ -19,11 +23,11 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu";
-import { useDealerItemsStore } from "@/entities/partners/items/useDealerItems";
+import { useDealerItemsStore } from "@/entities/partners/items/useDealerItemsStore";
 import { PaginationWithSelect } from "@components/PaginationBlock/PaginationBlock";
 
 interface ProductTableProps {
-	filteredItems: TableItem[];
+	filteredItems: Items[];
 	currencySymbol: string;
 }
 
@@ -31,7 +35,7 @@ export default function ProductTable({
 	filteredItems,
 	currencySymbol,
 }: ProductTableProps) {
-	const { tableItems, toggleSelect, toggleSelectAll, selectedItems } =
+	const { allItems, toggleSelect, toggleSelectAll, selectedItems } =
 		useDealerItemsStore();
 	const [openDropdownId, setOpenDropdownId] = useState<number | null>(null);
 	const [currentPage, setCurrentPage] = useState(1);
@@ -43,8 +47,8 @@ export default function ProductTable({
 		currentPage * rowsPerPage,
 	);
 	const isAllSelected =
-		tableItems.length > 0 &&
-		tableItems.every((item) =>
+		allItems.length > 0 &&
+		allItems.every((item) =>
 			selectedItems().some((selected) => selected.id === item.id),
 		);
 
@@ -116,9 +120,9 @@ export default function ProductTable({
 												className={styles.status}
 												style={{ background: statusInfo?.backgroundColor }}
 											>
-												{PromotionStatuses.includes(status) && (
-													<Icons.ArrowLineUp color="black" />
-												)}
+												{PromotionStatuses.includes(
+													status as TPromotionStatuses,
+												) && <Icons.ArrowLineUp color="black" />}
 												{statusInfo?.status}
 											</span>
 										);

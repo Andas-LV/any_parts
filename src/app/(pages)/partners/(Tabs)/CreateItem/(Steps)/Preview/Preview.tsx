@@ -28,7 +28,6 @@ export default function Preview({ previousStep, isActive }: PreviewProps) {
 		router.push(routes.partners());
 		toast({
 			done: true,
-			variant: "success",
 			title: "Товар успешно создан!",
 			description:
 				"Ваш товар добавлен в каталог. Теперь его могут увидеть покупатели",

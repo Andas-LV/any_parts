@@ -6,6 +6,8 @@
 	--brand-gray: #f2f2f2;
 	--skeleton: #e0e0e0;
 	--text-secondary: #808080;
+	--premium-gradient: linear-gradient(to right, #8A0CE4, var(--brand-primary));
+	--premium-gradient-light: linear-gradient(to right, #DBB4F7, #C2D9F8);
 	--error: #d82020;
 }
 

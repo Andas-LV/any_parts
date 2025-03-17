@@ -17,7 +17,6 @@ const LogOutModal = ({ onClose }: { onClose: () => void }) => {
 			await logout();
 			toast({
 				done: true,
-				variant: "success",
 				description: "Вы вышли из аккаунта",
 			});
 			onClose();

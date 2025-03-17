@@ -34,7 +34,7 @@ export function CommentsSection() {
 		0,
 	);
 
-	const ratingRows = ratings.reverse().map((stars) => {
+	const ratingRows = ratings.map((stars) => {
 		const count =
 			item.ratingDistribution[stars as keyof typeof item.ratingDistribution] ||
 			0;

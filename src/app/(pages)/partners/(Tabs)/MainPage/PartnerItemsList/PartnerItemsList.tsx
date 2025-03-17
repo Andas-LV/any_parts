@@ -5,27 +5,23 @@ import SearchBar from "./SearchBar/SearchBar";
 import StatusFilter from "./StatusFilter/StatusFilter";
 import ProductTable from "./ProductTable/ProductTable";
 import { useUserStore } from "@/entities/user/useUserStore";
-import { ItemStatusValues } from "@/types/partners/TableItem";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import styles from "./PartnerItemsList.module.css";
-import { useDealerItemsStore } from "@/entities/partners/items/useDealerItems";
+import { useDealerItemsStore } from "@/entities/partners/items/useDealerItemsStore";
+import { partnerItemStatuses } from "@/constants/status";
 
 export default function PartnerItemsList() {
 	const { user } = useUserStore();
-	const { tableItems } = useDealerItemsStore();
-
+	const { filteredItems } = useDealerItemsStore();
 	const [search, setSearch] = useState("");
-	const [selectedStatuses, setSelectedStatuses] = useState<ItemStatusValues[]>(
-		[],
-	);
+
 	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 
-	const filteredItems = tableItems.filter(
+	const displayedItems = filteredItems().filter(
 		(item) =>
-			selectedStatuses.every((status) => item.statuses.includes(status)) &&
-			(item.productName.toLowerCase().includes(search.toLowerCase()) ||
-				item.article.toLowerCase().includes(search.toLowerCase()) ||
-				item.barcode.toLowerCase().includes(search.toLowerCase())),
+			item.productName.toLowerCase().includes(search.toLowerCase()) ||
+			item.article.toLowerCase().includes(search.toLowerCase()) ||
+			item.barcode.toLowerCase().includes(search.toLowerCase()),
 	);
 
 	return (
@@ -38,18 +34,15 @@ export default function PartnerItemsList() {
 						search={search}
 						onSearchChange={(e) => setSearch(e.target.value)}
 					/>
-					<StatusFilter
-						selectedStatuses={selectedStatuses}
-						setSelectedStatuses={setSelectedStatuses}
-					/>
-					<Button>
+					<StatusFilter statuses={partnerItemStatuses} />
+					<Button className={"rounded-xl"}>
 						<Plus /> Добавить товар
 					</Button>
 				</div>
 			</div>
 
 			<ProductTable
-				filteredItems={filteredItems}
+				filteredItems={displayedItems}
 				currencySymbol={currencySymbol}
 			/>
 		</div>

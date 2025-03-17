@@ -1,4 +1,4 @@
-import { ItemStatusValues, TableItem } from "@/types/partners/TableItem";
+import { ItemStatusValues, Items } from "@/types/partners/Items";
 
 const productNames = [
 	"Тормозные колодки передние",
@@ -89,18 +89,12 @@ const statusesOptions: ItemStatusValues[] = [
 const imageUrl =
 	"https://www.sixt.com/magazine/wp-content/uploads//sites/6/2022/04/Bugatti-Bolide-Hypercar-resize.jpg";
 
-export const tableItems: TableItem[] = Array.from({ length: 80 }, (_, i) => {
+export const tableItems: Items[] = Array.from({ length: 80 }, (_, i) => {
 	const index = i % 20;
 	const groupNumber = Math.floor(i / 20) + 1;
-
-	// Гарантированно получаем первый статус, используя индекс по модулю длины массива
 	const firstStatus = statusesOptions[i % statusesOptions.length];
-
-	// Определяем, будет ли у товара 2 статуса: для нечетных значений i – два статуса, для четных – один.
 	const hasTwoStatuses = i % 2 !== 0;
-	// Если требуется второй статус, выбираем его со сдвигом, чтобы он отличался от первого.
 	const secondStatus = statusesOptions[(i + 1) % statusesOptions.length];
-
 	const statuses = hasTwoStatuses ? [firstStatus, secondStatus] : [firstStatus];
 
 	return {
