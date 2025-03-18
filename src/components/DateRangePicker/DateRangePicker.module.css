@@ -1,38 +1,38 @@
 /* DateRangePicker.module.css */
 .popoverTrigger {
-    width: fit-content;
-    justify-content: flex-start;
-    text-align: left;
-    color: var(--text-secondary);
-    border-radius: 10px;
-    height: 100%;
+	width: fit-content;
+	justify-content: flex-start;
+	text-align: left;
+	color: var(--text-secondary);
+	border-radius: 10px;
+	height: 100%;
 }
 
 .popoverContent {
-    width: auto;
-    padding: 0 1rem 1rem 1rem;
+	width: auto;
+	padding: 0 1rem 1rem 1rem;
 }
 
 .dateRange {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.25rem;
 }
 
 .datePickerBtns {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .applyBtn,
 .cancelBtn {
-    flex: 1;
-    border-radius: 10px;
+	flex: 1;
+	border-radius: 10px;
 }
 
 .cancelBtn {
-    background-color: #f0f0f0;
+	background-color: #f0f0f0;
 }

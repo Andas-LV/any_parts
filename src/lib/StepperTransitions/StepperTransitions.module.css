@@ -1,78 +1,78 @@
 .step-transition {
-    animation-duration: 0.4s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: both;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
 }
 
 .enterRight {
-    animation-name: enterFromRight;
+	animation-name: enterFromRight;
 }
 
 .enterLeft {
-    animation-name: enterFromLeft;
+	animation-name: enterFromLeft;
 }
 
 .exitRight {
-    animation-name: exitToRight;
+	animation-name: exitToRight;
 }
 
 .exitLeft {
-    animation-name: exitToLeft;
+	animation-name: exitToLeft;
 }
 
 .intro {
-    animation-name: fadeIn;
+	animation-name: fadeIn;
 }
 
 @keyframes enterFromRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+	from {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 @keyframes enterFromLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 @keyframes exitToRight {
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateX(50px);
-    }
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(50px);
+	}
 }
 
 @keyframes exitToLeft {
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }

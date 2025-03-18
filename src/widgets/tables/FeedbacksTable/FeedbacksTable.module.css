@@ -1,82 +1,84 @@
 .FeedbacksTable {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
 
 .FeedbacksTable table {
-    width: 100%;
-    table-layout: auto;
-    border-collapse: collapse;
-    border: 1px solid #e0e0e0;
+	width: 100%;
+	table-layout: auto;
+	border-collapse: collapse;
+	border: 1px solid #e0e0e0;
 }
 
 /* Шапка таблицы */
 .FeedbacksTable thead tr {
-    background-color: #f8f8f8;
-    font-weight: bold;
+	background-color: #f8f8f8;
+	font-weight: bold;
 }
 
 .FeedbacksTable th,
 .FeedbacksTable td {
-    padding: 0.75rem;
-    border: 1px solid #e0e0e0;
-    font-size: 16px;
-    vertical-align: top;
-    text-align: left;
+	padding: 0.75rem;
+	border: 1px solid #e0e0e0;
+	font-size: 16px;
+	vertical-align: top;
+	text-align: left;
 }
 
 .FeedbacksTable th {
-    font-weight: 500;
-    color: black;
+	font-weight: 500;
+	color: black;
 }
 
 .FeedbacksTable tbody tr:hover {
-    background-color: #fafafa;
+	background-color: #fafafa;
 }
 
-.tableCell, .time {
-    color: var(--text-secondary);
+.tableCell,
+.time {
+	color: var(--text-secondary);
 }
 
 .tableProductCell {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: var(--text-secondary);
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	color: var(--text-secondary);
 }
 
 .tableDateCell {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
 }
 
-.productName, .date{
-    color: black;
-    font-weight: 500;
+.productName,
+.date {
+	color: black;
+	font-weight: 500;
 }
 
-.time{
-    font-size: 14px;
+.time {
+	font-size: 14px;
 }
 
 .image {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
 }
 
 /*STATUS*/
 .status {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    border-radius: 1rem;
-    padding: 0.2rem 0.5rem;
-    font-weight: bold;
-    font-size: 14px;
-    color: rgba(0,0,0,0.8);
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	border-radius: 1rem;
+	padding: 0.2rem 0.5rem;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(0, 0, 0, 0.8);
 }

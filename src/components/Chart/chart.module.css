@@ -10,10 +10,9 @@
 	overflow: scroll;
 }
 
-.Container{
+.Container {
 	width: 100%;
 }
-
 
 .date {
 	color: var(--text-secondary);

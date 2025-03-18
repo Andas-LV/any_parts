@@ -1,44 +1,44 @@
 .PromotionCard {
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1.5rem;
+	border-radius: 1rem;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	cursor: pointer;
 }
 
 .PromotionCard:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .PromotionCard h2 {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0;
+	font-size: 20px;
+	font-weight: 700;
+	margin: 0;
 }
 
 .PromotionCard .premiumTitle {
-    background: var(--premium-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	background: var(--premium-gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .PromotionCard p {
-    margin-top: 0.5rem;
-    font-size: 16px;
-    color: #333;
-    font-weight: 500;
+	margin-top: 0.5rem;
+	font-size: 16px;
+	color: #333;
+	font-weight: 500;
 }
 
 .PromotionCard ul {
-    padding-left: 20px;
-    color: #666;
+	padding-left: 20px;
+	color: #666;
 }
 
 .PromotionCard li {
-    font-size: 14px;
-    line-height: 1.5;
-    list-style-type: disc;
+	font-size: 14px;
+	line-height: 1.5;
+	list-style-type: disc;
 }

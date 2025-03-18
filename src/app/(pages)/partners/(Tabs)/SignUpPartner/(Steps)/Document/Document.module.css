@@ -1,9 +1,9 @@
 .Document {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
 
-.Document h1{
-    font-size: 2rem;
+.Document h1 {
+	font-size: 2rem;
 }

@@ -1,176 +1,176 @@
 .actionsBlockContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 1;
-    height: auto;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	flex: 1;
+	height: auto;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	background-color: white;
 }
 
 .prices {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
+	display: flex;
+	align-items: flex-start;
+	gap: 30px;
 }
 
 .leftSidePrice,
 .rightSidePrice {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 /* Actual price */
 .actualPrice {
-    width: 150px;
-    height: 32px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	width: 150px;
+	height: 32px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 /* Discount block */
 .discountWrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 .oldPrice {
-    width: 100px;
-    height: 20px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	width: 100px;
+	height: 20px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .discount {
-    width: 40px;
-    height: 20px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	width: 40px;
+	height: 20px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 /* AP Price */
 .apPrice {
-    width: 150px;
-    height: 30px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	width: 150px;
+	height: 30px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .apText {
-    width: 100px;
-    height: 20px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	width: 100px;
+	height: 20px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 /* Chart block */
 .chartWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #d1d1d1;
-    padding: 15px;
-    border-radius: 10px;
-    cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #d1d1d1;
+	padding: 15px;
+	border-radius: 10px;
+	cursor: pointer;
 }
 
 .priceRange {
-    display: flex;
-    align-items: center;
-    flex: 0.5;
-    font-weight: bold;
+	display: flex;
+	align-items: center;
+	flex: 0.5;
+	font-weight: bold;
 }
 
 .priceRangeText {
-    width: 80px;
-    height: 20px;
-    border-radius: 10px;
-    margin: 0 0.5rem;
-    animation: pulse 1.5s infinite ease-in-out;
+	width: 80px;
+	height: 20px;
+	border-radius: 10px;
+	margin: 0 0.5rem;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .arrowIcon {
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	width: 30px;
+	height: 30px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .arrowRight {
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .chartPlaceholder {
-    width: 100%;
-    height: 50px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	width: 100%;
+	height: 50px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 /* Action buttons */
 .actionButtons {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	width: 100%;
 }
 
 .basket,
 .buyNow {
-    flex: 1;
-    padding: 25px;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	flex: 1;
+	padding: 25px;
+	font-size: 16px;
+	font-weight: 500;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 /* Market info */
 .marketInfo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 .marketName {
-    width: 120px;
-    height: 20px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	width: 120px;
+	height: 20px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 .marketRating {
-    display: flex;
-    align-items: center;
-    gap: 3px;
+	display: flex;
+	align-items: center;
+	gap: 3px;
 }
 
 .marketRatingIcon,
 .marketRatingText,
 .marketArrowDown {
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    animation: pulse 1.5s infinite ease-in-out;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	animation: pulse 1.5s infinite ease-in-out;
 }
 
 /* Анимация пульсации */
 @keyframes pulse {
-    0% {
-        background-color: #e0e0e0;
-    }
-    50% {
-        background-color: #d6d6d6;
-    }
-    100% {
-        background-color: #e0e0e0;
-    }
+	0% {
+		background-color: #e0e0e0;
+	}
+	50% {
+		background-color: #d6d6d6;
+	}
+	100% {
+		background-color: #e0e0e0;
+	}
 }

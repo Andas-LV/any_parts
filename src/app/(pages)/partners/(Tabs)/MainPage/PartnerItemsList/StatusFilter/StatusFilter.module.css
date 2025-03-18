@@ -1,35 +1,35 @@
 .statusSelect {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    border: 2px solid #e5e7eb;
-    border-radius: 0.75rem;
-    padding: 10px;
-    font-size: 14px;
-    cursor: pointer;
-    appearance: none;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	border: 2px solid #e5e7eb;
+	border-radius: 0.75rem;
+	padding: 10px;
+	font-size: 14px;
+	cursor: pointer;
+	appearance: none;
 }
 
 .filter {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .status {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    border-radius: 1rem;
-    padding: 0.2rem 0.5rem;
-    font-weight: 500;
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	border-radius: 1rem;
+	padding: 0.2rem 0.5rem;
+	font-weight: 500;
 }
 
 /*ARROW*/
 .arrowIcon {
-    transition: transform 0.3s ease;
+	transition: transform 0.3s ease;
 }
 
 .rotated {
-    transform: rotate(180deg);
+	transform: rotate(180deg);
 }
