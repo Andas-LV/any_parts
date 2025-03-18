@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "@components/ui/button";
 import { Plus } from "lucide-react";
-import SearchBar from "./SearchBar/SearchBar";
+import SearchBar from "@components/SearchBar/SearchBar";
 import StatusFilter from "./StatusFilter/StatusFilter";
-import ProductTable from "./ProductTable/ProductTable";
+import ProductTable from "@/widgets/tables/ProductTable/ProductTable";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import styles from "./PartnerItemsList.module.css";

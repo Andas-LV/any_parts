@@ -5,7 +5,7 @@ export const exampleFeedbacks: Feedback[] = [
 		id: 1,
 		user: {
 			id: 3,
-			username: "user2",
+			username: "customer_name",
 			email: "user@gmail.com",
 			phone: "+77777777777",
 			apWallet: false,
@@ -17,7 +17,10 @@ export const exampleFeedbacks: Feedback[] = [
 		rating: 5,
 		date: "23-05-2024",
 		text: "Lorem ipsum dolor sit amet consectetur. Mattis mattis augue a in egestas pharetra. Vitae nulla nulla lectus nulla pellentesque augue. Quis suspendisse aenean ac tempus velit vulputate sed. Massa sed pellentesque ornare lacus tempus.",
-		images: [],
+		images: [
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVztO21w1bSNdSqz1MfBKiQ6UYl9aveWpiwg&s",
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnGi_FJnvq9ZRPbFGnQ8W_dyl2nSeJGdBq2w&s",
+		],
 		likes: 94,
 		likedByMe: false,
 		replies: [],

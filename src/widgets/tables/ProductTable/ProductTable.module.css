@@ -22,7 +22,7 @@
 	padding: 0.75rem;
 	border: 1px solid #e0e0e0;
 	font-size: 16px;
-	vertical-align: middle;
+	vertical-align: top;
 	text-align: left;
 }
 
@@ -76,9 +76,3 @@
 	font-weight: bold;
 	font-size: 14px;
 }
-
-/*ACTIONS*/
-.actionDots {
-	cursor: pointer;
-}
-

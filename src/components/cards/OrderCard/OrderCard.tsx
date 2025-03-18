@@ -1,4 +1,3 @@
-import Loading from "@components/Loading";
 import React, { useState } from "react";
 import { StatusChoice, TOrder } from "@/types/Orders";
 import styles from "./orderCard.module.css";

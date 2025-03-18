@@ -1,6 +1,5 @@
 import { Feedback } from "@/types/Feedbacks";
 import { User } from "@/types/User";
-import { StatusTypes } from "@/types/Refund";
 
 export type ItemCard = {
 	id: number;

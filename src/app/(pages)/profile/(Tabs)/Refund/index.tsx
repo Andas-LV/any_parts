@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { Icons } from "@/assets/svg";
-import { RefundItem, StatusTypes } from "@/types/Refund";
+import { RefundItem, TRefundStatus } from "@/types/Refund";
 import DeleteRefund from "@/widgets/modals/refund/deleteRefund/DeleteRefund";
 import CreateRefund from "@/widgets/modals/refund/create/CreateRefund";
 import RefundFullInfo from "@/widgets/modals/refund/create/refundFullInfo";
@@ -146,7 +146,7 @@ export default function Refund() {
 										<TableCell className={styles.tableCell}>
 											<span
 												className={getRefundStatusStyle(
-													item.status as StatusTypes,
+													item.status as TRefundStatus,
 												)}
 											>
 												{item.status}

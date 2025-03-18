@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import styles from "./ItemsLists.module.css";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
-import SearchBar from "@/app/(pages)/partners/(Tabs)/MainPage/PartnerItemsList/SearchBar/SearchBar";
+import SearchBar from "@components/SearchBar/SearchBar";
 import { Button } from "@components/ui/button";
 import { Plus } from "lucide-react";
-import ProductTable from "@/app/(pages)/partners/(Tabs)/MainPage/PartnerItemsList/ProductTable/ProductTable";
+import ProductTable from "@/widgets/tables/ProductTable/ProductTable";
 import { useDealerItemsStore } from "@/entities/partners/items/useDealerItemsStore";
 
 export default function ItemsLists() {

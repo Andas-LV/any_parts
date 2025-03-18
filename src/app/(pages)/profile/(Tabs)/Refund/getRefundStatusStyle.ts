@@ -1,7 +1,7 @@
-import { StatusTypes } from "@/types/Refund";
+import { TRefundStatus } from "@/types/Refund";
 import styles from "@/app/(pages)/profile/(Tabs)/Refund/page.module.css";
 
-export const getRefundStatusStyle = (status: StatusTypes) => {
+export const getRefundStatusStyle = (status: TRefundStatus) => {
 	switch (status) {
 		case "Одобрено":
 			return styles.statusApproved;

@@ -1,4 +1,4 @@
-import { TOrder } from "@/types/Orders";
+import { StatusChoice, TOrder } from "@/types/Orders";
 
 export const exampleOrders: TOrder[] = [
 	{
@@ -10,7 +10,7 @@ export const exampleOrders: TOrder[] = [
 		productName: "Product",
 		address: "Алматинская, Карасайский, Ельтай, к.х. АКХ Жетысу, уч. 1095",
 		price: 20000,
-		status: "Получено",
+		status: StatusChoice.received,
 		eCheck: "Детали чека",
 		card: {
 			id: 1,
@@ -28,7 +28,7 @@ export const exampleOrders: TOrder[] = [
 		productName: "Product",
 		address: "Алматинская, Карасайский, Ельтай, к.х. АКХ Жетысу, уч. 1095",
 		price: 5000,
-		status: "Заказ оплачен и ожидает обработки",
+		status: StatusChoice.pending,
 		eCheck: "Детали чека",
 		card: {
 			id: 1,
@@ -46,7 +46,7 @@ export const exampleOrders: TOrder[] = [
 		productName: "Product",
 		address: "Алматинская, Карасайский, Ельтай, к.х. АКХ Жетысу, уч. 1095",
 		price: 10000,
-		status: "Ожидает в пункте выдачи",
+		status: StatusChoice.waiting,
 		eCheck: "Детали чека",
 		card: {
 			id: 1,

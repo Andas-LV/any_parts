@@ -1,4 +1,4 @@
-export type Items = {
+export type TPartnersItem = {
 	id: number;
 	image: string;
 	productName: string;

@@ -12,7 +12,7 @@ import { Checkbox } from "@components/ui/checkbox";
 import { partnerItemStatuses } from "@/constants/status";
 import {
 	PromotionStatuses,
-	Items,
+	TPartnersItem,
 	TPromotionStatuses,
 } from "@/types/partners/Items";
 import styles from "./ProductTable.module.css";
@@ -27,7 +27,7 @@ import { useDealerItemsStore } from "@/entities/partners/items/useDealerItemsSto
 import { PaginationWithSelect } from "@components/PaginationBlock/PaginationBlock";
 
 interface ProductTableProps {
-	filteredItems: Items[];
+	filteredItems: TPartnersItem[];
 	currencySymbol: string;
 }
 

@@ -72,7 +72,7 @@
 }
 
 /*STATUS*/
-.statusApproved {
+.statusReceived {
 	background-color: #c3ecdb;
 	color: #032416;
 	padding: 0.25rem 0.5rem;
@@ -82,7 +82,7 @@
 	width: fit-content;
 }
 
-.statusProcessing {
+.statusWaiting {
 	background-color: var(--brand-gray);
 	color: #4d4d4d;
 	padding: 0.25rem 0.5rem;

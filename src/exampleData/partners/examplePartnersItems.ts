@@ -1,4 +1,4 @@
-import { ItemStatusValues, Items } from "@/types/partners/Items";
+import { ItemStatusValues, TPartnersItem } from "@/types/partners/Items";
 
 const productNames = [
 	"Тормозные колодки передние",
@@ -87,25 +87,30 @@ const statusesOptions: ItemStatusValues[] = [
 ];
 
 const imageUrl =
-	"https://www.sixt.com/magazine/wp-content/uploads//sites/6/2022/04/Bugatti-Bolide-Hypercar-resize.jpg";
+	"https://media.istockphoto.com/id/514802759/photo/speeding.jpg?s=612x612&w=0&k=20&c=NOkADTslFprPmuUuwzFTKgkYpGk5HQv495Mj6w3jSZc=";
 
-export const tableItems: Items[] = Array.from({ length: 80 }, (_, i) => {
-	const index = i % 20;
-	const groupNumber = Math.floor(i / 20) + 1;
-	const firstStatus = statusesOptions[i % statusesOptions.length];
-	const hasTwoStatuses = i % 2 !== 0;
-	const secondStatus = statusesOptions[(i + 1) % statusesOptions.length];
-	const statuses = hasTwoStatuses ? [firstStatus, secondStatus] : [firstStatus];
+export const tableItems: TPartnersItem[] = Array.from(
+	{ length: 80 },
+	(_, i) => {
+		const index = i % 20;
+		const groupNumber = Math.floor(i / 20) + 1;
+		const firstStatus = statusesOptions[i % statusesOptions.length];
+		const hasTwoStatuses = i % 2 !== 0;
+		const secondStatus = statusesOptions[(i + 1) % statusesOptions.length];
+		const statuses = hasTwoStatuses
+			? [firstStatus, secondStatus]
+			: [firstStatus];
 
-	return {
-		id: i + 1,
-		image: imageUrl,
-		productName: productNames[index],
-		category: categories[index],
-		article: `${articles[index]}-${groupNumber}`,
-		barcode: (1234567890123 + i).toString(),
-		statuses,
-		price: basePrices[index],
-		inStockRoom: baseInStock[index],
-	};
-});
+		return {
+			id: i + 1,
+			image: imageUrl,
+			productName: productNames[index],
+			category: categories[index],
+			article: `${articles[index]}-${groupNumber}`,
+			barcode: (1234567890123 + i).toString(),
+			statuses,
+			price: basePrices[index],
+			inStockRoom: baseInStock[index],
+		};
+	},
+);

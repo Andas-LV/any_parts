@@ -1,20 +1,30 @@
 import { create } from "zustand";
-import { tableItems } from "@/exampleData/examplePartnersItems";
-import { Items, ItemStatusValues } from "@/types/partners/Items";
+import { tableItems } from "@/exampleData/partners/examplePartnersItems";
+import { TPartnersItem, ItemStatusValues } from "@/types/partners/Items";
+import { PartnerFeedback, PartnerQuestion } from "@/types/partners/Feedbacks";
+import {
+	examplePartnerFeedbacks,
+	examplePartnerQuestions,
+} from "@/exampleData/partners/examplePartnersFeedbacks";
 
 export interface DealerItemsStore {
-	allItems: Items[];
-	filteredItems: () => Items[];
+	allItems: TPartnersItem[];
+	filteredItems: () => TPartnersItem[];
+	itemFeedbacks: PartnerFeedback[];
+	itemQuestions: PartnerQuestion[];
+
 	selectedIds: number[];
 	filterStatus: ItemStatusValues[];
 	setFilterStatus: (statuses: ItemStatusValues[]) => void;
 	toggleSelect: (id: number) => void;
 	toggleSelectAll: () => void;
-	selectedItems: () => Items[];
+	selectedItems: () => TPartnersItem[];
 }
 
 export const useDealerItemsStore = create<DealerItemsStore>((set, get) => ({
 	allItems: tableItems,
+	itemFeedbacks: examplePartnerFeedbacks,
+	itemQuestions: examplePartnerQuestions,
 	selectedIds: [],
 	filterStatus: [],
 

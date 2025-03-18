@@ -14,14 +14,19 @@ import {
 	DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu";
 import ItemsLists from "@/app/(pages)/partners/(Tabs)/ItemsLists/ItemsLists";
+import Promotion from "@/app/(pages)/partners/(Tabs)/Promotion/Promotion";
 import { Button } from "@components/ui/button";
 import { useState } from "react";
-import Promotion from "@/app/(pages)/partners/(Tabs)/Promotion/Promotion";
+import PartnerItemsFeedbacks from "@/app/(pages)/partners/(Tabs)/PartnerItemsFeedbacks/PartnerItemsFeedbacks";
+import PartnerItemsQuestions from "@/app/(pages)/partners/(Tabs)/PartnerItemsQuestions/PartnerItemsQuestions";
 
 export default function Page() {
 	const { isModerated } = useUserStore();
 	const [activeTab, setActiveTab] = useState("main");
 	const [itemsTabView, setItemsTabView] = useState<"create" | "list">("list");
+	const [feedbacksTabView, setFeedbacksTabView] = useState<
+		"feedbacks" | "questions"
+	>("feedbacks");
 
 	return (
 		<div className={styles.wrapper}>
@@ -67,9 +72,37 @@ export default function Page() {
 					<TabsTrigger value="progress" className={styles.tabsTrigger}>
 						Продвижение
 					</TabsTrigger>
-					<TabsTrigger value="feedback" className={styles.tabsTrigger}>
-						Отзывы и вопросы
-					</TabsTrigger>
+
+					<DropdownMenu>
+						<DropdownMenuTrigger asChild>
+							<Button
+								variant="ghost"
+								className={`${styles.tabsTrigger} ${
+									activeTab === "feedbacks" ? styles.tabsTriggerActive : ""
+								}`}
+							>
+								Отзывы и вопросы
+							</Button>
+						</DropdownMenuTrigger>
+						<DropdownMenuContent>
+							<DropdownMenuItem
+								onClick={() => {
+									setFeedbacksTabView("feedbacks");
+									setActiveTab("feedbacks");
+								}}
+							>
+								Отзывы покупателей
+							</DropdownMenuItem>
+							<DropdownMenuItem
+								onClick={() => {
+									setFeedbacksTabView("questions");
+									setActiveTab("feedbacks");
+								}}
+							>
+								Вопросы пользователей
+							</DropdownMenuItem>
+						</DropdownMenuContent>
+					</DropdownMenu>
 				</TabsList>
 
 				<TabsContent value="main" className={styles.tabsContent}>
@@ -84,8 +117,12 @@ export default function Page() {
 					<Promotion />
 				</TabsContent>
 
-				<TabsContent value="feedback" className={styles.tabsContent}>
-					<p>Контент для вкладки «Отзывы и вопросы»</p>
+				<TabsContent value="feedbacks" className={styles.tabsContent}>
+					{feedbacksTabView === "feedbacks" ? (
+						<PartnerItemsFeedbacks />
+					) : (
+						<PartnerItemsQuestions />
+					)}
 				</TabsContent>
 			</Tabs>
 		</div>

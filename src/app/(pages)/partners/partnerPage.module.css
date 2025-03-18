@@ -30,6 +30,11 @@
 		border-color 0.2s;
 }
 
+.tabsTrigger:hover {
+	color: black;
+	background-color: transparent;
+}
+
 .tabsTriggerActive, .tabsTrigger[data-state="active"] {
 	border-bottom: 2px solid var(--brand-primary);
 	color: black;

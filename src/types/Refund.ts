@@ -1,24 +1,19 @@
 export type RefundItem = {
 	id: number;
 	price: number;
-
-	status: StatusTypes;
+	status: TRefundStatus;
 	comment?: string;
 	images: Media[];
-
 	createdAt: Date;
 };
 
 export type RefundItemValidator = {
 	shopName: string;
 	productName: string;
-
 	refundCause: RefundCauseTypes;
 	price: number;
-
 	detailedContext: string;
 	images: Media[];
-
 	createdAt: Date;
 };
 
@@ -44,4 +39,4 @@ export type PhotoOptions =
 	| "Срок годности или № партии"
 	| "Видео дефекта";
 
-export type StatusTypes = "На рассмотрении" | "Одобрено" | "Не одобрено";
+export type TRefundStatus = "На рассмотрении" | "Одобрено" | "Не одобрено";

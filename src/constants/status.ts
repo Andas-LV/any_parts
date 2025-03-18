@@ -1,4 +1,9 @@
 import { TPartnerItemStatuses } from "@/types/partners/Items";
+import {
+	FeedbacksStatuses,
+	TPartnerFeedbackStatuses,
+} from "@/types/partners/Feedbacks";
+import { StatusChoice, TItemDeliveryStatuses } from "@/types/Orders";
 
 export const partnerItemStatuses: TPartnerItemStatuses[] = [
 	{
@@ -20,6 +25,42 @@ export const partnerItemStatuses: TPartnerItemStatuses[] = [
 		status: "Премиум-продвижение",
 		value: "premiumPromotion",
 		backgroundColor: "var(--premium-gradient-light)",
+	},
+];
+
+export const partnerFeedbackStatuses: TPartnerFeedbackStatuses[] = [
+	{
+		name: FeedbacksStatuses.new,
+		value: "new" as keyof FeedbacksStatuses,
+		backgroundColor: "#c2ebda",
+	},
+	{
+		name: FeedbacksStatuses.seen,
+		value: "seen" as keyof FeedbacksStatuses,
+		backgroundColor: "var(--brand-gray)",
+	},
+	{
+		name: FeedbacksStatuses.processed,
+		value: "processed" as keyof FeedbacksStatuses,
+		backgroundColor: "var(--brand-gray)",
+	},
+];
+
+export const itemDeliveryStatuses: TItemDeliveryStatuses[] = [
+	{
+		name: StatusChoice.received,
+		value: "received" as keyof StatusChoice,
+		backgroundColor: "#c3ecdb",
+	},
+	{
+		name: StatusChoice.pending,
+		value: "pending" as keyof StatusChoice,
+		backgroundColor: "var(--brand-gray)",
+	},
+	{
+		name: StatusChoice.waiting,
+		value: "waiting" as keyof StatusChoice,
+		backgroundColor: "#c2d9f8",
 	},
 ];
 

@@ -4,12 +4,13 @@ import styles from "./orderCard.module.css";
 
 export const getOrderStatusStyle = (status: StatusChoice) => {
 	switch (status) {
-		case "Ожидает в пункте выдачи":
+		case StatusChoice.waiting:
+			return styles.statusWaiting;
+		case StatusChoice.pending:
 			return styles.statusPending;
-		case "Заказ оплачен и ожидает обработки":
-			return styles.statusProcessing;
+		case StatusChoice.received:
 		default:
-			return styles.statusApproved;
+			return styles.statusReceived;
 	}
 };
 
@@ -23,20 +24,20 @@ export const getOrderAction = (
 		StatusChoice,
 		{ text: string; variant: ButtonVariant; onClick: () => void }
 	> = {
-		"Ожидает в пункте выдачи": {
+		[StatusChoice.waiting]: {
 			text: "Посмотреть товар",
 			variant: "secondary",
 			onClick: () => console.log("Заказ скоро можно забрать!"),
 		},
-		"Заказ оплачен и ожидает обработки": {
+		[StatusChoice.pending]: {
 			text: "Посмотреть товар",
 			variant: "secondary",
 			onClick: () => console.log("Заказ отменён"),
 		},
-		Получено: {
+		[StatusChoice.received]: {
 			text: "Написать отзыв",
 			variant: "default",
-			onClick: openFeedbackModal, // Открывает модалку
+			onClick: openFeedbackModal,
 		},
 	};
 
