@@ -6,11 +6,13 @@ import {
 	exampleSessions,
 } from "@/exampleData/exampleSessions";
 import { exampleUser } from "@/exampleData/exampleUser";
-import { TProfileTabs } from "@/types/Profile";
+import { TProfileTabs } from "@/app/(pages)/profile/page";
+import { PartnersTabs } from "@/app/(pages)/partners/page";
 
 interface UserState {
 	user: User | null;
 	activeProfileTab: TProfileTabs;
+	activePartnersTab: PartnersTabs;
 	isDealer: boolean;
 	isModerated: boolean;
 	isLoading: boolean;
@@ -23,6 +25,7 @@ interface UserState {
 	createApWallet: () => Promise<void>;
 	setModeratedUser: (moderation: boolean) => Promise<void>;
 	setActiveProfileTab: (activeProfileTab: TProfileTabs) => void;
+	setActivePartnersTab: (activePartnersTab: PartnersTabs) => void;
 	clearError: () => void;
 }
 
@@ -31,6 +34,7 @@ export const useUserStore = create<UserState>()((set) => ({
 	isDealer: exampleUser?.role === "dealer",
 	isModerated: exampleUser?.moderated === true,
 	activeProfileTab: "main",
+	activePartnersTab: "main",
 	sessions: exampleSessions,
 	currentSession: exampleCurrentSession,
 	isLoading: false,
@@ -141,6 +145,7 @@ export const useUserStore = create<UserState>()((set) => ({
 		}
 	},
 
+	setActivePartnersTab: (tab: PartnersTabs) => set({ activePartnersTab: tab }),
 	setActiveProfileTab: (tab) => set({ activeProfileTab: tab }),
 	clearError: () => set({ error: null }),
 }));

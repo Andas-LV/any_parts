@@ -5,7 +5,6 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import styles from "./imageCarousel.module.css";
 import { Icons } from "@/assets/svg";
-import ImagesSkeleton from "@components/skeletons/ItemPageSkeleton/ImagesSkeleton/ImagesSkeleton";
 
 interface ImageCarouselProps {
 	images: string[];
@@ -23,8 +22,9 @@ export default function ImageCarousel({
 	const visibleThumbnails = 5;
 
 	const selectedMedia = images[selectedIndex];
-	const isVideo =
-		selectedMedia.endsWith(".mp4") || selectedMedia.endsWith(".webm");
+	const isVideo = (media: string) => {
+		return media && (media.endsWith(".mp4") || media.endsWith(".webm"));
+	};
 
 	const scrollDown = () => {
 		if (scrollIndex + visibleThumbnails < images.length) {
@@ -59,7 +59,7 @@ export default function ImageCarousel({
 								})}
 								onClick={() => setSelectedIndexAction(index + scrollIndex)}
 							>
-								{src.endsWith(".mp4") || src.endsWith(".webm") ? (
+								{isVideo(src) ? (
 									<div className={styles.videoThumbnail}>
 										<span className={styles.playIcon}>▶</span>
 									</div>
@@ -82,7 +82,7 @@ export default function ImageCarousel({
 			</div>
 
 			<div className={styles.mainMedia}>
-				{isVideo ? (
+				{isVideo(selectedMedia) ? (
 					<video controls className={styles.video}>
 						<source src={selectedMedia} type="video/mp4" />
 						Ваш браузер не поддерживает видео.

@@ -24,7 +24,6 @@ const DeleteRefund = ({
 				done: true,
 				description: "Выбранный возврат успешно удалён",
 			});
-			console.log(itemId);
 			onClose();
 		} catch (error) {
 			console.error(error);

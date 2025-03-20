@@ -13,7 +13,6 @@ export const copyToClipboard = (
 	navigator.clipboard
 		.writeText(strValue)
 		.then(() => {
-			console.log("Скопировано:", strValue);
 			toast({
 				done: true,
 				description: `Скопировано: ${strValue}`,

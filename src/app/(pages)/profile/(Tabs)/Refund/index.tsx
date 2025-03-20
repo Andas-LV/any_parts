@@ -2,7 +2,6 @@
 import styles from "./page.module.css";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 import { Button } from "@components/ui/button";
-import { Search as SearchIcon } from "lucide-react";
 import React, { useEffect, useMemo, useState } from "react";
 import {
 	Table,
@@ -29,6 +28,7 @@ import RequestSended from "@/widgets/modals/requestSended/requestSended";
 import { getRefundStatusStyle } from "./getRefundStatusStyle";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
+import SearchBar from "@components/SearchBar/SearchBar";
 
 type TModal = "itemChooseModal" | "itemFullInfoModal" | "onSuccessModal" | null;
 
@@ -89,12 +89,13 @@ export default function Refund() {
 	return (
 		<div className={styles.wrapper}>
 			<h2 className={styles.title}>Возврат</h2>
-			<div className={styles.noContentWrapper}>
-				<div className={styles.noContentTitle}>
+
+			<div className={styles.infoContentWrapper}>
+				<div className={styles.infoContentTitle}>
 					Чтобы вернуть товар по браку, оформите заявку на его проверку.
 				</div>
 				<p>
-					<Icons.Info width={16} height={16} />
+					<Icons.Info width={16} height={16} color={"black"} />
 					Рассмотрение заявки занимает до 7 рабочих дней.
 				</p>
 				<Button
@@ -105,17 +106,16 @@ export default function Refund() {
 					Создать заявку
 				</Button>
 			</div>
+
 			<div className={styles.content}>
-				<div className={styles.searchWrapper}>
-					<SearchIcon className={styles.searchIcon} />
-					<input
-						value={search}
-						onChange={(e) => setSearch(e.target.value)}
-						type="text"
-						placeholder="Поиск..."
-						className={styles.searchInput}
+				<div className={styles.searchContainer}>
+					<SearchBar
+						search={search}
+						placeholder={"Поиск..."}
+						onSearchChange={(e) => setSearch(e.target.value)}
 					/>
 				</div>
+
 				<div className={styles.tableWrapper}>
 					{refunds && refunds.length > 0 && (
 						<Table className={styles.table}>

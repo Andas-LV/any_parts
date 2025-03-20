@@ -15,7 +15,6 @@ const SettingsModal = ({ onClose }: { onClose: () => void }) => {
 	const [searchParams, setSearchParams] = useState(false);
 
 	const handleSubmit = async () => {
-		console.log(mailing, searchParams);
 		onClose();
 	};
 

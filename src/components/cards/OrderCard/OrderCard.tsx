@@ -16,6 +16,8 @@ import CreateFeedback from "@/widgets/modals/feedback/createFeedback";
 import OrderCardSkeleton from "@components/skeletons/OrderCardSkeleton/OrderCardSkeleton";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
+import { useItemsStore } from "@/entities/items/useItemsStore";
+import { itemInfo } from "@/exampleData/exampleItems";
 
 interface OrderCardProps {
 	order: TOrder;
@@ -27,8 +29,10 @@ export default function OrderCard({ order }: OrderCardProps) {
 	}
 
 	const { user } = useUserStore();
+	const { setCurrentItem } = useItemsStore();
 
 	const {
+		id,
 		name,
 		orderId,
 		shopName,
@@ -41,9 +45,10 @@ export default function OrderCard({ order }: OrderCardProps) {
 	} = order;
 
 	const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
-	const orderAction = getOrderAction(status as StatusChoice, () =>
-		setIsFeedbackOpen(true),
-	);
+	const orderAction = getOrderAction(status as StatusChoice, () => {
+		setCurrentItem(itemInfo[id]);
+		setIsFeedbackOpen(true);
+	});
 
 	return (
 		<Card>
@@ -116,7 +121,6 @@ export default function OrderCard({ order }: OrderCardProps) {
 				<CreateFeedback
 					feedbackType={"Новый"}
 					onClose={() => setIsFeedbackOpen(false)}
-					itemId={orderId}
 				/>
 			)}
 		</Card>

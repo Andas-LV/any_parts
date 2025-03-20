@@ -1,8 +1,8 @@
 import { create } from "zustand";
-import { ItemCard } from "@/types/items/Item";
+import { ItemCardType } from "@/types/items/Item";
 import { items } from "@/exampleData/exampleItems";
 
-export type CartItem = ItemCard & {
+export type CartItem = ItemCardType & {
 	quantity: number;
 	selected: boolean;
 };
@@ -10,7 +10,7 @@ export type CartItem = ItemCard & {
 export interface BasketStore {
 	cartItems: CartItem[];
 
-	addItem: (item: ItemCard, quantity?: number) => void;
+	addItem: (item: ItemCardType, quantity?: number) => void;
 	removeItem: (id: number) => void;
 	updateQuantity: (id: number, quantity: number) => void;
 	toggleSelect: (id: number) => void;

@@ -48,6 +48,7 @@ export default function PartnerItemsFeedbacks() {
 				<div className={styles.actions}>
 					<SearchBar
 						search={search}
+						placeholder={"Название, артикул, штрихкод"}
 						onSearchChange={(e) => setSearch(e.target.value)}
 					/>
 					<DateRangePicker

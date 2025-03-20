@@ -1,10 +1,7 @@
 "use client";
 
 import styles from "./itemCard.module.css";
-import {
-	ItemCard as ItemCardType,
-	TFilteredItemInfo,
-} from "@/types/items/Item";
+import { ItemCardType, TFilteredItemInfo } from "@/types/items/Item";
 import { ImageCarousel } from "../ImageCarousel";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";

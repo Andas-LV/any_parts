@@ -4,41 +4,47 @@ import styles from "./actionBlock.module.css";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { TCreateItemFullInfo } from "@/types/items/CreateItem";
-import { calculateDiscountPercentage } from "@/hooks/calculateDiscountPercentage";
+import {
+	calculateAPDiscount,
+	calculateDiscount,
+} from "@/utils/calculateDiscount";
 
 interface IActionsBlock {
 	item: TCreateItemFullInfo;
+	selectedColorIndex: number;
+	selectedSizeIndex: number;
 }
 
-export default function ActionsBlock({ item }: IActionsBlock) {
+export default function ActionsBlock({
+	item,
+	selectedColorIndex,
+	selectedSizeIndex,
+}: IActionsBlock) {
 	const { user } = useUserStore();
-
 	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 
-	console.log("fullInfo", item);
+	const selectedColor = item.prices[selectedColorIndex];
+	const selectedSize = selectedColor?.sizes[selectedSizeIndex];
+
+	const price = selectedSize?.discountPrice ?? selectedSize?.price;
+	const oldPrice = selectedSize?.price;
 
 	return (
 		<div className={styles.actionsBlockContainer}>
 			<div className={styles.prices}>
 				<div className={styles.leftSidePrice}>
 					<div className={styles.actualPrice}>
-						{item.prices[0].sizes[0].discountPrice
-							? `${item.prices[0].sizes[0].discountPrice.toLocaleString()} ${currencySymbol}`
-							: `${item.prices[0].sizes[0].price.toLocaleString()} ${currencySymbol}`}
+						{price
+							? `${price.toLocaleString()} ${currencySymbol}`
+							: `${oldPrice?.toLocaleString()} ${currencySymbol}`}
 					</div>
-					{item.prices[0].sizes[0].discountPrice ? (
+					{price && oldPrice !== price ? (
 						<div className={styles.discountWrapper}>
 							<div className={styles.oldPrice}>
-								{item.prices[0].sizes[0].price.toLocaleString()}{" "}
-								{currencySymbol}
+								{oldPrice?.toLocaleString()} {currencySymbol}
 							</div>
 							<div className={styles.discount}>
-								-
-								{calculateDiscountPercentage(
-									Number(item.prices[0].sizes[0].price),
-									Number(item.prices[0].sizes[0].discountPrice),
-								)}
-								%
+								-{calculateDiscount(Number(oldPrice), Number(price))} %
 							</div>
 						</div>
 					) : null}
@@ -46,7 +52,8 @@ export default function ActionsBlock({ item }: IActionsBlock) {
 
 				<div className={styles.rightSidePrice}>
 					<div className={styles.apPrice}>
-						{item.prices[0].sizes[0].price} {currencySymbol}
+						{price ? calculateAPDiscount(price) : calculateAPDiscount(oldPrice)}
+						{currencySymbol}
 					</div>
 					<div className={styles.apText}>c AP Кошельком</div>
 				</div>

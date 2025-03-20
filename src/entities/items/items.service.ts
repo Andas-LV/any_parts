@@ -1,7 +1,7 @@
 import axiosInstance from "@/lib/axiosInstance";
-import { ItemCard, ItemInfoType } from "@/types/items/Item";
+import { ItemCardType, ItemInfoType } from "@/types/items/Item";
 
-export async function getItemCards(): Promise<ItemCard[]> {
+export async function getItemCards(): Promise<ItemCardType[]> {
 	const { data } = await axiosInstance.get("/items/");
 	return data;
 }

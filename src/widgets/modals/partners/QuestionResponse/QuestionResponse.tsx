@@ -3,7 +3,7 @@ import styles from "./QuestionResponse.module.css";
 import SideModalLayout from "@/layouts/SideModalLayout/SideModalLayout";
 import { PartnerQuestion } from "@/types/partners/Feedbacks";
 import { Button } from "@components/ui/button";
-import { formatDate } from "@/hooks/formatDate";
+import { formatDate } from "@/utils/formatDate";
 import { partnerFeedbackStatuses } from "@/constants/status";
 import { Icons } from "@/assets/svg";
 import { Textarea } from "@components/ui/textarea";

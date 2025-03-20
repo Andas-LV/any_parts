@@ -11,7 +11,14 @@ import Orders from "@/app/(pages)/profile/(Tabs)/Orders";
 import Purse from "@/app/(pages)/profile/(Tabs)/Purse";
 import Feedback from "@/app/(pages)/profile/(Tabs)/Feedback";
 import { useUserStore } from "@/entities/user/useUserStore";
-import { TProfileTabs } from "@/types/Profile";
+
+export type TProfileTabs =
+	| "main"
+	| "orders"
+	| "refund"
+	| "favorite"
+	| "purse"
+	| "feedback";
 
 export default function Profile() {
 	const { activeProfileTab, setActiveProfileTab } = useUserStore();

@@ -5,10 +5,10 @@ import styles from "./confirmEmail.module.css";
 import { Button } from "@components/ui/button";
 import { useAuthStore } from "@/entities/auth/useAuthStore";
 import RegisterModal from "@/widgets/modals/auth/register";
-import { renderError } from "@/hooks/renderError";
+import { renderError } from "@/utils/renderError";
 import ModalsLayout from "@/layouts/modalLayout/layout";
 import Timer, { useTimer } from "@/hooks/useTimer";
-import { formatTime } from "@/hooks/formatTime";
+import { formatTime } from "@/utils/formatTime";
 
 const ConfirmEmailModal = ({
 	onClose,

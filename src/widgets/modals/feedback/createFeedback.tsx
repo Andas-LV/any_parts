@@ -13,13 +13,11 @@ import { useCurrencySymbol } from "@/hooks/useCurrency";
 
 interface FeedbackProps {
 	onClose: () => void;
-	itemId: number;
 	feedbackType: "Новый" | "Дополнительный";
 }
 
 export default function CreateFeedback({
 	onClose,
-	itemId,
 	feedbackType,
 }: FeedbackProps) {
 	const { currentItem, isLoading } = useItemsStore();

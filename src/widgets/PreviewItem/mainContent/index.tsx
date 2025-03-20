@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import ImageCarousel from "./ImageCarousel";
+import React, { useState } from "react";
+import ImageCarousel from "@components/ImageCarousel";
 import ItemInfo from "./ItemInfo";
 import styles from "./mainContent.module.css";
 import ActionsBlock from "./ActionsBlock";
-import Loading from "@components/Loading";
 import { useCreateItemStore } from "@/entities/partners/createItem/useCreateItemStore";
 import ImagesSkeleton from "@components/skeletons/ItemPageSkeleton/ImagesSkeleton/ImagesSkeleton";
 import MainInfoSkeleton from "@components/skeletons/ItemPageSkeleton/MainInfoSkeleton/MainInfoSkeleton";
@@ -13,7 +12,8 @@ import ActionsBlockSkeleton from "@components/skeletons/ItemPageSkeleton/ActionB
 
 export default function MainContent() {
 	const { fullInfo, isLoading } = useCreateItemStore();
-	const [selectedIndex, setSelectedIndex] = useState(0);
+	const [selectedColorIndex, setSelectedColorIndex] = useState(0);
+	const [selectedSizeIndex, setSelectedSizeIndex] = useState(0);
 
 	if (!fullInfo || isLoading) {
 		return (
@@ -25,19 +25,30 @@ export default function MainContent() {
 		);
 	}
 
+	const images = [
+		...fullInfo.images,
+		...fullInfo.colors.map((color) => color.photo),
+	];
+
 	return (
 		<div className={styles.mainContent}>
 			<ImageCarousel
-				images={fullInfo.images}
-				selectedIndex={selectedIndex}
-				setSelectedIndexAction={setSelectedIndex}
+				images={images}
+				selectedIndex={selectedSizeIndex}
+				setSelectedIndexAction={setSelectedSizeIndex}
 			/>
 			<ItemInfo
 				item={fullInfo}
-				selectedIndex={selectedIndex}
-				setSelectedIndexAction={setSelectedIndex}
+				selectedColorIndex={selectedColorIndex}
+				setSelectedColorIndex={setSelectedColorIndex}
+				selectedSizeIndex={selectedSizeIndex}
+				setSelectedSizeIndex={setSelectedSizeIndex}
 			/>
-			<ActionsBlock item={fullInfo} />
+			<ActionsBlock
+				item={fullInfo}
+				selectedColorIndex={selectedColorIndex}
+				selectedSizeIndex={selectedSizeIndex}
+			/>
 		</div>
 	);
 }

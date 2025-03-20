@@ -10,7 +10,7 @@ import {
 	TableRow,
 } from "@components/ui/table";
 import { PaginationWithSelect } from "@components/PaginationBlock/PaginationBlock";
-import { formatDate } from "@/hooks/formatDate";
+import { formatDate } from "@/utils/formatDate";
 import { Button } from "@components/ui/button";
 import {
 	itemDeliveryStatuses,

@@ -24,7 +24,6 @@ export default function Preview({ previousStep, isActive }: PreviewProps) {
 	}, [isActive]);
 
 	const createItem = () => {
-		console.log(fullInfo);
 		router.push(routes.partners());
 		toast({
 			done: true,

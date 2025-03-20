@@ -40,8 +40,6 @@ export default function SearchPage({
 	useEffect(() => {
 		const name = searchParams?.get("name") || "";
 		setSearchName(name);
-
-		console.log("name:", name, "/ value:", search[0]);
 	}, [searchParams]);
 
 	return (

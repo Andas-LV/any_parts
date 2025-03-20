@@ -20,10 +20,12 @@ import { useState } from "react";
 import PartnerItemsFeedbacks from "@/app/(pages)/partners/(Tabs)/PartnerItemsFeedbacks/PartnerItemsFeedbacks";
 import PartnerItemsQuestions from "@/app/(pages)/partners/(Tabs)/PartnerItemsQuestions/PartnerItemsQuestions";
 
+export type PartnersTabs = "main" | "items" | "progress" | "feedbacks";
+
 export default function Page() {
-	const { isModerated } = useUserStore();
-	const [activeTab, setActiveTab] = useState("main");
-	const [itemsTabView, setItemsTabView] = useState<"create" | "list">("list");
+	const { isModerated, activePartnersTab, setActivePartnersTab } =
+		useUserStore();
+	const [itemsTabView, setItemsTabView] = useState<"create" | "list">("create");
 	const [feedbacksTabView, setFeedbacksTabView] = useState<
 		"feedbacks" | "questions"
 	>("feedbacks");
@@ -32,7 +34,11 @@ export default function Page() {
 		<div className={styles.wrapper}>
 			<PartnersHeader />
 
-			<Tabs value={activeTab} onValueChange={setActiveTab} className="h-full">
+			<Tabs
+				value={String(activePartnersTab)}
+				onValueChange={(value) => setActivePartnersTab(value as PartnersTabs)}
+				className="h-full"
+			>
 				<TabsList className={styles.tabsList}>
 					<TabsTrigger value="main" className={styles.tabsTrigger}>
 						Главная
@@ -43,7 +49,7 @@ export default function Page() {
 							<Button
 								variant="ghost"
 								className={`${styles.tabsTrigger} ${
-									activeTab === "items" ? styles.tabsTriggerActive : ""
+									activePartnersTab === "items" ? styles.tabsTriggerActive : ""
 								}`}
 							>
 								Товары
@@ -53,7 +59,7 @@ export default function Page() {
 							<DropdownMenuItem
 								onClick={() => {
 									setItemsTabView("list");
-									setActiveTab("items");
+									setActivePartnersTab("items");
 								}}
 							>
 								Список товаров
@@ -61,7 +67,7 @@ export default function Page() {
 							<DropdownMenuItem
 								onClick={() => {
 									setItemsTabView("create");
-									setActiveTab("items");
+									setActivePartnersTab("items");
 								}}
 							>
 								Добавить товар
@@ -78,7 +84,9 @@ export default function Page() {
 							<Button
 								variant="ghost"
 								className={`${styles.tabsTrigger} ${
-									activeTab === "feedbacks" ? styles.tabsTriggerActive : ""
+									activePartnersTab === "feedbacks"
+										? styles.tabsTriggerActive
+										: ""
 								}`}
 							>
 								Отзывы и вопросы
@@ -88,7 +96,7 @@ export default function Page() {
 							<DropdownMenuItem
 								onClick={() => {
 									setFeedbacksTabView("feedbacks");
-									setActiveTab("feedbacks");
+									setActivePartnersTab("feedbacks");
 								}}
 							>
 								Отзывы покупателей
@@ -96,7 +104,7 @@ export default function Page() {
 							<DropdownMenuItem
 								onClick={() => {
 									setFeedbacksTabView("questions");
-									setActiveTab("feedbacks");
+									setActivePartnersTab("feedbacks");
 								}}
 							>
 								Вопросы пользователей

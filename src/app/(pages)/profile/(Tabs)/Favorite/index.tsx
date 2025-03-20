@@ -2,12 +2,11 @@
 
 import styles from "./page.module.css";
 import { useItemsStore } from "@/entities/items/useItemsStore";
-import { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Button } from "@components/ui/button";
 import { useRouter } from "next/navigation";
 import ItemCard from "@components/cards/ItemCards/ItemCard/ItemCard";
 import { Icons } from "@/assets/svg";
-import { Search as SearchIcon } from "lucide-react";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -16,6 +15,7 @@ import {
 } from "@components/ui/dropdown-menu";
 import { itemSorts } from "@/constants/item";
 import { routes } from "@/configs/routes";
+import SearchBar from "@components/SearchBar/SearchBar";
 
 export default function Favorite() {
 	const { getFavoriteItems, favoriteItems } = useItemsStore();
@@ -28,7 +28,7 @@ export default function Favorite() {
 	const selectedSortName =
 		itemSorts.find((sort) => sort.value === selectedSort)?.name ||
 		"Выберите сортировку";
-	const favoriteItemsEmpty = !favoriteItems || favoriteItems.length === 0;
+	const isFavoriteItems = favoriteItems && favoriteItems.length > 0;
 
 	useEffect(() => {
 		getFavoriteItems();
@@ -45,34 +45,14 @@ export default function Favorite() {
 	return (
 		<div className={styles.wrapper}>
 			<h2>Избранное</h2>
-			{favoriteItemsEmpty ? (
-				<div className={styles.noFavoriteWrapper}>
-					<div className={styles.noFavoriteTitle}>В избранном пока пусто</div>
-					<p>
-						Сохраняйте товары, которые понравились, <br /> чтобы долго не искать
-					</p>
-
-					<Button
-						onClick={() => router.push(routes.home())}
-						className={styles.toMainBtn}
-					>
-						Перейти на главную
-					</Button>
-				</div>
-			) : (
+			{isFavoriteItems ? (
 				<div className={styles.content}>
 					<div className={styles.searchSection}>
-						<div className={styles.searchWrapper}>
-							<SearchIcon className={styles.searchIcon} />
-
-							<input
-								value={search}
-								onChange={(e) => setSearch(e.target.value)}
-								type="text"
-								placeholder="Поиск..."
-								className={styles.searchInput}
-							/>
-						</div>
+						<SearchBar
+							search={search}
+							placeholder={"Поиск..."}
+							onSearchChange={(e) => setSearch(e.target.value)}
+						/>
 
 						<div className={styles.filter}>
 							<Icons.ArrowsDownUp />
@@ -106,6 +86,20 @@ export default function Favorite() {
 							<p className={styles.noResults}>Ничего не найдено</p>
 						)}
 					</div>
+				</div>
+			) : (
+				<div className={styles.noFavoriteWrapper}>
+					<div className={styles.noFavoriteTitle}>В избранном пока пусто</div>
+					<p>
+						Сохраняйте товары, которые понравились, <br /> чтобы долго не искать
+					</p>
+
+					<Button
+						onClick={() => router.push(routes.home())}
+						className={styles.toMainBtn}
+					>
+						Перейти на главную
+					</Button>
 				</div>
 			)}
 		</div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import ImageCarousel from "@/app/(pages)/item/[...id]/mainContent/ImageCarousel";
+import ImageCarousel from "@components/ImageCarousel";
 import ItemInfo from "@/app/(pages)/item/[...id]/mainContent/ItemInfo";
 import styles from "./mainContent.module.css";
 import ActionsBlock from "@/app/(pages)/item/[...id]/mainContent/ActionsBlock";
@@ -10,7 +10,11 @@ import ImagesSkeleton from "@components/skeletons/ItemPageSkeleton/ImagesSkeleto
 import MainInfoSkeleton from "@components/skeletons/ItemPageSkeleton/MainInfoSkeleton/MainInfoSkeleton";
 import ActionsBlockSkeleton from "@components/skeletons/ItemPageSkeleton/ActionBlockSkeleton/ActionBlockSkeleton";
 
-export default function MainContent() {
+interface MainContentProps {
+	scrollToSection: () => void;
+}
+
+export default function MainContent({ scrollToSection }: MainContentProps) {
 	const [selectedIndex, setSelectedIndex] = useState(0);
 
 	const { currentItem, isLoading } = useItemsStore();
@@ -36,6 +40,7 @@ export default function MainContent() {
 				item={currentItem}
 				selectedIndex={selectedIndex}
 				setSelectedIndexAction={setSelectedIndex}
+				scrollToSection={scrollToSection}
 			/>
 			<ActionsBlock item={currentItem} />
 		</div>

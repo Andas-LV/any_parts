@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use, useState, useEffect } from "react";
+import React, { use, useEffect, useRef } from "react";
 import styles from "./itemPage.module.css";
 import HeaderWrapper from "@/layouts/HeaderProvider";
 import ItemHeader from "./pageHeader/index";
@@ -11,6 +11,7 @@ import PurchasedCarousel from "@/widgets/Items/(Carousel)/Purchased";
 import { Comments } from "@/app/(pages)/item/[...id]/feedbacks";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 import ItemStickyHeader from "@/app/(pages)/item/[...id]/ItemStickyHeader/ItemHeader";
+import { useStickyHeader } from "@/hooks/useStickyHeader"; // Импортируем хук
 
 export default function ItemPage({
 	params,
@@ -26,16 +27,13 @@ export default function ItemPage({
 		fetchItemById(id);
 	}, [id]);
 
-	const [showStickyHeader, setShowStickyHeader] = useState(false);
+	const showStickyHeader = useStickyHeader("mainContent");
 
-	useEffect(() => {
-		const handleScroll = () => {
-			setShowStickyHeader(window.scrollY > window.innerHeight);
-		};
+	const detailsRef = useRef<HTMLDivElement>(null);
 
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+	const scrollToSection = () => {
+		detailsRef.current?.scrollIntoView({ behavior: "smooth" });
+	};
 
 	const breadcrumbItems = [
 		{ label: "Главная", href: "/" },
@@ -49,10 +47,14 @@ export default function ItemPage({
 
 				<div className={styles.wrapper}>
 					<ItemHeader routes={breadcrumbItems} />
-					<MainContent />
+					<div id={"mainContent"}>
+						<MainContent scrollToSection={scrollToSection} />
+					</div>
 					<RecommendedCarousel />
 					<PurchasedCarousel />
-					<Details />
+					<div ref={detailsRef}>
+						<Details />
+					</div>
 					<Comments />
 				</div>
 			</HeaderWrapper>

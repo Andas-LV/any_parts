@@ -18,7 +18,7 @@ type TModalOptions = "standardPromotion" | "premiumPromotion" | null;
 
 export default function Promotion() {
 	const { setFilterStatus, filteredItems } = useDealerItemsStore();
-	const { user } = useUserStore();
+	const { user, setActivePartnersTab } = useUserStore();
 
 	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 	const [search, setSearch] = useState("");
@@ -42,10 +42,16 @@ export default function Promotion() {
 					<div className={styles.actions}>
 						<SearchBar
 							search={search}
+							placeholder={"Название, артикул, штрихкод"}
 							onSearchChange={(e) => setSearch(e.target.value)}
 						/>
 						<StatusFilter statuses={promotionStatuses} />
-						<Button className={"rounded-xl"}>
+						<Button
+							onClick={() => {
+								setActivePartnersTab("items");
+							}}
+							className={"rounded-xl"}
+						>
 							<Plus /> Добавить товар
 						</Button>
 					</div>
@@ -76,7 +82,14 @@ export default function Promotion() {
 			<div className={styles.noContent}>
 				<h3>Пока пусто</h3>
 				<p>Здесь можно будет продвинуть товар</p>
-				<Button className={styles.createItemBtn}>Создать товар</Button>
+				<Button
+					onClick={() => {
+						setActivePartnersTab("items");
+					}}
+					className={styles.createItemBtn}
+				>
+					Создать товар
+				</Button>
 			</div>
 
 			{openModal === "standardPromotion" && (

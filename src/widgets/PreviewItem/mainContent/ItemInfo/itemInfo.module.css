@@ -11,6 +11,12 @@
 	font-weight: bold;
 }
 
+.itemInfoContainer h3 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+/* Рейтинг, отзывы и продажи */
 .ratings {
 	display: flex;
 	align-items: center;
@@ -40,6 +46,7 @@
 	color: var(--brand-primary);
 }
 
+/* Изображения товара */
 .imagesOption {
 	display: flex;
 	flex-wrap: wrap;
@@ -60,33 +67,25 @@
 	padding: 3px;
 }
 
+/* Опции товара */
 .options {
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
+	align-items: center;
 }
 
 .optionBtn {
-	background-color: white;
-	color: black;
-	border-radius: 5px;
-	border: 1px solid #b3b3b3;
-	box-shadow: none;
-	font-weight: 600;
-	flex: 1;
-	text-align: center;
+	border: 1px solid var(--skeleton);
+	padding: 1rem;
 }
 
 .optionBtn:hover {
-	background-color: #2785ec;
-	color: white;
+	background-color: var(--skeleton);
 }
 
-.activeOption {
-	background-color: var(--brand-primary);
-	color: white;
-}
-
+/* Характеристики товара */
 .characteristics {
 	width: 100%;
 	display: flex;
@@ -132,6 +131,7 @@
 	padding: 0;
 }
 
+/* Кнопка копирования */
 .copyIcon {
 	background: none;
 	border: none;

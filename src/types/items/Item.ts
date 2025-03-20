@@ -1,7 +1,7 @@
 import { Feedback } from "@/types/Feedbacks";
 import { User } from "@/types/User";
 
-export type ItemCard = {
+export type ItemCardType = {
 	id: number;
 	name: string;
 	price: number;
@@ -25,11 +25,7 @@ export type ItemInfoType = {
 	rating: number;
 	ratingDistribution: RatingDistribution;
 
-	comments: {
-		amount: number;
-		images: feedbackImages;
-		list: Feedback[];
-	};
+	comments: Comments;
 	images: string[];
 
 	marketName: string;
@@ -69,6 +65,12 @@ export type AutoType = {
 	model: string;
 	generation: string;
 	manuFacturer: string;
+};
+
+export type Comments = {
+	amount: number;
+	images: feedbackImages;
+	list: Feedback[];
 };
 
 export type feedbackImages = {

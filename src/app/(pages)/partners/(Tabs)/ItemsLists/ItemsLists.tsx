@@ -33,6 +33,7 @@ export default function ItemsLists() {
 				<div className={styles.actions}>
 					<SearchBar
 						search={search}
+						placeholder={"Название, артикул, штрихкод"}
 						onSearchChange={(e) => setSearch(e.target.value)}
 					/>
 					<Button className={"rounded-xl"}>

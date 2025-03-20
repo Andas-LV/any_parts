@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import styles from "./tab.module.css";
 import { Button } from "@components/ui/button";
 import { useUserStore } from "@/entities/user/useUserStore";
-import FeedbackCard from "../../../../../../../components/cards/FeedbackCard";
+import FeedbackCard from "@components/cards/FeedbackCard";
 import WaitingFeedback from "./WaitingFeedback";
 
 export default function Feedbacks() {

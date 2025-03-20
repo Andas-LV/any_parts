@@ -3,6 +3,7 @@
 import React from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@components/ui/tabs";
 import styles from "./items.module.css";
+import { items } from "@/exampleData/exampleItems";
 import Discounted from "@/widgets/Items/(Tabs)/Discounted/Discounted";
 import Recommended from "@/widgets/Items/(Tabs)/Recommended/Recommended";
 import Popular from "@/widgets/Items/(Tabs)/Popular/Popular";
@@ -27,13 +28,13 @@ export function Items() {
 
 				<div className={styles.tabsContent}>
 					<TabsContent value="sale">
-						<Discounted />
+						<Discounted items={items} />
 					</TabsContent>
 					<TabsContent value="recommended">
-						<Recommended />
+						<Recommended items={items} />
 					</TabsContent>
 					<TabsContent value="popular">
-						<Popular />
+						<Popular items={items} />
 					</TabsContent>
 				</div>
 			</Tabs>

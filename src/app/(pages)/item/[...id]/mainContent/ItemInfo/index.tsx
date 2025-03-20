@@ -1,32 +1,33 @@
 "use client";
 
+import React, { useState } from "react";
 import { ItemInfoType } from "@/types/items/Item";
-import React from "react";
-import styles from "./itemInfo.module.css";
 import RatingStars from "@components/stars/RatingStars";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { Icons } from "@/assets/svg";
 import { copyToClipboard } from "@components/copyToClipboard";
 import { useToast } from "@/hooks/use-toast";
 import { charactersSerializer } from "@/types/items/charactersSerializer";
 import { Button } from "@components/ui/button";
-import MainInfoSkeleton from "@components/skeletons/ItemPageSkeleton/MainInfoSkeleton/MainInfoSkeleton";
+import styles from "./itemInfo.module.css";
+import { renderThumbnail } from "@/utils/renderThumbnail";
 
 interface ItemInfoProps {
 	selectedIndex: number;
 	setSelectedIndexAction: (index: number) => void;
 	item: ItemInfoType;
+	scrollToSection: () => void;
 }
 
 export default function ItemInfo({
 	selectedIndex,
 	setSelectedIndexAction,
 	item,
+	scrollToSection,
 }: ItemInfoProps) {
 	const { toast } = useToast();
-
 	const characters = charactersSerializer(item);
+	const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
 
 	return (
 		<div className={styles.itemInfoContainer}>
@@ -34,56 +35,59 @@ export default function ItemInfo({
 
 			<div className={styles.ratings}>
 				<div className={styles.rating}>
-					{item.rating}
-					<RatingStars rating={item.rating} />
+					{item.rating} <RatingStars rating={item.rating} />
 				</div>
-
 				<div className={styles.comments}>{item.comments.amount} отзывов</div>
-
 				<div className={styles.sold}>{item.sold} продано</div>
 			</div>
 
+			{/* Кнопки для прокрутки */}
 			<div className={styles.linkBtns}>
-				<button>Характеристики</button>
-				<button>Описание</button>
+				<button onClick={scrollToSection}>Характеристики</button>
+				<button onClick={scrollToSection}>Описание</button>
 			</div>
 
 			<div className={styles.imagesOption}>
-				{item.images.map((src, index) => (
+				{item.images.map((src, i) => (
 					<button
-						key={index}
+						key={i}
 						className={cn(styles.thumbnail, {
-							[styles.activeImage]: index === selectedIndex,
+							[styles.activeImage]: i === selectedIndex,
 						})}
-						onClick={() => setSelectedIndexAction(index)}
+						onClick={() => setSelectedIndexAction(i)}
 					>
-						{src.endsWith(".mp4") || src.endsWith(".webm") ? (
-							<div className={styles.videoThumbnail}>
-								<span className={styles.playIcon}>▶</span>
-							</div>
-						) : (
-							<Image
-								src={src}
-								alt={`Thumbnail ${index + 1}`}
-								width={48}
-								height={48}
-							/>
-						)}
+						{renderThumbnail(src, i)}
 					</button>
 				))}
 			</div>
 
+			<div className={styles.options}>
+				{item.options.map((option, i) => (
+					<Button
+						key={i}
+						variant={i === selectedOptionIndex ? "default" : "ghost"}
+						onClick={() => setSelectedOptionIndex(i)}
+						className={cn(styles.optionBtn, {
+							[styles.activeOption]: i === selectedOptionIndex,
+						})}
+					>
+						{option}
+					</Button>
+				))}
+			</div>
+
+			{/* Раздел с характеристиками */}
 			<div className={styles.characteristics}>
-				{characters.map((characteristic, index) => (
-					<div key={index} className={styles.characteristic}>
-						<span className={styles.label}>{characteristic.name}</span>
-						<span className={styles.dots}></span>
+				{characters.map((character, i) => (
+					<div key={i} className={styles.characteristic}>
+						<span className={styles.label}>{character.name}</span>
+						<span className={styles.dots} />
 						<span className={styles.value}>
-							{characteristic.value}
-							{characteristic.name === "Артикул" && (
+							{character.value}
+							{character.name === "Артикул" && (
 								<button
 									className={styles.copyIcon}
-									onClick={() => copyToClipboard(characteristic.value, toast)}
+									onClick={() => copyToClipboard(character.value, toast)}
 								>
 									<Icons.Copy />
 								</button>

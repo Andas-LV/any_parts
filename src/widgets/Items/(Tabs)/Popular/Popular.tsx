@@ -1,8 +1,12 @@
-import { items } from "@/exampleData/exampleItems";
 import ItemCard from "@components/cards/ItemCards/ItemCard/ItemCard";
+import { ItemCardType } from "@/types/items/Item";
 import styles from "./page.module.css";
 
-export default function Popular() {
+interface PopularProps {
+	items: ItemCardType[];
+}
+
+export default function Popular({ items }: PopularProps) {
 	return (
 		<div className={styles.wrapper}>
 			{items.map((item, index) => (

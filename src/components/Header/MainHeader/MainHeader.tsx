@@ -6,11 +6,11 @@ import Link from "next/link";
 import Search from "./Search/Search";
 import styles from "./mainHeader.module.css";
 import LoginModal from "@/widgets/modals/auth/login";
-import CategoryFilter from "@components/Header/MainHeader/Category/CategoryFilter";
+import CategoryFilter from "@components/Category/CategoryFilter";
 import { useAuthStore } from "@/entities/auth/useAuthStore";
 import { Icons } from "@/assets/svg";
 import { useUserStore } from "@/entities/user/useUserStore";
-import { TProfileTabs } from "@/types/Profile";
+import { TProfileTabs } from "@/app/(pages)/profile/page";
 import { useRouter } from "next/navigation";
 import { routes } from "@/configs/routes";
 
@@ -24,11 +24,10 @@ const MainHeader = () => {
 	const routeToProfileSection = (section: TProfileTabs) => {
 		setActiveProfileTab(section);
 		router.push(routes.profile());
-		console.log(activeProfileTab);
 	};
 
 	return (
-		<div className={styles.container}>
+		<div className={styles.mainHeaderContainer}>
 			<Link href="/" className={styles.logo}>
 				<Icons.Logo width={45} height={35} />
 				<h1>Any Parts</h1>

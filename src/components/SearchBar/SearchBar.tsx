@@ -5,9 +5,14 @@ import styles from "./SearchBar.module.css";
 interface SearchBarProps {
 	search: string;
 	onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	placeholder: string;
 }
 
-export default function SearchBar({ search, onSearchChange }: SearchBarProps) {
+export default function SearchBar({
+	search,
+	onSearchChange,
+	placeholder,
+}: SearchBarProps) {
 	return (
 		<div className={styles.searchWrapper}>
 			<SearchIcon className={styles.searchIcon} />
@@ -15,7 +20,7 @@ export default function SearchBar({ search, onSearchChange }: SearchBarProps) {
 				value={search}
 				onChange={onSearchChange}
 				type="text"
-				placeholder="Название, артикул, штрихкод"
+				placeholder={placeholder}
 				className={styles.searchInput}
 			/>
 		</div>

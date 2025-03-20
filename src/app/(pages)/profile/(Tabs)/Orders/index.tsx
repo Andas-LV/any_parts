@@ -16,7 +16,7 @@ export default function Orders() {
 	const { orders, getOrders } = useOrdersStore();
 
 	const router = useRouter();
-	const isOrders = !orders || orders.length === 0;
+	const isOrders = orders && orders.length > 0;
 
 	useEffect(() => {
 		getOrders();
@@ -40,23 +40,6 @@ export default function Orders() {
 	return (
 		<div className={styles.wrapper}>
 			{isOrders ? (
-				<div className={styles.noOrdersWrapper}>
-					<h2>Заказы</h2>
-					<div className={styles.noOrdersTitle}>В заказах пока пусто</div>
-					<p>
-						Загляните на главную, чтобы выбрать товары <br /> или найдите нужное
-						в поиске
-					</p>
-
-					<Button
-						variant={"outline"}
-						onClick={() => router.push(routes.home())}
-						className={styles.toMainBtn}
-					>
-						Перейти на главную
-					</Button>
-				</div>
-			) : (
 				<Tabs defaultValue="active" className={styles.tabsContainer}>
 					<div className={styles.tabsListWrapper}>
 						<TabsList className={styles.tabsList}>
@@ -79,6 +62,23 @@ export default function Orders() {
 						</TabsContent>
 					</div>
 				</Tabs>
+			) : (
+				<div className={styles.noOrdersWrapper}>
+					<h2>Заказы</h2>
+					<div className={styles.noOrdersTitle}>В заказах пока пусто</div>
+					<p>
+						Загляните на главную, чтобы выбрать товары <br /> или найдите нужное
+						в поиске
+					</p>
+
+					<Button
+						variant={"outline"}
+						onClick={() => router.push(routes.home())}
+						className={styles.toMainBtn}
+					>
+						Перейти на главную
+					</Button>
+				</div>
 			)}
 		</div>
 	);

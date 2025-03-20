@@ -9,7 +9,7 @@ import {
 	CardTitle,
 	Card,
 } from "@components/ui/card";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import {
 	Carousel,
 	CarouselContent,
@@ -18,6 +18,9 @@ import {
 	CarouselPrevious,
 } from "@components/ui/carousel";
 import CreateFeedback from "@/widgets/modals/feedback/createFeedback";
+import { itemInfo } from "@/exampleData/exampleItems";
+import { useItemsStore } from "@/entities/items/useItemsStore";
+import { shouldUseCarousel } from "@/utils/shouldUseCarousel";
 
 interface FeedbackCardProps {
 	feedback: TMyFeedbackCard;
@@ -36,20 +39,21 @@ export default function FeedbackCard({ feedback }: FeedbackCardProps) {
 		id,
 	} = feedback;
 
+	const { setCurrentItem } = useItemsStore();
 	const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
 	const [liked, setLiked] = useState(likedByMe);
-	const [useCarousel, setUseCarousel] = useState(false);
 	const containerRef = useRef<HTMLDivElement>(null);
 
-	useEffect(() => {
-		if (images && images.length > 0 && containerRef.current) {
-			// Ширина одного изображения по стилям: 160px, gap = 20px между ними
-			const containerWidth = containerRef.current.offsetWidth;
-			const totalImagesWidth = images.length * 160 + (images.length - 1) * 20;
-			setUseCarousel(totalImagesWidth > containerWidth);
-		}
-	}, [images]);
+	const useCarousel = shouldUseCarousel(
+		images!,
+		containerRef.current?.offsetWidth || 0,
+	);
+
+	const selectItemToFeedback = () => {
+		setCurrentItem(itemInfo[id]);
+		setIsFeedbackOpen(true);
+	};
 
 	return (
 		<Card className={styles.card}>
@@ -134,7 +138,7 @@ export default function FeedbackCard({ feedback }: FeedbackCardProps) {
 				</Button>
 
 				<Button
-					onClick={() => setIsFeedbackOpen(true)}
+					onClick={selectItemToFeedback}
 					variant="outline"
 					className={styles.replyBtn}
 				>
@@ -146,7 +150,6 @@ export default function FeedbackCard({ feedback }: FeedbackCardProps) {
 				<CreateFeedback
 					feedbackType={"Дополнительный"}
 					onClose={() => setIsFeedbackOpen(false)}
-					itemId={id}
 				/>
 			)}
 		</Card>

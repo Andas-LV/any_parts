@@ -12,7 +12,6 @@ const Devices = ({ onClose }: { onClose: () => void }) => {
 	const handleDeleteOtherSessions = async () => {
 		if (currentSession) {
 			await deleteOtherSessions(currentSession?.id);
-			console.log("currentSession.id: ", currentSession?.id);
 		}
 	};
 

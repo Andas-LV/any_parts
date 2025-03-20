@@ -13,6 +13,7 @@ import { ordersSorts } from "@/constants/orders";
 import OrderCard from "@components/cards/OrderCard/OrderCard";
 import React, { useMemo, useState } from "react";
 import { useOrdersStore } from "@/entities/orders/useOrdersStore";
+import SearchBar from "@components/SearchBar/SearchBar";
 
 export default function ArchiveOrders() {
 	const { orders } = useOrdersStore();
@@ -37,17 +38,11 @@ export default function ArchiveOrders() {
 	return (
 		<div className={styles.content}>
 			<div className={styles.searchSection}>
-				<div className={styles.searchWrapper}>
-					<SearchIcon className={styles.searchIcon} />
-
-					<input
-						value={search}
-						onChange={(e) => setSearch(e.target.value)}
-						type="text"
-						placeholder="Поиск..."
-						className={styles.searchInput}
-					/>
-				</div>
+				<SearchBar
+					search={search}
+					placeholder={"Поиск..."}
+					onSearchChange={(e) => setSearch(e.target.value)}
+				/>
 
 				<div className={styles.filter}>
 					<Icons.ArrowsDownUp />

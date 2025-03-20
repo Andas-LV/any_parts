@@ -6,7 +6,7 @@ import {
 	itemDeliveryStatuses,
 	partnerFeedbackStatuses,
 } from "@/constants/status";
-import { formatDate } from "@/hooks/formatDate";
+import { formatDate } from "@/utils/formatDate";
 import { Button } from "@components/ui/button";
 import { Icons } from "@/assets/svg";
 import { Textarea } from "@components/ui/textarea";

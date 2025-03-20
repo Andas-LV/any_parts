@@ -11,7 +11,7 @@ import { useDealerItemsStore } from "@/entities/partners/items/useDealerItemsSto
 import { partnerItemStatuses } from "@/constants/status";
 
 export default function PartnerItemsList() {
-	const { user } = useUserStore();
+	const { user, setActivePartnersTab } = useUserStore();
 	const { filteredItems } = useDealerItemsStore();
 	const [search, setSearch] = useState("");
 
@@ -32,10 +32,16 @@ export default function PartnerItemsList() {
 				<div className={styles.actions}>
 					<SearchBar
 						search={search}
+						placeholder={"Название, артикул, штрихкод"}
 						onSearchChange={(e) => setSearch(e.target.value)}
 					/>
 					<StatusFilter statuses={partnerItemStatuses} />
-					<Button className={"rounded-xl"}>
+					<Button
+						onClick={() => {
+							setActivePartnersTab("items");
+						}}
+						className={"rounded-xl"}
+					>
 						<Plus /> Добавить товар
 					</Button>
 				</div>

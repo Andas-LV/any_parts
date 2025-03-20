@@ -1,11 +1,14 @@
-import { items } from "@/exampleData/exampleItems";
-import ItemCard from "@components/cards/ItemCards/ItemCard/ItemCard";
+import { ItemCardType } from "@/types/items/Item";
 import styles from "./page.module.css";
+import ItemCard from "@components/cards/ItemCards/ItemCard/ItemCard";
 
-export default function Recommended() {
+interface RecommendedProps {
+	items: ItemCardType[];
+}
+
+export default function Recommended({ items }: RecommendedProps) {
 	return (
 		<div className={styles.wrapper}>
-			Recommended
 			{items.map((item, index) => (
 				<ItemCard key={index} item={item} showFavorite={true} />
 			))}

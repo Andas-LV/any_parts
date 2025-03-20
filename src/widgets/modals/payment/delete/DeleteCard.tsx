@@ -29,7 +29,6 @@ const DeleteCard = ({
 				done: true,
 				description: "Выбранный реквизит успешно удалён",
 			});
-			console.log(currentCard);
 			onClose();
 		} catch (error) {
 			console.error(error);

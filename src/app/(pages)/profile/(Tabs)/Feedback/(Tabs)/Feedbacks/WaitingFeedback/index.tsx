@@ -11,18 +11,19 @@ import {
 } from "@components/ui/card";
 import RatingStars from "@components/stars/RatingStars";
 import CreateFeedback from "@/widgets/modals/feedback/createFeedback";
+import { itemInfo } from "@/exampleData/exampleItems";
+import { useItemsStore } from "@/entities/items/useItemsStore";
 
 export default function WaitingFeedback() {
 	const { setActiveProfileTab } = useUserStore();
-	const { unRatedOrders, getUnratedOrders, isLoading, error } =
-		useFeedbacksStore();
+	const { unRatedOrders, getUnratedOrders, isLoading } = useFeedbacksStore();
+	const { setCurrentItem } = useItemsStore();
 	const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
-	const [itemId, setItemId] = useState(0);
 
 	const unRatedOrdersEmpty = !unRatedOrders || unRatedOrders.length === 0;
 
 	const selectItemToFeedback = (itemId: number) => {
-		setItemId(itemId);
+		setCurrentItem(itemInfo[itemId]);
 		setIsFeedbackOpen(true);
 	};
 
@@ -89,7 +90,6 @@ export default function WaitingFeedback() {
 				<CreateFeedback
 					feedbackType={"Новый"}
 					onClose={() => setIsFeedbackOpen(false)}
-					itemId={itemId}
 				/>
 			)}
 		</div>

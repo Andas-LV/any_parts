@@ -1,13 +1,13 @@
 import { create } from "zustand";
-import type { ItemCard, ItemInfoType } from "@/types/items/Item";
+import type { ItemCardType, ItemInfoType } from "@/types/items/Item";
 import { items, itemInfo, itemsForRefund } from "@/exampleData/exampleItems";
 import { RefundItem } from "@/types/Refund";
 
 interface ItemState {
-	items: ItemCard[] | null;
+	items: ItemCardType[] | null;
 	itemInfo: ItemInfoType[] | null;
 	refunds: RefundItem[] | null;
-	favoriteItems: ItemCard[] | null;
+	favoriteItems: ItemCardType[] | null;
 	currentItem: ItemInfoType | null;
 
 	isLoading: boolean;

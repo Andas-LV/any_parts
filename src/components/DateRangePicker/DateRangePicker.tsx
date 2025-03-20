@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/popover";
 import { DateRange } from "react-day-picker";
 import { ru } from "date-fns/locale";
-import { formatDate } from "@/hooks/formatDate";
+import { formatDate } from "@/utils/formatDate";
 import styles from "./DateRangePicker.module.css";
 
 interface DateRangePickerProps {

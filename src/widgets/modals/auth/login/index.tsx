@@ -7,7 +7,7 @@ import { Checkbox } from "@components/ui/checkbox";
 import { Label } from "@components/ui/label";
 import ConfirmEmailModal from "../confirmEmail";
 import { useAuthStore } from "@/entities/auth/useAuthStore";
-import { renderError } from "@/hooks/renderError";
+import { renderError } from "@/utils/renderError";
 import ModalsLayout from "@/layouts/modalLayout/layout";
 
 const LoginModal = ({ onClose }: { onClose: () => void }) => {

@@ -14,11 +14,6 @@ export type TOrder = {
 	card: Payment;
 };
 
-// export type StatusChoice =
-// 	| "Получено"
-// 	| "Заказ оплачен и ожидает обработки"
-// 	| "Ожидает в пункте выдачи";
-
 export type TItemDeliveryStatuses = {
 	name: StatusChoice;
 	value: keyof StatusChoice;

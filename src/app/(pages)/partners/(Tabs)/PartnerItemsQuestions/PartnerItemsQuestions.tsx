@@ -48,6 +48,7 @@ export default function PartnerItemsQuestions() {
 				<div className={styles.actions}>
 					<SearchBar
 						search={search}
+						placeholder={"Название, артикул, штрихкод"}
 						onSearchChange={(e) => setSearch(e.target.value)}
 					/>
 					<DateRangePicker
