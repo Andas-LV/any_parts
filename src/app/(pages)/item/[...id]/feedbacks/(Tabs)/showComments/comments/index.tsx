@@ -5,7 +5,7 @@ import RatingStars from "@components/stars/RatingStars";
 import React, { useState } from "react";
 import { Icons } from "@/assets/svg";
 import { Progress } from "@components/ui/progress";
-import CommentItem from "@/app/(pages)/item/[...id]/feedbacks/showComments/comments/CommentItem/CommentItem";
+import CommentItem from "./CommentItem/CommentItem";
 import { Button } from "@components/ui/button";
 import {
 	DropdownMenu,

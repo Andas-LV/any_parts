@@ -1,8 +1,8 @@
 "use client";
 
-import MainHeader from "@/components/Header/MainHeader/MainHeader";
-import TopHeader from "@/components/Header/TopHeader/TopHeader";
-import HeaderFilter from "@/components/Header/HeaderFilter/HeaderFilter";
+import MainHeader from "./MainHeader/MainHeader";
+import TopHeader from "./TopHeader/TopHeader";
+import HeaderFilter from "./HeaderFilter/HeaderFilter";
 import { useStickyHeader } from "@/hooks/useStickyHeader";
 import styles from "./header.module.css";
 

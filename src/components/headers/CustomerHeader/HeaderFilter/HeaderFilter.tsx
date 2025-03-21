@@ -3,7 +3,7 @@
 import { useState } from "react";
 import styles from "./headerFilter.module.css";
 import Image from "next/image";
-import { filterTypes } from "@/components/Header/HeaderFilter/filterTypes";
+import { filterTypes } from "./filterTypes";
 
 export default function HeaderFilter() {
 	const [activeFilter, setActiveFilter] = useState<string | null>(null);
@@ -14,7 +14,7 @@ export default function HeaderFilter() {
 			{filterTypes.map((filter) => (
 				<div
 					key={filter.name}
-					className={`${styles.item} ${activeFilter === filter.name ? styles.active : ""}`}
+					className={styles.item}
 					onClick={() => setActiveFilter(filter.name)}
 				>
 					<Image src={filter.image} alt={filter.name} width={20} height={20} />

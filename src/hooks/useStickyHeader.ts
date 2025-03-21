@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 
 export function useStickyHeader(elementId: string) {
 	const [isSticky, setIsSticky] = useState(false);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const handleScroll = () => {
 			const element = document.getElementById(elementId);
 			if (element) {

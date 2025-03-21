@@ -1,4 +1,4 @@
-import { Category } from "@/types/Category";
+import { Category, PopularCategories } from "@/types/Category";
 
 export const categories: Category[] = [
 	{
@@ -140,3 +140,34 @@ export const categories: Category[] = [
 		],
 	},
 ];
+
+const popCatImages = [
+	"https://ic.carid.com/icons/wheels-and-rims_ic_5.jpg",
+	"https://ic.carid.com/icons/headlights_ic_5.jpg",
+	"https://ic.carid.com/icons/tires_ic_5.jpg",
+	"https://ic.carid.com/icons/exhaust-systems_ic_5.jpg",
+	"https://ic.carid.com/icons/running-boards_ic_5.jpg",
+	"https://ic.carid.com/icons/suspension-systems_ic_5.jpg",
+	"https://ic.carid.com/icons/custom-floor-mats_ic_5.jpg",
+	"https://ic.carid.com/icons/brakes_ic_5.jpg",
+	"https://ic.carid.com/icons/seat-covers_ic_5.jpg",
+	"https://ic.carid.com/icons/bed-accessories_ic_5.jpg",
+]
+
+const popCatNames = [
+	{ name: "Колёса и диски", value: "wheels-and-rims" },
+	{ name: "Фары", value: "headlights" },
+	{ name: "Шины", value: "tires" },
+	{ name: "Системы выхлопа", value: "exhaust-systems" },
+	{ name: "Пороги", value: "running-boards" },
+	{ name: "Системы подвески", value: "suspension-systems" },
+	{ name: "Индивидуальные коврики", value: "custom-floor-mats" },
+	{ name: "Тормоза", value: "brakes" },
+	{ name: "Чехлы для сидений", value: "seat-covers" },
+	{ name: "Аксессуары для кузова", value: "bed-accessories" },
+];
+
+export const popularCategories: PopularCategories[] = popCatNames.map((cat, index) => ({
+	...cat,
+	image: popCatImages[index],
+}));

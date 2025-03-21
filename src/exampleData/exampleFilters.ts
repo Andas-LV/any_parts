@@ -7,6 +7,20 @@ export const exampleBrands = [
 	{ value: "HONDA", label: "HONDA" },
 	{ value: "KIA", label: "KIA" },
 	{ value: "Lexus", label: "Lexus" },
+	{ value: "MERCEDES-BENZ", label: "MERCEDES-BENZ" },
+	{ value: "FORD", label: "FORD" },
+	{ value: "CHEVROLET", label: "CHEVROLET" },
+	{ value: "NISSAN", label: "NISSAN" },
+	{ value: "MAZDA", label: "MAZDA" },
+	{ value: "HYUNDAI", label: "HYUNDAI" },
+	{ value: "TESLA", label: "TESLA" },
+	{ value: "VOLKSWAGEN", label: "VOLKSWAGEN" },
+	{ value: "VOLVO", label: "VOLVO" },
+	{ value: "FERRARI", label: "FERRARI" },
+	{ value: "PORSCHE", label: "PORSCHE" },
+	{ value: "MITSUBISHI", label: "MITSUBISHI" },
+	{ value: "SUBARU", label: "SUBARU" },
+	{ value: "RENAULT", label: "RENAULT" },
 ];
 
 export const exampleFilterTypes = [

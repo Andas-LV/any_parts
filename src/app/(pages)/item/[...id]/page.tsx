@@ -6,11 +6,11 @@ import HeaderWrapper from "@/layouts/HeaderProvider";
 import ItemHeader from "./pageHeader/index";
 import MainContent from "./mainContent";
 import Details from "./details";
-import RecommendedCarousel from "@/widgets/Items/(Carousel)/Recommended";
-import PurchasedCarousel from "@/widgets/Items/(Carousel)/Purchased";
+import RecommendedCarousel from "../../../../components/sliders/Recommended";
+import PurchasedCarousel from "../../../../components/sliders/Purchased";
 import { Comments } from "@/app/(pages)/item/[...id]/feedbacks";
 import { useItemsStore } from "@/entities/items/useItemsStore";
-import ItemStickyHeader from "@/app/(pages)/item/[...id]/ItemStickyHeader/ItemHeader";
+import ItemStickyHeader from "@components/headers/ItemStickyHeader/ItemHeader";
 import { useStickyHeader } from "@/hooks/useStickyHeader"; // Импортируем хук
 
 export default function ItemPage({

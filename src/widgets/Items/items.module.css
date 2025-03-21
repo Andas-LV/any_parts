@@ -1,6 +1,6 @@
 .tabsContainer {
 	position: relative;
-	margin: 30px 0;
+	margin-bottom: 2rem;
 	width: 100%;
 }
 
@@ -13,24 +13,20 @@
 	width: 100%;
 }
 
-.tabsContent {
-	padding-top: var(--tabs-height);
-}
-
 .tabsList {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 	gap: 20px;
 	background-color: transparent !important;
-	padding: 2rem 0;
+	padding: 1rem 0 2rem;
 }
 
 /*TRIGGER*/
 .tabsTrigger {
 	padding: 12px 0;
 	height: auto;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
 	color: #6b7280;
 	background-color: transparent !important;

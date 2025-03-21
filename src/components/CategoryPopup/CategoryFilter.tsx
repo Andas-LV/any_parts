@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@components/ui/button";
 import { categories } from "@/exampleData/exampleCategories";
 import { Category } from "@/types/Category";
+import useBodyOverflow from "@/hooks/useBodyOverflow"
 import styles from "./CategoryFilter.module.css";
 import { Icons } from "@/assets/svg";
 
@@ -14,17 +15,7 @@ export default function CategoryFilter() {
 	);
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 
-	useEffect(() => {
-		if (isOpen) {
-			document.body.style.overflow = "hidden";
-		} else {
-			document.body.style.overflow = "";
-		}
-
-		return () => {
-			document.body.style.overflow = "";
-		};
-	}, [isOpen]);
+	useBodyOverflow(isOpen);
 
 	return (
 		<div className={styles.container}>

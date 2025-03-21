@@ -36,7 +36,7 @@ export default function ChartModal({ onClose }: ChartModalProps) {
 						data={values}
 						color={"var(--brand-primary)"}
 						height={100}
-						dot={true}
+						dot={false}
 						tooltip={true}
 					/>
 				</div>

@@ -46,9 +46,7 @@ export default function Chart({
 	tooltip = false,
 	fullChart = false,
 }: ChartProps) {
-	const areaDot = !!dot;
-	const areaActiveDot = dot ? undefined : { r: 3, fill: "white" };
-
+	const areaActiveDot = dot ? undefined : { r: 5, fill: color};
 	return (
 		<ResponsiveContainer height={height} className={styles.Container}>
 			<AreaChart data={data}>
@@ -89,7 +87,7 @@ export default function Chart({
 					/>
 				)}
 
-				{tooltip && <Tooltip content={<CustomTooltip />} />}
+				{tooltip && <Tooltip content={<CustomTooltip />}/>}
 
 				<Area
 					className={styles.chartArea}
@@ -98,7 +96,7 @@ export default function Chart({
 					stroke={color}
 					fill="url(#myGradient)"
 					strokeWidth={3}
-					dot={areaDot}
+					dot={dot}
 					animationDuration={1000}
 					activeDot={areaActiveDot}
 				/>

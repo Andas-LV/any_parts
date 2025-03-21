@@ -2,8 +2,8 @@
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import styles from "./comments.module.css";
-import { ShowComments } from "@/app/(pages)/item/[...id]/feedbacks/showComments";
-import { AskQuestion } from "@/app/(pages)/item/[...id]/feedbacks/askQuestion";
+import { ShowComments } from "./(Tabs)/showComments";
+import { AskQuestion } from "./(Tabs)/askQuestion";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 import React from "react";
 import Loading from "@components/Loading";

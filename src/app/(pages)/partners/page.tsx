@@ -1,6 +1,6 @@
 "use client";
 
-import PartnersHeader from "@components/PartnersHeader/PartnersHeader";
+import PartnersHeader from "@components/headers/PartnersHeader/PartnersHeader";
 import styles from "./partnerPage.module.css";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
 import CreateItem from "@/app/(pages)/partners/(Tabs)/CreateItem/CreateItem";

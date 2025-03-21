@@ -82,7 +82,7 @@ export default function MarketStatistics() {
 					data={values}
 					color={"var(--brand-primary)"}
 					height={350}
-					dot={true}
+					dot={false}
 					tooltip={true}
 					fullChart={true}
 				/>

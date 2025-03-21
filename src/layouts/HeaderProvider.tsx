@@ -1,4 +1,4 @@
-import Header from "@components/Header";
+import Header from "@components/headers/CustomerHeader";
 import React from "react";
 
 interface HeaderWrapperProps {

@@ -5,7 +5,6 @@ import Menu from "./menu";
 import { usePaymentStore } from "@/entities/payment/usePaymentStore";
 import { groupTransactionsByDate } from "@components/transActions/groupTransactionsByDate";
 import { TransactionGroup } from "@components/transActions/TransActionsGroup/TransActionsGroup";
-import Loading from "@components/Loading";
 
 export default function Purse() {
 	const { transActions } = usePaymentStore();

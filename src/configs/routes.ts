@@ -1,4 +1,4 @@
-import { ISearchParams } from "@components/Header/MainHeader/Search/Search";
+import { ISearchParams } from "@components/headers/CustomerHeader/MainHeader/Search/Search";
 
 export const routes = {
 	home: () => "/",
@@ -10,12 +10,4 @@ export const routes = {
 	itemPage: (id: number) => `/item/${id}`,
 	searchedPage: ({ value, name }: ISearchParams) =>
 		`/search/${value}/?name=${name}`,
-};
-
-const slugify = (text: string): string => {
-	return text
-		.toLowerCase()
-		.trim()
-		.replace(/\s+/g, "-")
-		.replace(/[^\p{L}\p{N}\-]+/gu, ""); // \p{L} – все буквы, \p{N} – цифры
 };

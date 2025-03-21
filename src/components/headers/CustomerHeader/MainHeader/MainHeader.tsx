@@ -6,7 +6,7 @@ import Link from "next/link";
 import Search from "./Search/Search";
 import styles from "./mainHeader.module.css";
 import LoginModal from "@/widgets/modals/auth/login";
-import CategoryFilter from "@components/Category/CategoryFilter";
+import CategoryFilter from "@components/CategoryPopup/CategoryFilter";
 import { useAuthStore } from "@/entities/auth/useAuthStore";
 import { Icons } from "@/assets/svg";
 import { useUserStore } from "@/entities/user/useUserStore";

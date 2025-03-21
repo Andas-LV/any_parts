@@ -1,7 +1,7 @@
 .container {
 	display: flex;
 	align-items: center;
-	gap: 15px;
+	gap: 0.5rem;
 	overflow-x: auto;
 	white-space: nowrap;
 	padding: 10px 0;
@@ -25,17 +25,11 @@
 		color 0.2s ease-in-out;
 }
 
-.item img {
-	width: 20px;
-	height: 20px;
+.item:hover {
+	background-color: var(--brand-gray);
 }
 
 .text {
 	display: inline-block;
 	transition: transform 0.4s ease-in-out;
-}
-
-.active {
-	background-color: #e5e7eb;
-	border-radius: 5px;
 }
