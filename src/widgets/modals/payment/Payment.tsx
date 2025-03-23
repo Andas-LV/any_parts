@@ -6,6 +6,7 @@ import { Icons } from "@/assets/svg";
 import Image from "next/image";
 import PaymentCard from "../../../components/cards/PaymentCards";
 import ModalsLayout from "@/layouts/modalLayout/layout";
+import React from "react";
 
 const Payment = ({
 	onClose,
@@ -22,13 +23,7 @@ const Payment = ({
 
 			<button className={styles.navItem} onClick={onCreate}>
 				<div className={styles.navHeader}>
-					<Image
-						className={styles.navImage}
-						src={"/profile/CreditCard.png"}
-						alt="navImage"
-						fill
-						sizes={"20px"}
-					/>
+					<Icons.CreditCard width={20} height={20} />
 					<p>Привязать карту</p>
 				</div>
 				<Icons.ArrowRight />
@@ -36,13 +31,7 @@ const Payment = ({
 
 			<button className={styles.navItem}>
 				<div className={styles.navHeader}>
-					<Image
-						className={styles.navImage}
-						src={"/profile/CreditCard.png"}
-						alt="navImage"
-						fill
-						sizes={"20px"}
-					/>
+					<Icons.CreditCard width={20} height={20} />
 					<p>Привязать счёт (к примеру СБП)</p>
 				</div>
 				<Icons.ArrowRight />

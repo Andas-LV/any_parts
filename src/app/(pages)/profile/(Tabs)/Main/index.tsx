@@ -2,13 +2,13 @@
 
 import styles from "./page.module.css";
 import Menu from "./menu";
-import Image from "next/image";
 import React, { useState } from "react";
 import ApCreateModal from "@/widgets/modals/apWallet/apCreateModal";
 import { useUserStore } from "@/entities/user/useUserStore";
 import AfterCreate from "@/widgets/modals/apWallet/afterCreateWallet/afterCreate";
 import InstructionModal from "@/widgets/modals/apWallet/instruction/instructionModal";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { Icons } from "@/assets/svg";
 
 export type TModal =
 	| "createWallet"
@@ -20,6 +20,8 @@ export default function Main() {
 	const { user } = useUserStore();
 
 	const [activeModal, setActiveModal] = useState<TModal>(null);
+
+	const itemsAmount = 0
 
 	return (
 		<div className={styles.wrapper}>
@@ -34,13 +36,7 @@ export default function Main() {
 
 					{user?.apWallet ? (
 						<button className={styles.createWalletButton}>
-							<Image
-								className={styles.walletImg}
-								src={"/profile/APwallet.png"}
-								alt={"wallet"}
-								fill
-								sizes={"20px"}
-							/>
+							<Icons.Wallet />
 
 							<p>Пополнить</p>
 						</button>
@@ -49,13 +45,7 @@ export default function Main() {
 							className={styles.createWalletButton}
 							onClick={() => setActiveModal("createWallet")}
 						>
-							<Image
-								className={styles.walletImg}
-								src={"/profile/APwallet.png"}
-								alt={"wallet"}
-								fill
-								sizes={"20px"}
-							/>
+							<Icons.Wallet />
 
 							<p>Открыть AP Кошелёк</p>
 						</button>
@@ -65,17 +55,11 @@ export default function Main() {
 				<div className={styles.actionCard}>
 					<div className={styles.itemName}>
 						<h2>Избранное</h2>
-						<p>0 товаров</p>
+						<p>{itemsAmount} товаров</p>
 					</div>
 
 					<button className={styles.favoriteButton}>
-						<Image
-							className={styles.likedImg}
-							src={"/profile/liked.png"}
-							alt={"liked"}
-							fill
-							sizes={"30px"}
-						/>
+						<Icons.HeartFilled width={20} height={20} />
 					</button>
 				</div>
 
@@ -86,13 +70,7 @@ export default function Main() {
 					</div>
 
 					<button className={styles.bagButton}>
-						<Image
-							className={styles.bagImg}
-							src={"/profile/Bag.png"}
-							alt={"bag"}
-							fill
-							sizes={"30px"}
-						/>
+						<Icons.Bag width={30} height={30} />
 					</button>
 				</div>
 			</div>

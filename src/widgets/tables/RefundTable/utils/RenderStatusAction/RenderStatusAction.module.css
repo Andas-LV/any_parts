@@ -1,0 +1,40 @@
+.commentButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    cursor: pointer;
+    padding-bottom: 5px;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.commentButton:hover {
+    color: #374151;
+}
+
+.commentContent {
+    max-width: 300px;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.commentContent pre {
+    white-space: pre-wrap;
+}
+
+.deleteButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: #000000;
+    }
+}

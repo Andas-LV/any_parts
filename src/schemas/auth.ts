@@ -15,5 +15,5 @@ export const confirmEmail = z.object({
 export const editSchema = z.object({
 	username: z.string().min(1, "Имя пользователя обязательно "),
 	phone: z.string().regex(/^\+7\d{10}$/, "Номер должен содержать 11 цифр"),
-	male: z.enum(["Male", "Female"]),
+	male: z.enum(["Male", "Female"]).optional(),
 });

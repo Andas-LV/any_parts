@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import styles from "./page.module.css";
 import { useUserStore } from "@/entities/user/useUserStore";
 import React, { useState } from "react";
@@ -13,7 +12,7 @@ import DeleteCard from "@/widgets/modals/payment/delete/DeleteCard";
 import CreateReq from "@/widgets/modals/requisites/create/CreateReq";
 import ConfirmReqCodeModal from "@/widgets/modals/requisites/create/confirm";
 import LogOutModal from "@/widgets/modals/auth/logout/LogOut";
-import EditModal from "@/widgets/modals/auth/edit/Edit";
+import EditModal from "@/widgets/modals/account/edit/Edit";
 import { Icons } from "@/assets/svg";
 
 export type TPaymentModal =
@@ -55,13 +54,7 @@ export default function Menu() {
 					className={styles.navItem}
 					onClick={() => setActivePaymentModal("paymentModal")}
 				>
-					<Image
-						className={styles.navImage}
-						src={"/profile/CreditCard.png"}
-						alt="navImage"
-						fill
-						sizes={"20px"}
-					/>
+					<Icons.CreditCard width={20} height={20} />
 
 					<p>Способы оплаты</p>
 				</button>
@@ -69,13 +62,7 @@ export default function Menu() {
 					className={styles.navItem}
 					onClick={() => setActiveReqModal("reqModal")}
 				>
-					<Image
-						className={styles.navImage}
-						src={"/profile/FileText.png"}
-						alt="navImage"
-						fill
-						sizes={"20px"}
-					/>
+					<Icons.TextFile width={20} height={20} color={"black"} />
 
 					<p>Реквизиты</p>
 				</button>
@@ -85,13 +72,7 @@ export default function Menu() {
 					className={styles.navItem}
 					onClick={() => setIsSettingsOpen(true)}
 				>
-					<Image
-						className={styles.navImage}
-						src={"/profile/Settings.png"}
-						alt="navImage"
-						fill
-						sizes={"20px"}
-					/>
+					<Icons.Settings width={20} height={20} />
 
 					<p>Настройки</p>
 				</button>
@@ -99,13 +80,7 @@ export default function Menu() {
 					className={styles.navItem}
 					onClick={() => setIsDevicesOpen(true)}
 				>
-					<Image
-						className={styles.navImage}
-						src={"/profile/Devices.png"}
-						alt="navImage"
-						fill
-						sizes={"20px"}
-					/>
+					<Icons.Devices width={20} height={20} />
 
 					<p>Ваши устройства</p>
 				</button>
@@ -113,13 +88,7 @@ export default function Menu() {
 					className={styles.navItem}
 					onClick={() => setIsLogOutOpen(true)}
 				>
-					<Image
-						className={styles.navImage}
-						src={"/profile/SignOut.png"}
-						alt="navImage"
-						fill
-						sizes={"20px"}
-					/>
+					<Icons.Logout width={20} height={20} />
 
 					<p>Выйти</p>
 				</button>

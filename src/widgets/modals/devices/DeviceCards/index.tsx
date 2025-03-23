@@ -2,13 +2,13 @@ import { Icons } from "@/assets/svg";
 import styles from "./deviceCard.module.css";
 import { useSessionsStore } from "@/entities/sessions/useSessionsStore";
 
-export default function DeviceCard() {
+export default function DeviceCards() {
 	const { sessions, deleteSession } = useSessionsStore();
 
 	if (!sessions || sessions.length === 0) return null;
 
 	return (
-		<div className={styles.cardsWrapper}>
+		<div  className={styles.cardsWrapper}>
 			{sessions.map((session) => (
 				<div
 					key={session.id}

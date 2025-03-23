@@ -27,6 +27,7 @@
 }
 
 .createWalletButton {
+	width: fit-content;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -36,6 +37,7 @@
 	color: white;
 	border-radius: 15px;
 }
+
 .createWalletButton p {
 	color: white;
 	font-weight: bold;
@@ -49,17 +51,4 @@
 
 .itemName h2 {
 	font-weight: bold;
-}
-
-.walletImg {
-	position: relative !important;
-	width: 20px !important;
-	height: auto !important;
-}
-
-.likedImg,
-.bagImg {
-	position: relative !important;
-	width: 30px !important;
-	height: auto !important;
 }

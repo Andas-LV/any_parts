@@ -4,6 +4,7 @@ export const routes = {
 	home: () => "/",
 	partners: () => `/partners`,
 	partnersAuth: () => `/partners/auth`,
+	partnersSettings: () => `/partners/settings`,
 	basket: () => `/basket`,
 	order: () => `/order`,
 	profile: () => `/profile`,

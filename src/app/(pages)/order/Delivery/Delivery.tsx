@@ -7,7 +7,7 @@ import { Button } from "@components/ui/button";
 import React, { useState } from "react";
 import { useOrdersStore } from "@/entities/orders/useOrdersStore";
 import { HOLDING_DAYS } from "@/constants/item";
-import EditModal from "@/widgets/modals/auth/edit/Edit";
+import EditModal from "@/widgets/modals/account/edit/Edit";
 
 export default function Delivery() {
 	const { user } = useUserStore();

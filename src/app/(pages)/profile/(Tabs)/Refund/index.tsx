@@ -3,32 +3,14 @@ import styles from "./page.module.css";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 import { Button } from "@components/ui/button";
 import React, { useEffect, useMemo, useState } from "react";
-import {
-	Table,
-	TableBody,
-	TableCell,
-	TableHead,
-	TableHeader,
-	TableRow,
-} from "@/components/ui/table";
-
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
 import { Icons } from "@/assets/svg";
-import { RefundItem, TRefundStatus } from "@/types/Refund";
-import DeleteRefund from "@/widgets/modals/refund/deleteRefund/DeleteRefund";
 import CreateRefund from "@/widgets/modals/refund/create/CreateRefund";
 import RefundFullInfo from "@/widgets/modals/refund/create/refundFullInfo";
 import RequestSended from "@/widgets/modals/requestSended/requestSended";
-import { getRefundStatusStyle } from "./getRefundStatusStyle";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import SearchBar from "@components/SearchBar/SearchBar";
+import RefundTable from "@/widgets/tables/RefundTable/RefundTable";
 
 type TModal = "itemChooseModal" | "itemFullInfoModal" | "onSuccessModal" | null;
 
@@ -37,7 +19,6 @@ export default function Refund() {
 	const { user } = useUserStore();
 	const [search, setSearch] = useState("");
 	const [activeModal, setActiveModal] = useState<TModal>(null);
-	const [showDeleteRefund, setShowDeleteRefund] = useState(false);
 	const currencySymbol = useCurrencySymbol(user ? user.currency : "KZT");
 
 	useEffect(() => {
@@ -53,38 +34,6 @@ export default function Refund() {
 			) || []
 		);
 	}, [search, refunds]);
-
-	const renderStatusAction = (item: RefundItem) => {
-		const { id, status, comment } = item;
-
-		if (status === "На рассмотрении") {
-			return (
-				<div>
-					{showDeleteRefund && (
-						<DeleteRefund
-							itemId={id}
-							onClose={() => setShowDeleteRefund(false)}
-						/>
-					)}
-					<Icons.BlackClose
-						className={styles.deleteButton}
-						onClick={() => setShowDeleteRefund(true)}
-					/>
-				</div>
-			);
-		}
-
-		return (
-			<DropdownMenu>
-				<DropdownMenuTrigger className={styles.commentButton}>
-					Комментарии
-				</DropdownMenuTrigger>
-				<DropdownMenuContent className={styles.commentContent}>
-					<DropdownMenuItem>{comment}</DropdownMenuItem>
-				</DropdownMenuContent>
-			</DropdownMenu>
-		);
-	};
 
 	return (
 		<div className={styles.wrapper}>
@@ -118,45 +67,10 @@ export default function Refund() {
 
 				<div className={styles.tableWrapper}>
 					{refunds && refunds.length > 0 && (
-						<Table className={styles.table}>
-							<TableHeader className={styles.tableHeader}>
-								<TableRow className={styles.tableRow}>
-									<TableHead className={styles.tableHead}>
-										№ претензии
-									</TableHead>
-									<TableHead className={styles.tableHead}>Дата</TableHead>
-									<TableHead className={styles.tableHead}>
-										Цена {currencySymbol}
-									</TableHead>
-									<TableHead className={styles.tableHead}>Статус</TableHead>
-								</TableRow>
-							</TableHeader>
-							<TableBody>
-								{filteredItems.map((item) => (
-									<TableRow key={item.id} className={styles.tableRow}>
-										<TableCell className={styles.tableCell}>
-											{item.id}
-										</TableCell>
-										<TableCell className={styles.tableCell}>
-											{item.createdAt.toLocaleDateString()}
-										</TableCell>
-										<TableCell className={styles.tableCell}>
-											{item.price.toLocaleString("ru-RU")}
-										</TableCell>
-										<TableCell className={styles.tableCell}>
-											<span
-												className={getRefundStatusStyle(
-													item.status as TRefundStatus,
-												)}
-											>
-												{item.status}
-											</span>
-											{renderStatusAction(item)}
-										</TableCell>
-									</TableRow>
-								))}
-							</TableBody>
-						</Table>
+						<RefundTable
+							items={filteredItems}
+							currencySymbol={currencySymbol}
+						/>
 					)}
 				</div>
 

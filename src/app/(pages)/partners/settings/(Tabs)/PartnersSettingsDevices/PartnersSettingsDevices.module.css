@@ -1,0 +1,75 @@
+.PartnersSettingsDevices{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.PartnersSettingsDevices p{
+    font-weight: 500;
+}
+
+.cardsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 500px;
+    height: 100%;
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    position: relative;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+.info strong {
+    font-weight: bold;
+}
+
+.active {
+    background-color: #f3f7fe;
+}
+
+.inactive {
+    background-color: #f5f5f5;
+}
+
+.sessionTime {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #888;
+}
+
+.sessionTime p {
+    color: #0fb36f;
+    font-weight: bold;
+}
+
+.deleteButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    fill: #333;
+    cursor: pointer;
+    padding: 5px;
+    transition: opacity 0.2s;
+}
+
+.deleteButton:hover {
+    opacity: 0.7;
+}

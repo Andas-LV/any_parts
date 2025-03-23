@@ -3,11 +3,21 @@
 import React, { useState } from "react";
 import styles from "./PartnersHeader.module.css";
 import { Icons } from "@/assets/svg";
-
-interface PartnersHeaderProps {}
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from "@components/ui/dropdown-menu";
+import { routes } from "@/configs/routes";
+import { useRouter } from "next/navigation";
+import LogOutModal from "@/widgets/modals/auth/logout/LogOut";
 
 export default function PartnersHeader() {
-	const [isOpen, setIsOpen] = useState(false);
+	const router = useRouter();
+
+	const [isMarketsList, setMarketsLists] = useState(false);
+	const [isLogOutOpen, setIsLogOutOpen] = useState(false);
 
 	return (
 		<div className={styles.PartnersHeader}>
@@ -18,19 +28,35 @@ export default function PartnersHeader() {
 			</div>
 
 			<div className={styles.navs}>
-				<nav onClick={() => setIsOpen(!isOpen)}>
+				<nav onClick={() => setMarketsLists(!isMarketsList)}>
 					Название магазина
 					<Icons.ArrowDown
-						className={`${styles.arrowIcon} ${isOpen ? styles.rotated : ""}`}
+						className={`${styles.arrowIcon} ${isMarketsList ? styles.rotated : ""}`}
 					/>
 				</nav>
 				<nav>
-					<Icons.User width={30} height={30} />
+					<DropdownMenu>
+						<DropdownMenuTrigger>
+							<Icons.User width={30} height={30} />
+						</DropdownMenuTrigger>
+						<DropdownMenuContent>
+							<DropdownMenuItem onClick={() => router.push(routes.partnersSettings())}>
+								<Icons.Settings width={20} height={20} />
+								Настройки
+							</DropdownMenuItem>
+							<DropdownMenuItem onClick={() => setIsLogOutOpen(true)}>
+								<Icons.Logout width={20} height={20} />
+								Выход
+							</DropdownMenuItem>
+						</DropdownMenuContent>
+					</DropdownMenu>
 				</nav>
 				<nav>
 					<Icons.ChatDots width={30} height={30} />
 				</nav>
 			</div>
+
+			{isLogOutOpen && <LogOutModal onClose={() => setIsLogOutOpen(false)} />}
 		</div>
 	);
 }

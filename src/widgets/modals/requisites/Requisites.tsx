@@ -22,13 +22,7 @@ const Requisites = ({
 
 			<button className={styles.navItem} onClick={onCreate}>
 				<div className={styles.navHeader}>
-					<Image
-						className={styles.navImage}
-						src={"/profile/FileText.png"}
-						alt="navImage"
-						fill
-						sizes={"20px"}
-					/>
+					<Icons.TextFile width={20} height={20} color={"black"} />
 					<p>Добавить реквизиты</p>
 				</div>
 				<Icons.ArrowRight />

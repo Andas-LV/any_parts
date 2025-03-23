@@ -1,3 +1,6 @@
+import { z } from "zod";
+import { editSchema } from "@/schemas/auth";
+
 export type User = {
 	id: number;
 	email: string;
@@ -10,6 +13,8 @@ export type User = {
 	role: Roles;
 	moderated?: boolean;
 };
+
+export type TEditSchema = z.infer<typeof editSchema>;
 
 export type MaleChoice = "Male" | "Female";
 
