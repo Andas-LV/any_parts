@@ -31,7 +31,7 @@
 	border-left: 1px solid var(--skeleton);
 }
 
-.stepWrapper > div {
+.stepWrapper div {
 	height: 100%;
 }
 /*CUSTOM STYLES*/

@@ -67,7 +67,6 @@ export default function SignUpPartner() {
 				<StepWizard
 					onStepChange={onStepChange}
 					transitions={transitions}
-					isLazyMount
 				>
 					<GeneralData />
 					<RegisterAddress />

@@ -35,7 +35,7 @@ export default function PartnersSettingsAccount() {
 	};
 
 	const onSubmitName = async(data: TEditSchema) => {
-		await updateUser({ username: data.username, phone: data.phone });
+		await updateUser({ username: data.username});
 		setIsUsernameDisabled(true);
 	};
 
@@ -46,7 +46,6 @@ export default function PartnersSettingsAccount() {
 
 	return (
 		<div className={styles.PartnersSettingsAccount}>
-			{/* ID - всегда disabled */}
 			<div className={styles.inputGroup}>
 				<label htmlFor="userId" className={styles.label}>
 					Any Parts ID

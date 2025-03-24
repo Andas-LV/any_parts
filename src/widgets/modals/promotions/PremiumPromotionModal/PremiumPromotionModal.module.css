@@ -16,10 +16,7 @@
 	align-items: center;
 	gap: 20px;
 }
-.error {
-	color: var(--error);
-	font-size: 14px;
-}
+
 .cancelBtn {
 	flex: 1;
 	padding: 25px 0;

@@ -9,4 +9,14 @@ export type Company = {
 	organizationType: organizationValueType;
 };
 
+export type TreatmentType = {
+	treatmentName: string;
+	marketName: string;
+	treatmentDate: string;
+	companyAccount: number;
+	bankBIC: string;
+	bankName: string;
+	bankAddress: string;
+}
+
 export type AddCompany = z.infer<typeof registerCompanySchema>;

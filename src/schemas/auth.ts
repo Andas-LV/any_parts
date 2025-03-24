@@ -17,3 +17,8 @@ export const editSchema = z.object({
 	phone: z.string().regex(/^\+7\d{10}$/, "Номер должен содержать 11 цифр"),
 	male: z.enum(["Male", "Female"]).optional(),
 });
+
+export const notificationEditSchema = z.object({
+	email: z.string().email("Введите корректный email"),
+	phone: z.string().regex(/^\+7\d{10}$/, "Номер должен содержать 11 цифр"),
+})

@@ -1,0 +1,27 @@
+.TreatmentCancellationModal {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	max-width: 500px;
+}
+
+.TreatmentCancellationModal p {
+    line-height: 1.3;
+	font-weight: 500;
+}
+
+.actionButtons {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+
+.actionButton{
+    flex: 1;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 25px 0;
+    border-radius: 0.8rem;
+}

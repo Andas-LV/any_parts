@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { editSchema } from "@/schemas/auth";
+import { editSchema, notificationEditSchema } from "@/schemas/auth";
 
 export type User = {
 	id: number;
@@ -15,6 +15,8 @@ export type User = {
 };
 
 export type TEditSchema = z.infer<typeof editSchema>;
+
+export type TNotificationEditSchema = z.infer<typeof notificationEditSchema>;
 
 export type MaleChoice = "Male" | "Female";
 
