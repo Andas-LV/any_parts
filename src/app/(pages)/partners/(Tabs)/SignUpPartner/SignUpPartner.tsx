@@ -31,7 +31,7 @@ export default function SignUpPartner() {
 		<div className={styles.SignUpPartner}>
 			<div className={styles.stepperBar}>
 				<h3>Добро пожаловать в Any Parts Partners</h3>
-				<Box sx={{ width: "100%", my: 3 }}>
+				<Box sx={{ width: "100%", my: 3, height: "100%" }}>
 					<Stepper
 						orientation="vertical"
 						activeStep={currentStep}
@@ -67,6 +67,7 @@ export default function SignUpPartner() {
 				<StepWizard
 					onStepChange={onStepChange}
 					transitions={transitions}
+					className={styles.myWizard}
 				>
 					<GeneralData />
 					<RegisterAddress />

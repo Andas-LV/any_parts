@@ -10,9 +10,9 @@ export default function Home() {
 	return (
 		<HeaderProvider>
 			<div className="flex flex-col gap-8 px-28">
-				<BrandsSlider/>
+				<BrandsSlider />
 				<Banner />
-				<PopularCategoriesSlider/>
+				<PopularCategoriesSlider />
 				<Items />
 			</div>
 		</HeaderProvider>

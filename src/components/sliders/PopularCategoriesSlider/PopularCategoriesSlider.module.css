@@ -1,35 +1,35 @@
 .PopularCategoriesSlider {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-    background-color: transparent;
-    margin: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 2rem;
+	background-color: transparent;
+	margin: 1rem 0;
 }
 
-.PopularCategoriesSlider h2{
-    font-size: 1.5rem;
-    font-weight: bold;
+.PopularCategoriesSlider h2 {
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
-.categoryItem{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    flex: none;
-    font-weight: bold;
-    border-radius: 1rem;
-    border: 1px solid lightgray;
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+.categoryItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	flex: none;
+	font-weight: bold;
+	border-radius: 1rem;
+	border: 1px solid lightgray;
+	padding: 1rem;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
 }
 
-.categoryItem:hover{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.categoryItem:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .image {
-    background: none !important;
+	background: none !important;
 }

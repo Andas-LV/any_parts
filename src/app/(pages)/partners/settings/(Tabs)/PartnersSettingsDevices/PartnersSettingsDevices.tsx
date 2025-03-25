@@ -5,7 +5,13 @@ import { Icons } from "@/assets/svg";
 import { Button } from "@components/ui/button";
 
 export default function PartnersSettingsDevices() {
-	const { sessions, currentSession, deleteOtherSessions, deleteSession, isLoading } = useSessionsStore();
+	const {
+		sessions,
+		currentSession,
+		deleteOtherSessions,
+		deleteSession,
+		isLoading,
+	} = useSessionsStore();
 
 	if (!sessions || sessions.length === 0) return null;
 
@@ -28,16 +34,16 @@ export default function PartnersSettingsDevices() {
 							<div className={styles.info}>
 								<strong>{session.device}</strong>
 								<span>
-                  {session.browser} • {session.ip}
-                </span>
+									{session.browser} • {session.ip}
+								</span>
 								{session.isCurrent ? (
 									<span className={styles.sessionTime}>
-                    <p>Текущий сеанс</p> • {session.location}
-                  </span>
+										<p>Текущий сеанс</p> • {session.location}
+									</span>
 								) : (
 									<span className={styles.sessionTime}>
-                    {session.timestamp} • {session.location}
-                  </span>
+										{session.timestamp} • {session.location}
+									</span>
 								)}
 							</div>
 

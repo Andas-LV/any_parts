@@ -17,6 +17,6 @@ export type TreatmentType = {
 	bankBIC: string;
 	bankName: string;
 	bankAddress: string;
-}
+};
 
 export type AddCompany = z.infer<typeof registerCompanySchema>;

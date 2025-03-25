@@ -21,7 +21,7 @@ export default function Main() {
 
 	const [activeModal, setActiveModal] = useState<TModal>(null);
 
-	const itemsAmount = 0
+	const itemsAmount = 0;
 
 	return (
 		<div className={styles.wrapper}>

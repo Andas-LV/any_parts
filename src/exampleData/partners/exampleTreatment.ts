@@ -7,5 +7,5 @@ export const exampleTreatment: TreatmentType = {
 	companyAccount: 643189012836,
 	bankBIC: "044578321",
 	bankName: "BANK",
-	bankAddress: "Address"
-}
+	bankAddress: "Address",
+};

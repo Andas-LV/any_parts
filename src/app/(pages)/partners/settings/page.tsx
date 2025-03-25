@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
 import styles from "./settings.module.css";
@@ -17,8 +17,10 @@ export default function PartnersSettings() {
 	return (
 		<div className={styles.wrapper}>
 			<h1 className={styles.header}>
-				<ChevronLeft className="h-6 w-6 cursor-pointer" onClick={() => router.back()} />
-
+				<ChevronLeft
+					className="h-6 w-6 cursor-pointer"
+					onClick={() => router.back()}
+				/>
 				Профиль
 			</h1>
 

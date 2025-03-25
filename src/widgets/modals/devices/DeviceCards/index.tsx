@@ -8,7 +8,7 @@ export default function DeviceCards() {
 	if (!sessions || sessions.length === 0) return null;
 
 	return (
-		<div  className={styles.cardsWrapper}>
+		<div className={styles.cardsWrapper}>
 			{sessions.map((session) => (
 				<div
 					key={session.id}

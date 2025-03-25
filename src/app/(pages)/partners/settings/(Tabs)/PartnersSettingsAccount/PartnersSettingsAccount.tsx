@@ -34,12 +34,12 @@ export default function PartnersSettingsAccount() {
 		console.log("Ошибки от zod:", formErrors);
 	};
 
-	const onSubmitName = async(data: TEditSchema) => {
-		await updateUser({ username: data.username});
+	const onSubmitName = async (data: TEditSchema) => {
+		await updateUser({ username: data.username });
 		setIsUsernameDisabled(true);
 	};
 
-	const onSubmitPhone = async(data: TEditSchema) => {
+	const onSubmitPhone = async (data: TEditSchema) => {
 		await updateUser({ phone: data.phone });
 		setIsPhoneDisabled(true);
 	};

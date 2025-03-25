@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "@components/ui/button";
 import { categories } from "@/exampleData/exampleCategories";
 import { Category } from "@/types/Category";
-import useBodyOverflow from "@/hooks/useBodyOverflow"
+import useBodyOverflow from "@/hooks/useBodyOverflow";
 import styles from "./CategoryFilter.module.css";
 import { Icons } from "@/assets/svg";
 

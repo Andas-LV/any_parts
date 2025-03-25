@@ -15,15 +15,15 @@ export function AskQuestion() {
 
 	const toggleCheckbox = () => {
 		setAnonymous(!anonymous);
-	}
+	};
 
 	const submit = () => {
 		const form = {
 			question: question,
 			anonymous: anonymous,
-		}
+		};
 		console.log("form:", form);
-	}
+	};
 
 	return (
 		<div className={styles.askQuestionWrapper}>
@@ -34,9 +34,7 @@ export function AskQuestion() {
 			</div>
 
 			<div className={styles.questionForm}>
-				<h2>
-					Задайте вопрос о товаре
-				</h2>
+				<h2>Задайте вопрос о товаре</h2>
 
 				<input
 					value={question}

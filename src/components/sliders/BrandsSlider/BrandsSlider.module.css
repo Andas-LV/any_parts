@@ -1,16 +1,16 @@
 .BrandsSlider {
-    margin-top: 1rem;
+	margin-top: 1rem;
 }
 
-.brandItem{
-    flex: none;
-    background-color: var(--brand-gray);
-    padding: 0.8rem 1rem;
-    border-radius: 1rem;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
+.brandItem {
+	flex: none;
+	background-color: var(--brand-gray);
+	padding: 0.8rem 1rem;
+	border-radius: 1rem;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
 }
-.brandItem:hover{
-    background-color: var(--skeleton);
+.brandItem:hover {
+	background-color: var(--skeleton);
 }

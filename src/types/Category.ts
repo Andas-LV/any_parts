@@ -15,7 +15,7 @@ export type PopularCategories = {
 	value: string;
 	name: string;
 	image: string;
-}
+};
 
 export type CategoryId =
 	| "auto"

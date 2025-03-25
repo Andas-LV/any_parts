@@ -3,10 +3,8 @@
 import PartnersHeader from "@components/headers/PartnersHeader/PartnersHeader";
 import styles from "./partnerPage.module.css";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
-import CreateItem from "@/app/(pages)/partners/(Tabs)/CreateItem/CreateItem";
 import SignUpPartner from "@/app/(pages)/partners/(Tabs)/SignUpPartner/SignUpPartner";
 import { useUserStore } from "@/entities/user/useUserStore";
-import MainPage from "@/app/(pages)/partners/(Tabs)/MainPage/MainPage";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -19,6 +17,16 @@ import { Button } from "@components/ui/button";
 import { useState } from "react";
 import PartnerItemsFeedbacks from "@/app/(pages)/partners/(Tabs)/PartnerItemsFeedbacks/PartnerItemsFeedbacks";
 import PartnerItemsQuestions from "@/app/(pages)/partners/(Tabs)/PartnerItemsQuestions/PartnerItemsQuestions";
+import dynamic from "next/dynamic";
+
+const MainPage = dynamic(
+	() => import("@/app/(pages)/partners/(Tabs)/MainPage/MainPage"),
+	{ ssr: false },
+);
+const CreateItem = dynamic(
+	() => import("@/app/(pages)/partners/(Tabs)/CreateItem/CreateItem"),
+	{ ssr: false },
+);
 
 export type PartnersTabs = "main" | "items" | "progress" | "feedbacks";
 

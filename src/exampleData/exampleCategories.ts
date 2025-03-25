@@ -152,7 +152,7 @@ const popCatImages = [
 	"https://ic.carid.com/icons/brakes_ic_5.jpg",
 	"https://ic.carid.com/icons/seat-covers_ic_5.jpg",
 	"https://ic.carid.com/icons/bed-accessories_ic_5.jpg",
-]
+];
 
 const popCatNames = [
 	{ name: "Колёса и диски", value: "wheels-and-rims" },
@@ -167,7 +167,9 @@ const popCatNames = [
 	{ name: "Аксессуары для кузова", value: "bed-accessories" },
 ];
 
-export const popularCategories: PopularCategories[] = popCatNames.map((cat, index) => ({
-	...cat,
-	image: popCatImages[index],
-}));
+export const popularCategories: PopularCategories[] = popCatNames.map(
+	(cat, index) => ({
+		...cat,
+		image: popCatImages[index],
+	}),
+);

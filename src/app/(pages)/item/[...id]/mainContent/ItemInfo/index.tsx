@@ -97,7 +97,11 @@ export default function ItemInfo({
 				))}
 			</div>
 
-			<Button onClick={scrollToSection} variant="link" className={styles.fullCharsLink}>
+			<Button
+				onClick={scrollToSection}
+				variant="link"
+				className={styles.fullCharsLink}
+			>
 				Все характеристики
 			</Button>
 		</div>

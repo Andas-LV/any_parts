@@ -9,24 +9,27 @@ interface TreatmentCancellationModalProps {
 	onClose: () => void;
 }
 
-export default function TreatmentCancellationModal ({onClose}: TreatmentCancellationModalProps) {
+export default function TreatmentCancellationModal({
+	onClose,
+}: TreatmentCancellationModalProps) {
 	const router = useRouter();
 
 	const cancelTreatment = () => {
-    try{
+		try {
 			// ЗАПРОС РАСТОРЖЕНИЯ
 			onClose();
-			router.push(routes.partnersAuth())
-		} catch(error){
-			console.error(error)
+			router.push(routes.partnersAuth());
+		} catch (error) {
+			console.error(error);
 		}
-	}
+	};
 
 	return (
 		<ModalsLayout title={"Расторжение договора"} onClose={onClose}>
 			<div className={styles.TreatmentCancellationModal}>
 				<p>
-					После расторжения договора ваш магазин будет отключён, а объявления удалены. Этот процесс необратим. Вы уверены?
+					После расторжения договора ваш магазин будет отключён, а объявления
+					удалены. Этот процесс необратим. Вы уверены?
 				</p>
 
 				<div className={styles.actionButtons}>
@@ -38,7 +41,11 @@ export default function TreatmentCancellationModal ({onClose}: TreatmentCancella
 						Отменить действие
 					</Button>
 
-					<Button onClick={cancelTreatment} variant={"destructive"} className={styles.actionButton}>
+					<Button
+						onClick={cancelTreatment}
+						variant={"destructive"}
+						className={styles.actionButton}
+					>
 						Расторгнуть
 					</Button>
 				</div>

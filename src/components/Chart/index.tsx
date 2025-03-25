@@ -46,7 +46,7 @@ export default function Chart({
 	tooltip = false,
 	fullChart = false,
 }: ChartProps) {
-	const areaActiveDot = dot ? undefined : { r: 5, fill: color};
+	const areaActiveDot = dot ? undefined : { r: 5, fill: color };
 	return (
 		<ResponsiveContainer height={height} className={styles.Container}>
 			<AreaChart data={data}>
@@ -87,7 +87,7 @@ export default function Chart({
 					/>
 				)}
 
-				{tooltip && <Tooltip content={<CustomTooltip />}/>}
+				{tooltip && <Tooltip content={<CustomTooltip />} />}
 
 				<Area
 					className={styles.chartArea}

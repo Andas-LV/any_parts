@@ -1,53 +1,53 @@
 .PartnersSettingsNotifications {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    border-radius: 0.5rem;
-    width: fit-content;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	border-radius: 0.5rem;
+	width: fit-content;
 }
 
 /* Обёртка для каждой группы (label + input) */
 .inputGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
 }
 
-.inputGroup h2{
-    font-size: 1.5rem;
-    font-weight: bold;
+.inputGroup h2 {
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
-.inputGroup p{
-    font-size: 1rem;
-    font-weight: 500;
+.inputGroup p {
+	font-size: 1rem;
+	font-weight: 500;
 }
 
 /* Обёртка для поля и кнопки "Изменить/Сохранить" */
 .fieldWithButton {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 /* Стили инпута */
 .input {
-    width: 100%;
-    padding: 0.75rem;
-    background: var(--brand-gray);
-    border-radius: 0.75rem;
-    font-size: 16px;
-    font-weight: 500;
-    border: none;
-    outline: none;
+	width: 100%;
+	padding: 0.75rem;
+	background: var(--brand-gray);
+	border-radius: 0.75rem;
+	font-size: 16px;
+	font-weight: 500;
+	border: none;
+	outline: none;
 }
 
 .errorText {
-    font-size: 14px;
-    margin-top: 0.25rem;
+	font-size: 14px;
+	margin-top: 0.25rem;
 }
 
 .input:disabled {
-    background: #e0e0e0;
-    color: var(--text-secondary);;
+	background: #e0e0e0;
+	color: var(--text-secondary);
 }

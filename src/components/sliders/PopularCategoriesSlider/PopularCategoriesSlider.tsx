@@ -12,7 +12,11 @@ export default function PopularCategoriesSlider() {
 			<ReusableCarousel slidesToScroll={1}>
 				{popularCategories.map((category, i) => (
 					<CarouselItem key={i} className={styles.categoryItem}>
-						<img src={category.image} alt={category.name} className={styles.image}/>
+						<img
+							src={category.image}
+							alt={category.name}
+							className={styles.image}
+						/>
 						{category.name}
 					</CarouselItem>
 				))}

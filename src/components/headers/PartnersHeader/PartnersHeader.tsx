@@ -40,7 +40,9 @@ export default function PartnersHeader() {
 							<Icons.User width={30} height={30} />
 						</DropdownMenuTrigger>
 						<DropdownMenuContent>
-							<DropdownMenuItem onClick={() => router.push(routes.partnersSettings())}>
+							<DropdownMenuItem
+								onClick={() => router.push(routes.partnersSettings())}
+							>
 								<Icons.Settings width={20} height={20} />
 								Настройки
 							</DropdownMenuItem>
