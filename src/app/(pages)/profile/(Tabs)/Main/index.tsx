@@ -3,10 +3,10 @@
 import styles from "./page.module.css";
 import Menu from "./menu";
 import React, { useState } from "react";
-import ApCreateModal from "@/widgets/modals/apWallet/apCreateModal";
+import ApCreateModal from "@/widgets/modals/customer/apWallet/apCreateModal";
 import { useUserStore } from "@/entities/user/useUserStore";
-import AfterCreate from "@/widgets/modals/apWallet/afterCreateWallet/afterCreate";
-import InstructionModal from "@/widgets/modals/apWallet/instruction/instructionModal";
+import AfterCreate from "@/widgets/modals/customer/apWallet/afterCreateWallet/afterCreate";
+import InstructionModal from "@/widgets/modals/customer/apWallet/instruction/instructionModal";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { Icons } from "@/assets/svg";
 

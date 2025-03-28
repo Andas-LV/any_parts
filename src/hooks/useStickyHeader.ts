@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 
 export function useStickyHeader(elementId: string) {
 	const [isSticky, setIsSticky] = useState(false);

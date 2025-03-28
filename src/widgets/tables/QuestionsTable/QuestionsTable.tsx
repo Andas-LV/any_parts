@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./QuestionsTable.module.css";
-import { useDealerItemsStore } from "@/entities/partners/items/useDealerItemsStore";
 import { PartnerQuestion } from "@/types/partners/Feedbacks";
 import {
 	Table,
@@ -20,7 +19,6 @@ interface QuestionsTableProps {
 }
 
 export default function QuestionsTable({ items }: QuestionsTableProps) {
-	const { allItems } = useDealerItemsStore();
 	const [selectedQuestion, setSelectedQuestion] =
 		useState<PartnerQuestion | null>(null);
 

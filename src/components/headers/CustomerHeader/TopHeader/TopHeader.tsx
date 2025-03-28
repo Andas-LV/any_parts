@@ -2,7 +2,7 @@ import styles from "./topHeader.module.css";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
-import CurrencyModal from "@/widgets/modals/currency/currencyModal";
+import CurrencyModal from "@/widgets/modals/customer/currency/currencyModal";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { countryCodes } from "@/constants/countryCodes";
 import { useRouter } from "next/navigation";

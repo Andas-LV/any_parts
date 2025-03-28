@@ -2,13 +2,13 @@
 
 import styles from "./OrderRegister.module.css";
 import { Button } from "@components/ui/button";
-import { useBasketStore } from "@/entities/basket/useBasketStore";
-import DiscountModal from "@/widgets/modals/discount/discountModal";
+import { useBasketStore } from "@/entities/customer/basket/useBasketStore";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { routes } from "@/configs/routes";
+import DiscountModal from "@/widgets/modals/customer/DiscountModal/DiscountModal";
 
 interface IOrderProps {
 	type: "basket" | "order" | null;

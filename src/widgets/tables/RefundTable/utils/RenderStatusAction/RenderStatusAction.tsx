@@ -1,5 +1,5 @@
 import { RefundItem } from "@/types/Refund";
-import DeleteRefund from "@/widgets/modals/refund/deleteRefund/DeleteRefund";
+import DeleteRefund from "@/widgets/modals/customer/menuModals/refund/deleteRefund/DeleteRefund";
 import { Icons } from "@/assets/svg";
 import styles from "./RenderStatusAction.module.css";
 import {

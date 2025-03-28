@@ -1,0 +1,88 @@
+.instruction {
+	color: #333;
+	font-size: 16px;
+	line-height: 1.5;
+	margin: 0 0 24px 0;
+	font-weight: 500;
+}
+
+.instruction span {
+	font-weight: bold;
+}
+
+.codeInput {
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 8px;
+	font-size: 16px;
+	background: #f9fafb;
+	margin-bottom: 16px;
+}
+
+.codeInput::placeholder {
+	color: #9ca3af;
+}
+
+.timerText {
+	color: #6b7280;
+	font-size: 14px;
+	margin-bottom: 25px;
+}
+
+.resendButton {
+	background: none;
+	border: none;
+	color: #2563eb;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	padding: 0;
+	margin-bottom: 25px;
+}
+
+.resendButton:hover {
+	text-decoration: underline;
+}
+
+.buttonGroup {
+	display: flex;
+	gap: 12px;
+	width: 100%;
+}
+
+.submitButton {
+	flex: 1;
+	padding: 25px 0;
+	background: #2563eb;
+	color: white;
+	border: none;
+	border-radius: 15px;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.changeEmailButton {
+	flex: 1;
+	padding: 25px 0;
+	background-color: var(--brand-gray);
+	color: black;
+	border: none;
+	border-radius: 15px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.changeEmailButton:disabled,
+.changeEmailButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.error {
+	color: var(--error);
+	font-size: 14px;
+	margin-bottom: 16px;
+}

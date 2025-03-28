@@ -5,9 +5,9 @@ import { useUserStore } from "@/entities/user/useUserStore";
 import { Icons } from "@/assets/svg";
 import { Button } from "@components/ui/button";
 import React, { useState } from "react";
-import { useOrdersStore } from "@/entities/orders/useOrdersStore";
+import { useOrdersStore } from "@/entities/customer/orders/useOrdersStore";
 import { HOLDING_DAYS } from "@/constants/item";
-import EditModal from "@/widgets/modals/account/edit/Edit";
+import EditModal from "@/widgets/modals/customer/account/edit/Edit";
 
 export default function Delivery() {
 	const { user } = useUserStore();

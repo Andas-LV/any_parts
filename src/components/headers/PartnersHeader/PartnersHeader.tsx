@@ -11,7 +11,7 @@ import {
 } from "@components/ui/dropdown-menu";
 import { routes } from "@/configs/routes";
 import { useRouter } from "next/navigation";
-import LogOutModal from "@/widgets/modals/auth/logout/LogOut";
+import LogOutModal from "@/widgets/modals/customer/auth/logout/LogOut";
 
 export default function PartnersHeader() {
 	const router = useRouter();

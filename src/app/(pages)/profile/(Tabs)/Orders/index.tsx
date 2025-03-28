@@ -1,9 +1,9 @@
 "use client";
 
 import styles from "./page.module.css";
-import { useAuthStore } from "@/entities/auth/useAuthStore";
+import { useAuthStore } from "@/entities/customer/auth/useAuthStore";
 import { Button } from "@components/ui/button";
-import { useOrdersStore } from "@/entities/orders/useOrdersStore";
+import { useOrdersStore } from "@/entities/customer/orders/useOrdersStore";
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";

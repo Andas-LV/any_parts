@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useState } from "react";
 import styles from "./Promotion.module.css";
 import { Button } from "@components/ui/button";
@@ -11,8 +13,8 @@ import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { Icons } from "@/assets/svg";
 import { promotionStatuses } from "@/constants/status";
-import StandardPromotionModal from "@/widgets/modals/promotions/StandardPromotionModal/StandardPromotionModal";
-import PremiumPromotionModal from "@/widgets/modals/promotions/PremiumPromotionModal/PremiumPromotionModal";
+import StandardPromotionModal from "@/widgets/modals/partners/promotions/StandardPromotionModal/StandardPromotionModal";
+import PremiumPromotionModal from "@/widgets/modals/partners/promotions/PremiumPromotionModal/PremiumPromotionModal";
 
 type TModalOptions = "standardPromotion" | "premiumPromotion" | null;
 

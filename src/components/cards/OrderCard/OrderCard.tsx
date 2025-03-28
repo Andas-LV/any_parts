@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Icons } from "@/assets/svg";
 import { getOrderStatusStyle, getOrderAction } from "./getOrderStatusStyle";
-import CreateFeedback from "@/widgets/modals/feedback/createFeedback";
+import CreateFeedback from "@/widgets/modals/customer/feedback/createFeedback";
 import OrderCardSkeleton from "@components/skeletons/OrderCardSkeleton/OrderCardSkeleton";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";

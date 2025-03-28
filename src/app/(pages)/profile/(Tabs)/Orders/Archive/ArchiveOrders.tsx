@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./archiveOrders.module.css";
-import { Search as SearchIcon } from "lucide-react";
 import { Icons } from "@/assets/svg";
 import {
 	DropdownMenu,
@@ -12,7 +11,7 @@ import {
 import { ordersSorts } from "@/constants/orders";
 import OrderCard from "@components/cards/OrderCard/OrderCard";
 import React, { useMemo, useState } from "react";
-import { useOrdersStore } from "@/entities/orders/useOrdersStore";
+import { useOrdersStore } from "@/entities/customer/orders/useOrdersStore";
 import SearchBar from "@components/SearchBar/SearchBar";
 
 export default function ArchiveOrders() {

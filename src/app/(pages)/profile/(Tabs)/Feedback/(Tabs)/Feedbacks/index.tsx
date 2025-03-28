@@ -1,4 +1,4 @@
-import { useFeedbacksStore } from "@/entities/feedbacks/useFeedbackStore";
+import { useFeedbacksStore } from "@/entities/customer/feedbacks/useFeedbackStore";
 import { useEffect } from "react";
 import styles from "./tab.module.css";
 import { Button } from "@components/ui/button";

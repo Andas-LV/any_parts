@@ -8,7 +8,7 @@ import { Card } from "@components/ui/card";
 import { Icons } from "@/assets/svg";
 import { useRouter } from "next/navigation";
 
-import { CartItem, useBasketStore } from "@/entities/basket/useBasketStore";
+import { CartItem, useBasketStore } from "@/entities/customer/basket/useBasketStore";
 import { Checkbox } from "@components/ui/checkbox";
 import BasketCardSkeleton from "@components/skeletons/BasketCardSkeleton/BasketCardSkeleton";
 import { useCurrencySymbol } from "@/hooks/useCurrency";

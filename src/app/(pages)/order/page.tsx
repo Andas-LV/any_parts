@@ -2,7 +2,7 @@
 
 import HeaderWrapper from "@/layouts/HeaderProvider";
 import styles from "./page.module.css";
-import { useBasketStore } from "@/entities/basket/useBasketStore";
+import { useBasketStore } from "@/entities/customer/basket/useBasketStore";
 import React from "react";
 import OrderRegister from "@/widgets/orderRegister/OrderRegister";
 import { Button } from "@components/ui/button";

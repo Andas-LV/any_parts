@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import styles from "./page.module.css";
 import React, { useState } from "react";
-import Payment from "@/widgets/modals/payment/Payment";
-import CreateCard from "@/widgets/modals/payment/create/CreateCard";
-import DeleteCard from "@/widgets/modals/payment/delete/DeleteCard";
-import { usePaymentStore } from "@/entities/payment/usePaymentStore";
+import Payment from "@/widgets/modals/customer/menuModals/payment/Payment";
+import CreateCard from "@/widgets/modals/customer/menuModals/payment/create/CreateCard";
+import DeleteCard from "@/widgets/modals/customer/menuModals/payment/delete/DeleteCard";
+import { usePaymentStore } from "@/entities/customer/payment/usePaymentStore";
 import { Button } from "@components/ui/button";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";

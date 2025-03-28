@@ -3,14 +3,14 @@
 import styles from "./paymentBlock.module.css";
 import { Checkbox } from "@components/ui/checkbox";
 import React, { useState } from "react";
-import { useBasketStore } from "@/entities/basket/useBasketStore";
+import { useBasketStore } from "@/entities/customer/basket/useBasketStore";
 import { Icons } from "@/assets/svg";
-import BasketShareModal from "@/widgets/modals/basketShareModal/BasketShareModal";
+import BasketShareModal from "@/widgets/modals/customer/basketShareModal/BasketShareModal";
 import PaymentCard from "../../../../components/cards/PaymentCards";
 import Image from "next/image";
-import { usePaymentStore } from "@/entities/payment/usePaymentStore";
-import CreateCard from "@/widgets/modals/payment/create/CreateCard";
-import DeleteCard from "@/widgets/modals/payment/delete/DeleteCard";
+import { usePaymentStore } from "@/entities/customer/payment/usePaymentStore";
+import CreateCard from "@/widgets/modals/customer/menuModals/payment/create/CreateCard";
+import DeleteCard from "@/widgets/modals/customer/menuModals/payment/create/CreateCard";
 import { TPaymentModal } from "@/app/(pages)/profile/(Tabs)/Main/menu";
 
 export default function PaymentBlock() {

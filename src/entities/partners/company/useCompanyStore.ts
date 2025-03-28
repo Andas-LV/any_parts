@@ -30,7 +30,7 @@ export const useCompanyStore = create<CompanyState>((set) => ({
 							...body,
 							id: Date.now(),
 							country: "russia",
-							organizationType: "массовое",
+							organizationType: "АО",
 						},
 					]
 				: [
@@ -38,7 +38,7 @@ export const useCompanyStore = create<CompanyState>((set) => ({
 							...body,
 							id: Date.now(),
 							country: "russia",
-							organizationType: "массовое",
+							organizationType: "АО",
 						},
 					],
 			isLoading: true,

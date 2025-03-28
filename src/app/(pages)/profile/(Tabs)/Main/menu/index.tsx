@@ -3,16 +3,16 @@
 import styles from "./page.module.css";
 import { useUserStore } from "@/entities/user/useUserStore";
 import React, { useState } from "react";
-import Payment from "@/widgets/modals/payment/Payment";
-import Requisites from "@/widgets/modals/requisites/Requisites";
-import SettingsModal from "@/widgets/modals/settings/settingsModal";
-import Devices from "@/widgets/modals/devices/Devices";
-import CreateCard from "@/widgets/modals/payment/create/CreateCard";
-import DeleteCard from "@/widgets/modals/payment/delete/DeleteCard";
-import CreateReq from "@/widgets/modals/requisites/create/CreateReq";
-import ConfirmReqCodeModal from "@/widgets/modals/requisites/create/confirm";
-import LogOutModal from "@/widgets/modals/auth/logout/LogOut";
-import EditModal from "@/widgets/modals/account/edit/Edit";
+import Payment from "@/widgets/modals/customer/menuModals/payment/Payment";
+import Requisites from "@/widgets/modals/customer/menuModals/requisites/Requisites";
+import SettingsModal from "@/widgets/modals/customer/menuModals/settings/settingsModal";
+import Devices from "@/widgets/modals/customer/menuModals/devices/Devices";
+import CreateCard from "@/widgets/modals/customer/menuModals/payment/create/CreateCard";
+import DeleteCard from "@/widgets/modals/customer/menuModals/payment/delete/DeleteCard";
+import CreateReq from "@/widgets/modals/customer/menuModals/requisites/create/CreateReq";
+import ConfirmReqCodeModal from "@/widgets/modals/customer/menuModals/requisites/create/confirm";
+import LogOutModal from "@/widgets/modals/customer/auth/logout/LogOut";
+import EditModal from "@/widgets/modals/customer/account/edit/Edit";
 import { Icons } from "@/assets/svg";
 
 export type TPaymentModal =

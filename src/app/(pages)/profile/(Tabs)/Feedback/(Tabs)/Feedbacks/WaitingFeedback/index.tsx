@@ -1,4 +1,4 @@
-import { useFeedbacksStore } from "@/entities/feedbacks/useFeedbackStore";
+import { useFeedbacksStore } from "@/entities/customer/feedbacks/useFeedbackStore";
 import React, { useEffect, useState } from "react";
 import styles from "./tab.module.css";
 import { Button } from "@components/ui/button";
@@ -10,7 +10,7 @@ import {
 	CardTitle,
 } from "@components/ui/card";
 import RatingStars from "@components/stars/RatingStars";
-import CreateFeedback from "@/widgets/modals/feedback/createFeedback";
+import CreateFeedback from "@/widgets/modals/customer/feedback/createFeedback";
 import { itemInfo } from "@/exampleData/exampleItems";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 

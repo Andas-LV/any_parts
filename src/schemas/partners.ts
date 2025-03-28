@@ -10,7 +10,7 @@ const CountryValidator = z.preprocess(
 
 export const OrganizationType = z.preprocess(
 	(val) => (typeof val === "string" && val.trim() === "" ? undefined : val),
-	z.enum(["единичное", "серийное", "массовое"], {
+	z.enum(["ИП", "ТОО", "АО"], {
 		errorMap: () => ({ message: "Тип организации обязателен" }),
 	}),
 );

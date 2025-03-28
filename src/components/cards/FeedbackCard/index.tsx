@@ -17,7 +17,7 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@components/ui/carousel";
-import CreateFeedback from "@/widgets/modals/feedback/createFeedback";
+import CreateFeedback from "@/widgets/modals/customer/feedback/createFeedback";
 import { itemInfo } from "@/exampleData/exampleItems";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 import { shouldUseCarousel } from "@/utils/shouldUseCarousel";

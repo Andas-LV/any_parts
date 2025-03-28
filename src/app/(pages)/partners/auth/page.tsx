@@ -2,12 +2,12 @@
 
 import React, { useState } from "react";
 import styles from "./PartnerAuth.module.css";
-import PartnerLoginModal from "@/widgets/modals/auth/partners/login/login";
+import PartnerLoginModal from "@/widgets/modals/partners/auth/login/login";
 import { Icons } from "@/assets/svg";
-import PartnerConfirmEmailModal from "@/widgets/modals/auth/partners/confirmEmail";
-import PartnerRegisterModal from "@/widgets/modals/auth/partners/register";
-import ChooseCompany from "@/widgets/modals/auth/partners/chooseCompany/chooseCompany";
-import CreateCompany from "@/widgets/modals/auth/partners/createCompany/createCompany";
+import PartnerConfirmEmailModal from "@/widgets/modals/partners/auth/confirmEmail";
+import PartnerRegisterModal from "@/widgets/modals/partners/auth/register";
+import ChooseCompany from "@/widgets/modals/partners/auth/chooseCompany/chooseCompany";
+import CreateCompany from "@/widgets/modals/partners/auth/createCompany/createCompany";
 
 export type TModal =
 	| "login"

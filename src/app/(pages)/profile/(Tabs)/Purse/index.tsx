@@ -2,7 +2,7 @@
 
 import styles from "./page.module.css";
 import Menu from "./menu";
-import { usePaymentStore } from "@/entities/payment/usePaymentStore";
+import { usePaymentStore } from "@/entities/customer/payment/usePaymentStore";
 import { groupTransactionsByDate } from "@components/transActions/groupTransactionsByDate";
 import { TransactionGroup } from "@components/transActions/TransActionsGroup/TransActionsGroup";
 

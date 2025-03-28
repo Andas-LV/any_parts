@@ -1,0 +1,26 @@
+.AdminAuth {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #000;
+    z-index: 101;
+}
+
+.logo h1,
+.logo span {
+    font-size: 26px;
+    font-weight: bold;
+    text-wrap: nowrap;
+}
+
+.logo span {
+    color: var(--brand-primary);
+}

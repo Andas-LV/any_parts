@@ -4,7 +4,7 @@ import { useUserStore } from "@/entities/user/useUserStore";
 import QuestionCard from "@components/cards/QuestionCard/QuestionCard";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 import React, { useEffect } from "react";
-import { useFeedbacksStore } from "@/entities/feedbacks/useFeedbackStore";
+import { useFeedbacksStore } from "@/entities/customer/feedbacks/useFeedbackStore";
 
 export default function Questions() {
 	const { setActiveProfileTab } = useUserStore();

@@ -20,13 +20,13 @@ export type PartnerRegister = z.infer<typeof registerPartnerSchema>;
 
 export type PartnerCountryValidator = "kazakh" | "russia";
 
-export type organizationValueType = "единичное" | "серийное" | "массовое";
+export type organizationValueType = "ИП" | "ТОО" | "АО";
 
 export const organizationTypes: {
 	value: organizationValueType;
 	label: string;
 }[] = [
-	{ value: "единичное", label: "Единичное" },
-	{ value: "серийное", label: "Серийное" },
-	{ value: "массовое", label: "Массовое" },
+	{ value: "ИП", label: "ИП" },
+	{ value: "ТОО", label: "ТОО" },
+	{ value: "АО", label: "АО" },
 ];

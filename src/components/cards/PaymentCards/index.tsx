@@ -1,6 +1,6 @@
 import { Icons } from "@/assets/svg";
 import styles from "./paymentCard.module.css";
-import { usePaymentStore } from "@/entities/payment/usePaymentStore";
+import { usePaymentStore } from "@/entities/customer/payment/usePaymentStore";
 import type { Payment as PaymentCardType } from "@/types/Payment";
 
 export default function PaymentCard({ onDelete }: { onDelete: () => void }) {

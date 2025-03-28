@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react";
 import styles from "./MarketStatistics.module.css";
 import dynamic from "next/dynamic";
@@ -11,7 +13,7 @@ import {
 import { Icons } from "@/assets/svg";
 const Chart = dynamic(() => import("@components/Chart"), { ssr: false });
 
-const marketStatsSorting = ["По продажам"];
+const marketStatsSorting = ["По продажам", "По кол-ву магазинов"];
 const dateOptions = ["Ежемесячно", "Еженедельно", "Ежедневно"];
 
 export default function MarketStatistics() {

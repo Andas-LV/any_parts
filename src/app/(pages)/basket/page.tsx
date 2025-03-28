@@ -3,7 +3,7 @@
 import React from "react";
 import HeaderWrapper from "@/layouts/HeaderProvider";
 import styles from "./page.module.css";
-import { useBasketStore } from "@/entities/basket/useBasketStore";
+import { useBasketStore } from "@/entities/customer/basket/useBasketStore";
 import HeaderBlock from "@/app/(pages)/basket/headerBlock/HeaderBlock";
 import OrderRegister from "@/widgets/orderRegister/OrderRegister";
 import BasketCard from "@components/cards/ItemCards/BasketCard/BasketCard";

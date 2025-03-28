@@ -9,7 +9,7 @@ import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { exampleChartData } from "@/exampleData/exampleChartData";
 import { useState } from "react";
-import ChartModal from "@/widgets/modals/chartModal/ChartModal";
+import ChartModal from "@/widgets/modals/customer/chartModal/ChartModal";
 
 const Chart = dynamic(() => import("@components/Chart"), { ssr: false });
 

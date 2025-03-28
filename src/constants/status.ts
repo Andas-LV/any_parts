@@ -4,6 +4,7 @@ import {
 	TPartnerFeedbackStatuses,
 } from "@/types/partners/Feedbacks";
 import { StatusChoice, TItemDeliveryStatuses } from "@/types/Orders";
+import { MarketStatuses, TMarketStatuses } from "@/types/admin/Markets";
 
 export const partnerItemStatuses: TPartnerItemStatuses[] = [
 	{
@@ -42,6 +43,29 @@ export const partnerFeedbackStatuses: TPartnerFeedbackStatuses[] = [
 	{
 		name: FeedbacksStatuses.processed,
 		value: "processed" as keyof FeedbacksStatuses,
+		backgroundColor: "var(--brand-gray)",
+	},
+];
+
+export const marketStatuses: TMarketStatuses[] = [
+	{
+		name: MarketStatuses.active,
+		value: "active" as keyof MarketStatuses,
+		backgroundColor: "#c2ebda",
+	},
+	{
+		name: MarketStatuses.notActive,
+		value: "notActive" as keyof MarketStatuses,
+		backgroundColor: "var(--brand-gray)",
+	},
+	{
+		name: MarketStatuses.notStarted,
+		value: "notStarted" as keyof MarketStatuses,
+		backgroundColor: "#FEF5C6",
+	},
+	{
+		name: MarketStatuses.archive,
+		value: "archive" as keyof MarketStatuses,
 		backgroundColor: "var(--brand-gray)",
 	},
 ];

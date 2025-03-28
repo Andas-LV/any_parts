@@ -9,7 +9,7 @@ import { useUserStore } from "@/entities/user/useUserStore";
 import { Button } from "@components/ui/button";
 import { Icons } from "@/assets/svg";
 import { TEditSchema } from "@/types/User";
-import LogOutModal from "@/widgets/modals/auth/logout/LogOut";
+import LogOutModal from "@/widgets/modals/customer/auth/logout/LogOut";
 
 export default function PartnersSettingsAccount() {
 	const { user, updateUser } = useUserStore();
