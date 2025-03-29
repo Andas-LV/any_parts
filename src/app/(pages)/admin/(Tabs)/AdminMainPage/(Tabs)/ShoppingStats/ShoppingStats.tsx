@@ -1,12 +1,14 @@
-import React from "react";
+"use client"
 import styles from "./ShoppingStats.module.css";
-
-interface ShoppingStatsProps {}
+import SellsList from "@/app/(pages)/admin/(Tabs)/AdminMainPage/(Tabs)/ShoppingStats/SellsList/SellsList";
+import SellsStatistics
+	from "@/app/(pages)/admin/(Tabs)/AdminMainPage/(Tabs)/ShoppingStats/SellsStatistics/SellsStatistics";
 
 export default function ShoppingStats() {
 	return (
 		<div className={styles.ShoppingStats}>
-			<h1>ShoppingStats component</h1>
+			<SellsStatistics/>
+			<SellsList/>
 		</div>
 	);
 }

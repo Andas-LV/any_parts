@@ -1,0 +1,60 @@
+.SellsTable {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.SellsTable table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    border: 1px solid #e0e0e0;
+}
+
+/* Шапка таблицы */
+.SellsTable thead tr {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+.SellsTable th,
+.SellsTable td {
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.SellsTable th {
+    font-weight: 500;
+    color: black;
+}
+
+.SellsTable tbody tr:hover {
+    background-color: #fafafa;
+}
+
+.tableProductCell {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.infoWithSubtitle{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    color: black;
+}
+
+.infoWithSubtitle span{
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}

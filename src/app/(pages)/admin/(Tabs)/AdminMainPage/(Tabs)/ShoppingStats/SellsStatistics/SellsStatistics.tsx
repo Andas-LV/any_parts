@@ -1,22 +1,13 @@
-"use client"
-
 import React, { useState } from "react";
-import styles from "./MarketsStatistics.module.css";
-import dynamic from "next/dynamic";
-import { exampleChartData } from "@/exampleData/exampleChartData";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "@components/ui/dropdown-menu";
+import styles from "./SellsStatistics.module.css";
 import { Icons } from "@/assets/svg";
-const Chart = dynamic(() => import("@components/Chart"), { ssr: false });
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@components/ui/dropdown-menu";
+import { dateOptions, sellsSorting } from "@/constants/markets";
+import { isProgressed, renderProgressIcon } from "@/utils/statsProgress";
+import Chart from "@components/Chart";
+import { exampleChartData } from "@/exampleData/exampleChartData";
 
-const marketStatsSorting = ["По продажам", "По кол-ву магазинов"];
-const dateOptions = ["Ежемесячно", "Еженедельно", "Ежедневно"];
-
-export default function MarketsStatistics() {
+export default function SellsStatistics() {
 	const { values } = exampleChartData;
 
 	const [isSortsOpen, setIsSortsOpen] = useState(false);
@@ -27,29 +18,17 @@ export default function MarketsStatistics() {
 	const viewProgress = 34;
 	const salesProgress = -13;
 
-	const isProgressed = (progress: number) => {
-		return progress >= 0;
-	};
-
-	const renderProgressIcon = (progress: number) => {
-		if (progress >= 0) {
-			return <Icons.TrendUp />;
-		} else {
-			return <Icons.TrendDown />;
-		}
-	};
-
 	return (
-		<div className={styles.MarketStatistics}>
+		<div className={styles.SellsStatistics}>
 			<div className={styles.leftBlocks}>
 				<div className={styles.visits}>
 					<div className={styles.statAmountWrapper}>
 						<div className={styles.storeFrontIconWrapper}>
-							<Icons.StoreFront width={30} height={30} />
+							<Icons.Users width={30} height={30} />
 						</div>
 						{viewsAmount}
 					</div>
-					<h3>Кол-во магазинов</h3>
+					<h3>Кол-во покупателей</h3>
 
 					<div className={styles.progressWrapper}>
 						{renderProgressIcon(viewProgress)}
@@ -68,7 +47,7 @@ export default function MarketsStatistics() {
 						</div>
 						{salesAmount}
 					</div>
-					<h3>Кол-во продаж</h3>
+					<h3>Общая выручка</h3>
 					<div className={styles.progressWrapper}>
 						{renderProgressIcon(salesProgress)}
 						<span
@@ -88,7 +67,7 @@ export default function MarketsStatistics() {
 					<div className={styles.filters}>
 						<DropdownMenu onOpenChange={setIsSortsOpen}>
 							<DropdownMenuTrigger className={styles.select}>
-								{marketStatsSorting[0]}
+								{sellsSorting[0]}
 								<Icons.ArrowDown
 									className={`${styles.arrowIcon} ${
 										isSortsOpen ? styles.rotated : ""
@@ -96,7 +75,7 @@ export default function MarketsStatistics() {
 								/>
 							</DropdownMenuTrigger>
 							<DropdownMenuContent>
-								{marketStatsSorting.map((sort, i) => (
+								{sellsSorting.map((sort, i) => (
 									<DropdownMenuItem key={i}>{sort}</DropdownMenuItem>
 								))}
 							</DropdownMenuContent>

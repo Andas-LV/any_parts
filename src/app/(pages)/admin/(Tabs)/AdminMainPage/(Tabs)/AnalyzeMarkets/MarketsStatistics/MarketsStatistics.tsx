@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react";
-import styles from "./MarketStatistics.module.css";
+import styles from "./MarketsStatistics.module.css";
 import dynamic from "next/dynamic";
 import { exampleChartData } from "@/exampleData/exampleChartData";
 import {
@@ -15,7 +15,9 @@ import { dateOptions, marketStatsSorting } from "@/constants/markets";
 import { isProgressed, renderProgressIcon } from "@/utils/statsProgress";
 const Chart = dynamic(() => import("@components/Chart"), { ssr: false });
 
-export default function MarketStatistics() {
+
+
+export default function MarketsStatistics() {
 	const { values } = exampleChartData;
 
 	const [isSortsOpen, setIsSortsOpen] = useState(false);
@@ -28,9 +30,49 @@ export default function MarketStatistics() {
 
 	return (
 		<div className={styles.MarketStatistics}>
+			<div className={styles.leftBlocks}>
+				<div className={styles.visits}>
+					<div className={styles.statAmountWrapper}>
+						<div className={styles.storeFrontIconWrapper}>
+							<Icons.StoreFront width={30} height={30} />
+						</div>
+						{viewsAmount}
+					</div>
+					<h3>Кол-во магазинов</h3>
+
+					<div className={styles.progressWrapper}>
+						{renderProgressIcon(viewProgress)}
+						<span
+							className={`${isProgressed(viewProgress) ? styles.trendUp : styles.trendDown}`}
+						>
+							{viewProgress}%
+						</span>
+						<p>за последнюю неделю</p>
+					</div>
+				</div>
+				<div className={styles.sales}>
+					<div className={styles.statAmountWrapper}>
+						<div className={styles.basketIconWrapper}>
+							<Icons.Basket width={30} height={30} fill={"black"} />
+						</div>
+						{salesAmount}
+					</div>
+					<h3>Кол-во продаж</h3>
+					<div className={styles.progressWrapper}>
+						{renderProgressIcon(salesProgress)}
+						<span
+							className={`${isProgressed(salesProgress) ? styles.trendUp : styles.trendDown}`}
+						>
+							{salesProgress}%
+						</span>
+						<p>за последнюю неделю</p>
+					</div>
+				</div>
+			</div>
+
 			<div className={styles.chartWrapper}>
 				<div className={styles.chartHeader}>
-					<h1>Статистика магазина</h1>
+					<h1>Статистика магазинов</h1>
 
 					<div className={styles.filters}>
 						<DropdownMenu onOpenChange={setIsSortsOpen}>
@@ -75,46 +117,6 @@ export default function MarketStatistics() {
 					tooltip={true}
 					fullChart={true}
 				/>
-			</div>
-
-			<div className={styles.rightBlocks}>
-				<div className={styles.visits}>
-					<div className={styles.statAmountWrapper}>
-						<div className={styles.eyeIconWrapper}>
-							<Icons.Eye width={30} height={30} />
-						</div>
-						{viewsAmount}
-					</div>
-					<h3>Кол-во посещений</h3>
-
-					<div className={styles.progressWrapper}>
-						{renderProgressIcon(viewProgress)}
-						<span
-							className={`${isProgressed(viewProgress) ? styles.trendUp : styles.trendDown}`}
-						>
-							{viewProgress}%
-						</span>
-						<p>за последнюю неделю</p>
-					</div>
-				</div>
-				<div className={styles.sales}>
-					<div className={styles.statAmountWrapper}>
-						<div className={styles.basketIconWrapper}>
-							<Icons.Basket width={30} height={30} fill={"black"} />
-						</div>
-						{salesAmount}
-					</div>
-					<h3>Кол-во продаж</h3>
-					<div className={styles.progressWrapper}>
-						{renderProgressIcon(salesProgress)}
-						<span
-							className={`${isProgressed(salesProgress) ? styles.trendUp : styles.trendDown}`}
-						>
-							{salesProgress}%
-						</span>
-						<p>за последнюю неделю</p>
-					</div>
-				</div>
 			</div>
 		</div>
 	);

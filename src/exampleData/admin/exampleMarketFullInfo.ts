@@ -2,8 +2,8 @@ import {
 	TMarketFullInfo,
 	TMarketsCountry,
 	MarketStatuses,
-	TOrganizationType,
 } from "@/types/admin/Markets";
+import { TOrganizationType } from "@/types/partners/signUp";
 
 const organizationTypes: TOrganizationType[] = [
 	"ИП",

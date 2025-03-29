@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import styles from "./discountModal.module.css";
+import styles from "./DiscountModal.module.css";
 
 import { useBasketStore } from "@/entities/customer/basket/useBasketStore";
 import ModalsLayout from "@/layouts/modalLayout/layout";

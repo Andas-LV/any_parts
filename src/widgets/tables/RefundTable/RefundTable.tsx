@@ -19,7 +19,7 @@ interface RefundTableProps {
 
 const RefundTable: React.FC<RefundTableProps> = ({ items, currencySymbol }) => {
 	return (
-		<div className={styles.tableWrapper}>
+		<div className={styles.RefundTable}>
 			{items && items.length > 0 && (
 				<Table className={styles.table}>
 					<TableHeader className={styles.tableHeader}>

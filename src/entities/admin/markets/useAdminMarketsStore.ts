@@ -1,11 +1,16 @@
 import { create } from "zustand";
-import { TMarketsList, TMarketsCountry } from "@/types/admin/Markets";
+import { TMarketsList, TMarketsCountry, TSellsList } from "@/types/admin/Markets";
 import { exampleMarkets } from "@/exampleData/admin/exampleMarkets";
+import { exampleSellsData } from "@/exampleData/admin/exampleSells";
 
 export interface AdminMarketsStore {
 	allMarkets: TMarketsList[];
-	filterCountry: TMarketsCountry | null;
+	allSells: TSellsList[];
+
 	filteredMarkets: () => TMarketsList[];
+	filteredSells: () => TSellsList[];
+
+	filterCountry: TMarketsCountry | null;
 	toggleSelect: (id: number) => void;
 	toggleSelectAll: () => void;
 	selectedIds: number[];
@@ -15,6 +20,8 @@ export interface AdminMarketsStore {
 
 export const useAdminMarketsStore = create<AdminMarketsStore>((set, get) => ({
 	allMarkets: exampleMarkets,
+	allSells: exampleSellsData,
+
 	selectedIds: [],
 	filterCountry: null,
 
@@ -26,6 +33,12 @@ export const useAdminMarketsStore = create<AdminMarketsStore>((set, get) => ({
 		const { allMarkets, filterCountry } = get();
 		if (!filterCountry) return allMarkets;
 		return allMarkets.filter((market) => market.country === filterCountry);
+	},
+
+	filteredSells: () => {
+		const { allSells, filterCountry } = get();
+		if (!filterCountry) return allSells;
+		return allSells.filter((sell) => sell.market.country === filterCountry);
 	},
 
 	toggleSelect: (id: number) => {

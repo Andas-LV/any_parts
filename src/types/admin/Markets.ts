@@ -1,6 +1,6 @@
 import { TSignUp } from "@/types/partners/signUp";
-import { z } from "zod";
-import { OrganizationType } from "@/schemas/partners";
+import { User } from "@/types/User";
+import { TPartnersItem } from "@/types/partners/Items";
 
 export type TMarketFullInfo = Omit<TSignUp, "country"> & TMarketsList;
 
@@ -13,6 +13,15 @@ export type TMarketsList = {
 	contactNumber: string;
 	sellsCount: number;
 };
+
+export type TSellsList = {
+	id: number;
+	item: Partial<TPartnersItem>;
+	market: Partial<TMarketsList>;
+	customer:Partial<User>;
+	sellDate: Date;
+	sellAmount: number;
+}
 
 export enum TMarketsCountry {
 	kazakh = "Казахстан",
@@ -46,4 +55,4 @@ export const countryOptions = [
 	},
 ];
 
-export type TOrganizationType = z.infer<typeof OrganizationType>;
+export type ModalType = "fullInfo" | "cancel" | null;

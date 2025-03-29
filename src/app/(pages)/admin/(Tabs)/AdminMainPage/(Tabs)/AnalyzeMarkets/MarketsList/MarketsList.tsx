@@ -7,7 +7,8 @@ import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { useAdminMarketsStore } from "@/entities/admin/markets/useAdminMarketsStore";
 import SearchBar from "@components/SearchBar/SearchBar";
-import CountryFilter from "@/app/(pages)/admin/(Tabs)/AdminMainPage/MarketsList/CountryFilter/CountryFilter";
+import CountryFilter from "@/app/(pages)/admin/(Tabs)/AdminMainPage/CountryFilter/CountryFilter";
+import { filterBySearch } from "@/utils/filterBySearch";
 
 export default function MarketsList() {
 	const { user } = useUserStore();
@@ -16,9 +17,7 @@ export default function MarketsList() {
 
 	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 
-	const displayedMarkets = filteredMarkets().filter((item) =>
-		item.marketName.toLowerCase().includes(search.toLowerCase()),
-	);
+	const displayedMarkets = filterBySearch(filteredMarkets(), search, ["marketName"]);
 
 	return (
 		<div className={styles.MarketsList}>
