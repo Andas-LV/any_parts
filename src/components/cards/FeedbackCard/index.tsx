@@ -2,7 +2,7 @@ import styles from "./feedbackCard.module.css";
 import { TMyFeedbackCard } from "@/types/Feedbacks";
 import RatingStars from "@components/stars/RatingStars";
 import { Button } from "@components/ui/button";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import {
 	CardDescription,
 	CardHeader,

@@ -3,7 +3,7 @@
 import styles from "./leftSide.module.css";
 import RatingStars from "@components/stars/RatingStars";
 import React, { useState } from "react";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { Progress } from "@components/ui/progress";
 import CommentItem from "./CommentItem/CommentItem";
 import { Button } from "@components/ui/button";

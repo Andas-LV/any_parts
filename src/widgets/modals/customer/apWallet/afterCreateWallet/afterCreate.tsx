@@ -1,4 +1,4 @@
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import styles from "./afterCreate.module.css";
 import ModalsLayout from "@/layouts/modalLayout/layout";
 

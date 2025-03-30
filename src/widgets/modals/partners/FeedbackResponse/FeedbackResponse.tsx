@@ -8,7 +8,7 @@ import {
 } from "@/constants/status";
 import { formatDate } from "@/utils/formatDate";
 import { Button } from "@components/ui/button";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { Textarea } from "@components/ui/textarea";
 import SideModalLayout from "@/layouts/SideModalLayout/SideModalLayout";
 import RatingStars from "@components/stars/RatingStars";

@@ -1,4 +1,4 @@
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 
 export default function RatingStars({
 	rating,

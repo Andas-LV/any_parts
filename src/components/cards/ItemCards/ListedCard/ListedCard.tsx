@@ -5,7 +5,7 @@ import { TFilteredItemInfo } from "@/types/items/Item";
 import { ImageCarousel } from "../ImageCarousel";
 import { Card } from "@components/ui/card";
 import { Button } from "@components/ui/button";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import Loading from "@components/Loading";

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import styles from "./PartnerAuth.module.css";
 import PartnerLoginModal from "@/widgets/modals/partners/auth/login/login";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import PartnerConfirmEmailModal from "@/widgets/modals/partners/auth/confirmEmail";
 import PartnerRegisterModal from "@/widgets/modals/partners/auth/register";
 import ChooseCompany from "@/widgets/modals/partners/auth/chooseCompany/chooseCompany";

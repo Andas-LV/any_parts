@@ -6,7 +6,7 @@ import React, { useEffect, useState, useMemo } from "react";
 import { Button } from "@components/ui/button";
 import { useRouter } from "next/navigation";
 import ItemCard from "@components/cards/ItemCards/ItemCard/ItemCard";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import {
 	DropdownMenu,
 	DropdownMenuContent,

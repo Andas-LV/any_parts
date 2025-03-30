@@ -4,7 +4,7 @@ import SideModalLayout from "@/layouts/SideModalLayout/SideModalLayout";
 import { TMarketFullInfo } from "@/types/admin/Markets";
 import { formatDateWithDuration } from "@/utils/formatDate";
 import { marketStatuses } from "@/constants/status";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 
 interface MarketFullInfoModalProps {
 	onClose: () => void;

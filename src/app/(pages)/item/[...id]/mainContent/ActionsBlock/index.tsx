@@ -1,7 +1,7 @@
 "use client";
 
 import { ItemInfoType } from "@/types/items/Item";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import styles from "./actionBlock.module.css";
 import { Button } from "@components/ui/button";
 import dynamic from "next/dynamic";

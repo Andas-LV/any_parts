@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import ModalsLayout from "@/layouts/modalLayout/layout";
 import { RequisiteValidatorSchema } from "@/schemas/requisite";
 import { useRequisitesStore } from "@/entities/customer/requisites/useRequisitesStore";

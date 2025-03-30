@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./currencyModal.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { Button } from "@components/ui/button";
 import Image from "next/image";
 import {

@@ -2,7 +2,7 @@
 
 import styles from "./Delivery.module.css";
 import { useUserStore } from "@/entities/user/useUserStore";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { Button } from "@components/ui/button";
 import React, { useState } from "react";
 import { useOrdersStore } from "@/entities/customer/orders/useOrdersStore";

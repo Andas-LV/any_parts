@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./ProductTable.module.css";
 import { TPartnersItem, TPromotionStatuses, PromotionStatuses } from "@/types/partners/Items";
 import { partnerItemStatuses } from "@/constants/status";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { useDealerItemsStore } from "@/entities/partners/items/useDealerItemsStore";
 import { PaginationWithSelect } from "@components/PaginationBlock/PaginationBlock";
 import { usePagination } from "@/hooks/usePagination";

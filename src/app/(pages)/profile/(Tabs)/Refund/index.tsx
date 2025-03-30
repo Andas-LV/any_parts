@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 import { Button } from "@components/ui/button";
 import React, { useEffect, useMemo, useState } from "react";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import CreateRefund from "@/widgets/modals/customer/menuModals/refund/create/CreateRefund";
 import RefundFullInfo from "@/widgets/modals/customer/menuModals/refund/create/refundFullInfo";
 import RequestSended from "@/widgets/modals/requestSended/requestSended";

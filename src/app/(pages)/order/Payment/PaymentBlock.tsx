@@ -4,7 +4,7 @@ import styles from "./paymentBlock.module.css";
 import { Checkbox } from "@components/ui/checkbox";
 import React, { useState } from "react";
 import { useBasketStore } from "@/entities/customer/basket/useBasketStore";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import BasketShareModal from "@/widgets/modals/customer/basketShareModal/BasketShareModal";
 import PaymentCard from "../../../../components/cards/PaymentCards";
 import Image from "next/image";

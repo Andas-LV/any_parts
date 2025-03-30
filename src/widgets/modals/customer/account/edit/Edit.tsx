@@ -17,7 +17,7 @@ import {
 } from "@components/ui/dropdown-menu";
 import { countryCodes } from "@/constants/countryCodes";
 import Image from "next/image";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 
 export default function EditModal({ onClose }: { onClose: () => void }) {
 	const { user, updateUser, isLoading, error } = useUserStore();

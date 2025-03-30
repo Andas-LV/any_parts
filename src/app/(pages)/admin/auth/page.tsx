@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./AdminAuth.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import AdminLoginModal from "@/widgets/modals/admin/auth/login/login";
 import ForgotPasswordModal from "@/widgets/modals/admin/auth/forgotPassword/forgotPassword";
 import AdminConfirmEmailModal from "@/widgets/modals/admin/auth/confirmEmail";

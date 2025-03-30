@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./archiveOrders.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import {
 	DropdownMenu,
 	DropdownMenuContent,

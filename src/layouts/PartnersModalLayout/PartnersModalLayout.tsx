@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./PartnersModalLayout.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 
 interface PartnersModalLayoutProps {
 	children: React.ReactNode;

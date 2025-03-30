@@ -15,7 +15,7 @@ import {
 	SelectValue,
 } from "@components/ui/select";
 import { TGeneralInfoSchema } from "@/types/items/CreateItem";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { useCreateItemStore } from "@/entities/partners/createItem/useCreateItemStore";
 
 interface GeneralInfoFormProps {

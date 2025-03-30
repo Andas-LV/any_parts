@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, use } from "react";
 import { useSearchParams } from "next/navigation";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import ListedCard from "@components/cards/ItemCards/ListedCard/ListedCard";
 import HeaderWrapper from "@/layouts/HeaderProvider";
 import styles from "./search.module.css";

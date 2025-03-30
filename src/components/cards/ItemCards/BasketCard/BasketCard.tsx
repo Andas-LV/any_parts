@@ -5,7 +5,7 @@ import styles from "./basketCard.module.css";
 import { Plus, Minus } from "lucide-react";
 import { ImageCarousel } from "../ImageCarousel";
 import { Card } from "@components/ui/card";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { useRouter } from "next/navigation";
 
 import { CartItem, useBasketStore } from "@/entities/customer/basket/useBasketStore";

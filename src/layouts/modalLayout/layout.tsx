@@ -1,5 +1,5 @@
 import React from "react";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import styles from "./layout.module.css";
 
 interface ModalsLayoutProps {

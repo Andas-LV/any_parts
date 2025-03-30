@@ -1,6 +1,6 @@
 import { RefundItem } from "@/types/Refund";
 import DeleteRefund from "@/widgets/modals/customer/menuModals/refund/deleteRefund/DeleteRefund";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import styles from "./RenderStatusAction.module.css";
 import {
 	DropdownMenu,

@@ -2,7 +2,7 @@
 
 import styles from "./CommentItem.module.css";
 import RatingStars from "@components/stars/RatingStars";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import Image from "next/image";
 import { Feedback } from "@/types/Feedbacks";
 import { Button } from "@components/ui/button";

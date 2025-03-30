@@ -14,10 +14,11 @@ import {
 import ItemsLists from "@/app/(pages)/partners/(Tabs)/ItemsLists/ItemsLists";
 import Promotion from "@/app/(pages)/partners/(Tabs)/Promotion/Promotion";
 import { Button } from "@components/ui/button";
-import { useState } from "react";
+import React, { useState } from "react";
 import PartnerItemsFeedbacks from "@/app/(pages)/partners/(Tabs)/PartnerItemsFeedbacks/PartnerItemsFeedbacks";
 import PartnerItemsQuestions from "@/app/(pages)/partners/(Tabs)/PartnerItemsQuestions/PartnerItemsQuestions";
 import dynamic from "next/dynamic";
+import Footer from "@components/Footer/Footer";
 
 const MainPage = dynamic(
 	() => import("@/app/(pages)/partners/(Tabs)/MainPage/MainPage"),
@@ -141,6 +142,8 @@ export default function Page() {
 					)}
 				</TabsContent>
 			</Tabs>
+
+			<Footer />
 		</div>
 	);
 }

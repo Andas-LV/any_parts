@@ -9,7 +9,7 @@ import {
 	ToastTitle,
 	ToastViewport,
 } from "@/components/ui/toast";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 
 export function Toaster() {
 	const { toasts } = useToast();

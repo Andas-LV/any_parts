@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ChevronRight, Share2 } from "lucide-react";
 import styles from "./pageHeader.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 
 interface ItemHeader {

@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./AdminHeader.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { routes } from "@/configs/routes";
 import { useRouter } from "next/navigation";
 

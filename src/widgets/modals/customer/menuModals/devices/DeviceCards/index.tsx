@@ -1,4 +1,4 @@
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import styles from "./deviceCard.module.css";
 import { useSessionsStore } from "@/entities/sessions/useSessionsStore";
 

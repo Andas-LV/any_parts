@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./requisites.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 
 import ModalsLayout from "@/layouts/modalLayout/layout";
 import RequisiteCard from "@/components/cards/RequisiteCards";

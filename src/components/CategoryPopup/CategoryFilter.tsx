@@ -7,7 +7,7 @@ import { categories } from "@/exampleData/exampleCategories";
 import { Category } from "@/types/Category";
 import useBodyOverflow from "@/hooks/useBodyOverflow";
 import styles from "./CategoryFilter.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 
 export default function CategoryFilter() {
 	const [selectedCategory, setSelectedCategory] = useState<Category | null>(

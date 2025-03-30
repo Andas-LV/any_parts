@@ -33,8 +33,8 @@ export function GenericTable<T>({
 				</TableRow>
 			</TableHeader>
 			<TableBody>
-				{data.map((item) => {
-					const key = getRowKey ? getRowKey(item) : Math.random();
+				{data.map((item, index) => {
+					const key = getRowKey ? getRowKey(item) : index;
 					return (
 						<TableRow key={key}>
 							{columns.map((col, idx) => (

@@ -10,7 +10,7 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { dateOptions, marketStatsSorting } from "@/constants/markets";
 import { isProgressed, renderProgressIcon } from "@/utils/statsProgress";
 const Chart = dynamic(() => import("@components/Chart"), { ssr: false });

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./SellsStatistics.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@components/ui/dropdown-menu";
 import { dateOptions, sellsSorting } from "@/constants/markets";
 import { isProgressed, renderProgressIcon } from "@/utils/statsProgress";

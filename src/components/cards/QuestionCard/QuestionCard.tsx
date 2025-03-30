@@ -3,7 +3,7 @@
 import { Card } from "@components/ui/card";
 import styles from "./questionCard.module.css";
 import { Button } from "@components/ui/button";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import React, { useState } from "react";
 import { Feedback } from "@/types/Feedbacks";
 import Image from "next/image";

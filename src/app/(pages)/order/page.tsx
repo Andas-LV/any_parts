@@ -9,7 +9,7 @@ import { Button } from "@components/ui/button";
 import { useRouter } from "next/navigation";
 import PaymentBlock from "@/app/(pages)/order/Payment/PaymentBlock";
 import Delivery from "@/app/(pages)/order/Delivery/Delivery";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { routes } from "@/configs/routes";
 
 export default function Order() {

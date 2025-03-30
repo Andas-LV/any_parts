@@ -10,7 +10,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { getOrderStatusStyle, getOrderAction } from "./getOrderStatusStyle";
 import CreateFeedback from "@/widgets/modals/customer/feedback/createFeedback";
 import OrderCardSkeleton from "@components/skeletons/OrderCardSkeleton/OrderCardSkeleton";

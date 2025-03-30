@@ -11,7 +11,7 @@ import { Plus } from "lucide-react";
 import ProductTable from "@/widgets/tables/ProductTable/ProductTable";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { promotionStatuses } from "@/constants/status";
 import StandardPromotionModal from "@/widgets/modals/partners/promotions/StandardPromotionModal/StandardPromotionModal";
 import PremiumPromotionModal from "@/widgets/modals/partners/promotions/PremiumPromotionModal/PremiumPromotionModal";

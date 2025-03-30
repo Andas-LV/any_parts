@@ -7,7 +7,7 @@ import PartnersSettingsAccount from "@/app/(pages)/partners/settings/(Tabs)/Part
 import PartnersSettingsDevices from "@/app/(pages)/partners/settings/(Tabs)/PartnersSettingsDevices/PartnersSettingsDevices";
 import PartnersTreatment from "@/app/(pages)/partners/settings/(Tabs)/PartnersTreatment/PartnersTreatment";
 import PartnersSettingsNotifications from "@/app/(pages)/partners/settings/(Tabs)/PartnersSettingsNotifications/PartnersSettingsNotifications";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, ChevronLeft } from "lucide-react";
 

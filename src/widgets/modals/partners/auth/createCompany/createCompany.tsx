@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./createCompany.module.css";
 import { countryCodes } from "@/constants/countryCodes";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { organizationTypes } from "@/types/Auth";
 import { AddCompany } from "@/types/partners/Company";
 import { Button } from "@components/ui/button";

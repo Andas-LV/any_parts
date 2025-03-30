@@ -1,6 +1,6 @@
 "use client";
 
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { useState } from "react";
 
 interface ReviewStarsProps {

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./SideModalLayout.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 
 interface SideModalLayoutProps {
 	children: React.ReactNode;

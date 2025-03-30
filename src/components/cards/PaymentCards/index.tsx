@@ -1,4 +1,4 @@
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import styles from "./paymentCard.module.css";
 import { usePaymentStore } from "@/entities/customer/payment/usePaymentStore";
 import type { Payment as PaymentCardType } from "@/types/Payment";

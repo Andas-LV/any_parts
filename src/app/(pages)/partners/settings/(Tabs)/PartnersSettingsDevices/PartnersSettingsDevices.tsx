@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./PartnersSettingsDevices.module.css";
 import { useSessionsStore } from "@/entities/sessions/useSessionsStore";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { Button } from "@components/ui/button";
 
 export default function PartnersSettingsDevices() {

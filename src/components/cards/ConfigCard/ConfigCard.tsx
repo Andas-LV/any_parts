@@ -3,7 +3,7 @@ import styles from "./ConfigCard.module.css";
 import { Checkbox } from "@components/ui/checkbox";
 import { UseFormRegister } from "react-hook-form";
 import { TConfigurationSchema } from "@/types/items/CreateItem";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { Button } from "@components/ui/button";
 
 type TBaseConfigPath = `colors.${number}` | `sizes.${number}`;

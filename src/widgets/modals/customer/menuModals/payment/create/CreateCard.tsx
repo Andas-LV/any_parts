@@ -4,7 +4,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import styles from "./createCard.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { usePaymentStore } from "@/entities/customer/payment/usePaymentStore";
 import ModalsLayout from "@/layouts/modalLayout/layout";
 import React, { useState } from "react";

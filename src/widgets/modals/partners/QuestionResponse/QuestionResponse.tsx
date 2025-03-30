@@ -5,7 +5,7 @@ import { PartnerQuestion } from "@/types/partners/Feedbacks";
 import { Button } from "@components/ui/button";
 import { formatDate } from "@/utils/formatDate";
 import { partnerFeedbackStatuses } from "@/constants/status";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { Textarea } from "@components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 

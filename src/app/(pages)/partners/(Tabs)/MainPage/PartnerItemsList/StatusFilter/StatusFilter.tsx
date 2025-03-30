@@ -6,7 +6,7 @@ import {
 	DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu";
 import { Checkbox } from "@components/ui/checkbox";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import styles from "./StatusFilter.module.css";
 import {
 	PromotionStatuses,

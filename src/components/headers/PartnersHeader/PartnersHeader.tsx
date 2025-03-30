@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./PartnersHeader.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import {
 	DropdownMenu,
 	DropdownMenuContent,

@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import styles from "./ItemHeader.module.css";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 import { Button } from "@components/ui/button";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 

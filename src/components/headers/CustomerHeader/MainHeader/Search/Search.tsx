@@ -9,7 +9,7 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { itemSearchTypes } from "@/constants/item";
 import { exampleSearchKeyWords } from "@/exampleData/exampleFilters";
 import { useRouter } from "next/navigation";

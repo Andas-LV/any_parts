@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import styles from "./imageCarousel.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 
 interface ImageCarouselProps {
 	images: string[];

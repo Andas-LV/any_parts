@@ -13,7 +13,7 @@ import CreateReq from "@/widgets/modals/customer/menuModals/requisites/create/Cr
 import ConfirmReqCodeModal from "@/widgets/modals/customer/menuModals/requisites/create/confirm";
 import LogOutModal from "@/widgets/modals/customer/auth/logout/LogOut";
 import EditModal from "@/widgets/modals/customer/account/edit/Edit";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 
 export type TPaymentModal =
 	| "paymentModal"

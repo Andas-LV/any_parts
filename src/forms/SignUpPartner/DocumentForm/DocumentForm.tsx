@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { TDocumentType } from "@/types/partners/signUp";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { documentSchema } from "@/schemas/partners";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 
 interface DocumentFormProps {
 	nextStep?: () => void;

@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { editSchema } from "@/schemas/auth";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { Button } from "@components/ui/button";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { TEditSchema } from "@/types/User";
 import LogOutModal from "@/widgets/modals/customer/auth/logout/LogOut";
 

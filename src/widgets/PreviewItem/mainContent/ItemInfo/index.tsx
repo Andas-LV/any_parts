@@ -1,6 +1,6 @@
 import { Button } from "@components/ui/button";
 import { cn } from "@/lib/utils";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { copyToClipboard } from "@components/copyToClipboard";
 import { useToast } from "@/hooks/use-toast";
 import { charactersSerializer } from "@/types/items/charactersSerializer";

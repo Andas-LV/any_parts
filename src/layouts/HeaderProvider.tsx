@@ -1,4 +1,5 @@
 import Header from "@components/headers/CustomerHeader";
+import Footer from "@components/Footer/Footer";
 import React from "react";
 
 interface HeaderWrapperProps {
@@ -13,6 +14,10 @@ export default function HeaderWrapper({ children }: HeaderWrapperProps) {
 			</div>
 
 			{children}
+
+			<div className="px-28">
+				<Footer />
+			</div>
 		</div>
 	);
 }

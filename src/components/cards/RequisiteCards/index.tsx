@@ -1,4 +1,4 @@
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import styles from "./requisiteCard.module.css";
 import { useRequisitesStore } from "@/entities/customer/requisites/useRequisitesStore";
 import { useToast } from "@/hooks/use-toast";

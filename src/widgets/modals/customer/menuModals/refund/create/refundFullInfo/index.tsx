@@ -5,7 +5,7 @@ import { Button } from "@components/ui/button";
 import { useItemsStore } from "@/entities/items/useItemsStore";
 import { PHOTO_OPTIONS, RETURN_REASONS } from "@/constants/item";
 import { Textarea } from "@components/ui/textarea";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import Loading from "@components/Loading";
 import RequestSended from "@/widgets/modals/requestSended/requestSended";
 import { useCurrencySymbol } from "@/hooks/useCurrency";

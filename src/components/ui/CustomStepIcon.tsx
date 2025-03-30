@@ -4,7 +4,7 @@ import StepConnector, {
 } from "@mui/material/StepConnector";
 import React from "react";
 import { Box } from "@mui/material";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 
 export const CustomConnector = styled(StepConnector)(({ theme }) => ({
 	[`& .${stepConnectorClasses.line}`]: {

@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./payment.module.css";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import PaymentCard from "@components/cards/PaymentCards";
 import ModalsLayout from "@/layouts/modalLayout/layout";
 import React from "react";

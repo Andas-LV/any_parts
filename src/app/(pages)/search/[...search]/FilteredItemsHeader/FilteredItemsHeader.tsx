@@ -1,6 +1,6 @@
 "use client";
 
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import styles from "./filterHeader.module.css";
 import { useFiltersStore } from "@/entities/items/useFiltersStore";
 import { MIN_PRICE, MAX_PRICE } from "@/exampleData/exampleFilters";

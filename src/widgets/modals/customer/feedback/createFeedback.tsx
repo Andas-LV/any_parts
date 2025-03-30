@@ -6,7 +6,7 @@ import { useItemsStore } from "@/entities/items/useItemsStore";
 import { useToast } from "@/hooks/use-toast";
 import Loading from "@components/Loading";
 import { Textarea } from "@components/ui/textarea";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import ReviewStars from "@components/stars/ReviewStars";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { useCurrencySymbol } from "@/hooks/useCurrency";

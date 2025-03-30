@@ -8,7 +8,7 @@ import styles from "./mainHeader.module.css";
 import LoginModal from "@/widgets/modals/customer/auth/login";
 import CategoryFilter from "@components/CategoryPopup/CategoryFilter";
 import { useAuthStore } from "@/entities/customer/auth/useAuthStore";
-import { Icons } from "@/assets/svg";
+import { Icons } from "@/assets/svg/svg";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { TProfileTabs } from "@/app/(pages)/profile/page";
 import { useRouter } from "next/navigation";
