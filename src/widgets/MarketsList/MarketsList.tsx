@@ -9,20 +9,31 @@ import { useAdminMarketsStore } from "@/entities/admin/markets/useAdminMarketsSt
 import SearchBar from "@components/SearchBar/SearchBar";
 import CountryFilter from "@/app/(pages)/admin/(Tabs)/AdminMainPage/CountryFilter/CountryFilter";
 import { filterBySearch } from "@/utils/filterBySearch";
+import MarketListsPerStatus from "@/widgets/MarketsList/MarketListsPerStatus/MarketListsPerStatus";
 
-export default function MarketsList() {
+interface MarketsListProps {
+	listWithTabs: boolean;
+}
+
+export default function MarketsList({
+	listWithTabs = false,
+}: MarketsListProps) {
 	const { user } = useUserStore();
 	const { filteredMarkets } = useAdminMarketsStore();
 	const [search, setSearch] = useState("");
 
 	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 
-	const displayedMarkets = filterBySearch(filteredMarkets(), search, ["marketName"]);
+	const displayedMarkets = filterBySearch(filteredMarkets(), search, [
+		"marketName",
+	]);
 
 	return (
 		<div className={styles.MarketsList}>
+			{listWithTabs && <h1>Список магазинов</h1>}
+
 			<div className={styles.header}>
-				<h2>Список магазинов</h2>
+				{!listWithTabs && <h2>Список магазинов</h2>}
 
 				<div className={styles.actions}>
 					<SearchBar
@@ -30,14 +41,23 @@ export default function MarketsList() {
 						placeholder={"Название магазина"}
 						onSearchChange={(e) => setSearch(e.target.value)}
 					/>
-					<CountryFilter/>
+					<CountryFilter />
 				</div>
 			</div>
 
-			<MarketsTable
-				filteredMarkets={displayedMarkets}
-				currencySymbol={currencySymbol}
-			/>
+			{listWithTabs && (
+				<MarketListsPerStatus
+					displayedMarkets={displayedMarkets}
+					currencySymbol={currencySymbol}
+				/>
+			)}
+
+			{!listWithTabs && (
+				<MarketsTable
+					filteredMarkets={displayedMarkets}
+					currencySymbol={currencySymbol}
+				/>
+			)}
 		</div>
 	);
 }

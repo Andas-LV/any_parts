@@ -1,20 +1,66 @@
 import React from "react";
 import styles from "./MarketFullInfoModal.module.css";
 import SideModalLayout from "@/layouts/SideModalLayout/SideModalLayout";
-import { TMarketFullInfo } from "@/types/admin/Markets";
+import { ModalType, TMarketFullInfo } from "@/types/admin/Markets";
 import { formatDateWithDuration } from "@/utils/formatDate";
-import { marketStatuses } from "@/constants/status";
+import { marketStatuses, marketRequestStatuses } from "@/constants/status";
 import { Icons } from "@/assets/svg/svg";
+import { Button } from "@components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import AdminTreatmentCancellationModal from "@/widgets/modals/admin/AdminTreatmentCancellationModal/AdminTreatmentCancellationModal";
+import { useModal } from "@/hooks/useModal";
+
+type ModalState = {
+	type: ModalType;
+	data: TMarketFullInfo;
+};
 
 interface MarketFullInfoModalProps {
 	onClose: () => void;
 	market: TMarketFullInfo;
+	actions?: boolean;
 }
 
 export default function MarketFullInfoModal({
 	onClose,
 	market,
+	actions = false,
 }: MarketFullInfoModalProps) {
+	const { toast } = useToast();
+	const { modalData, openModal, closeModal } = useModal<ModalState>();
+
+	const handleAction = (action: string, id: number) => {
+		switch (action) {
+			case "return":
+				toast({
+					done: true,
+					description: "Отправлен на доработку!",
+				});
+				console.log("Запрос: Вернуть на доработку для id:", id);
+				// запрос
+				break;
+			case "terminate":
+				toast({
+					variant: "destructive",
+					description: "Договор аннулирован.",
+				});
+				console.log("Запрос: Расторгнуть договор для id:", id);
+				// запрос
+				break;
+			case "conclude":
+				toast({
+					done: true,
+					description: "Договор заключен!",
+				});
+				console.log("Запрос: Заключить договор для id:", id);
+				// запрос
+				break;
+			default:
+				console.warn("Неизвестное действие");
+		}
+		onClose();
+	};
+
 	return (
 		<SideModalLayout title="Полная информация" onClose={onClose}>
 			<div className={styles.scrollContainer}>
@@ -30,17 +76,29 @@ export default function MarketFullInfoModal({
 							<div className={styles.row}>
 								<div className={styles.param}>Статус</div>
 								<div className={styles.value}>
-									{marketStatuses
-										.filter((s) => s.name === market.status)
-										.map((status) => (
-											<div
-												key={status.name}
-												style={{ backgroundColor: status.backgroundColor }}
-												className={styles.status}
-											>
-												{status.name}
-											</div>
-										))}
+									{actions
+										? marketRequestStatuses
+												.filter((s) => s.name === market.status)
+												.map((status) => (
+													<div
+														key={status.name}
+														style={{ backgroundColor: status.backgroundColor }}
+														className={styles.status}
+													>
+														{status.name}
+													</div>
+												))
+										: marketStatuses
+												.filter((s) => s.name === market.status)
+												.map((status) => (
+													<div
+														key={status.name}
+														style={{ backgroundColor: status.backgroundColor }}
+														className={styles.status}
+													>
+														{status.name}
+													</div>
+												))}
 								</div>
 							</div>
 
@@ -53,9 +111,7 @@ export default function MarketFullInfoModal({
 
 							<div className={styles.row}>
 								<div className={styles.param}>Страна регистрации</div>
-								<div className={styles.value}>
-									{market.country}
-								</div>
+								<div className={styles.value}>{market.country}</div>
 							</div>
 
 							<div className={styles.row}>
@@ -130,8 +186,43 @@ export default function MarketFullInfoModal({
 							</div>
 						</div>
 					</section>
+
+					{actions && (
+						<div className={styles.actions}>
+							<Button
+								onClick={() => handleAction("return", market.id)}
+								className={styles.btn}
+								variant={"secondary"}
+							>
+								Вернуть на доработку
+							</Button>
+							{market.status === "Партнер" ? (
+								<Button
+									onClick={() => handleAction("terminate", market.id)}
+									className={styles.btn}
+									variant={"destructive"}
+								>
+									Расторгнуть договор
+								</Button>
+							) : (
+								<Button
+									onClick={() => handleAction("conclude", market.id)}
+									className={styles.btn}
+								>
+									Заключить договор
+								</Button>
+							)}
+						</div>
+					)}
 				</div>
 			</div>
+
+			{modalData?.type === "cancel" && (
+				<AdminTreatmentCancellationModal
+					market={modalData.data}
+					onClose={closeModal}
+				/>
+			)}
 		</SideModalLayout>
 	);
 }

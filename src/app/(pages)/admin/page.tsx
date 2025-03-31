@@ -1,5 +1,6 @@
+"use client";
 
-import styles from './adminPage.module.css'
+import styles from "./adminPage.module.css";
 import AdminHeader from "@components/headers/AdminHeader/AdminHeader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
 import AdminMainPage from "@/app/(pages)/admin/(Tabs)/AdminMainPage/AdminMainPage";
@@ -7,15 +8,31 @@ import Markets from "@/app/(pages)/admin/(Tabs)/Markets/Markets";
 import Announcements from "@/app/(pages)/admin/(Tabs)/Announcements/Announcements";
 import Tariffs from "@/app/(pages)/admin/(Tabs)/Tariffs/Tariffs";
 import Footer from "@components/Footer/Footer";
-import React from "react";
+import React, { useState } from "react";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from "@components/ui/dropdown-menu";
+import { Button } from "@components/ui/button";
+import MarketRequests from "@/app/(pages)/admin/(Tabs)/MarketRequests/MarketRequests";
+
+type AdminTabs = "main" | "markets" | "announcements" | "tariffs";
 
 export default function AdminPage() {
-	return(
+	const [marketsView, setMarketsView] = useState<"markets" | "requests">(
+		"markets",
+	);
+	const [activeTab, setActiveTab] = useState<AdminTabs>("main");
+
+	return (
 		<div className={styles.wrapper}>
-			<AdminHeader/>
+			<AdminHeader />
 
 			<Tabs
-				defaultValue="main"
+				value={activeTab}
+				onValueChange={(value) => setActiveTab(value as AdminTabs)}
 				className="h-full"
 			>
 				<TabsList className={styles.tabsList}>
@@ -23,9 +40,36 @@ export default function AdminPage() {
 						Главная
 					</TabsTrigger>
 
-					<TabsTrigger value="markets" className={styles.tabsTrigger}>
-						Магазины
-					</TabsTrigger>
+					<DropdownMenu>
+						<DropdownMenuTrigger asChild>
+							<Button
+								variant="ghost"
+								className={`${styles.tabsTrigger} ${
+									activeTab === "markets" ? styles.tabsTriggerActive : ""
+								}`}
+							>
+								Магазины
+							</Button>
+						</DropdownMenuTrigger>
+						<DropdownMenuContent>
+							<DropdownMenuItem
+								onClick={() => {
+									setMarketsView("markets");
+									setActiveTab("markets");
+								}}
+							>
+								Список магазинов
+							</DropdownMenuItem>
+							<DropdownMenuItem
+								onClick={() => {
+									setMarketsView("requests");
+									setActiveTab("markets");
+								}}
+							>
+								Входящие заявки
+							</DropdownMenuItem>
+						</DropdownMenuContent>
+					</DropdownMenu>
 
 					<TabsTrigger value="announcements" className={styles.tabsTrigger}>
 						Объявления
@@ -37,23 +81,23 @@ export default function AdminPage() {
 				</TabsList>
 
 				<TabsContent value="main" className={styles.tabsContent}>
-					<AdminMainPage/>
+					<AdminMainPage />
 				</TabsContent>
 
 				<TabsContent value="markets" className={styles.tabsContent}>
-					<Markets/>
+					{marketsView === "markets" ? <Markets /> : <MarketRequests />}
 				</TabsContent>
 
 				<TabsContent value="announcements" className={styles.tabsContent}>
-					<Announcements/>
+					<Announcements />
 				</TabsContent>
 
 				<TabsContent value="tariffs" className={styles.tabsContent}>
-					<Tariffs/>
+					<Tariffs />
 				</TabsContent>
 			</Tabs>
 
 			<Footer />
 		</div>
-	)
+	);
 }

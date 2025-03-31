@@ -20,6 +20,6 @@ export type TNotificationEditSchema = z.infer<typeof notificationEditSchema>;
 
 export type MaleChoice = "Male" | "Female";
 
-export type Roles = "user" | "dealer";
+export type Roles = "user" | "dealer" | "admin";
 
 export type Currency = "KZT" | "RUB";

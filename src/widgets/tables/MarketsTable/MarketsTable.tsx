@@ -7,6 +7,7 @@ import {
 	TMarketFullInfo,
 	TMarketsList,
 	ModalType,
+	MarketStatuses,
 } from "@/types/admin/Markets";
 import { marketStatuses } from "@/constants/status";
 import { exampleMarketFullInfo } from "@/exampleData/admin/exampleMarketFullInfo";
@@ -23,19 +24,32 @@ type ModalState = {
 	data: TMarketFullInfo;
 };
 
+interface MarketsTableProps {
+	filteredMarkets: TMarketsList[];
+	currencySymbol: string;
+	status?: MarketStatuses | null;
+}
+
 export default function MarketsTable({
 	filteredMarkets,
 	currencySymbol,
-}: {
-	filteredMarkets: TMarketsList[];
-	currencySymbol: string;
-}) {
+	status,
+}: MarketsTableProps) {
 	const { allMarkets, toggleSelect, toggleSelectAll, selectedMarkets } =
 		useAdminMarketsStore();
 
 	const { modalData, openModal, closeModal } = useModal<ModalState>();
 
 	const [openDropdownId, setOpenDropdownId] = useState<number | null>(null);
+
+	let dataForPaging = filteredMarkets;
+
+	if (status) {
+		dataForPaging = filteredMarkets.filter((market) =>
+			status.includes(market.status),
+		);
+	}
+
 	const {
 		currentPage,
 		rowsPerPage,
@@ -48,10 +62,10 @@ export default function MarketsTable({
 	} = usePagination({
 		initialPage: 1,
 		initialRowsPerPage: 10,
-		totalItems: filteredMarkets.length,
+		totalItems: dataForPaging.length,
 	});
 
-	const currentMarkets = paginatedData(filteredMarkets);
+	const currentMarkets = paginatedData(dataForPaging);
 
 	const isAllSelected =
 		allMarkets.length > 0 &&
@@ -114,11 +128,16 @@ export default function MarketsTable({
 		},
 		{
 			header: "Контактный номер",
-			render: (market: TMarketsList) => market.contactNumber,
+			render: (market: TMarketsList) => {
+				return (
+					<div className={styles.contactNumber}>{market.contactNumber}</div>
+				);
+			},
 		},
 		{
 			header: "Продажи",
-			render: (market: TMarketsList) => `${market.sellsCount} ${currencySymbol}`,
+			render: (market: TMarketsList) =>
+				`${market.sellsCount} ${currencySymbol}`,
 		},
 		{
 			header: "",

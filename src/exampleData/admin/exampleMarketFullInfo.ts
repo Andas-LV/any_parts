@@ -1,9 +1,9 @@
 import {
-	TMarketFullInfo,
 	TMarketsCountry,
-	MarketStatuses,
+	MarketStatuses, MarketRequestStatuses, TMarketFullInfo
 } from "@/types/admin/Markets";
 import { TOrganizationType } from "@/types/partners/signUp";
+import { Currency } from "@/types/User";
 
 const organizationTypes: TOrganizationType[] = [
 	"ИП",
@@ -41,45 +41,48 @@ const statuses = [
 	MarketStatuses.archive,
 ];
 
-export const exampleMarketFullInfo: TMarketFullInfo[] = [];
+const reqStatuses = [
+	MarketRequestStatuses.new,
+	MarketRequestStatuses.seen,
+	MarketRequestStatuses.partner,
+];
 
-for (let i = 1; i <= 50; i++) {
-	const countryKey = i % 2 === 0 ? "kazakh" : "russia";
-	const countryValue =
-		TMarketsCountry[countryKey as keyof typeof TMarketsCountry];
 
-	const organizationType = organizationTypes[i % organizationTypes.length];
-	const city = cities[countryKey as keyof typeof cities];
-	const address = addresses[countryKey as keyof typeof addresses];
-	const bankInfo = banks[countryKey as keyof typeof banks];
+function generateFullInfo<StatusType>(statusArray : StatusType[]) {
+	return Array.from({ length: 50 }, (v, j) => {
+		const i = j + 1;
+		const countryKey = (i % 2 === 0) ? "kazakh" : "russia";
+		const countryValue = TMarketsCountry[countryKey];
+		const organizationType = organizationTypes[(i - 1) % organizationTypes.length];
+		const city = cities[countryKey];
+		const address = addresses[countryKey];
+		const bankInfo = banks[countryKey];
 
-	const fullInfo: TMarketFullInfo = {
-		id: i,
-		marketName: `Market ${i}`,
-		registrationDate: new Date(2020 + (i % 3), i % 12, (i % 28) + 1),
-		status: statuses[i % statuses.length],
-		contactNumber: `+7-777-000-${String(i).padStart(4, "0")}`,
-		sellsCount: i * 10,
+		return {
+			id: i,
+			marketName: `Market ${i}`,
+			registrationDate: new Date(2020 + (i % 3), i % 12, (i % 28) + 1),
+			status: statusArray[i % statusArray.length],
+			contactNumber: `+7-777-000-${String(i).padStart(4, "0")}`,
+			sellsCount: i * 10,
 
-		organizationName: `Organization ${i}`,
-		taxNumber: String(i).padStart(12, "0"),
-		organizationType: organizationType,
+			organizationName: `Organization ${i}`,
+			taxNumber: String(i).padStart(12, "0"),
+			organizationType: organizationType,
 
-		country: countryValue,
-		city: city,
-		address: address,
+			country: countryValue,
+			city: city,
+			address: address,
 
-		document: new File(["dummy content"], `document${i}.pdf`, {
-			type: "application/pdf",
-		}),
+			document: new File(["dummy content"], `document${i}.pdf`, { type: "application/pdf" }),
 
-		account: String(1000 + i),
-		currency: "KZT",
-		swift: "ABCDEFGH",
-		bankName: bankInfo.bankName,
-		bankCity: bankInfo.bankCity,
-		bankAddress: bankInfo.bankAddress,
-	};
-
-	exampleMarketFullInfo.push(fullInfo);
+			account: String(1000 + i),
+			currency: "KZT" as Currency,
+			swift: "ABCDEFGH",
+			...bankInfo,
+		};
+	});
 }
+
+export const exampleMarketFullInfo: TMarketFullInfo[] = generateFullInfo(statuses);
+export const exampleMarketRequestFullInfo = generateFullInfo(reqStatuses);

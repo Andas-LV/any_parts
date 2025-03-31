@@ -14,12 +14,6 @@ export type TOrder = {
 	card: Payment;
 };
 
-export type TItemDeliveryStatuses = {
-	name: StatusChoice;
-	value: keyof StatusChoice;
-	backgroundColor: string;
-};
-
 export enum StatusChoice {
 	received = "Получено",
 	pending = "Заказ оплачен и ожидает обработки",

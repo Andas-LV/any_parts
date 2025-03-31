@@ -1,10 +1,8 @@
 import { TPartnerItemStatuses } from "@/types/partners/Items";
-import {
-	FeedbacksStatuses,
-	TPartnerFeedbackStatuses,
-} from "@/types/partners/Feedbacks";
-import { StatusChoice, TItemDeliveryStatuses } from "@/types/Orders";
-import { MarketStatuses, TMarketStatuses } from "@/types/admin/Markets";
+import { FeedbacksStatuses } from "@/types/partners/Feedbacks";
+import { StatusChoice } from "@/types/Orders";
+import { MarketRequestStatuses, MarketStatuses } from "@/types/admin/Markets";
+import { StatusObject } from "@/types/Status";
 
 export const partnerItemStatuses: TPartnerItemStatuses[] = [
 	{
@@ -29,7 +27,7 @@ export const partnerItemStatuses: TPartnerItemStatuses[] = [
 	},
 ];
 
-export const partnerFeedbackStatuses: TPartnerFeedbackStatuses[] = [
+export const partnerFeedbackStatuses: StatusObject<FeedbacksStatuses>[] = [
 	{
 		name: FeedbacksStatuses.new,
 		value: "new" as keyof FeedbacksStatuses,
@@ -47,7 +45,7 @@ export const partnerFeedbackStatuses: TPartnerFeedbackStatuses[] = [
 	},
 ];
 
-export const marketStatuses: TMarketStatuses[] = [
+export const marketStatuses: StatusObject<MarketStatuses>[] = [
 	{
 		name: MarketStatuses.active,
 		value: "active" as keyof MarketStatuses,
@@ -70,7 +68,25 @@ export const marketStatuses: TMarketStatuses[] = [
 	},
 ];
 
-export const itemDeliveryStatuses: TItemDeliveryStatuses[] = [
+export const marketRequestStatuses: StatusObject<MarketRequestStatuses>[] = [
+	{
+		name: MarketRequestStatuses.new,
+		value: "active" as keyof MarketStatuses,
+		backgroundColor: "#c2ebda",
+	},
+	{
+		name: MarketRequestStatuses.seen,
+		value: "notActive" as keyof MarketStatuses,
+		backgroundColor: "var(--brand-gray)",
+	},
+	{
+		name: MarketRequestStatuses.partner,
+		value: "notStarted" as keyof MarketStatuses,
+		backgroundColor: "#c1d8f6",
+	},
+];
+
+export const itemDeliveryStatuses: StatusObject<StatusChoice>[] = [
 	{
 		name: StatusChoice.received,
 		value: "received" as keyof StatusChoice,

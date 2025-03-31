@@ -23,12 +23,6 @@ export type PartnerQuestion = {
 	helpful: number;
 };
 
-export type TPartnerFeedbackStatuses = {
-	name: FeedbacksStatuses;
-	value: keyof FeedbacksStatuses;
-	backgroundColor: string;
-};
-
 export enum FeedbacksStatuses {
 	new = "Новый",
 	seen = "Просмотрен",

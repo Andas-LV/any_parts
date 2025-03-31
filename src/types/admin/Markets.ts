@@ -2,7 +2,7 @@ import { TSignUp } from "@/types/partners/signUp";
 import { User } from "@/types/User";
 import { TPartnersItem } from "@/types/partners/Items";
 
-export type TMarketFullInfo = Omit<TSignUp, "country"> & TMarketsList;
+export type TMarketFullInfo = Omit<TSignUp, "country"> & (TMarketsList | TMarketRequestsList);
 
 export type TMarketsList = {
 	id: number;
@@ -13,6 +13,8 @@ export type TMarketsList = {
 	contactNumber: string;
 	sellsCount: number;
 };
+
+export type TMarketRequestsList = Omit<TMarketsList, 'status'> & { status: MarketRequestStatuses };
 
 export type TSellsList = {
 	id: number;
@@ -35,11 +37,11 @@ export enum MarketStatuses {
 	archive = "В архиве",
 }
 
-export type TMarketStatuses = {
-	name: MarketStatuses;
-	value: keyof MarketStatuses;
-	backgroundColor: string;
-};
+export enum MarketRequestStatuses {
+	new = "Новый",
+	seen = "Просмотрен",
+	partner = "Партнер",
+}
 
 export const countryOptions = [
 	{ key: "all", name: "Все страны", value: "all" },

@@ -1,6 +1,11 @@
 .MarketsList {
 }
 
+.MarketsList h1 {
+	font-weight: bold;
+	font-size: 2rem;
+}
+
 .MarketsList h2 {
 	font-weight: bold;
 	font-size: 26px;

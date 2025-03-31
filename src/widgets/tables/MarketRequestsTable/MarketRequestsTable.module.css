@@ -1,10 +1,10 @@
-.MarketsTable {
+.MarketRequestsTable {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.MarketsTable table {
+.MarketRequestsTable table {
     width: 100%;
     table-layout: auto;
     border-collapse: collapse;
@@ -12,25 +12,25 @@
 }
 
 /* Шапка таблицы */
-.MarketsTable thead tr {
+.MarketRequestsTable thead tr {
     background-color: #f8f8f8;
     font-weight: bold;
 }
 
-.MarketsTable th,
-.MarketsTable td {
+.MarketRequestsTable th,
+.MarketRequestsTable td {
     padding: 0.75rem;
     border: 1px solid #e0e0e0;
     font-size: 16px;
     text-align: left
 }
 
-.MarketsTable th {
+.MarketRequestsTable th {
     font-weight: 500;
     color: black;
 }
 
-.MarketsTable tbody tr:hover {
+.MarketRequestsTable tbody tr:hover {
     background-color: #fafafa;
 }
 
@@ -58,14 +58,13 @@
     font-weight: bold;
 }
 
-.contactNumber{
+.contact, .checkReq{
     color: var(--brand-primary);
+    font-weight: 500;
 }
 
-.image {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+.checkReq{
+    cursor: pointer;
 }
 
 /*STATUS*/

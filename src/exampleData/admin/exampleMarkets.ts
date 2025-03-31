@@ -1,6 +1,10 @@
-import { MarketStatuses, TMarketsCountry, TMarketsList } from "@/types/admin/Markets";
-
-export const exampleMarkets: TMarketsList[] = [];
+import {
+	MarketStatuses,
+	TMarketsCountry,
+	TMarketsList,
+	TMarketRequestsList,
+	MarketRequestStatuses
+} from "@/types/admin/Markets";
 
 const countries = [TMarketsCountry.kazakh, TMarketsCountry.russia];
 const statuses = [
@@ -10,26 +14,35 @@ const statuses = [
 	MarketStatuses.archive,
 ];
 
-for (let i = 1; i <= 50; i++) {
-	const market: TMarketsList = {
-		id: i,
-		marketName: `Market ${i}`,
-		// Детерминированная дата: циклично 2020, 2021, 2022; месяцы 0-11; дни от 1 до 28
-		registrationDate: new Date(
-			2020 + (i % 3),
-			i % 12,
-			(i % 28) + 1
-		),
-		// Выбор страны и статуса по циклу
-		country: countries[i % countries.length],
-		status: statuses[i % statuses.length],
-		// Формирование контактного номера с фиксированным шаблоном
-		contactNumber: `+7-777-000-${(1000 + i).toString()}`,
-		// Количество продаж — фиксированное значение для примера
-		sellsCount: i * 10000,
-	};
+const reqStatuses = [
+	MarketRequestStatuses.new,
+	MarketRequestStatuses.seen,
+	MarketRequestStatuses.partner,
+];
 
-	exampleMarkets.push(market);
+function generateMarkets<StatusType>(prefix: string, statusArray: StatusType[]) {
+	return Array.from({ length: 50 }, (v, j) => {
+		const i = j + 1;
+		return {
+			id: i,
+			marketName: prefix + i,
+			registrationDate: new Date(2020 + (i % 3), i % 12, (i % 28) + 1),
+			country: countries[i % countries.length],
+			status: statusArray[i % statusArray.length],
+			contactNumber: `+7-777-000-${(1000 + i).toString()}`,
+			sellsCount: i * 10000,
+		} as {
+			id: number;
+			marketName: string;
+			registrationDate: Date;
+			country: TMarketsCountry;
+			status: StatusType;
+			contactNumber: string;
+			sellsCount: number;
+		};
+	});
 }
 
+export const exampleMarkets: TMarketsList[] = generateMarkets("Market ", statuses);
+export const exampleMarketRequests: TMarketRequestsList[] = generateMarkets("Request Market ", reqStatuses);
 
