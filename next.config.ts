@@ -1,5 +1,9 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+	env: {
+		NEXT_BACKEND_URL: process.env.NEXT_BACKEND_URL,
+	},
+};
 
 export default nextConfig;

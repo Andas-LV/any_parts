@@ -35,7 +35,7 @@ export interface MultiPromotionChartDataPoint {
 }
 
 export const exampleMultiPromotionChartData: MultiPromotionChartDataPoint[] = [
-	{ date: "Янв", standardPromotion: 200000, premiumPromotion: 180000 },
+	{ date: "Янв", standardPromotion: 200610, premiumPromotion: 180000 },
 	{ date: "Февр", standardPromotion: 150000, premiumPromotion: 160000 },
 	{ date: "Март", standardPromotion: 180000, premiumPromotion: 140000 },
 	{ date: "Апр", standardPromotion: 230000, premiumPromotion: 130000 },

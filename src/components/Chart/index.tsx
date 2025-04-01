@@ -12,6 +12,7 @@ import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { ChartDataPoint } from "@/exampleData/exampleChartData";
 import styles from "./chart.module.css";
+import { formatNumber } from "@/utils/formatNumber";
 
 export interface ChartProps {
 	data: ChartDataPoint[];
@@ -30,7 +31,7 @@ export function CustomTooltip({ active, payload }: any) {
 		const { value, date } = payload[0].payload;
 		return (
 			<div className={styles.customTooltip}>
-				<p>{`${value} ${currencySymbol}`}</p>
+				<p>{`${formatNumber(value)} (${currencySymbol})`}</p>
 				<p className={styles.date}>{date}</p>
 			</div>
 		);

@@ -8,10 +8,9 @@ import {
 	YAxis,
 	CartesianGrid,
 } from "recharts";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
-import { useUserStore } from "@/entities/user/useUserStore";
 import { useAdminMarketsStore } from "@/entities/admin/markets/useAdminMarketsStore";
 import styles from "./PromotionsChart.module.css";
+import { formatNumber } from "@/utils/formatNumber";
 
 export interface ChartDataPoint {
 	date: string;
@@ -30,9 +29,6 @@ type values = {
 };
 
 export function CustomTooltip({ active, payload }: any) {
-	const { user } = useUserStore();
-	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
-
 	if (active && payload && payload.length) {
 		const { payload: item } = payload[0];
 		const values: values[] = payload.map((entry: any) => ({
@@ -44,7 +40,7 @@ export function CustomTooltip({ active, payload }: any) {
 			<div className={styles.customTooltip}>
 				{values.map((value: values, index: number) => (
 					<p key={index}>
-						{value.value} {currencySymbol} – {value.name}
+						{formatNumber(value.value)} – {value.name}
 					</p>
 				))}
 				<p className={styles.date}>{item.date}</p>
