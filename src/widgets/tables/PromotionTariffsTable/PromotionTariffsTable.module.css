@@ -1,0 +1,51 @@
+.PromotionTariffsTable {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.PromotionTariffsTable table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    border: 1px solid #e0e0e0;
+}
+
+/* Шапка таблицы */
+.PromotionTariffsTable thead tr {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+.PromotionTariffsTable th,
+.PromotionTariffsTable td {
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.PromotionTariffsTable th {
+    font-weight: 500;
+    color: black;
+}
+
+.PromotionTariffsTable tbody tr:hover {
+    background-color: #fafafa;
+}
+
+.tableProductCell {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.standardPromo, .premiumPromo{
+    font-weight: 500;
+}
+.premiumPromo{
+    background: var(--premium-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

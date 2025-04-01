@@ -1,12 +1,43 @@
-import React from "react";
-import styles from "./Announcements.module.css";
+"use client"
 
-interface AnnouncementsProps {}
+import React, { useState } from "react";
+import styles from "./Announcements.module.css";
+import AdminProductsCheckTable from "@/widgets/tables/AdminProductsCheckTable/AdminProductsCheckTable";
+import { filterBySearch } from "@/utils/filterBySearch";
+import SearchBar from "@components/SearchBar/SearchBar";
+import { useAdminItemsStore } from "@/entities/admin/items/useAdminItemsStore";
+import { useCurrencySymbol } from "@/hooks/useCurrency";
+import { useUserStore } from "@/entities/user/useUserStore";
 
 export default function Announcements() {
+	const { user } = useUserStore();
+	const { allItems } = useAdminItemsStore();
+
+	const [search, setSearch] = useState("");
+
+	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
+	const displayedMarkets = filterBySearch(allItems, search, [
+		"productName",
+		"article",
+		"barcode",
+	]);
+
 	return (
 		<div className={styles.Announcements}>
-			<h1>Announcements component</h1>
+			<h1>Список объявлений</h1>
+
+			<div className={styles.search}>
+				<SearchBar
+					search={search}
+					placeholder={"Название, артикул, штрихкод"}
+					onSearchChange={(e) => setSearch(e.target.value)}
+				/>
+			</div>
+
+			<AdminProductsCheckTable
+				filteredItems={displayedMarkets}
+				currencySymbol={currencySymbol}
+			/>
 		</div>
 	);
 }

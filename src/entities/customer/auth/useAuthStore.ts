@@ -28,8 +28,7 @@ export const useAuthStore = create<AuthState>()(
 	persist(
 		(set) => ({
 			token: getInitialToken()!,
-			// isAuthenticated: !!getInitialToken(),
-			isAuthenticated: true,
+			isAuthenticated: !!getInitialToken(),
 			isLoading: false,
 			error: null,
 			email: null,

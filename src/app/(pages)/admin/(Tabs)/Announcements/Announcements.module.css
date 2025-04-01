@@ -1,1 +1,14 @@
-.Announcements {}
+.Announcements {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.search{
+    max-width: 400px;
+}
+
+.Announcements h1 {
+    font-weight: bold;
+    font-size: 2rem;
+}

@@ -7,7 +7,6 @@ import AdminMainPage from "@/app/(pages)/admin/(Tabs)/AdminMainPage/AdminMainPag
 import Markets from "@/app/(pages)/admin/(Tabs)/Markets/Markets";
 import Announcements from "@/app/(pages)/admin/(Tabs)/Announcements/Announcements";
 import Tariffs from "@/app/(pages)/admin/(Tabs)/Tariffs/Tariffs";
-import Footer from "@components/Footer/Footer";
 import React, { useState } from "react";
 import {
 	DropdownMenu,
@@ -96,8 +95,6 @@ export default function AdminPage() {
 					<Tariffs />
 				</TabsContent>
 			</Tabs>
-
-			<Footer />
 		</div>
 	);
 }

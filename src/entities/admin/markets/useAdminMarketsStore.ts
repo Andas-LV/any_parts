@@ -7,6 +7,7 @@ import {
 } from "@/types/admin/Markets";
 import { exampleMarketRequests, exampleMarkets } from "@/exampleData/admin/exampleMarkets";
 import { exampleSellsData } from "@/exampleData/admin/exampleSells";
+import { PromotionsEnum } from "@/types/Promotions";
 
 export interface AdminMarketsStore {
 	allMarkets: TMarketsList[];
@@ -23,6 +24,9 @@ export interface AdminMarketsStore {
 	selectedIds: number[];
 	selectedMarkets: () => TMarketsList[];
 	setFilterCountry: (country: TMarketsCountry | null) => void;
+
+	filterPromotions: (keyof typeof PromotionsEnum)[];
+	setFilterPromotion: (promotions: (keyof typeof PromotionsEnum)[]) => void;
 }
 
 export const useAdminMarketsStore = create<AdminMarketsStore>((set, get) => ({
@@ -31,10 +35,15 @@ export const useAdminMarketsStore = create<AdminMarketsStore>((set, get) => ({
 	allMarketRequests: exampleMarketRequests,
 
 	selectedIds: [],
+	filterPromotions: ["standardPromotion", "premiumPromotion"],
 	filterCountry: null,
 
 	setFilterCountry: (country: TMarketsCountry | null) => {
 		set({ filterCountry: country });
+	},
+
+	setFilterPromotion: (promotions) => {
+		set({ filterPromotions: promotions });
 	},
 
 	filteredMarkets: () => {

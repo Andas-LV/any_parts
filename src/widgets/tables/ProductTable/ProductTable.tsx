@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import styles from "./ProductTable.module.css";
-import { TPartnersItem, TPromotionStatuses, PromotionStatuses } from "@/types/partners/Items";
+import {
+	TPartnersItem,
+	TPromotionStatuses,
+	PromotionStatuses,
+} from "@/types/partners/Items";
 import { partnerItemStatuses } from "@/constants/status";
 import { Icons } from "@/assets/svg/svg";
 import { useDealerItemsStore } from "@/entities/partners/items/useDealerItemsStore";
@@ -9,14 +13,19 @@ import { usePagination } from "@/hooks/usePagination";
 import { GenericTable } from "@/components/GenericTable";
 import { Checkbox } from "@components/ui/checkbox";
 import { ActionMenu } from "@components/ActionMenu";
+import SkeletonTable from "@components/skeletons/SkeletonTable/SkeletonTable";
 
 interface ProductTableProps {
 	filteredItems: TPartnersItem[];
 	currencySymbol: string;
 }
 
-export default function ProductTable({ filteredItems, currencySymbol }: ProductTableProps) {
-	const { allItems, toggleSelect, toggleSelectAll, selectedItems } = useDealerItemsStore();
+export default function ProductTable({
+	filteredItems,
+	currencySymbol,
+}: ProductTableProps) {
+	const { allItems, toggleSelect, toggleSelectAll, selectedItems } =
+		useDealerItemsStore();
 	const [openDropdownId, setOpenDropdownId] = useState<number | null>(null);
 
 	const {
@@ -28,6 +37,7 @@ export default function ProductTable({ filteredItems, currencySymbol }: ProductT
 		handleNextPage,
 		handlePreviousPage,
 		paginatedData,
+		isChangingPage,
 	} = usePagination({
 		initialPage: 1,
 		initialRowsPerPage: 10,
@@ -39,16 +49,17 @@ export default function ProductTable({ filteredItems, currencySymbol }: ProductT
 	const isAllSelected =
 		allItems.length > 0 &&
 		allItems.every((item) =>
-			selectedItems().some((selected) => selected.id === item.id)
+			selectedItems().some((selected) => selected.id === item.id),
 		);
 
 	const handleDropdownToggle = (id: number) =>
 		setOpenDropdownId((prev) => (prev === id ? null : id));
 
-	// Определяем столбцы для GenericTable
 	const columns = [
 		{
-			header: <Checkbox checked={isAllSelected} onCheckedChange={toggleSelectAll} />,
+			header: (
+				<Checkbox checked={isAllSelected} onCheckedChange={toggleSelectAll} />
+			),
 			render: (item: TPartnersItem) => (
 				<Checkbox
 					className={styles.checkBox}
@@ -61,7 +72,11 @@ export default function ProductTable({ filteredItems, currencySymbol }: ProductT
 			header: "Товар",
 			render: (item: TPartnersItem) => (
 				<div className={styles.tableProductCell}>
-					<img src={item.image} alt={item.productName} className={styles.image} />
+					<img
+						src={item.image}
+						alt={item.productName}
+						className={styles.image}
+					/>
 					<div>
 						<p className={styles.productName}>{item.productName}</p>
 						{item.category}
@@ -84,7 +99,7 @@ export default function ProductTable({ filteredItems, currencySymbol }: ProductT
 				<div className={styles.tableStatusCell}>
 					{item.statuses.map((status, index) => {
 						const statusInfo = partnerItemStatuses.find(
-							(s) => s.value === status
+							(s) => s.value === status,
 						);
 						return (
 							<span
@@ -104,6 +119,8 @@ export default function ProductTable({ filteredItems, currencySymbol }: ProductT
 		},
 		{
 			header: "Цена",
+			accessor: "price" as keyof TPartnersItem,
+			sortable: true,
 			render: (item: TPartnersItem) => (
 				<>
 					{item.price} {currencySymbol}
@@ -112,6 +129,8 @@ export default function ProductTable({ filteredItems, currencySymbol }: ProductT
 		},
 		{
 			header: "Склад AP",
+			accessor: "inStockRoom" as keyof TPartnersItem,
+			sortable: true,
 			render: (item: TPartnersItem) => item.inStockRoom,
 		},
 		{
@@ -137,11 +156,15 @@ export default function ProductTable({ filteredItems, currencySymbol }: ProductT
 
 	return (
 		<div className={styles.ProductTable}>
-			<GenericTable
-				data={currentItems}
-				columns={columns}
-				getRowKey={(item) => item.id}
-			/>
+			{isChangingPage ? (
+				<SkeletonTable />
+			) : (
+				<GenericTable
+					data={currentItems}
+					columns={columns}
+					getRowKey={(item) => item.id}
+				/>
+			)}
 			<PaginationWithSelect
 				currentPage={currentPage}
 				totalPages={totalPages}

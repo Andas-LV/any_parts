@@ -3,7 +3,7 @@ import { registerPartnerSchema } from "@/schemas/partners";
 
 export type Login = {
 	email: string;
-	agreed: boolean;
+	accepted_agreement: boolean;
 };
 
 export type ConfirmCode = {

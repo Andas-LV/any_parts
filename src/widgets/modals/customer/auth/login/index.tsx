@@ -11,14 +11,14 @@ import { renderError } from "@/utils/renderError";
 import ModalsLayout from "@/layouts/modalLayout/layout";
 
 const LoginModal = ({ onClose }: { onClose: () => void }) => {
-	const { getConfirmCode, isLoading, error } = useAuthStore();
+	const { getConfirmCode, error } = useAuthStore();
 	const [email, setEmail] = useState("");
 	const [agreed, setAgreed] = useState(false);
 	const [showConfirmModal, setShowConfirmModal] = useState(false);
 
 	const loginForm = {
 		email: email,
-		agreed: agreed,
+		accepted_agreement: agreed,
 	};
 
 	const handleSubmit = async () => {
@@ -38,6 +38,8 @@ const LoginModal = ({ onClose }: { onClose: () => void }) => {
 			<ConfirmEmailModal onClose={onClose} onChangeEmail={handleChangeEmail} />
 		);
 	}
+
+	console.log("error: ", error);
 
 	return (
 		<ModalsLayout title={"Войдите по почте"} onClose={onClose}>
@@ -73,7 +75,7 @@ const LoginModal = ({ onClose }: { onClose: () => void }) => {
 				</Label>
 			</div>
 
-			{renderError(error, "agreed")}
+			{renderError(error, "accepted_agreement")}
 		</ModalsLayout>
 	);
 };

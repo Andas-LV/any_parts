@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const loginSchema = z.object({
 	email: z.string().email("Введите корректный email"),
-	agreed: z
+	accepted_agreement: z
 		.boolean()
 		.refine((value) => value, "Вы должны согласиться с условиями"),
 });

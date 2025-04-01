@@ -11,6 +11,7 @@ import { PaginationWithSelect } from "@components/PaginationBlock/PaginationBloc
 import QuestionResponse from "@/widgets/modals/partners/QuestionResponse/QuestionResponse";
 import { usePagination } from "@/hooks/usePagination";
 import { useModal } from "@/hooks/useModal";
+import SkeletonTable from "@components/skeletons/SkeletonTable/SkeletonTable"
 
 interface QuestionsTableProps {
 	items: PartnerQuestion[];
@@ -30,6 +31,7 @@ export default function QuestionsTable({ items }: QuestionsTableProps) {
 		handleNextPage,
 		handlePreviousPage,
 		paginatedData,
+		isChangingPage
 	} = usePagination({
 		initialPage: 1,
 		initialRowsPerPage: 10,
@@ -114,11 +116,15 @@ export default function QuestionsTable({ items }: QuestionsTableProps) {
 
 	return (
 		<div className={styles.QuestionsTable}>
-			<GenericTable
-				data={currentItems}
-				columns={columns}
-				getRowKey={(item) => item.id}
-			/>
+			{isChangingPage ? (
+				<SkeletonTable />
+			) : (
+				<GenericTable
+					data={currentItems}
+					columns={columns}
+					getRowKey={(item) => item.id}
+				/>
+			)}
 			<PaginationWithSelect
 				currentPage={currentPage}
 				totalPages={totalPages}

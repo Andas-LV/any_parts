@@ -22,7 +22,7 @@ export interface ChartProps {
 	fullChart?: boolean;
 }
 
-function CustomTooltip({ active, payload }: any) {
+export function CustomTooltip({ active, payload }: any) {
 	const { user } = useUserStore();
 	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 
@@ -75,7 +75,7 @@ export default function Chart({
 				)}
 
 				{fullChart && (
-					<YAxis axisLine={false} tickLine={false} tickMargin={0} />
+					<YAxis axisLine={false} tickLine={false} tickMargin={10} />
 				)}
 
 				{fullChart && (

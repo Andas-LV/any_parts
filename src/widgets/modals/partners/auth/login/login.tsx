@@ -20,7 +20,7 @@ const PartnerLoginModal = ({ onNext }: PartnerLoginModalProps) => {
 
 	const loginForm = {
 		email: email,
-		agreed: agreed,
+		accepted_agreement: agreed,
 	};
 
 	const handleSubmit = async () => {
@@ -66,7 +66,7 @@ const PartnerLoginModal = ({ onNext }: PartnerLoginModalProps) => {
 				</Label>
 			</div>
 
-			{renderError(error, "agreed")}
+			{renderError(error, "accepted_agreement")}
 		</PartnersModalLayout>
 	);
 };

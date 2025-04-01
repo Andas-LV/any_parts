@@ -18,6 +18,7 @@ import { usePagination } from "@/hooks/usePagination";
 import { ActionMenu } from "@components/ActionMenu";
 import { useModal } from "@/hooks/useModal";
 import { GenericTable } from "@/components/GenericTable";
+import SkeletonTable from "@components/skeletons/SkeletonTable/SkeletonTable";
 
 type ModalState = {
 	type: ModalType;
@@ -59,6 +60,7 @@ export default function MarketsTable({
 		handleNextPage,
 		handlePreviousPage,
 		paginatedData,
+		isChangingPage
 	} = usePagination({
 		initialPage: 1,
 		initialRowsPerPage: 10,
@@ -114,6 +116,8 @@ export default function MarketsTable({
 		},
 		{
 			header: "Статус",
+			accessor: "status" as keyof TMarketsList,
+			sortable: true,
 			render: (market: TMarketsList) => {
 				const statusInfo = marketStatuses.find((s) => s.name === market.status);
 				return (
@@ -136,6 +140,8 @@ export default function MarketsTable({
 		},
 		{
 			header: "Продажи",
+			accessor: "sellsCount" as keyof TMarketsList,
+			sortable: true,
 			render: (market: TMarketsList) =>
 				`${market.sellsCount} ${currencySymbol}`,
 		},
@@ -162,11 +168,16 @@ export default function MarketsTable({
 
 	return (
 		<div className={styles.MarketsTable}>
-			<GenericTable
-				data={currentMarkets}
-				columns={columns}
-				getRowKey={(market) => market.id}
-			/>
+			{isChangingPage ? (
+				<SkeletonTable />
+			) : (
+				<GenericTable
+					data={currentMarkets}
+					columns={columns}
+					getRowKey={(market) => market.id}
+				/>
+			)}
+
 			<PaginationWithSelect
 				currentPage={currentPage}
 				totalPages={totalPages}

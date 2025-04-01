@@ -3,6 +3,7 @@ import { FeedbacksStatuses } from "@/types/partners/Feedbacks";
 import { StatusChoice } from "@/types/Orders";
 import { MarketRequestStatuses, MarketStatuses } from "@/types/admin/Markets";
 import { StatusObject } from "@/types/Status";
+import { TAdminItemsStatus } from "@/types/admin/Items";
 
 export const partnerItemStatuses: TPartnerItemStatuses[] = [
 	{
@@ -44,6 +45,24 @@ export const partnerFeedbackStatuses: StatusObject<FeedbacksStatuses>[] = [
 		backgroundColor: "var(--brand-gray)",
 	},
 ];
+
+export const adminItemStatuses:StatusObject<TAdminItemsStatus>[] = [
+	{
+		name: TAdminItemsStatus.active,
+		value: "active" as keyof TAdminItemsStatus,
+		backgroundColor: "#c2ebda",
+	},
+	{
+		name: TAdminItemsStatus.notActive,
+		value: "notActive" as keyof TAdminItemsStatus,
+		backgroundColor: "var(--brand-gray)",
+	},
+	{
+		name: TAdminItemsStatus.inRevision,
+		value: "inRevision" as keyof TAdminItemsStatus,
+		backgroundColor: "#FCCDC9",
+	},
+]
 
 export const marketStatuses: StatusObject<MarketStatuses>[] = [
 	{

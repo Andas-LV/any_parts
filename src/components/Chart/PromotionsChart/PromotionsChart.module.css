@@ -1,0 +1,18 @@
+.PromotionsChart {
+    width: 100%;
+}
+.customTooltip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow: scroll;
+}
+
+.date {
+    color: var(--text-secondary);
+}

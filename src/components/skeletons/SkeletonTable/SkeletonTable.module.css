@@ -1,0 +1,108 @@
+@keyframes pulse {
+    0% {
+        background-color: #e0e0e0;
+    }
+    50% {
+        background-color: #d6d6d6;
+    }
+    100% {
+        background-color: #e0e0e0;
+    }
+}
+
+.SkeletonTable {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.SkeletonTable table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    border: 1px solid #e0e0e0;
+}
+
+.SkeletonTable th,
+.SkeletonTable td {
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Skeletons */
+.headerSkeleton {
+    width: 80px;
+    height: 20px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.checkboxSkeleton {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.tableProductCell {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.productName,
+.category,
+.article,
+.barcode,
+.statusSkeleton,
+.price,
+.stock,
+.menu {
+    height: 16px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+    margin-bottom: 8px;
+}
+
+.productName {
+    width: 150px;
+}
+
+.category {
+    width: 100px;
+}
+
+.article {
+    width: 120px;
+}
+
+.barcode {
+    width: 100px;
+}
+
+.statusSkeleton {
+    width: 130px;
+    height: 24px;
+}
+
+.price {
+    width: 80px;
+}
+
+.stock {
+    width: 60px;
+}
+
+.menu {
+    width: 24px;
+    height: 24px;
+}

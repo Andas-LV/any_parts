@@ -1,6 +1,6 @@
 import { ItemStatusValues, TPartnersItem } from "@/types/partners/Items";
 
-const productNames = [
+export const productNames = [
 	"Тормозные колодки передние",
 	"Амортизатор задний",
 	"Фильтр воздушный",
@@ -23,7 +23,7 @@ const productNames = [
 	"Крышка масляного фильтра",
 ];
 
-const categories = [
+export const categories = [
 	"Тормозная система",
 	"Подвеска",
 	"Двигатель",
@@ -46,7 +46,7 @@ const categories = [
 	"Двигатель",
 ];
 
-const articles = [
+export const articles = [
 	"TB-1024",
 	"AM-2255",
 	"FV-9784",
@@ -69,12 +69,12 @@ const articles = [
 	"КМФ-3021",
 ];
 
-const basePrices = [
+export const basePrices = [
 	1500, 2300, 600, 1200, 3200, 800, 950, 400, 5000, 300, 650, 1800, 4500, 2500,
 	950, 3800, 10000, 1200, 450, 350,
 ];
 
-const baseInStock = [
+export const baseInStock = [
 	10, 5, 15, 20, 3, 25, 8, 50, 2, 30, 12, 18, 4, 6, 22, 10, 2, 15, 8, 25,
 ];
 
@@ -86,7 +86,7 @@ const statusesOptions: ItemStatusValues[] = [
 	"premiumPromotion",
 ];
 
-const imageUrl =
+export const imageUrl =
 	"https://media.istockphoto.com/id/514802759/photo/speeding.jpg?s=612x612&w=0&k=20&c=NOkADTslFprPmuUuwzFTKgkYpGk5HQv495Mj6w3jSZc=";
 
 export const tableItems: TPartnersItem[] = Array.from(

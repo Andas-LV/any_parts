@@ -10,6 +10,7 @@ import { usePagination } from "@/hooks/usePagination";
 import { ActionMenu } from "@components/ActionMenu";
 import { useModal } from "@/hooks/useModal";
 import { GenericTable } from "@/components/GenericTable";
+import SkeletonTable from "@components/skeletons/SkeletonTable/SkeletonTable"
 
 type ModalState = {
 	type: ModalType;
@@ -33,6 +34,7 @@ export default function SellsTable({ sellsData, currencySymbol }: SellsTableProp
 		handleNextPage,
 		handlePreviousPage,
 		paginatedData,
+		isChangingPage
 	} = usePagination({
 		initialPage: 1,
 		initialRowsPerPage: 10,
@@ -92,10 +94,14 @@ export default function SellsTable({ sellsData, currencySymbol }: SellsTableProp
 		},
 		{
 			header: "Дата покупки",
+			accessor: "sellDate" as keyof TSellsList,
+			sortable: true,
 			render: (sell: TSellsList) => formatDateWithDuration(sell.sellDate),
 		},
 		{
 			header: "Стоимость покупки",
+			accessor: "sellAmount" as keyof TSellsList,
+			sortable: true,
 			render: (sell: TSellsList) => (
 				<>
 					{sell.sellAmount} {currencySymbol}
@@ -125,11 +131,15 @@ export default function SellsTable({ sellsData, currencySymbol }: SellsTableProp
 
 	return (
 		<div className={styles.SellsTable}>
-			<GenericTable
-				data={currentSells}
-				columns={columns}
-				getRowKey={(sell) => sell.id}
-			/>
+			{isChangingPage ? (
+				<SkeletonTable />
+			) : (
+				<GenericTable
+					data={currentSells}
+					columns={columns}
+					getRowKey={(sell) => sell.id}
+				/>
+			)}
 			<PaginationWithSelect
 				currentPage={currentPage}
 				totalPages={totalPages}

@@ -11,6 +11,8 @@ import { itemDeliveryStatuses, partnerFeedbackStatuses } from "@/constants/statu
 import FeedbackResponse from "@/widgets/modals/partners/FeedbackResponse/FeedbackResponse";
 import { usePagination } from "@/hooks/usePagination";
 import { useModal } from "@/hooks/useModal";
+import SkeletonTable from "@components/skeletons/SkeletonTable/SkeletonTable"
+import { TAdminItems } from "@/types/admin/Items";
 
 interface FeedbacksTableProps {
 	items: PartnerFeedback[];
@@ -30,6 +32,7 @@ export default function FeedbacksTable({ items }: FeedbacksTableProps) {
 		handleNextPage,
 		handlePreviousPage,
 		paginatedData,
+		isChangingPage
 	} = usePagination({
 		initialPage: 1,
 		initialRowsPerPage: 10,
@@ -59,6 +62,8 @@ export default function FeedbacksTable({ items }: FeedbacksTableProps) {
 		},
 		{
 			header: "Статус",
+			accessor: "status" as keyof PartnerFeedback,
+			sortable: true,
 			render: (item: PartnerFeedback) => (
 				<>
 					{partnerFeedbackStatuses
@@ -77,6 +82,8 @@ export default function FeedbacksTable({ items }: FeedbacksTableProps) {
 		},
 		{
 			header: "Дата и время",
+			accessor: "time" as keyof PartnerFeedback,
+			sortable: true,
 			render: (item: PartnerFeedback) => (
 				<div className={styles.tableDateCell}>
 					<span className={styles.date}>{formatDate(item.time).date}</span>
@@ -144,11 +151,15 @@ export default function FeedbacksTable({ items }: FeedbacksTableProps) {
 
 	return (
 		<div className={styles.FeedbacksTable}>
-			<GenericTable
-				data={currentItems}
-				columns={columns}
-				getRowKey={(item) => item.id}
-			/>
+			{isChangingPage ? (
+				<SkeletonTable />
+			) : (
+				<GenericTable
+					data={currentItems}
+					columns={columns}
+					getRowKey={(item) => item.id}
+				/>
+			)}
 			<PaginationWithSelect
 				currentPage={currentPage}
 				totalPages={totalPages}

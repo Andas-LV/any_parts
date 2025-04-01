@@ -12,6 +12,7 @@ import { marketRequestStatuses } from "@/constants/status";
 import { GenericTable } from "@components/GenericTable";
 import { PaginationWithSelect } from "@components/PaginationBlock/PaginationBlock";
 import MarketFullInfoModal from "@/widgets/modals/admin/MarketFullInfoModal/MarketFullInfoModal";
+import SkeletonTable from "@components/skeletons/SkeletonTable/SkeletonTable"
 
 type ModalState = {
 	type: ModalType;
@@ -40,6 +41,7 @@ export default function MarketRequestsTable({
 		handleNextPage,
 		handlePreviousPage,
 		paginatedData,
+		isChangingPage
 	} = usePagination({
 		initialPage: 1,
 		initialRowsPerPage: 10,
@@ -69,6 +71,8 @@ export default function MarketRequestsTable({
 		},
 		{
 			header: "Статус",
+			accessor: "status" as keyof TMarketRequestsList,
+			sortable: true,
 			render: (market: TMarketRequestsList) => {
 				const statusInfo = marketRequestStatuses.find((s) => s.name === market.status);
 				return (
@@ -104,11 +108,15 @@ export default function MarketRequestsTable({
 
 	return (
 		<div className={styles.MarketRequestsTable}>
-			<GenericTable
-				data={currentMarkets}
-				columns={columns}
-				getRowKey={(market) => market.id}
-			/>
+			{isChangingPage ? (
+				<SkeletonTable />
+			) : (
+				<GenericTable
+					data={currentMarkets}
+					columns={columns}
+					getRowKey={(market) => market.id}
+				/>
+			)}
 			<PaginationWithSelect
 				currentPage={currentPage}
 				totalPages={totalPages}
