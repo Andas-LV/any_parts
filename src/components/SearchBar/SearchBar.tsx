@@ -6,15 +6,17 @@ interface SearchBarProps {
 	search: string;
 	onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	placeholder: string;
+	width?: string;
 }
 
 export default function SearchBar({
 	search,
 	onSearchChange,
 	placeholder,
+	width
 }: SearchBarProps) {
 	return (
-		<div className={styles.searchWrapper}>
+		<div style={{width: width}} className={styles.searchWrapper}>
 			<SearchIcon className={styles.searchIcon} />
 			<input
 				value={search}

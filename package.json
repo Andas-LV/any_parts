@@ -38,7 +38,6 @@
 		"cmdk": "^1.0.0",
 		"date-fns": "^4.1.0",
 		"embla-carousel-react": "^8.5.2",
-		"google-map-react": "^2.2.1",
 		"js-cookie": "^3.0.5",
 		"leaflet": "^1.9.4",
 		"lucide-react": "^0.474.0",
@@ -57,7 +56,6 @@
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3",
-		"@types/google-map-react": "^2.1.10",
 		"@types/js-cookie": "^3.0.6",
 		"@types/node": "^20",
 		"@types/react": "^19",

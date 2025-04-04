@@ -5,26 +5,31 @@ import { DeliveryPoint } from "@/types/DeliveryPoint";
 
 interface DeliveryPointItemProps {
 	point: DeliveryPoint;
-	selected: boolean;
-	onSelect: (id: number) => void;
+	radio?: boolean;
+	selected?: boolean;
+	onSelect?: (id: number) => void;
 }
 
 export const DeliveryPointItem = ({
 	point,
+	radio,
 	selected,
 	onSelect,
 }: DeliveryPointItemProps) => {
 	const handleClick = () => {
-		onSelect(point.id);
+		onSelect?.(point.id);
 	};
 
 	return (
 		<label className={styles.DeliveryPointItem}>
-			<RadioGroupItem
-				value={point.id.toString()}
-				className={styles.radioButton}
-				checked={selected}
-			/>
+			{radio && (
+				<RadioGroupItem
+					value={point.id.toString()}
+					className={styles.radioButton}
+					checked={selected}
+				/>
+			)}
+
 			<div className={styles.deliveryPoint} onClick={handleClick}>
 				<div className={styles.address}>{point.address}</div>
 				<div className={styles.workingTime}>

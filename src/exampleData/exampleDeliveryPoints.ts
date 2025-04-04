@@ -3,101 +3,85 @@ import { DeliveryPoint } from "@/types/DeliveryPoint";
 export const allDeliveryPoints: DeliveryPoint[] = [
 	{
 		id: 1,
-		address: "Алматы, микрорайон Шугыла 340/35к10",
+		address: "Астана, правый берег",
 		workingTime: {
 			days: "Ежедневно",
 			open: "9:00",
 			close: "22:00",
 		},
-		coordinates: {
-			lat: 43.238949, lng: 76.889709
-		}
+		coordinates: { lat: 51.169392, lng: 71.449074 },
 	},
 	{
 		id: 2,
-		address: "Алматы, микрорайон Шугыла 320",
+		address: "Астана, правый берег",
 		workingTime: {
 			days: "Ежедневно",
 			open: "9:00",
 			close: "22:00",
 		},
-		coordinates: {
-			lat: 43.238969, lng: 76.889789
-		}
+		coordinates: { lat: 51.169392, lng: 71.449074 },
 	},
 	{
 		id: 3,
-		address: "Алматы, микрорайон Шугыла 340/35к10",
+		address: "Астана, около Байтерека",
 		workingTime: {
 			days: "Ежедневно",
 			open: "9:00",
 			close: "22:00",
 		},
-		coordinates: {
-			lat: 43.238949, lng: 76.889709
-		}
+		coordinates: { lat: 51.128, lng: 71.43 },
 	},
 	{
 		id: 4,
-		address: "Алматы, микрорайон Шугыла 320",
+		address: "Астана, правый берег",
 		workingTime: {
 			days: "Ежедневно",
 			open: "9:00",
 			close: "22:00",
 		},
-		coordinates: {
-			lat: 43.238949, lng: 76.889709
-		}
+		coordinates: { lat: 51.169392, lng: 71.449074 },
 	},
 	{
 		id: 5,
-		address: "Алматы, микрорайон Шугыла 340/35к10",
+		address: "Астана, около Байтерека",
 		workingTime: {
 			days: "Ежедневно",
 			open: "9:00",
 			close: "22:00",
 		},
-		coordinates: {
-			lat: 43.238949, lng: 76.889709
-		}
+		coordinates: { lat: 51.128, lng: 71.43 },
 	},
 	{
 		id: 6,
-		address: "Алматы, микрорайон Шугыла 320",
+		address: "Астана, около Байтерека",
 		workingTime: {
 			days: "Ежедневно",
 			open: "9:00",
 			close: "22:00",
 		},
-		coordinates: {
-			lat: 43.238949, lng: 76.889709
-		}
+		coordinates: { lat: 51.128, lng: 71.43 },
 	},
-]
+];
 
-export const userDeliveryPoints:DeliveryPoint[] = [
+export const userDeliveryPoints: DeliveryPoint[] = [
 	{
 		id: 1,
-		address: "Алматы, микрорайон Шугыла 340/35к10",
+		address: "Астана, правый берег",
 		workingTime: {
 			days: "Ежедневно",
 			open: "9:00",
 			close: "22:00",
 		},
-		coordinates: {
-			lat: 43.238949, lng: 76.889709
-		}
+		coordinates: { lat: 51.169392, lng: 71.449074 },
 	},
 	{
 		id: 2,
-		address: "Алматы, микрорайон Шугыла 320",
+		address: "Астана, около Байтерека",
 		workingTime: {
 			days: "Ежедневно",
 			open: "9:00",
 			close: "22:00",
 		},
-		coordinates: {
-			lat: 43.238949, lng: 76.889709
-		}
+		coordinates: { lat: 51.128, lng: 71.43 },
 	},
-]
+];

@@ -1,28 +1,51 @@
-"use client"
+"use client";
 
-import React, { useRef, useState } from "react";
+import React from "react";
+import { DeliveryPoint } from "@/types/DeliveryPoint"
 import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
 const attribution =
 	'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-const url =
-	"https://api.maptiler.com/maps/basic-v2/256/{z}/{x}/{y}.png?key=puoG6vOLC4oqJXcum8fR";
+const url = process.env.NEXT_PUBLIC_LEAFLET_URL;
 
-const OpenStreetMap = () => {
-	const [center, setCenter] = useState({
-		lat: 43.238949, lng: 76.889709
-	});
+interface OpenStreetMapProps {
+	deliveryPoints: DeliveryPoint[];
+}
+
+
+const customIcon = L.icon({
+	iconUrl: "/logo.svg",
+	iconSize: [25, 25],
+	iconAnchor: [20, 25],
+	popupAnchor: [0, -25],
+});
+
+export default function OpenStreetMap({ deliveryPoints }: OpenStreetMapProps) {
+	const center = { lat: 51.169392, lng: 71.449074 }; // Центр Астаны
 
 	return (
-		<div>
-			<MapContainer center={center} zoom={9}>
-				<TileLayer attribution={attribution} url={url} />
-				<Marker position={[23.729211164246585, 90.40874895549243]}>
-					<Popup>This is a popup.</Popup>
-				</Marker>
+		<div style={{ width: "70%", height: "100vh" }}>
+			<MapContainer
+				center={center}
+				zoom={11}
+				style={{ width: "100%", height: "100%" }}
+			>
+				<TileLayer attribution={attribution} url={url!} />
+				{deliveryPoints.map((point) => (
+					<Marker key={point.id} position={[point.coordinates.lat, point.coordinates.lng]} icon={customIcon}>
+						<Popup>
+							<div>
+								<h3>{point.address}</h3>
+								<p>
+									{point.workingTime.days}: {point.workingTime.open} - {point.workingTime.close}
+								</p>
+							</div>
+						</Popup>
+					</Marker>
+				))}
 			</MapContainer>
 		</div>
 	);
-};
-
-export default OpenStreetMap;
+}

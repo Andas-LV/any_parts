@@ -43,6 +43,7 @@ export const ChooseDeliveryPointModal = ({
 							<DeliveryPointItem
 								key={point.id}
 								point={point}
+								radio
 								selected={selectedPointId === point.id}
 								onSelect={setSelectedPointId}
 							/>
@@ -52,7 +53,7 @@ export const ChooseDeliveryPointModal = ({
 					<p className={styles.noResults}>Ничего не найдено</p>
 				)}
 
-				<Button onClick={handleConfirm} disabled={selectedPointId === null}>
+				<Button className={styles.btn} onClick={handleConfirm} disabled={selectedPointId === null}>
 					Заберу отсюда
 				</Button>
 			</div>
