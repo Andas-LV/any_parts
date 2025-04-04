@@ -8,6 +8,7 @@ import {
 import { exampleUser } from "@/exampleData/exampleUser";
 import { TProfileTabs } from "@/app/(pages)/profile/page";
 import { PartnersTabs } from "@/app/(pages)/partners/page";
+import { TChangePassword } from "@/types/admin/Auth";
 
 interface UserState {
 	user: User | null;
@@ -21,6 +22,7 @@ interface UserState {
 	fetchUser: () => Promise<void>;
 	updateUser: (data: Partial<User>) => Promise<void>;
 	changeCurrency: (currency: Currency) => Promise<void>;
+	changePassword: (data: TChangePassword) => Promise<void>;
 	updateAvatar: (file: File) => Promise<void>;
 	createApWallet: () => Promise<void>;
 	setModeratedUser: (moderation: boolean) => Promise<void>;
@@ -120,6 +122,20 @@ export const useUserStore = create<UserState>()((set) => ({
 			set({
 				error:
 					error instanceof Error ? error.message : "Failed to change currency",
+			});
+		} finally {
+			set({ isLoading: false });
+		}
+	},
+
+	changePassword: async (data: TChangePassword) => {
+		set({ isLoading: true, error: null });
+		try {
+			await userService.changePassword(data);
+		} catch (error) {
+			set({
+				error:
+					error instanceof Error ? error.message : "Failed to change password",
 			});
 		} finally {
 			set({ isLoading: false });

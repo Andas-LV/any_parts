@@ -7,9 +7,12 @@ import { useUserStore } from "@/entities/user/useUserStore";
 import { countryCodes } from "@/constants/countryCodes";
 import { useRouter } from "next/navigation";
 import { routes } from "@/configs/routes";
+import { ChooseDeliveryPointModal } from "@/widgets/modals/customer/ChooseDeliveryPointModal/ChooseDeliveryPointModal";
 
 export default function TopHeader() {
-	const [isModalOpen, setModalOpen] = useState(false);
+	const [currencyModal, setCurrencyModal] = useState(false);
+	const [deliveryModal, setDeliveryModal] = useState(false);
+
 	const router = useRouter();
 	const { user } = useUserStore();
 	const userCurrency = user?.currency || "KZT";
@@ -23,7 +26,7 @@ export default function TopHeader() {
 				<Button
 					className={styles.currency}
 					variant="secondary"
-					onClick={() => setModalOpen(true)}
+					onClick={() => setCurrencyModal(true)}
 				>
 					<Image
 						className={styles.currencyImg}
@@ -35,7 +38,7 @@ export default function TopHeader() {
 					{selectedCountry.currencyDesc} • {userCurrency}
 				</Button>
 
-				<Button className={styles.address} variant="secondary">
+				<Button onClick={() => setDeliveryModal(true)} className={styles.address} variant="secondary">
 					<Image
 						src={"/header/location.svg"}
 						alt="location"
@@ -54,7 +57,8 @@ export default function TopHeader() {
 				Стать продавцом
 			</Button>
 
-			{isModalOpen && <CurrencyModal onClose={() => setModalOpen(false)} />}
+			{currencyModal && <CurrencyModal onClose={() => setCurrencyModal(false)} />}
+			{deliveryModal && <ChooseDeliveryPointModal onClose={() => setDeliveryModal(false)} />}
 		</div>
 	);
 }

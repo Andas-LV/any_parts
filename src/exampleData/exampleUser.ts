@@ -1,4 +1,5 @@
 import type { User } from "@/types/User";
+import { userDeliveryPoints } from "@/exampleData/exampleDeliveryPoints";
 
 export const exampleUser: User = {
 	id: 1,
@@ -11,4 +12,5 @@ export const exampleUser: User = {
 	currency: "KZT",
 	role: "dealer",
 	moderated: true,
+	deliveryPoints: userDeliveryPoints,
 };

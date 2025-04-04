@@ -12,7 +12,7 @@
 			"withStory": false,
 			"withLazy": false,
 			"customTemplates": {
-				"component": "src/components/templates/component/TemplateName.tsx"
+				"component": "src/lib/templates/component/TemplateName.tsx"
 			}
 		}
 	}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { manrope } from "@/assets//fonts";
+import { manrope } from "@/assets/fonts";
 import "./globals.css";
 import React, { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";

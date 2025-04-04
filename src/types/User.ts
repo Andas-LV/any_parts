@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { editSchema, notificationEditSchema } from "@/schemas/auth";
+import { editSchema, notificationEditSchema } from "@/schemas/account";
+import { DeliveryPoint } from "@/types/DeliveryPoint";
 
 export type User = {
 	id: number;
@@ -12,6 +13,7 @@ export type User = {
 	currency: Currency;
 	role: Roles;
 	moderated?: boolean;
+	deliveryPoints?: DeliveryPoint[];
 };
 
 export type TEditSchema = z.infer<typeof editSchema>;

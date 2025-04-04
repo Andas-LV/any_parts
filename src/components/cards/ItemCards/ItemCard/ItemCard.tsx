@@ -45,6 +45,8 @@ export default function ItemCard({ item, showFavorite }: ItemCardProps) {
 		setIsFavorite(!isFavorite);
 	};
 
+	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
+	
 	return (
 		<Card
 			className={styles.card}
@@ -56,14 +58,14 @@ export default function ItemCard({ item, showFavorite }: ItemCardProps) {
 				<div className={styles.priceContainer}>
 					<div className={styles.mainPrice}>
 						{currentPrice?.toLocaleString() || price.toLocaleString()}{" "}
-						{user && useCurrencySymbol(user.currency)}
+						{currencySymbol}
 					</div>
 
 					{discount && currentPrice && (
 						<div className={styles.priceInfo}>
 							<span className={styles.oldPrice}>
 								{price.toLocaleString()}{" "}
-								{user && useCurrencySymbol(user.currency)}
+								{currencySymbol}
 							</span>
 							<span className={styles.discount}>{discount}%</span>
 						</div>

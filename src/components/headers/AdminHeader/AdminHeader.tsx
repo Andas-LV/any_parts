@@ -17,7 +17,7 @@ export default function AdminHeader() {
 				<span>Admin</span>
 			</div>
 
-			<div className={"cursor-pointer"} onClick={() => router.push(routes.adminSettings())}>
+			<div className={"cursor-pointer"} onClick={() => router.push(routes.adminProfile())}>
 				<Icons.User width={35} height={35} />
 			</div>
 		</div>

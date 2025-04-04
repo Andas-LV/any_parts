@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { registerPartnerSchema } from "@/schemas/partners";
+import { changePasswordSchema } from "@/schemas/account";
 
 export type TAdminLogin = {
 	email: string;
@@ -16,3 +16,5 @@ export type TNewPassword = {
 	newPassword: string;
 	newPasswordConfirm: string;
 }
+
+export type TChangePassword = z.infer<typeof changePasswordSchema>;

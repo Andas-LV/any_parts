@@ -1,5 +1,6 @@
 import axiosInstance from "@/lib/axiosInstance";
 import { Currency, type User } from "@/types/User";
+import { TChangePassword } from "@/types/admin/Auth";
 
 export async function getUserMe(): Promise<User> {
 	const { data } = await axiosInstance.get("/user/me/");
@@ -13,6 +14,11 @@ export async function updateUserMe(body: Partial<User>): Promise<User> {
 
 export async function changeCurrency(body: Currency): Promise<User> {
 	const { data } = await axiosInstance.patch("/user/me/update/currency/", body);
+	return data;
+}
+
+export async function changePassword(body: TChangePassword) {
+	const { data } = await axiosInstance.post("/user/me/update/password/", body);
 	return data;
 }
 

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import styles from "./PartnersSettingsAccount.module.css";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { editSchema } from "@/schemas/auth";
+import { editSchema } from "@/schemas/account";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { Button } from "@components/ui/button";
 import { Icons } from "@/assets/svg/svg";

@@ -4,7 +4,7 @@ import { useUserStore } from "@/entities/user/useUserStore";
 import { useForm } from "react-hook-form";
 import { TNotificationEditSchema } from "@/types/User";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { notificationEditSchema } from "@/schemas/auth";
+import { notificationEditSchema } from "@/schemas/account";
 import { Button } from "@components/ui/button";
 
 export default function PartnersSettingsNotifications() {

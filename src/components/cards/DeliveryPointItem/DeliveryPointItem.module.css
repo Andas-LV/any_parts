@@ -1,0 +1,20 @@
+.DeliveryPointItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.deliveryPoint{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap:0.5rem;
+}
+
+.address{
+    font-weight: bold;
+}
+
+.workingTime{
+    color: var(--text-secondary)
+}

@@ -9,7 +9,7 @@ export const routes = {
 
 	admin: () => `/admin`,
 	adminAuth: () => `/admin/auth`,
-	adminSettings: () => `/admin/settings`,
+	adminProfile: () => `/admin/profile`,
 
 	basket: () => `/basket`,
 	order: () => `/order`,
@@ -17,4 +17,6 @@ export const routes = {
 	itemPage: (id: number) => `/item/${id}`,
 	searchedPage: ({ value, name }: ISearchParams) =>
 		`/search/${value}/?name=${name}`,
+
+	deliveryPoints: () => `/deliveryPoints`,
 };

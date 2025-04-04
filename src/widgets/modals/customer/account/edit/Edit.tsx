@@ -4,7 +4,7 @@ import { Button } from "@components/ui/button";
 import React, { useState } from "react";
 import { RadioGroup, RadioGroupItem } from "@components/ui/radio-group";
 import { useUserStore } from "@/entities/user/useUserStore";
-import { editSchema } from "@/schemas/auth";
+import { editSchema } from "@/schemas/account";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";

@@ -5,6 +5,10 @@
 	width: 400px;
 }
 
+.logOutModelWrapper p{
+	font-weight: 500;
+}
+
 .actionButtons {
 	width: 100%;
 	display: flex;
