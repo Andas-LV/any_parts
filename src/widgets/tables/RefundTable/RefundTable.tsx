@@ -11,10 +11,11 @@ import styles from "./RefundTable.module.css";
 import { RefundItem, TRefundStatus } from "@/types/Refund";
 import { getRefundStatusStyle } from "./utils/getRefundStatusStyle";
 import { renderStatusAction } from "./utils/RenderStatusAction/RenderStatusAction";
+import { CurrencySymbol } from "@/hooks/useCurrency";
 
 interface RefundTableProps {
 	items: RefundItem[];
-	currencySymbol: string;
+	currencySymbol: CurrencySymbol | null;
 }
 
 const RefundTable: React.FC<RefundTableProps> = ({ items, currencySymbol }) => {

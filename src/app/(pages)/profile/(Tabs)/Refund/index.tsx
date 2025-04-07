@@ -7,7 +7,6 @@ import { Icons } from "@/assets/svg/svg";
 import CreateRefund from "@/widgets/modals/customer/menuModals/refund/create/CreateRefund";
 import RefundFullInfo from "@/widgets/modals/customer/menuModals/refund/create/refundFullInfo";
 import RequestSended from "@/widgets/modals/requestSended/requestSended";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import SearchBar from "@components/SearchBar/SearchBar";
 import RefundTable from "@/widgets/tables/RefundTable/RefundTable";
@@ -16,10 +15,9 @@ type TModal = "itemChooseModal" | "itemFullInfoModal" | "onSuccessModal" | null;
 
 export default function Refund() {
 	const { getRefundItems, refunds } = useItemsStore();
-	const { user } = useUserStore();
+	const { currencySymbol } = useUserStore();
 	const [search, setSearch] = useState("");
 	const [activeModal, setActiveModal] = useState<TModal>(null);
-	const currencySymbol = useCurrencySymbol(user ? user.currency : "KZT");
 
 	useEffect(() => {
 		getRefundItems();

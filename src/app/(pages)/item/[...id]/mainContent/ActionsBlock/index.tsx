@@ -5,7 +5,6 @@ import { Icons } from "@/assets/svg/svg";
 import styles from "./actionBlock.module.css";
 import { Button } from "@components/ui/button";
 import dynamic from "next/dynamic";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { exampleChartData } from "@/exampleData/exampleChartData";
 import { useState } from "react";
@@ -18,11 +17,10 @@ interface IActionsBlock {
 }
 
 export default function ActionsBlock({ item }: IActionsBlock) {
-	const { user } = useUserStore();
+	const { currencySymbol} = useUserStore();
 	const [chartModal, setChartModal] = useState(false);
 	const { medianPrice, currentPrice } = exampleChartData;
 
-	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 	const priceRange = medianPrice - currentPrice;
 	const isNegative = priceRange < 0;
 

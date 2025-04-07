@@ -7,7 +7,6 @@ import CreateCard from "@/widgets/modals/customer/menuModals/payment/create/Crea
 import DeleteCard from "@/widgets/modals/customer/menuModals/payment/delete/DeleteCard";
 import { usePaymentStore } from "@/entities/customer/payment/usePaymentStore";
 import { Button } from "@components/ui/button";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 type TPaymentModal =
@@ -18,7 +17,7 @@ type TPaymentModal =
 
 export default function Menu() {
 	const { balance } = usePaymentStore();
-	const { user } = useUserStore();
+	const { currencySymbol } = useUserStore();
 
 	const [activePaymentModal, setActivePaymentModal] =
 		useState<TPaymentModal>(null);
@@ -27,7 +26,7 @@ export default function Menu() {
 		<div className={styles.wrappersColumn}>
 			<div className={styles.wrapper}>
 				<h2 className={styles.balance}>
-					{balance} {user && useCurrencySymbol(user.currency)}
+					{balance} {currencySymbol}
 				</h2>
 
 				<Button

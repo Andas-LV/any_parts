@@ -5,14 +5,11 @@ import CountryFilter from "@/app/(pages)/admin/(Tabs)/AdminMainPage/CountryFilte
 import SellsTable from "@/widgets/tables/SellsTable/SellsTable";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { useAdminMarketsStore } from "@/entities/admin/markets/useAdminMarketsStore";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
 
 export default function SellsList() {
-	const { user } = useUserStore();
+	const { currencySymbol } = useUserStore();
 	const { filteredSells } = useAdminMarketsStore();
 	const [search, setSearch] = useState("");
-
-	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 
 	const displayedSells = filteredSells().filter((sell) =>
 		sell.market.marketName?.toLowerCase().includes(search.toLowerCase()) ||

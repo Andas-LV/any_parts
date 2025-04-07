@@ -6,16 +6,14 @@ import AdminProductsCheckTable from "@/widgets/tables/AdminProductsCheckTable/Ad
 import { filterBySearch } from "@/utils/filterBySearch";
 import SearchBar from "@components/SearchBar/SearchBar";
 import { useAdminItemsStore } from "@/entities/admin/items/useAdminItemsStore";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 export default function Announcements() {
-	const { user } = useUserStore();
+	const { currencySymbol } = useUserStore();
 	const { allItems } = useAdminItemsStore();
 
 	const [search, setSearch] = useState("");
 
-	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 	const displayedMarkets = filterBySearch(allItems, search, [
 		"productName",
 		"article",

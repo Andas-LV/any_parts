@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import styles from "./ItemsLists.module.css";
 import { useUserStore } from "@/entities/user/useUserStore";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
 import SearchBar from "@components/SearchBar/SearchBar";
 import { Button } from "@components/ui/button";
 import { Plus } from "lucide-react";
@@ -11,12 +10,10 @@ import ProductTable from "@/widgets/tables/ProductTable/ProductTable";
 import { useDealerItemsStore } from "@/entities/partners/items/useDealerItemsStore";
 
 export default function ItemsLists() {
-	const { user } = useUserStore();
+	const { currencySymbol } = useUserStore();
 	const { allItems } = useDealerItemsStore();
 
 	const [search, setSearch] = useState("");
-
-	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 
 	const filteredItems = allItems.filter(
 		(item) =>

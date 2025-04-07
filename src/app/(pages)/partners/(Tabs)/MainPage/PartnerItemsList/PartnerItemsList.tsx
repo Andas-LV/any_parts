@@ -5,17 +5,14 @@ import SearchBar from "@components/SearchBar/SearchBar";
 import StatusFilter from "./StatusFilter/StatusFilter";
 import ProductTable from "@/widgets/tables/ProductTable/ProductTable";
 import { useUserStore } from "@/entities/user/useUserStore";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
 import styles from "./PartnerItemsList.module.css";
 import { useDealerItemsStore } from "@/entities/partners/items/useDealerItemsStore";
 import { partnerItemStatuses } from "@/constants/status";
 
 export default function PartnerItemsList() {
-	const { user, setActivePartnersTab } = useUserStore();
+	const { setActivePartnersTab, currencySymbol } = useUserStore();
 	const { filteredItems } = useDealerItemsStore();
 	const [search, setSearch] = useState("");
-
-	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 
 	const displayedItems = filteredItems().filter(
 		(item) =>

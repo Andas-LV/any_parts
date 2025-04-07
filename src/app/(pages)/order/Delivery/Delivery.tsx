@@ -53,7 +53,7 @@ export default function Delivery() {
 				<Icons.ArrowRight />
 			</div>
 
-			{isEditModal && <EditModal onClose={() => setIsEditModal(false)} />}
+			{isEditModal && <EditModal onClose={() => setIsEditModal(false)}/>}
 		</div>
 	);
 }

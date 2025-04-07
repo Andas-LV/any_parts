@@ -14,10 +14,11 @@ import { GenericTable } from "@/components/GenericTable";
 import { Checkbox } from "@components/ui/checkbox";
 import { ActionMenu } from "@components/ActionMenu";
 import SkeletonTable from "@components/skeletons/SkeletonTable/SkeletonTable";
+import { CurrencySymbol } from "@/hooks/useCurrency";
 
 interface ProductTableProps {
 	filteredItems: TPartnersItem[];
-	currencySymbol: string;
+	currencySymbol: CurrencySymbol | null;
 }
 
 export default function ProductTable({

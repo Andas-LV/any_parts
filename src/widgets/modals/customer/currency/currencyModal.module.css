@@ -1,3 +1,7 @@
+.currencyModal{
+	width: 500px;
+}
+
 .select {
 	display: flex;
 	align-items: center;

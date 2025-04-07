@@ -9,6 +9,7 @@ import { exampleUser } from "@/exampleData/exampleUser";
 import { TProfileTabs } from "@/app/(pages)/profile/page";
 import { PartnersTabs } from "@/app/(pages)/partners/page";
 import { TChangePassword } from "@/types/admin/Auth";
+import { CurrencySymbol, useCurrencySymbol } from "@/hooks/useCurrency";
 
 interface UserState {
 	user: User | null;
@@ -16,6 +17,7 @@ interface UserState {
 	activePartnersTab: PartnersTabs;
 	isDealer: boolean;
 	isModerated: boolean;
+	currencySymbol: CurrencySymbol | null;
 	isLoading: boolean;
 	error: string | null;
 
@@ -39,6 +41,7 @@ export const useUserStore = create<UserState>()((set) => ({
 	activePartnersTab: "main",
 	sessions: exampleSessions,
 	currentSession: exampleCurrentSession,
+	currencySymbol: null,
 	isLoading: false,
 	error: null,
 
@@ -46,7 +49,11 @@ export const useUserStore = create<UserState>()((set) => ({
 		set({ isLoading: true, error: null });
 		try {
 			const user = await userService.getUserMe();
-			set({ user, isDealer: user?.role === "dealer" });
+			set({
+				user,
+				isDealer: user?.role === "dealer",
+				currencySymbol: useCurrencySymbol(user.currency),
+			});
 		} catch (error) {
 			set({
 				error: error instanceof Error ? error.message : "Failed to fetch user",

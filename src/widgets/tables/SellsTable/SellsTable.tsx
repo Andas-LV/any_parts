@@ -11,6 +11,7 @@ import { ActionMenu } from "@components/ActionMenu";
 import { useModal } from "@/hooks/useModal";
 import { GenericTable } from "@/components/GenericTable";
 import SkeletonTable from "@components/skeletons/SkeletonTable/SkeletonTable"
+import { CurrencySymbol } from "@/hooks/useCurrency";
 
 type ModalState = {
 	type: ModalType;
@@ -19,7 +20,7 @@ type ModalState = {
 
 interface SellsTableProps {
 	sellsData: TSellsList[];
-	currencySymbol: string;
+	currencySymbol: CurrencySymbol | null;
 }
 
 export default function SellsTable({ sellsData, currencySymbol }: SellsTableProps) {

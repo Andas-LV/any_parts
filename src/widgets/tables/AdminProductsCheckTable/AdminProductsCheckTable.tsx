@@ -12,6 +12,7 @@ import { useModal } from "@/hooks/useModal";
 import DeleteItemModal from "@/widgets/modals/admin/DeleteItemModal/DeleteItemModal";
 import { useToast } from "@/hooks/use-toast";
 import SkeletonTable from "@components/skeletons/SkeletonTable/SkeletonTable";
+import { CurrencySymbol } from "@/hooks/useCurrency";
 
 type ModalState = {
 	type: "removeItem" | null;
@@ -20,7 +21,7 @@ type ModalState = {
 
 interface AdminProductsCheckTableProps {
 	filteredItems: TAdminItems[];
-	currencySymbol: string;
+	currencySymbol: CurrencySymbol | null;
 }
 
 export default function AdminProductsCheckTable({

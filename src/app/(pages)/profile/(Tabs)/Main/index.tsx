@@ -7,7 +7,6 @@ import ApCreateModal from "@/widgets/modals/customer/apWallet/apCreateModal";
 import { useUserStore } from "@/entities/user/useUserStore";
 import AfterCreate from "@/widgets/modals/customer/apWallet/afterCreateWallet/afterCreate";
 import InstructionModal from "@/widgets/modals/customer/apWallet/instruction/instructionModal";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { Icons } from "@/assets/svg/svg";
 
 export type TModal =
@@ -17,7 +16,7 @@ export type TModal =
 	| null;
 
 export default function Main() {
-	const { user } = useUserStore();
+	const { user, currencySymbol } = useUserStore();
 
 	const [activeModal, setActiveModal] = useState<TModal>(null);
 
@@ -30,7 +29,7 @@ export default function Main() {
 			<div className={styles.actionCards}>
 				<div className={styles.actionCard}>
 					<div className={styles.itemName}>
-						<h2>0 {user && useCurrencySymbol(user.currency)}</h2>
+						<h2>0 {currencySymbol}</h2>
 						<p>Баланс</p>
 					</div>
 

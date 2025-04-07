@@ -4,7 +4,6 @@ import { Icons } from "@/assets/svg/svg";
 import styles from "./filterHeader.module.css";
 import { useFiltersStore } from "@/entities/items/useFiltersStore";
 import { MIN_PRICE, MAX_PRICE } from "@/exampleData/exampleFilters";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 export default function FilteredItemsHeader() {
@@ -25,7 +24,7 @@ export default function FilteredItemsHeader() {
 		setSelectedManufacturers,
 	} = useFiltersStore();
 
-	const { user } = useUserStore();
+	const { currencySymbol } = useUserStore();
 
 	const isPriceChanged =
 		priceRange[0] !== MIN_PRICE || priceRange[1] !== MAX_PRICE;
@@ -54,8 +53,8 @@ export default function FilteredItemsHeader() {
 	};
 
 	const priceLabel = `
-    от ${priceRange[0]} ${user && useCurrencySymbol(user.currency)} 
-    до ${priceRange[1]} ${user && useCurrencySymbol(user.currency)}`;
+    от ${priceRange[0]} ${currencySymbol} 
+    до ${priceRange[1]} ${currencySymbol}`;
 
 	const chips = [];
 

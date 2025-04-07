@@ -9,7 +9,6 @@ import SearchBar from "@components/SearchBar/SearchBar";
 import StatusFilter from "@/app/(pages)/partners/(Tabs)/MainPage/PartnerItemsList/StatusFilter/StatusFilter";
 import { Plus } from "lucide-react";
 import ProductTable from "@/widgets/tables/ProductTable/ProductTable";
-import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 import { Icons } from "@/assets/svg/svg";
 import { promotionStatuses } from "@/constants/status";
@@ -20,9 +19,8 @@ type TModalOptions = "standardPromotion" | "premiumPromotion" | null;
 
 export default function Promotion() {
 	const { setFilterStatus, filteredItems } = useDealerItemsStore();
-	const { user, setActivePartnersTab } = useUserStore();
+	const { setActivePartnersTab, currencySymbol } = useUserStore();
 
-	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
 	const [search, setSearch] = useState("");
 	const [openModal, setOpenModal] = useState<TModalOptions>(null);
 

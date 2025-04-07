@@ -35,58 +35,60 @@ const CurrencyModal = ({ onClose }: { onClose: () => void }) => {
 
 	return (
 		<ModalsLayout title={"Валюта"} onClose={onClose}>
-			<p>
-				Выберите знакомую для вас валюту, чтобы оценить стоимость товаров.
-				Валюта оплаты будет рассчитана в тенге.
-			</p>
+			<div className={styles.currencyModal}>
+				<p>
+					Выберите знакомую для вас валюту, чтобы оценить стоимость товаров.
+					Валюта оплаты будет рассчитана в тенге.
+				</p>
 
-			<div className={styles.inputWrapper}>
-				<DropdownMenu onOpenChange={setSelectIsOpen}>
-					<div className={styles.inputContainer}>
-						<DropdownMenuTrigger asChild>
-							<div className={styles.countrySelector}>
-								<Image
-									src={selectedCountry.flag}
-									alt={selectedCountry.name}
-									width={20}
-									height={16}
-									className={styles.flag}
-								/>
-								{selectedCountry.currencyDesc},{selectedCountry.currency}
-								<Icons.ArrowDown
-									className={`${styles.arrowIcon} ${selectIsOpen ? styles.rotated : ""}`}
-								/>
-							</div>
-						</DropdownMenuTrigger>
-					</div>
+				<div className={styles.inputWrapper}>
+					<DropdownMenu onOpenChange={setSelectIsOpen}>
+						<div className={styles.inputContainer}>
+							<DropdownMenuTrigger asChild>
+								<div className={styles.countrySelector}>
+									<Image
+										src={selectedCountry.flag}
+										alt={selectedCountry.name}
+										width={20}
+										height={16}
+										className={styles.flag}
+									/>
+									{selectedCountry.currencyDesc},{selectedCountry.currency}
+									<Icons.ArrowDown
+										className={`${styles.arrowIcon} ${selectIsOpen ? styles.rotated : ""}`}
+									/>
+								</div>
+							</DropdownMenuTrigger>
+						</div>
 
-					<DropdownMenuContent className={styles.dropdownMenu}>
-						{countryCodes.map((country) => (
-							<DropdownMenuItem
-								key={country.name}
-								onClick={() => setSelectedCountry(country)}
-							>
-								<Image
-									src={country.flag}
-									alt={country.name}
-									width={20}
-									height={16}
-									className={styles.flag}
-								/>
-								{country.currencyDesc},{country.currency}
-							</DropdownMenuItem>
-						))}
-					</DropdownMenuContent>
-				</DropdownMenu>
+						<DropdownMenuContent className={styles.dropdownMenu}>
+							{countryCodes.map((country) => (
+								<DropdownMenuItem
+									key={country.name}
+									onClick={() => setSelectedCountry(country)}
+								>
+									<Image
+										src={country.flag}
+										alt={country.name}
+										width={20}
+										height={16}
+										className={styles.flag}
+									/>
+									{country.currencyDesc},{country.currency}
+								</DropdownMenuItem>
+							))}
+						</DropdownMenuContent>
+					</DropdownMenu>
+				</div>
+
+				<Button
+					className={styles.submitButton}
+					onClick={handleSubmit}
+					disabled={isLoading}
+				>
+					Сохранить
+				</Button>
 			</div>
-
-			<Button
-				className={styles.submitButton}
-				onClick={handleSubmit}
-				disabled={isLoading}
-			>
-				Сохранить
-			</Button>
 		</ModalsLayout>
 	);
 };
