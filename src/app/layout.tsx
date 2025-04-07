@@ -20,10 +20,6 @@ export default function RootLayout({
 			<head>
 				<link rel="icon" href="/logo.svg" type="image/svg+xml" />
 				<link rel="icon" href="/favicon.ico" sizes="any" />
-				<script
-					src={process.env.NEXT_CHATBOT_API}
-					data-company-id={process.env.NEXT_DATA_COMPANY_ID}
-				></script>
 			</head>
 			<body className={`${manrope.className}`}>
 				<Suspense fallback={<Loading />}>

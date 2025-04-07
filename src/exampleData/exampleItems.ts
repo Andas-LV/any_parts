@@ -1,857 +1,128 @@
 import { ItemCardType, ItemInfoType } from "@/types/items/Item";
-import { RefundItem } from "@/types/Refund";
+import { RefundItem, TRefundStatus } from "@/types/Refund";
 import { exampleFeedbacks } from "@/exampleData/exampleFeedbacks";
+import { Currency, MaleChoice, Roles } from "@/types/User";
 
-export const itemInfo: ItemInfoType[] = [
-	{
-		id: 1,
-		name: "Качественный перешив руля, ручки КПП",
-
-		price: 2000,
-		apPrice: 1800,
-		currentPrice: 1500,
-		discount: 25,
-		favorite: true,
-
-		marketName: "Market_name",
-		rating: 3.6,
-		ratingDistribution: {
-			1: 2,
-			2: 4,
-			3: 9,
-			4: 13,
-			5: 86,
-		},
-
-		comments: {
-			amount: 34,
-			images: {
-				totalImages: 75,
-				image: [
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/carpet.png",
-					},
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/evaCarpet.png",
-					},
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/case.png",
-					},
-				],
-			},
-			list: exampleFeedbacks,
-		},
-
-		sold: 150,
-		options: ["Черный", "Красный", "Синий"],
-		type: ["Перешив", "Тюнинг"],
-		brand: "AutoStyle",
-		material: "Кожа",
-		article: 15978954613,
-		images: [
-			"/items/steeringWheel.png",
-			"/items/case.png",
-			"/items/evaCarpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
-		],
-		description:
-			"Lorem ipsum dolor sit amet consectetur. " +
-			"Enim lectus et lorem auctor fermentum tellus purus enim. " +
-			"Amet luctus sit mauris non euismod sagittis sit amet suscipit. " +
-			"Quisque morbi scelerisque neque vulputate pharetra est. " +
-			"Sed eleifend elit parturient eleifend scelerisque. " +
-			"Etiam viverra vel amet tincidunt felis. " +
-			"Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. " +
-			"Quam nisl porttitor eget elit ornare pellentesque eget sapien. " +
-			"Eu imperdiet malesuada semper in in purus urna velit. " +
-			"Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. " +
-			"Vestibulum cursus morbi sed egestas sed viverra sagittis cras.",
-	},
-	{
-		id: 2,
-		name: "Коврики эва ева с бортами, EVA с бортиками 3D",
-
-		price: 3200,
-		apPrice: 1800,
-		currentPrice: null,
-		discount: null,
-		favorite: false,
-
-		marketName: "Market_name",
-		rating: 4.5,
-		ratingDistribution: {
-			1: 2,
-			2: 4,
-			3: 9,
-			4: 13,
-			5: 86,
-		},
-
-		comments: {
-			amount: 34,
-			images: {
-				totalImages: 75,
-				image: [
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/carpet.png",
-					},
-				],
-			},
-			list: exampleFeedbacks,
-		},
-		sold: 90,
-		article: 15978954613,
-		options: ["Черный", "Серый", "Бежевый"],
-		type: ["Коврики", "Защита интерьера"],
-		brand: "EvaLux",
-		material: "Полиуретан",
-		images: ["/items/evaCarpet.png"],
-		description:
-			"Lorem ipsum dolor sit amet consectetur. " +
-			"Enim lectus et lorem auctor fermentum tellus purus enim. " +
-			"Amet luctus sit mauris non euismod sagittis sit amet suscipit. " +
-			"Quisque morbi scelerisque neque vulputate pharetra est. " +
-			"Sed eleifend elit parturient eleifend scelerisque. " +
-			"Etiam viverra vel amet tincidunt felis. " +
-			"Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. " +
-			"Quam nisl porttitor eget elit ornare pellentesque eget sapien. " +
-			"Eu imperdiet malesuada semper in in purus urna velit. " +
-			"Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. " +
-			"Vestibulum cursus morbi sed egestas sed viverra sagittis cras.",
-	},
-	{
-		id: 3,
-		name: "Комплект премиальных чехлов на сидения",
-		price: 4500,
-		apPrice: 1800,
-		currentPrice: 3900,
-		discount: 13,
-		favorite: true,
-
-		marketName: "Market_name",
-		rating: 4.8,
-		ratingDistribution: {
-			1: 2,
-			2: 4,
-			3: 9,
-			4: 13,
-			5: 86,
-		},
-
-		comments: {
-			amount: 34,
-			images: {
-				totalImages: 75,
-				image: [
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/carpet.png",
-					},
-				],
-			},
-			list: exampleFeedbacks,
-		},
-		sold: 210,
-		article: 15978954613,
-		options: ["Эко-кожа", "Алькантара", "Ткань"],
-		type: ["Чехлы", "Тюнинг"],
-		brand: "SeatCover Pro",
-		material: "Эко-кожа",
-		images: [
-			"/items/steeringWheel.png",
-			"/items/case.png",
-			"/items/evaCarpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
-		],
-		description:
-			"Lorem ipsum dolor sit amet consectetur. " +
-			"Enim lectus et lorem auctor fermentum tellus purus enim. " +
-			"Amet luctus sit mauris non euismod sagittis sit amet suscipit. " +
-			"Quisque morbi scelerisque neque vulputate pharetra est. " +
-			"Sed eleifend elit parturient eleifend scelerisque. " +
-			"Etiam viverra vel amet tincidunt felis. " +
-			"Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. " +
-			"Quam nisl porttitor eget elit ornare pellentesque eget sapien. " +
-			"Eu imperdiet malesuada semper in in purus urna velit. " +
-			"Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. " +
-			"Vestibulum cursus morbi sed egestas sed viverra sagittis cras.",
-	},
-	{
-		id: 4,
-		name: "Качественный перешив руля, ручки КПП",
-
-		price: 2000,
-		apPrice: 1800,
-		currentPrice: 1500,
-		discount: 25,
-		favorite: true,
-
-		marketName: "Market_name",
-		rating: 3.6,
-		ratingDistribution: {
-			1: 2,
-			2: 4,
-			3: 9,
-			4: 13,
-			5: 86,
-		},
-
-		comments: {
-			amount: 34,
-			images: {
-				totalImages: 75,
-				image: [
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/carpet.png",
-					},
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/evaCarpet.png",
-					},
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/case.png",
-					},
-				],
-			},
-			list: exampleFeedbacks,
-		},
-
-		sold: 150,
-		options: ["Черный", "Красный", "Синий"],
-		type: ["Перешив", "Тюнинг"],
-		brand: "AutoStyle",
-		material: "Кожа",
-		article: 15978954613,
-		images: [
-			"/items/steeringWheel.png",
-			"/items/case.png",
-			"/items/evaCarpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
-		],
-		description:
-			"Lorem ipsum dolor sit amet consectetur. " +
-			"Enim lectus et lorem auctor fermentum tellus purus enim. " +
-			"Amet luctus sit mauris non euismod sagittis sit amet suscipit. " +
-			"Quisque morbi scelerisque neque vulputate pharetra est. " +
-			"Sed eleifend elit parturient eleifend scelerisque. " +
-			"Etiam viverra vel amet tincidunt felis. " +
-			"Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. " +
-			"Quam nisl porttitor eget elit ornare pellentesque eget sapien. " +
-			"Eu imperdiet malesuada semper in in purus urna velit. " +
-			"Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. " +
-			"Vestibulum cursus morbi sed egestas sed viverra sagittis cras.",
-	},
-	{
-		id: 5,
-		name: "Коврики эва ева с бортами, EVA с бортиками 3D",
-
-		price: 3200,
-		apPrice: 1800,
-		currentPrice: null,
-		discount: null,
-		favorite: false,
-
-		marketName: "Market_name",
-		rating: 4.5,
-		ratingDistribution: {
-			1: 2,
-			2: 4,
-			3: 9,
-			4: 13,
-			5: 86,
-		},
-
-		comments: {
-			amount: 34,
-			images: {
-				totalImages: 75,
-				image: [
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/carpet.png",
-					},
-				],
-			},
-			list: exampleFeedbacks,
-		},
-		sold: 90,
-		article: 15978954613,
-		options: ["Черный", "Серый", "Бежевый"],
-		type: ["Коврики", "Защита интерьера"],
-		brand: "EvaLux",
-		material: "Полиуретан",
-		images: ["/items/evaCarpet.png"],
-		description:
-			"Lorem ipsum dolor sit amet consectetur. " +
-			"Enim lectus et lorem auctor fermentum tellus purus enim. " +
-			"Amet luctus sit mauris non euismod sagittis sit amet suscipit. " +
-			"Quisque morbi scelerisque neque vulputate pharetra est. " +
-			"Sed eleifend elit parturient eleifend scelerisque. " +
-			"Etiam viverra vel amet tincidunt felis. " +
-			"Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. " +
-			"Quam nisl porttitor eget elit ornare pellentesque eget sapien. " +
-			"Eu imperdiet malesuada semper in in purus urna velit. " +
-			"Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. " +
-			"Vestibulum cursus morbi sed egestas sed viverra sagittis cras.",
-	},
-	{
-		id: 6,
-		name: "Комплект премиальных чехлов на сидения",
-		price: 4500,
-		apPrice: 1800,
-		currentPrice: 3900,
-		discount: 13,
-		favorite: true,
-
-		marketName: "Market_name",
-		rating: 4.8,
-		ratingDistribution: {
-			1: 2,
-			2: 4,
-			3: 9,
-			4: 13,
-			5: 86,
-		},
-
-		comments: {
-			amount: 34,
-			images: {
-				totalImages: 75,
-				image: [
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/carpet.png",
-					},
-				],
-			},
-			list: exampleFeedbacks,
-		},
-		sold: 210,
-		article: 15978954613,
-		options: ["Эко-кожа", "Алькантара", "Ткань"],
-		type: ["Чехлы", "Тюнинг"],
-		brand: "SeatCover Pro",
-		material: "Эко-кожа",
-		images: [
-			"/items/steeringWheel.png",
-			"/items/case.png",
-			"/items/evaCarpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
-		],
-		description:
-			"Lorem ipsum dolor sit amet consectetur. " +
-			"Enim lectus et lorem auctor fermentum tellus purus enim. " +
-			"Amet luctus sit mauris non euismod sagittis sit amet suscipit. " +
-			"Quisque morbi scelerisque neque vulputate pharetra est. " +
-			"Sed eleifend elit parturient eleifend scelerisque. " +
-			"Etiam viverra vel amet tincidunt felis. " +
-			"Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. " +
-			"Quam nisl porttitor eget elit ornare pellentesque eget sapien. " +
-			"Eu imperdiet malesuada semper in in purus urna velit. " +
-			"Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. " +
-			"Vestibulum cursus morbi sed egestas sed viverra sagittis cras.",
-	},
-	{
-		id: 7,
-		name: "Качественный перешив руля, ручки КПП",
-
-		price: 2000,
-		apPrice: 1800,
-		currentPrice: 1500,
-		discount: 25,
-		favorite: true,
-
-		marketName: "Market_name",
-		rating: 3.6,
-		ratingDistribution: {
-			1: 2,
-			2: 4,
-			3: 9,
-			4: 13,
-			5: 86,
-		},
-
-		comments: {
-			amount: 34,
-			images: {
-				totalImages: 75,
-				image: [
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/carpet.png",
-					},
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/evaCarpet.png",
-					},
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/case.png",
-					},
-				],
-			},
-			list: exampleFeedbacks,
-		},
-
-		sold: 150,
-		options: ["Черный", "Красный", "Синий"],
-		type: ["Перешив", "Тюнинг"],
-		brand: "AutoStyle",
-		material: "Кожа",
-		article: 15978954613,
-		images: [
-			"/items/steeringWheel.png",
-			"/items/case.png",
-			"/items/evaCarpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
-		],
-		description:
-			"Lorem ipsum dolor sit amet consectetur. " +
-			"Enim lectus et lorem auctor fermentum tellus purus enim. " +
-			"Amet luctus sit mauris non euismod sagittis sit amet suscipit. " +
-			"Quisque morbi scelerisque neque vulputate pharetra est. " +
-			"Sed eleifend elit parturient eleifend scelerisque. " +
-			"Etiam viverra vel amet tincidunt felis. " +
-			"Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. " +
-			"Quam nisl porttitor eget elit ornare pellentesque eget sapien. " +
-			"Eu imperdiet malesuada semper in in purus urna velit. " +
-			"Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. " +
-			"Vestibulum cursus morbi sed egestas sed viverra sagittis cras.",
-	},
-	{
-		id: 8,
-		name: "Коврики эва ева с бортами, EVA с бортиками 3D",
-
-		price: 3200,
-		apPrice: 1800,
-		currentPrice: null,
-		discount: null,
-		favorite: false,
-
-		marketName: "Market_name",
-		rating: 4.5,
-		ratingDistribution: {
-			1: 2,
-			2: 4,
-			3: 9,
-			4: 13,
-			5: 86,
-		},
-
-		comments: {
-			amount: 34,
-			images: {
-				totalImages: 75,
-				image: [
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/carpet.png",
-					},
-				],
-			},
-			list: exampleFeedbacks,
-		},
-		sold: 90,
-		article: 15978954613,
-		options: ["Черный", "Серый", "Бежевый"],
-		type: ["Коврики", "Защита интерьера"],
-		brand: "EvaLux",
-		material: "Полиуретан",
-		images: ["/items/evaCarpet.png"],
-		description:
-			"Lorem ipsum dolor sit amet consectetur. " +
-			"Enim lectus et lorem auctor fermentum tellus purus enim. " +
-			"Amet luctus sit mauris non euismod sagittis sit amet suscipit. " +
-			"Quisque morbi scelerisque neque vulputate pharetra est. " +
-			"Sed eleifend elit parturient eleifend scelerisque. " +
-			"Etiam viverra vel amet tincidunt felis. " +
-			"Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. " +
-			"Quam nisl porttitor eget elit ornare pellentesque eget sapien. " +
-			"Eu imperdiet malesuada semper in in purus urna velit. " +
-			"Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. " +
-			"Vestibulum cursus morbi sed egestas sed viverra sagittis cras.",
-	},
-	{
-		id: 9,
-		name: "Комплект премиальных чехлов на сидения",
-		price: 4500,
-		apPrice: 1800,
-		currentPrice: 3900,
-		discount: 13,
-		favorite: true,
-
-		marketName: "Market_name",
-		rating: 4.8,
-		ratingDistribution: {
-			1: 2,
-			2: 4,
-			3: 9,
-			4: 13,
-			5: 86,
-		},
-
-		comments: {
-			amount: 34,
-			images: {
-				totalImages: 75,
-				image: [
-					{
-						user: {
-							id: 3,
-							username: "user2",
-							email: "user@gmail.com",
-							phone: "+77777777777",
-							apWallet: false,
-							avatarUrl: "user.png",
-							male: "Male",
-							currency: "KZT",
-							role: "user",
-						},
-						imageUrl: "/items/carpet.png",
-					},
-				],
-			},
-			list: exampleFeedbacks,
-		},
-		sold: 210,
-		article: 15978954613,
-		options: ["Эко-кожа", "Алькантара", "Ткань"],
-		type: ["Чехлы", "Тюнинг"],
-		brand: "SeatCover Pro",
-		material: "Эко-кожа",
-		images: [
-			"/items/steeringWheel.png",
-			"/items/case.png",
-			"/items/evaCarpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
-		],
-		description:
-			"Lorem ipsum dolor sit amet consectetur. " +
-			"Enim lectus et lorem auctor fermentum tellus purus enim. " +
-			"Amet luctus sit mauris non euismod sagittis sit amet suscipit. " +
-			"Quisque morbi scelerisque neque vulputate pharetra est. " +
-			"Sed eleifend elit parturient eleifend scelerisque. " +
-			"Etiam viverra vel amet tincidunt felis. " +
-			"Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. " +
-			"Quam nisl porttitor eget elit ornare pellentesque eget sapien. " +
-			"Eu imperdiet malesuada semper in in purus urna velit. " +
-			"Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. " +
-			"Vestibulum cursus morbi sed egestas sed viverra sagittis cras.",
-	},
+const imagePaths = [
+	"/items/steeringWheel.png",
+	"/items/case.png",
+	"/items/evaCarpet.png",
+	"/items/seatCovers.png",
+	"/items/wheelItems.png",
+	"/items/carpet.png",
 ];
 
-export const items: ItemCardType[] = [
-	{
-		id: 1,
-		name: "Качественный перешив руля, ручки кпп",
-		price: 2000,
-		currentPrice: 1500,
-		discount: 25,
-		rating: 3.6,
-		comments: 382,
-		favorite: true,
+// items
+export const items: ItemCardType[] = [];
+
+for (let i = 0; i < 10; i++) {
+	const item = {
+		id: i + 1,
+		name: `Item ${i + 1}`,
+		price: 2000 + i * 300,
+		currentPrice: i % 2 === 0 ? 2000 + i * 200 : null,
+		discount: i % 2 === 0 ? 10 + i * 2 : null,
+		rating: 3.5 + i * 0.1,
+		comments: 100 + i * 50,
+		favorite: i % 3 === 0,
+		images: [imagePaths[i % 6], imagePaths[(i + 1) % 6]],
+	};
+	items.push(item);
+}
+
+// itemInfo
+export const itemInfo: ItemInfoType[] = [];
+
+for (let i = 0; i < 9; i++) {
+	// Generate multiple comments for each item
+	const commentImages = [];
+	for (let j = 0; j < 17; j++) { // 17 comments per item, adjust as needed
+		commentImages.push({
+			user: {
+				id: 3 + j, // Incremental user ID
+				username: `user${j + 1}`, // Unique username
+				email: `user${j + 1}@gmail.com`, // Unique email
+				phone: `+777777777${j.toString().padStart(2, '0')}`, // Incremental phone
+				apWallet: j % 2 === 0, // Alternating apWallet
+				avatarUrl: `user${j % 3 + 1}.png`, // Cycle through 3 avatars
+				male: j % 2 === 0 ? "Male" : "Female" as MaleChoice, // Alternating gender
+				currency: "KZT" as Currency,
+				role: "user" as Roles,
+			},
+			imageUrl: imagePaths[j % 6] // Cycle through the 6 images
+		});
+	}
+
+	const item = {
+		id: i + 1,
+		name: `Item ${i + 1}`,
+		price: 2000 + (i * 500),
+		apPrice: 1800,
+		currentPrice: i % 2 === 0 ? 1500 + (i * 400) : null,
+		discount: i % 2 === 0 ? 20 + (i * 2) : null,
+		favorite: i % 3 === 0,
+		marketName: "Market_name",
+		rating: 3.5 + (i * 0.1),
+		ratingDistribution: {
+			1: 2,
+			2: 4,
+			3: 9,
+			4: 13,
+			5: 86,
+		},
+		comments: {
+			amount: commentImages.length, // Matches the number of comments
+			images: {
+				totalImages: commentImages.length, // Matches the number of comment images
+				image: commentImages // Array of generated comments
+			},
+			list: exampleFeedbacks, // Assuming this is defined elsewhere
+		},
+		sold: 100 + (i * 20),
+		options: ["Черный", "Серый", "Красный"],
+		type: i % 2 === 0 ? ["Тюнинг", "Перешив"] : ["Коврики", "Защита"],
+		brand: `Brand ${i + 1}`,
+		material: i % 2 === 0 ? "Кожа" : "Полиуретан",
+		article: 15978954613 + i,
 		images: [
-			"/items/steeringWheel.png",
-			"/items/case.png",
-			"/items/evaCarpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
+			imagePaths[i % 6],
+			imagePaths[(i + 1) % 6],
+			imagePaths[(i + 2) % 6]
 		],
-	},
-	{
-		id: 2,
-		name: "Коврики эва ева с бортами, eva с бортиками 3Д",
-		price: 3200,
-		currentPrice: null,
-		discount: null,
-		favorite: false,
-		rating: 4.5,
-		comments: 128,
-		images: ["/items/evaCarpet.png"],
-	},
-	{
-		id: 3,
-		name: "ITEM 3",
-		price: 4500,
-		currentPrice: 3900,
-		discount: 13,
-		rating: 4.8,
-		comments: 256,
-		favorite: true,
-		images: [
-			"/items/steeringWheel.png",
-			"/items/case.png",
-			"/items/evaCarpet.png",
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
-			"/items/steeringWheel.png",
-			"/items/case.png",
-		],
-	},
-	{
-		id: 4,
-		name: "ITEM 4",
-		price: 1800,
-		currentPrice: 1400,
-		discount: 22,
-		rating: 3.9,
-		comments: 97,
-		favorite: false,
-		images: [
-			"/items/seatCovers.png",
-			"/items/wheelItems.png",
-			"/items/carpet.png",
-			"/items/steeringWheel.png",
-			"/items/case.png",
-		],
-	},
-	{
-		id: 5,
-		name: "ITEM 5",
-		price: 5000,
-		currentPrice: null,
-		discount: null,
-		rating: 4.2,
-		comments: 412,
-		favorite: false,
-		images: ["/items/steeringWheel.png", "/items/case.png"],
-	},
-	{
-		id: 6,
-		name: "ITEM 6",
-		price: 2300,
-		currentPrice: 1900,
-		discount: 17,
-		rating: 3.5,
-		comments: 189,
-		favorite: false,
-		images: [
-			"/items/carpet.png",
-			"/items/steeringWheel.png",
-			"/items/case.png",
-		],
-	},
-	{
-		id: 7,
-		name: "ITEM 7",
-		price: 2900,
-		currentPrice: null,
-		discount: null,
-		rating: 4.0,
-		comments: 275,
-		favorite: false,
-		images: ["/items/seatCovers.png", "/items/wheelItems.png"],
-	},
-	{
-		id: 8,
-		name: "ITEM 8",
-		price: 3700,
-		currentPrice: 3300,
-		discount: 11,
-		rating: 4.6,
-		comments: 132,
-		favorite: false,
-		images: ["/items/carpet.png"],
-	},
-	{
-		id: 9,
-		name: "ITEM 9",
-		price: 2600,
-		currentPrice: 2200,
-		discount: 15,
-		rating: 4.1,
-		comments: 321,
-		favorite: false,
-		images: ["/items/steeringWheel.png", "/items/case.png"],
-	},
-	{
-		id: 10,
-		name: "ITEM 10",
-		price: 3400,
-		currentPrice: null,
-		discount: null,
-		rating: 3.7,
-		comments: 88,
-		favorite: false,
-		images: ["/items/evaCarpet.png"],
-	},
+		description:
+			"Lorem ipsum dolor sit amet consectetur. " +
+			"Enim lectus et lorem auctor fermentum tellus purus enim. " +
+			"Amet luctus sit mauris non euismod sagittis sit amet suscipit. " +
+			"Quisque morbi scelerisque neque vulputate pharetra est. " +
+			"Sed eleifend elit parturient eleifend scelerisque. " +
+			"Etiam viverra vel amet tincidunt felis. " +
+			"Vel pellentesque aliquam faucibus nisl dignissim nisl justo lacus diam. " +
+			"Quam nisl портtitor eget elit ornare pellentesque eget sapien. " +
+			"Eu imperdiet malesuada semper in in purus urna velit. " +
+			"Diam dolor lacinia nunc duis a. Sit sit libero blandit ante tristique velit. " +
+			"Vestibulum cursus morbi sed egestas sed viverra sagittis cras.",
+	};
+	itemInfo.push(item);
+}
+
+// itemsForRefund
+const refundStatuses: TRefundStatus[] = [
+	"На рассмотрении",
+	"Одобрено",
+	"Не одобрено",
+];
+const refundPrices = [10000, 20000, 5000];
+const refundComments = [
+	undefined,
+	"Здравствуйте!  \nВаша онлайн-заявка рассмотрена и подтверждена. Вы можете оформить возврат товара в любом фирменном пункте самовывоза в течение 15 календарных дней с момента утверждения заявки.  \nНадеемся, что ваши будущие покупки будут удачными!  \nС уважением, Any Parts",
+	"Здравствуйте!\n\nВаша онлайн-заявка рассмотрена, но, к сожалению, не может быть утверждена. Возврат товара невозможен в соответствии с установленными условиями.\n\nЕсли у вас есть дополнительные вопросы, пожалуйста, свяжитесь с нашей поддержкой.\n\nС уважением, Any Parts",
 ];
 
-export const itemsForRefund: RefundItem[] = [
-	{
-		id: 1,
-		price: 10000,
-
-		status: "На рассмотрении",
+export const itemsForRefund: RefundItem[] = refundStatuses.map(
+	(status, index) => ({
+		id: index + 1,
+		price: refundPrices[index],
+		status,
 		images: [
 			{
 				id: 1,
@@ -860,52 +131,7 @@ export const itemsForRefund: RefundItem[] = [
 				file_name: "carpet.png",
 			},
 		],
-
 		createdAt: new Date("2024-02-14T12:30:00Z"),
-	},
-	{
-		id: 2,
-		price: 20000,
-
-		status: "Одобрено",
-		images: [
-			{
-				id: 1,
-				file: "/items/carpet.png",
-				file_type: "image/png",
-				file_name: "carpet.png",
-			},
-		],
-
-		createdAt: new Date("2024-02-14T12:30:00Z"),
-		comment:
-			"Здравствуйте!  \n" +
-			"Ваша онлайн-заявка рассмотрена и подтверждена. Вы можете оформить возврат товара в любом фирменном пункте самовывоза в течение 15 календарных дней с момента утверждения заявки.  \n" +
-			"Надеемся, что ваши будущие покупки будут удачными!  \n" +
-			"С уважением, Any Parts",
-	},
-	{
-		id: 3,
-		price: 5000,
-
-		status: "Не одобрено",
-		images: [
-			{
-				id: 1,
-				file: "/items/carpet.png",
-				file_type: "image/png",
-				file_name: "carpet.png",
-			},
-		],
-
-		createdAt: new Date("2024-02-14T12:30:00Z"),
-		comment:
-			"Здравствуйте!\n" +
-			"\n" +
-			"Ваша онлайн-заявка рассмотрена, но, к сожалению, не может быть утверждена. Возврат товара невозможен в соответствии с установленными условиями.\n" +
-			"\n" +
-			"Если у вас есть дополнительные вопросы, пожалуйста, свяжитесь с нашей поддержкой.\n" +
-			"\n" +
-			"С уважением, Any Parts",
-	},
-];
+		comment: refundComments[index],
+	}),
+);

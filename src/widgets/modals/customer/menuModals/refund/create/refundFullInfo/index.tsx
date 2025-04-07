@@ -7,7 +7,7 @@ import { PHOTO_OPTIONS, RETURN_REASONS } from "@/constants/item";
 import { Textarea } from "@components/ui/textarea";
 import { Icons } from "@/assets/svg/svg";
 import Loading from "@components/Loading";
-import RequestSended from "@/widgets/modals/requestSended/requestSended";
+import RequestSended from "@/widgets/modals/general/requestSended/requestSended";
 import { useCurrencySymbol } from "@/hooks/useCurrency";
 import { useUserStore } from "@/entities/user/useUserStore";
 

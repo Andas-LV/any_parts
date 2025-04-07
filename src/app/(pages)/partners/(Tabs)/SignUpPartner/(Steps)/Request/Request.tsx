@@ -5,7 +5,7 @@ import styles from "./Request.module.css";
 import { Button } from "@components/ui/button";
 import { usePartnersSignUpStore } from "@/entities/partners/fullSignUp/usePartnersSignUpStore";
 import { useRouter } from "next/navigation";
-import RequestSended from "@/widgets/modals/requestSended/requestSended";
+import RequestSended from "@/widgets/modals/general/requestSended/requestSended";
 import { useUserStore } from "@/entities/user/useUserStore";
 
 interface RequestProps {

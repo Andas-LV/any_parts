@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Feedback } from "@/types/Feedbacks";
 import { Button } from "@components/ui/button";
 import { useState } from "react";
+import { ResponseToQuestionModal } from "@/widgets/modals/general/ResponseToQuestionModal/ResponseToQuestionModal";
 
 interface CommentItemProps {
 	comment: Feedback;
@@ -14,6 +15,7 @@ interface CommentItemProps {
 
 export default function CommentItem({ comment }: CommentItemProps) {
 	const [liked, setLiked] = useState(comment.likedByMe);
+	const [answerModal, setAnswerModal] = useState(false);
 
 	return (
 		<div key={comment.id} className={styles.commentItem}>
@@ -54,10 +56,21 @@ export default function CommentItem({ comment }: CommentItemProps) {
 					{comment.likes}
 				</Button>
 
-				<Button variant="outline" className={styles.replyBtn}>
+				<Button
+					onClick={() => setAnswerModal(true)}
+					variant="outline"
+					className={styles.replyBtn}
+				>
 					Ответить
 				</Button>
 			</div>
+
+			{answerModal && (
+				<ResponseToQuestionModal
+					comment={comment}
+					onClose={() => setAnswerModal(false)}
+				/>
+			)}
 		</div>
 	);
 }
