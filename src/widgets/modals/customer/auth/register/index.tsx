@@ -1,35 +1,33 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import styles from "./register.module.css";
 import { Button } from "@components/ui/button";
-import { useAuthStore } from "@/entities/customer/auth/useAuthStore";
+import { renderError } from "@/utils/renderError";
 import ModalsLayout from "@/layouts/modalLayout/layout";
+import PartnersModalLayout from "@/layouts/PartnersModalLayout/PartnersModalLayout";
+
+interface RegisterModalProps {
+	email: string;
+	username: string;
+	setUsername: (value: string) => void;
+	error: string | null;
+	onSubmit: (e: React.FormEvent) => Promise<void>;
+	onChangeEmail: () => void;
+	back: () => void;
+}
 
 const RegisterModal = ({
-	onClose,
+	email,
+	username,
+	setUsername,
+	error,
+	onSubmit,
 	onChangeEmail,
-}: {
-	onClose: () => void;
-	onChangeEmail: () => void;
-}) => {
-	const { register, isLoading, error, email } = useAuthStore();
-	const [username, setUsername] = useState("");
-
-	const handleSubmit = async () => {
-		if (!email) {
-			return;
-		}
-		try {
-			await register({ username, email });
-			onClose();
-		} catch (error) {
-			console.error("Error registering:", error);
-		}
-	};
-
+												 back,
+}: RegisterModalProps) => {
 	return (
-		<ModalsLayout title={"Регистрация"} onClose={onClose}>
+		<PartnersModalLayout title={"Регистрация"} back={back}>
 			<p className={styles.instruction}>
 				Мы не нашли аккаунт, зарегистрированный на почту <br />
 				<span className={styles.email}>{email}</span>
@@ -43,22 +41,22 @@ const RegisterModal = ({
 				кнопку «Зарегистрироваться»
 			</p>
 
-			<input
-				type="text"
-				className={styles.nameInput}
-				placeholder="Ваше имя"
-				value={username}
-				onChange={(e) => setUsername(e.target.value)}
-			/>
+			<form onSubmit={onSubmit} className="flex flex-col gap-4">
+				<input
+					type="text"
+					className={styles.nameInput}
+					placeholder="Ваше имя"
+					value={username}
+					onChange={(e) => setUsername(e.target.value)}
+				/>
 
-			<Button
-				className={styles.submitButton}
-				onClick={handleSubmit}
-				disabled={isLoading}
-			>
-				Зарегистрироваться
-			</Button>
-		</ModalsLayout>
+				{renderError(error, "username")}
+
+				<Button type="submit" className={styles.submitButton}>
+					Зарегистрироваться
+				</Button>
+			</form>
+		</PartnersModalLayout>
 	);
 };
 

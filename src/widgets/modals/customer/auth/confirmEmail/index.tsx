@@ -3,95 +3,93 @@
 import React, { useState } from "react";
 import styles from "./confirmEmail.module.css";
 import { Button } from "@components/ui/button";
-import { useAuthStore } from "@/entities/customer/auth/useAuthStore";
-import RegisterModal from "@/widgets/modals/customer/auth/register";
 import { renderError } from "@/utils/renderError";
 import ModalsLayout from "@/layouts/modalLayout/layout";
 import Timer, { useTimer } from "@/hooks/useTimer";
 import { formatTime } from "@/utils/formatTime";
+import PartnersModalLayout from "@/layouts/PartnersModalLayout/PartnersModalLayout";
+
+interface ConfirmEmailModalProps {
+	email: string;
+	code: string;
+	setCode: (value: string) => void;
+	error: string | null;
+	onSubmit: (e: React.FormEvent) => Promise<void>;
+	onResend: () => Promise<void>;
+	onChangeEmail: () => void;
+	back: () => void;
+}
 
 const ConfirmEmailModal = ({
-	onClose,
+	email,
+	code,
+	setCode,
+	error,
+	onSubmit,
+	onResend,
 	onChangeEmail,
-}: {
-	onClose: () => void;
-	onChangeEmail: () => void;
-}) => {
-	const { email, isLoading, error } = useAuthStore();
-	const [code, setCode] = useState("");
+	back,
+}: ConfirmEmailModalProps) => {
 	const [canResend, setCanResend] = useState(false);
-	const [showRegisterModal, setShowRegisterModal] = useState(false);
 	const { reset: resetTimer } = useTimer(120, () => setCanResend(true));
 
-	const handleResend = () => {
+	const handleResendClick = () => {
 		setCanResend(false);
 		resetTimer();
-		// Add your resend logic here
+		onResend();
 	};
-
-	const handleSubmit = async () => {
-		// await confirmEmail(code);
-		if (!useAuthStore.getState().error) {
-			setShowRegisterModal(true);
-		}
-	};
-
-	if (showRegisterModal) {
-		return <RegisterModal onClose={onClose} onChangeEmail={onChangeEmail} />;
-	}
 
 	return (
-		<ModalsLayout title={"Подтвердите почту"} onClose={onClose}>
+		<PartnersModalLayout title={"Подтвердите почту"} back={back}>
 			<p className={styles.instruction}>
 				Укажите проверочный код - он придёт на <span>{email}</span> <br />в
 				течение 2 минут.
 			</p>
-
-			<input
-				type="text"
-				className={styles.codeInput}
-				placeholder="Код из смс"
-				value={code}
-				onChange={(e) => setCode(e.target.value)}
-			/>
-
-			{!canResend ? (
-				<Timer
-					initialTime={120}
-					onComplete={() => setCanResend(true)}
-					render={(timeLeft) => (
-						<p className={styles.timerText}>
-							Получить новый код можно через {formatTime(timeLeft)}
-						</p>
-					)}
+			<form onSubmit={onSubmit} className="flex flex-col gap-4">
+				<input
+					type="text"
+					className={styles.codeInput}
+					placeholder="Код из смс"
+					value={code}
+					onChange={(e) => setCode(e.target.value)}
 				/>
-			) : (
-				<button className={styles.resendButton} onClick={handleResend}>
-					Отправить код заново
-				</button>
-			)}
 
-			{renderError(error, "code")}
+				{!canResend ? (
+					<Timer
+						initialTime={120}
+						onComplete={() => setCanResend(true)}
+						render={(timeLeft) => (
+							<p className={styles.timerText}>
+								Получить новый код можно через {formatTime(timeLeft)}
+							</p>
+						)}
+					/>
+				) : (
+					<button
+						type="button"
+						className={styles.resendButton}
+						onClick={handleResendClick}
+					>
+						Отправить код заново
+					</button>
+				)}
 
-			<div className={styles.buttonGroup}>
-				<Button
-					className={styles.submitButton}
-					onClick={handleSubmit}
-					disabled={isLoading}
-				>
-					Подтвердить
-				</Button>
+				{renderError(error, "code")}
 
-				<Button
-					variant="ghost"
-					className={styles.changeEmailButton}
-					onClick={onChangeEmail}
-					disabled={isLoading}
-				>
-					Изменить почту
-				</Button>
-			</div>
-		</ModalsLayout>
+				<div className={styles.buttonGroup}>
+					<Button type="submit" className={styles.submitButton}>
+						Подтвердить
+					</Button>
+					<Button
+						variant="ghost"
+						className={styles.changeEmailButton}
+						onClick={onChangeEmail}
+					>
+						Изменить почту
+					</Button>
+				</div>
+			</form>
+		</PartnersModalLayout>
 	);
 };
 

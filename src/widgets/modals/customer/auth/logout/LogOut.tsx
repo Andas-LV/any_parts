@@ -12,9 +12,9 @@ const LogOutModal = ({ onClose }: { onClose: () => void }) => {
 	const { logout, isLoading, error } = useAuthStore();
 	const { toast } = useToast();
 
-	const handleLogOut = async () => {
+	const handleLogOut = () => {
 		try {
-			await logout();
+			logout();
 			toast({
 				done: true,
 				description: "Вы вышли из аккаунта",

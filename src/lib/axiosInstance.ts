@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toSnakeCase, toCamelCase } from "@/utils/serviceConverters";
+import { getAuthToken } from "@/configs/cookie";
 
 const axiosInstance = axios.create({
 	baseURL: process.env.NEXT_BACKEND_URL,
@@ -11,7 +12,7 @@ const axiosInstance = axios.create({
 // 👉 Request interceptor
 axiosInstance.interceptors.request.use((config) => {
 	if (typeof window !== "undefined") {
-		const token = localStorage.getItem("token");
+		const token = getAuthToken();
 		if (token) {
 			config.headers.Authorization = `Bearer ${token}`;
 		}

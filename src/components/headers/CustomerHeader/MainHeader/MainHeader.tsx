@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Search from "./Search/Search";
 import styles from "./mainHeader.module.css";
-import LoginModal from "@/widgets/modals/customer/auth/login";
 import CategoryFilter from "@components/CategoryPopup/CategoryFilter";
 import { useAuthStore } from "@/entities/customer/auth/useAuthStore";
 import { Icons } from "@/assets/svg/svg";
@@ -16,15 +14,18 @@ import { routes } from "@/configs/routes";
 
 const MainHeader = () => {
 	const { isAuthenticated } = useAuthStore();
-	const { setActiveProfileTab, activeProfileTab } = useUserStore();
+	const { setActiveProfileTab } = useUserStore();
 
 	const router = useRouter();
-	const [isModalOpen, setModalOpen] = useState(false);
 
 	const routeToProfileSection = (section: TProfileTabs) => {
 		setActiveProfileTab(section);
 		router.push(routes.profile());
 	};
+
+	const handleLogin = () => {
+		router.push(routes.login());
+	}
 
 	return (
 		<div className={styles.mainHeaderContainer}>
@@ -47,7 +48,7 @@ const MainHeader = () => {
 						<span>Профиль</span>
 					</div>
 				) : (
-					<div className={styles.navItem} onClick={() => setModalOpen(true)}>
+					<div className={styles.navItem} onClick={handleLogin}>
 						<Icons.User width={24} height={24} />
 						<span>Войти</span>
 					</div>
@@ -79,8 +80,6 @@ const MainHeader = () => {
 					<span>Корзина</span>
 				</Link>
 			</nav>
-
-			{isModalOpen && <LoginModal onClose={() => setModalOpen(false)} />}
 		</div>
 	);
 };

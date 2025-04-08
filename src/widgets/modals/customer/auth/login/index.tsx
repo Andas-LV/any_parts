@@ -1,82 +1,71 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import styles from "./loginModal.module.css";
 import { Button } from "@components/ui/button";
 import { Checkbox } from "@components/ui/checkbox";
 import { Label } from "@components/ui/label";
-import ConfirmEmailModal from "../confirmEmail";
-import { useAuthStore } from "@/entities/customer/auth/useAuthStore";
 import { renderError } from "@/utils/renderError";
 import ModalsLayout from "@/layouts/modalLayout/layout";
+import PartnersModalLayout from "@/layouts/PartnersModalLayout/PartnersModalLayout";
 
-const LoginModal = ({ onClose }: { onClose: () => void }) => {
-	const { getConfirmCode, error } = useAuthStore();
-	const [email, setEmail] = useState("");
-	const [agreed, setAgreed] = useState(false);
-	const [showConfirmModal, setShowConfirmModal] = useState(false);
+interface LoginModalProps {
+	email: string;
+	setEmail: (value: string) => void;
+	agreed: boolean;
+	setAgreed: (value: boolean) => void;
+	error: string | null;
+	onSubmit: (e: React.FormEvent) => Promise<void>;
+	back: () => void;
+}
 
-	const loginForm = {
-		email: email,
-		accepted_agreement: agreed,
-	};
-
-	const handleSubmit = async () => {
-		await getConfirmCode(loginForm);
-
-		if (!useAuthStore.getState().error) {
-			setShowConfirmModal(true);
-		}
-	};
-
-	const handleChangeEmail = () => {
-		setShowConfirmModal(false);
-	};
-
-	if (showConfirmModal) {
-		return (
-			<ConfirmEmailModal onClose={onClose} onChangeEmail={handleChangeEmail} />
-		);
-	}
-
-	console.log("error: ", error);
-
+const LoginModal = ({
+	email,
+	setEmail,
+	agreed,
+	setAgreed,
+	error,
+	onSubmit,
+	back,
+}: LoginModalProps) => {
 	return (
-		<ModalsLayout title={"Войдите по почте"} onClose={onClose}>
+		<PartnersModalLayout title={"Войдите по почте"} back={back}>
 			<p>Введите email, чтобы войти или зарегистрироваться</p>
-			<div className={styles.inputWrapper}>
-				<input
-					type="text"
-					className={styles.emailInput}
-					placeholder="example@gmail.com"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-				/>
-			</div>
+			<form onSubmit={onSubmit} className="flex flex-col gap-4">
+				<div className={styles.inputWrapper}>
+					<input
+						type="text"
+						className={styles.emailInput}
+						placeholder="example@gmail.com"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+				</div>
 
-			{renderError(error, "email")}
+				{renderError(error, "email")}
 
-			<Button className={styles.submitButton} onClick={handleSubmit}>
-				Получить код
-			</Button>
-			<div className={styles.checkbox}>
-				<Checkbox
-					id="terms"
-					checked={agreed}
-					onClick={() => setAgreed(!agreed)}
-				/>
-				<Label htmlFor="terms" className={styles.terms}>
-					<span>Соглашаюсь</span>
-					<a>
-						с правилами пользования <br /> торговой площадкой{" "}
-					</a>
-					<span>и</span>
-					<a>возврата</a>
-				</Label>
-			</div>
+				<Button type="submit" className={styles.submitButton}>
+					Получить код
+				</Button>
+				<div className={styles.checkbox}>
+					<Checkbox
+						id="terms"
+						checked={agreed}
+						onClick={() => setAgreed(!agreed)}
+					/>
+					<Label htmlFor="terms" className={styles.terms}>
+						<span>Соглашаюсь</span>
+						<a>
+							с правилами пользования <br /> торговой площадкой{" "}
+						</a>
+						<span>и</span>
+						<a>возврата</a>
+					</Label>
+				</div>
 
-			{renderError(error, "accepted_agreement")}
-		</ModalsLayout>
+				{renderError(error, "accepted_agreement")}
+			</form>
+		</PartnersModalLayout>
 	);
 };
 

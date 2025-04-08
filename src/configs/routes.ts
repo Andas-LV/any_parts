@@ -2,6 +2,7 @@ import { ISearchParams } from "@components/headers/CustomerHeader/MainHeader/Sea
 
 export const routes = {
 	home: () => "/",
+	login: () => "/login",
 
 	partners: () => `/partners`,
 	partnersAuth: () => `/partners/auth`,
