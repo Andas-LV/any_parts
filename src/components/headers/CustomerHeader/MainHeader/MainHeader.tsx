@@ -11,10 +11,15 @@ import { useUserStore } from "@/entities/user/useUserStore";
 import { TProfileTabs } from "@/app/(pages)/profile/page";
 import { useRouter } from "next/navigation";
 import { routes } from "@/configs/routes";
+import { useSession } from "next-auth/react";
+import { useState } from "react";
+import LoginPage from "@/app/(pages)/login/page";
 
 const MainHeader = () => {
 	const { isAuthenticated } = useAuthStore();
+	// const { data: session, status} = useSession();
 	const { setActiveProfileTab } = useUserStore();
+	const [login, setLogin] = useState(false);
 
 	const router = useRouter();
 
@@ -24,6 +29,7 @@ const MainHeader = () => {
 	};
 
 	const handleLogin = () => {
+		// setLogin(true);
 		router.push(routes.login());
 	}
 
@@ -80,6 +86,8 @@ const MainHeader = () => {
 					<span>Корзина</span>
 				</Link>
 			</nav>
+
+			{/*{login && <LoginPage/>}*/}
 		</div>
 	);
 };

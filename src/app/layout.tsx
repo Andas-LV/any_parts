@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { manrope } from "@/assets/fonts";
 import React, { Suspense } from "react";
+import { AllProviders } from "@/lib/providers/AllProviders";
 import { Toaster } from "@/components/ui/toaster";
 import Loading from "@components/Loading";
 import "./globals.css";
@@ -8,23 +9,28 @@ import "./globals.css";
 export const metadata: Metadata = {
 	title: "Any Parts",
 	description: "Any Parts",
+	creator: "ZIZ INC.",
+	generator: "Next.js",
+	icons: {
+		icon: "/logo.svg",
+		shortcut: "/logo.svg",
+		apple: "/logo.svg",
+	},
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
 	return (
 		<html lang="en">
-			<head>
-				<link rel="icon" href="/logo.svg" type="image/svg+xml" />
-				<link rel="icon" href="/favicon.ico" sizes="any" />
-			</head>
 			<body className={`${manrope.className}`}>
 				<Suspense fallback={<Loading />}>
-					{children}
-					<Toaster />
+					<AllProviders>
+						{children}
+						<Toaster />
+					</AllProviders>
 				</Suspense>
 			</body>
 		</html>

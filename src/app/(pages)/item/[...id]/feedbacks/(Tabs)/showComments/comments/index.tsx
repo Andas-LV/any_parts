@@ -1,115 +1,111 @@
-"use client";
+"use client"
 
-import styles from "./leftSide.module.css";
-import RatingStars from "@components/stars/RatingStars";
-import React, { useState } from "react";
-import { Icons } from "@/assets/svg/svg";
-import { Progress } from "@components/ui/progress";
-import CommentItem from "./CommentItem/CommentItem";
-import { Button } from "@components/ui/button";
+import React, { useState } from "react"
+import styles from "./leftSide.module.css"
+import { Icons } from "@/assets/svg/svg"
+import RatingStars from "@components/stars/RatingStars"
+import { Progress } from "@components/ui/progress"
+import { Button } from "@components/ui/button"
+import CommentItem from "./CommentItem/CommentItem"
+import { useItemsStore } from "@/entities/items/useItemsStore"
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "@components/ui/dropdown-menu";
-import { useItemsStore } from "@/entities/items/useItemsStore";
+	Select,
+	SelectTrigger,
+	SelectValue,
+	SelectContent,
+	SelectItem,
+} from "@components/ui/select"
 
-const ratings = [1, 2, 3, 4, 5];
-const filters = ["Сначала полезные", "Сначала популярные"];
+const ratings = [1, 2, 3, 4, 5]
+const filters = ["Сначала полезные", "Сначала популярные"]
 
 export function CommentsSection() {
-	const { currentItem } = useItemsStore();
-	const item = currentItem;
+	const { currentItem: item } = useItemsStore()
+	const [selectedRating, setSelectedRating] = useState<string>("")
+	const [selectedFilter, setSelectedFilter] = useState<string>(filters[0])
 
-	if (!item) {
-		return null;
-	}
+	if (!item) return null
 
-	const [isOpen, setIsOpen] = useState(false);
-	const [isRatingOpen, setIsRatingOpen] = useState(false);
-
-	const total = Object.values(item.ratingDistribution).reduce(
-		(a, b) => a + b,
-		0,
-	);
-
-	const ratingRows = ratings.map((stars) => {
-		const count =
-			item.ratingDistribution[stars as keyof typeof item.ratingDistribution] ||
-			0;
-		const percentage = item.comments.amount > 0 ? (count / total) * 100 : 0;
-
-		return (
-			<div key={stars} className={styles.ratingRow}>
-				<div className={styles.starsContainer}>
-					{[...Array(stars)].map((_, i) => (
-						<Icons.Star key={i} width={16} height={16} />
-					))}
-					{[...Array(5 - stars)].map((_, i) => (
-						<Icons.StarEmpty key={i} width={16} height={16} />
-					))}
-				</div>
-				<Progress value={percentage} className={styles.progressBar} />
-				<div className={styles.ratingCount}>{count}</div>
-			</div>
-		);
-	});
+	const totalRatings = Object.values(item.ratingDistribution).reduce((a, b) => a + b, 0)
 
 	return (
 		<div className={styles.wrapper}>
+			{/* Общий рейтинг */}
 			<div className={styles.ratingContainer}>
 				<div className={styles.generalRating}>
 					<div className={styles.rating}>
 						<span>{item.rating.toFixed(1)}</span>
 						<RatingStars rating={item.rating} />
 					</div>
-
 					<Button variant="link">Все {item.comments.amount} отзывов</Button>
-
 					<p>{item.sold} купили</p>
 				</div>
 
-				<div className={styles.ratingDistributionContainer}>{ratingRows}</div>
+				{/* Распределение рейтингов */}
+				<div className={styles.ratingDistributionContainer}>
+					{ratings.map((stars) => {
+						const count = item.ratingDistribution[stars as keyof typeof item.ratingDistribution] || 0
+						const percentage = totalRatings ? (count / totalRatings) * 100 : 0
+
+						return (
+							<div key={stars} className={styles.ratingRow}>
+								<div className={styles.starsContainer}>
+									{[...Array(5)].map((_, i) =>
+										i < stars ? (
+											<Icons.Star key={i} width={16} height={16} />
+										) : (
+											<Icons.StarEmpty key={i} width={16} height={16} />
+										)
+									)}
+								</div>
+								<Progress value={percentage} className={styles.progressBar} />
+								<div className={styles.ratingCount}>{count}</div>
+							</div>
+						)
+					})}
+				</div>
 			</div>
 
+			{/* Фильтры */}
 			<div className={styles.commentFilterContainer}>
 				<div className={styles.commentFilters}>
 					<Button variant="outline">С фото</Button>
 					<Button variant="outline">Из Казахстана</Button>
-					<DropdownMenu onOpenChange={setIsRatingOpen}>
-						<DropdownMenuTrigger className={styles.ratingSelect}>
-							Все звезды
-							<Icons.ArrowDown
-								className={`${styles.arrowIcon} ${isRatingOpen ? styles.rotated : ""}`}
-							/>
-						</DropdownMenuTrigger>
-						<DropdownMenuContent>
-							{ratings.map((star, i) => (
-								<DropdownMenuItem key={i}>{star}</DropdownMenuItem>
+
+					{/* Select по звёздам */}
+					<Select value={selectedRating} onValueChange={setSelectedRating}>
+						<SelectTrigger className={styles.ratingSelect}>
+							<SelectValue placeholder="Все звезды" />
+						</SelectTrigger>
+						<SelectContent>
+							{ratings.map((star) => (
+								<SelectItem key={star} value={star.toString()}>
+									{star}
+								</SelectItem>
 							))}
-						</DropdownMenuContent>
-					</DropdownMenu>
+						</SelectContent>
+					</Select>
 				</div>
 
-				<DropdownMenu onOpenChange={setIsOpen}>
-					<DropdownMenuTrigger className={styles.ratingSelect}>
-						{filters[0]}
-						<Icons.ArrowDown
-							className={`${styles.arrowIcon} ${isOpen ? styles.rotated : ""}`}
-						/>
-					</DropdownMenuTrigger>
-					<DropdownMenuContent>
+				{/* Select по сортировке */}
+				<Select value={selectedFilter} onValueChange={setSelectedFilter}>
+					<SelectTrigger className={styles.ratingSelect}>
+						<SelectValue />
+					</SelectTrigger>
+					<SelectContent>
 						{filters.map((filter) => (
-							<DropdownMenuItem key={filter}>{filter}</DropdownMenuItem>
+							<SelectItem key={filter} value={filter}>
+								{filter}
+							</SelectItem>
 						))}
-					</DropdownMenuContent>
-				</DropdownMenu>
+					</SelectContent>
+				</Select>
 			</div>
 
+			{/* Список комментариев */}
 			{item.comments.list.map((comment, i) => (
 				<CommentItem key={i} comment={comment} />
 			))}
 		</div>
-	);
+	)
 }

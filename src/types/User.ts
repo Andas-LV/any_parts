@@ -14,6 +14,9 @@ export type User = {
 	role: Roles;
 	moderated?: boolean;
 	deliveryPoints?: DeliveryPoint[];
+
+	access?: string;
+	refresh?: string;
 };
 
 export type TEditSchema = z.infer<typeof editSchema>;

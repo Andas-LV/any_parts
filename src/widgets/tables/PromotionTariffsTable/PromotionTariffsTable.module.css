@@ -11,7 +11,7 @@
     border: 1px solid #e0e0e0;
 }
 
-/* Шапка таблицы */
+/* Table header */
 .PromotionTariffsTable thead tr {
     background-color: #f8f8f8;
     font-weight: bold;
@@ -27,7 +27,7 @@
 
 .PromotionTariffsTable th {
     font-weight: 500;
-    color: black;
+    color: #333;
 }
 
 .PromotionTariffsTable tbody tr:hover {
@@ -41,11 +41,76 @@
     gap: 1rem;
 }
 
-.standardPromo, .premiumPromo{
+.standardPromo,
+.premiumPromo {
     font-weight: 500;
 }
-.premiumPromo{
+
+.premiumPromo {
     background: var(--premium-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Cost cell layout */
+.costCell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spread content to left and right */
+    gap: 0.75rem; /* Space between price/input and button */
+}
+
+.priceWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Price text */
+.priceText {
+    flex-grow: 1;
+}
+
+.priceInput {
+    background-color: transparent;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.priceInput:focus {
+    border-color: #007bff;
+}
+
+/* Action button (edit/save) */
+.actionButton {
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.actionButton:hover:not(.disabled) {
+    background-color: #f0f0f0;
+    border-radius: 0.5rem;
+}
+
+/* Icon styles */
+.actionIcon {
+    width: 18px;
+    height: 18px;
+    color: #666;
+}
+
+.actionButton:hover:not(.disabled) .actionIcon {
+    color: #333;
+}
+
+/* Disabled state */
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }

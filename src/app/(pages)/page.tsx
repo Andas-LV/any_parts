@@ -1,5 +1,6 @@
 "use client";
 
+import { useSession } from "next-auth/react"
 import Banner from "@/components/Banner/Banner";
 import { Items } from "@/widgets/Items";
 import HeaderProvider from "@/layouts/HeaderProvider";
@@ -9,6 +10,7 @@ import { useUserStore } from "@/entities/user/useUserStore";
 import { useEffect } from "react";
 
 export default function Home() {
+	// const { data: session, status} = useSession()
 	const { fetchUser } = useUserStore();
 
 	useEffect(() => {

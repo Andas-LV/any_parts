@@ -45,7 +45,7 @@ export default function ListedCard({ item, showFavorite }: ItemCardProps) {
 		marketName,
 	} = item;
 
-	const { user } = useUserStore();
+	const { currencySymbol } = useUserStore();
 
 	const characters = [
 		{ name: "Тип", value: itemType },
@@ -90,14 +90,14 @@ export default function ListedCard({ item, showFavorite }: ItemCardProps) {
 				<div className={styles.priceContainer}>
 					<div className={styles.mainPrice}>
 						{currentPrice?.toLocaleString() || price.toLocaleString()}
-						{user && useCurrencySymbol(user.currency)}
+						{currencySymbol}
 					</div>
 
 					{discount && currentPrice && (
 						<div className={styles.priceInfo}>
 							<span className={styles.oldPrice}>
 								{price.toLocaleString()}
-								{user && useCurrencySymbol(user.currency)}
+								{currencySymbol}
 							</span>
 
 							<span className={styles.discount}>-{discount}%</span>

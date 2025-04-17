@@ -1,11 +1,11 @@
-import { Loader } from "lucide-react";
+import { LoaderCircle } from "lucide-react";
 import styles from "./loading.module.css";
 
 const Loading = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.spinner}>
-				<Loader size={48} color="white" />
+				<LoaderCircle size={40} color="white" />
 			</div>
 		</div>
 	);

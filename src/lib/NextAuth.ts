@@ -1,8 +1,9 @@
-import NextAuth, { type NextAuthOptions } from "next-auth";
+import {type NextAuthOptions} from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { jwtDecode } from "jwt-decode";
 import { login, confirmEmail, register, refreshToken } from "@/entities/customer/auth/auth.service";
 import { Login, ConfirmCode, Register } from "@/types/Auth";
+import { User } from "@/types/User";
 // @ts-ignore
 import { CredentialsSignin } from "next-auth";
 import { routes } from "@/configs/routes";
@@ -23,7 +24,7 @@ interface IUser {
 	refresh?: string;
 }
 
-export const authOptions: NextAuthOptions = {
+export const authOptions:NextAuthOptions = {
 	providers: [
 		// 1. Провайдер для отправки кода (только email)
 		Credentials({
@@ -159,8 +160,10 @@ export const authOptions: NextAuthOptions = {
 		async session({ session, token }) {
 			// Передаём данные пользователя из token в session
 			if (token.user) {
-				session.user = token.user;
+				session.user = token.user as User;
+				session.access = token.access as string;
 			}
+
 			return session;
 		},
 	},
@@ -171,6 +174,4 @@ export const authOptions: NextAuthOptions = {
 	},
 
 	secret: process.env.NEXTAUTH_SECRET,
-};
-
-export const {handlers, signIn, signOut, auth} =  NextAuth(authOptions);
+}

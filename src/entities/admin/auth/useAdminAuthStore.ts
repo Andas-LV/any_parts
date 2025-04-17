@@ -8,7 +8,6 @@ const isClient = typeof window !== "undefined";
 const getInitialToken = isClient ? getAuthToken : () => null;
 
 interface PartnerAuthState {
-	token: string | null;
 	isAuthenticated: boolean;
 	isLoading: boolean;
 	error: z.ZodError | string | null;
@@ -23,116 +22,107 @@ interface PartnerAuthState {
 }
 
 export const useAdminAuthStore = create<PartnerAuthState>()(
-	persist(
-		(set) => ({
-			token: getInitialToken()!,
-			isAuthenticated: !!getInitialToken(),
-			isLoading: false,
-			error: null,
-			email: null,
+	(set) => ({
+		isAuthenticated: !!getInitialToken(),
+		isLoading: false,
+		error: null,
+		email: null,
 
-			login: async (data: TAdminLogin) => {
-				set({ isLoading: true, error: null });
-				try {
-					// const response = await partnerAuthService.login(data);
-					// setAuthToken(response.token);
+		login: async (data: TAdminLogin) => {
+			set({ isLoading: true, error: null });
+			try {
+				// const response = await partnerAuthService.login(data);
+				// setAuthToken(response.token);
+				set({
+					// token: response.token,
+					isAuthenticated: true,
+					email: data.email,
+				});
+			} catch (error) {
+				if (error instanceof z.ZodError) {
+					set({ error });
+				} else {
 					set({
-						// token: response.token,
-						isAuthenticated: true,
-						email: data.email,
+						error: error instanceof Error ? error.message : "Login failed",
 					});
-				} catch (error) {
-					if (error instanceof z.ZodError) {
-						set({ error });
-					} else {
-						set({
-							error: error instanceof Error ? error.message : "Login failed",
-						});
-					}
-				} finally {
-					set({ isLoading: false });
 				}
-			},
-
-			getConfirmCode: async (email: string) => {
-				set({ isLoading: true, error: null });
-				try {
-					// await partnerAuthService.getConfirmCode(data);
-					// Store the email for later confirmation.
-					set({ email: email });
-				} catch (error) {
-					if (error instanceof z.ZodError) {
-						set({ error });
-					} else {
-						set({
-							error:
-								error instanceof Error
-									? error.message
-									: "Get confirm code failed",
-						});
-					}
-				} finally {
-					set({ isLoading: false });
-				}
-			},
-
-			confirmEmail: async (data: ConfirmCode) => {
-				set({ isLoading: true, error: null });
-				try {
-					// const response = await partnerAuthService.confirmEmail(data);
-					// setAuthToken(response.token);
-					set({
-						// token: response.token,
-						isAuthenticated: true,
-					});
-				} catch (error) {
-					if (error instanceof z.ZodError) {
-						set({ error });
-					} else {
-						set({
-							error:
-								error instanceof Error ? error.message : "Confirm email failed",
-						});
-					}
-				} finally {
-					set({ isLoading: false });
-				}
-			},
-
-			refreshPassword: async(data: TNewPassword) => {
-				set({ isLoading: true, error: null });
-				try {
-					// const response = await partnerAuthService.confirmEmail(data);
-					// setAuthToken(response.token);
-					set({
-						// token: response.token,
-						isAuthenticated: true,
-					});
-				} catch (error) {
-					if (error instanceof z.ZodError) {
-						set({ error });
-					} else {
-						set({
-							error:
-								error instanceof Error ? error.message : "Confirm email failed",
-						});
-					}
-				} finally {
-					set({ isLoading: false });
-				}
-			},
-
-			logout: () => {
-				removeAuthToken();
-				set({ token: null, isAuthenticated: false });
-			},
-
-			clearError: () => set({ error: null }),
-		}),
-		{
-			name: "partner-auth-storage",
-			partialize: (state) => ({ token: state.token }),
-			version: 1,
+			} finally {
+				set({ isLoading: false });
+			}
 		},
-	),
+
+		getConfirmCode: async (email: string) => {
+			set({ isLoading: true, error: null });
+			try {
+				// await partnerAuthService.getConfirmCode(data);
+				// Store the email for later confirmation.
+				set({ email: email });
+			} catch (error) {
+				if (error instanceof z.ZodError) {
+					set({ error });
+				} else {
+					set({
+						error:
+							error instanceof Error
+								? error.message
+								: "Get confirm code failed",
+					});
+				}
+			} finally {
+				set({ isLoading: false });
+			}
+		},
+
+		confirmEmail: async (data: ConfirmCode) => {
+			set({ isLoading: true, error: null });
+			try {
+				// const response = await partnerAuthService.confirmEmail(data);
+				// setAuthToken(response.token);
+				set({
+					// token: response.token,
+					isAuthenticated: true,
+				});
+			} catch (error) {
+				if (error instanceof z.ZodError) {
+					set({ error });
+				} else {
+					set({
+						error:
+							error instanceof Error ? error.message : "Confirm email failed",
+					});
+				}
+			} finally {
+				set({ isLoading: false });
+			}
+		},
+
+		refreshPassword: async(data: TNewPassword) => {
+			set({ isLoading: true, error: null });
+			try {
+				// const response = await partnerAuthService.confirmEmail(data);
+				// setAuthToken(response.token);
+				set({
+					// token: response.token,
+					isAuthenticated: true,
+				});
+			} catch (error) {
+				if (error instanceof z.ZodError) {
+					set({ error });
+				} else {
+					set({
+						error:
+							error instanceof Error ? error.message : "Confirm email failed",
+					});
+				}
+			} finally {
+				set({ isLoading: false });
+			}
+		},
+
+		logout: async() => {
+			await removeAuthToken();
+		},
+
+		clearError: () => set({ error: null }),
+	}),
 );

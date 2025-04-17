@@ -23,7 +23,7 @@ export default function ItemCard({ item, showFavorite }: ItemCardProps) {
 		return <ItemCardSkeleton />;
 	}
 
-	const { user } = useUserStore();
+	const { currencySymbol } = useUserStore();
 
 	const {
 		id,
@@ -45,8 +45,6 @@ export default function ItemCard({ item, showFavorite }: ItemCardProps) {
 		setIsFavorite(!isFavorite);
 	};
 
-	const currencySymbol = user ? useCurrencySymbol(user.currency) : "";
-	
 	return (
 		<Card
 			className={styles.card}

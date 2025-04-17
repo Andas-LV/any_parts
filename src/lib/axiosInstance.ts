@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toSnakeCase, toCamelCase } from "@/utils/serviceConverters";
+import { getSession } from "next-auth/react";
 import { getAuthToken } from "@/configs/cookie";
 
 const axiosInstance = axios.create({
@@ -10,12 +11,19 @@ const axiosInstance = axios.create({
 });
 
 // 👉 Request interceptor
-axiosInstance.interceptors.request.use((config) => {
+axiosInstance.interceptors.request.use(async (config) => {
 	if (typeof window !== "undefined") {
 		const token = getAuthToken();
 		if (token) {
 			config.headers.Authorization = `Bearer ${token}`;
 		}
+
+		// const session = await getSession();
+		// if (!session) {
+		// 	console.warn("⚠️ No access token available! Request may fail.");
+		// } else {
+		// 	config.headers.Authorization = `Bearer ${session.access}`;
+		// }
 	}
 
 	if (config.data && typeof config.data === "object") {

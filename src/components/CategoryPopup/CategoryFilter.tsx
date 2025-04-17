@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@components/ui/button";
 import { categories } from "@/exampleData/exampleCategories";
@@ -8,6 +8,7 @@ import { Category } from "@/types/Category";
 import useBodyOverflow from "@/hooks/useBodyOverflow";
 import styles from "./CategoryFilter.module.css";
 import { Icons } from "@/assets/svg/svg";
+import { ChevronRight } from "lucide-react";
 
 export default function CategoryFilter() {
 	const [selectedCategory, setSelectedCategory] = useState<Category | null>(
@@ -53,12 +54,7 @@ export default function CategoryFilter() {
 									{category.name}
 								</div>
 
-								<Image
-									src={"/arrows/arrow-right.svg"}
-									alt={"arrow"}
-									width={14}
-									height={14}
-								/>
+								<ChevronRight />
 							</button>
 						))}
 					</div>

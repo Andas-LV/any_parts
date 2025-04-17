@@ -25,7 +25,7 @@ export const ChooseDeliveryPointModal = ({
 	const handleConfirm = () => {
 		if (selectedPointId !== null) {
 			console.log("selectedPointId", selectedPointId);
-			router.push(routes.deliveryPoints())
+			// router.push(routes.deliveryPoints())
 			onClose();
 		}
 	};
